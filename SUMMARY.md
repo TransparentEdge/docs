@@ -84,6 +84,7 @@
     * [Capas de caché](getting-started/faq/arquitectura/capas-de-cache.md)
   * [Efectividad de la caché](getting-started/faq/hitratio.md)
   * [SSL](getting-started/faq/gestion-de-certificados-ssl.md)
+  * [Códigos de error 503](getting-started/faq/codigos-de-error-503.md)
   * [Funcionalidades](getting-started/faq/funcionalidades/README.md)
     * [Protección ante caídas del origen](getting-started/faq/funcionalidades/proteccion-ante-caidas-del-origen.md)
     * [Rate Limit](getting-started/faq/funcionalidades/rate-limit.md)
