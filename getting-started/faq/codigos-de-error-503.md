@@ -17,7 +17,7 @@ Las CDN's, por motivos técnicos, enmascaramos esa almalgama de _status codes_ e
 
 Ya que un error **`503`** proveniente de la CDN puede tener muchos motivos, éstos vienen clasificados en las cabeceras de respuesta y en el própio código html del error devuelto con más información relevante que puede ayudar a discernir el tipo de error, dichas cabeceras empiezan por `TCDN-` y todas tienen al final un valor numérico que nos permite identificar con precisión la petición, por ejemplo: `TCDN-BENG-504:275330054`.
 
-### Lista de códigos
+## Lista de códigos
 
 * **`TCDN-BENG-5xx`** - _Backend Error No Grace_
 
