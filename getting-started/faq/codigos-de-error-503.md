@@ -37,4 +37,4 @@ Ya que un error **`503`** proveniente de la CDN puede tener muchos motivos, ést
 
 * **`TCDN-NBD`** - _No Backend Defined_
 
-> El dominio existe en la CDN pero no se le ha asignado ningún backend.
+> El dominio existe en la CDN pero no se le ha asignado ningún _backend_.
