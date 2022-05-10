@@ -8,7 +8,7 @@ Lo primero que debes entender es que es una cabecera _web_ y, si la vas a invoca
 
 ```javascript
 sub vcl_recv {
-    if (req.http.True-Client-Ip ~ "(1.1.2.2|1.2.3.4)") {
+    if (req.http.True-Client-Ip ~ "^(1.1.2.2|1.2.3.4)$") {
         set req.http.TCDN-Command = "deny_request";
     }
     if ((req.http.host == "www.transparentedge.eu") && (req.url ~ "/my-new-url")) {
