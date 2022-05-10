@@ -4,7 +4,7 @@ Para bloquear tráfico que procede de una o varias direcciones IP es muy sencill
 
 ```javascript
 sub vcl_recv{
-    if (req.http.True-Client-Ip ~ "(1.1.2.2|1.2.3.4)") { 
+    if (req.http.True-Client-Ip ~ "^(1.1.2.2|1.2.3.4)$") { 
         set req.http.TCDN-Command = "deny_request, " + req.http.TCDN-Command;
     } 
 }
