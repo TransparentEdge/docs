@@ -33,7 +33,7 @@ Ofrece la opción de enviar los _logs_ directamente a un _bucket_ de S3.
 
 Para poder configurarlo se necesitan credenciales con acceso programático y una política asociada que permita como mínimo realizar subidas en el _bucket_ a utilizar.
 
-El _bucket_ a especificar debe ser su nombre, tal cual se ha configurado en S3 (no la URL), dicho nombre sólo se compone de caracteres alfanuméricos y guiones.
+El _bucket_ a especificar debe ser su nombre, tal cual se ha configurado en S3 (no la URL), dicho nombre es el que se usó al crear el bucket en S3, las reglas de nombrado están [aquí](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html).
 
 <figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
