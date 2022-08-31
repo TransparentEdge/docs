@@ -65,7 +65,7 @@ HEAD
 
 Es un error complejo. Significa que la conexión se ha cerrado por superación del tiempo de espera. Si el error se produce en el servidor del cliente, ese error se transformará en un 503 en Transparent CDN.\
 En condiciones normales suele deberse a algún problema de comunicaciones, ya sea por algún _firewall_ interno, un error interno del servidor o firewall/proxy entre Transparent CDN y el cliente.\
-Cualquier mensaje de "connection close" o "closing connection" en los logs del servidor de cliente puede significar el 408. Hemos tenido problemas históricos con módulos de Apache que provocaban ese error, como el mpm\_itk ([http://mpm-itk.sesse.net/](http://mpm-itk.sesse.net)).
+Cualquier mensaje de "connection close" o "closing connection" en los logs del servidor de cliente puede significar el 408. Hemos tenido problemas históricos con módulos de Apache que provocaban ese error, como el mpm\_itk ([http://mpm-itk.sesse.net/](http://mpm-itk.sesse.net/)).
 
 ## Errores de servidor
 

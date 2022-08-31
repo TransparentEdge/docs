@@ -22,7 +22,7 @@ Recuerda: nos encanta escucharte y mejorar nuestro servicio es nuestra prioridad
 
 ## ¿Y ahora qué?
 
-Enhorabuena, tu sitio web ya está funcionando a través de Transparent Edge Services, pero solo es el principio. Transparent Edge Services, al estar basado en [Varnish Enterprise](https://www.varnish-software.com), te abre un mundo de posibilidades a la hora de configurar la CDN. En nuestro portal de documentación encontrarás los casos de uso más habituales y te explicamos cómo llevarlos a cabo en nuestra sección de guías y tutoriales.
+Enhorabuena, tu sitio web ya está funcionando a través de Transparent Edge Services, pero solo es el principio. Transparent Edge Services, al estar basado en [Varnish Enterprise](https://www.varnish-software.com/), te abre un mundo de posibilidades a la hora de configurar la CDN. En nuestro portal de documentación encontrarás los casos de uso más habituales y te explicamos cómo llevarlos a cabo en nuestra sección de guías y tutoriales.
 
 Si todavía quieres ir más allá, puedes consultar nuestro manual de [Referencia VCL](config/vcl/), que te dará un conocimiento profundo sobre lo que se puede hacer con Varnish y Transparent Edge Services.
 

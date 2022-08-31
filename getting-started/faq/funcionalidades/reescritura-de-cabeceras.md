@@ -1,6 +1,6 @@
 # Reescritura de cabeceras
 
-Al estar basados en [Varnish](https://www.varnish-software.com), en particular en Varnish Plus, tenemos mucha flexibilidad a la hora de modificar el comportamiento por defecto de tu sitio web. La reescritura de cabeceras es algo muy común que se puede hacer sin demasiados problemas. Los casos más comunes son:
+Al estar basados en [Varnish](https://www.varnish-software.com/), en particular en Varnish Plus, tenemos mucha flexibilidad a la hora de modificar el comportamiento por defecto de tu sitio web. La reescritura de cabeceras es algo muy común que se puede hacer sin demasiados problemas. Los casos más comunes son:
 
 #### Reescritura de la cabecera de Host
 

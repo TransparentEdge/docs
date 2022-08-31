@@ -6,7 +6,7 @@ Una CDN como Transparent Edge Services no deja de ser un concentrador de las pet
 
 Tener disponible un lenguaje como _VCL_ (_Varnish Configuration Language_) para definir lógica a este nivel permite hacer todo tipo de virguerías y operaciones que harán las delicias de cualquier DevOps. Las posibilidades son amplias para cualquier app o sitio web que pase por Transparent CDN, que permite _SSL-offloading_ (protocol downgrade), end-to-end SSL, WAF, routing basado en URL, múltiples backend en función de criterios arbitrarios y personalizados, A/B testing, canary deployments, HTTP-header feature-flags y un largo etcetera.
 
-Como las funcionalidades se ven con ejemplos, pongamos una API basada en microservicios, repartidos en varios hosts. Con un Application Gateway podemos hacer que todos los servicios estén disponibles vía [api.misitio.com](http://api.misitio.com). Los distintos microservicios podrían albergarse bajo distintas URL del mismo dominio [api.misitio.com](http://api.misitio.com): `/login`, `/estadisticas`, `/carrito`, cada uno en su propio _backend_, con un _VCL_ como el siguiente:
+Como las funcionalidades se ven con ejemplos, pongamos una API basada en microservicios, repartidos en varios hosts. Con un Application Gateway podemos hacer que todos los servicios estén disponibles vía [api.misitio.com](http://api.misitio.com/). Los distintos microservicios podrían albergarse bajo distintas URL del mismo dominio [api.misitio.com](http://api.misitio.com/): `/login`, `/estadisticas`, `/carrito`, cada uno en su propio _backend_, con un _VCL_ como el siguiente:
 
 ```
 # Supongamos tres backends dados de alta:

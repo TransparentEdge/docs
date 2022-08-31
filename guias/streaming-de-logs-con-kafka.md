@@ -8,7 +8,7 @@ description: Documentación y una guía rápida de cómo echar a andar tu primer
 Si tienes cualquier duda sobre el servicio de _Streaming de logs en tiempo real_, contacta con nosotros en [support@transparentedge.eu](mailto:soporte@transparentedge.eu)
 {% endhint %}
 
-Para activar el servicio de _Streaming de logs en tiempo real_, tan sólo debes acceder al panel en [https://dashboard.transparentcdn.com/](https://dashboard.transparentcdn.com) y dentro del apartado _Logs_, en la pestaña _Streaming_, encontrarás todo lo necesario.
+Para activar el servicio de _Streaming de logs en tiempo real_, tan sólo debes acceder al panel en [https://dashboard.transparentcdn.com/](https://dashboard.transparentcdn.com/) y dentro del apartado _Logs_, en la pestaña _Streaming_, encontrarás todo lo necesario.
 
 Una vez activado el servicio, **podrás descargarte un archivo zip** que contiene los certificados digitales necesarios para autenticar a tus _consumers_ así como una serie de plantillas preconfiguradas con tus datos para consumir los logs mediante _filebeat_, _logstash_ y _python_.
 

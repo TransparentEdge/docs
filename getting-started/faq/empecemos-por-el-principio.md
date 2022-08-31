@@ -46,10 +46,10 @@ Adicionalmente a lo comentado en el punto anterior, una CDN tiene muchas otras v
 
 ## Transparent Rocks!
 
-Transparent Edge Services es la primera red contenidos de capital 100% español y con infraestructura en más de 30 países. Basada en [Varnish Enterprise](https://www.varnish-software.com) somos la única CDN del mundo que ofrece esta modalidad de Varnish como servicio con toda la potencia que esto conlleva. Además somos [Open Partner](https://www.varnish-software.com/partners/) de Varnish lo que nos da una garantía adicional a nuestro producto y servicio.
+Transparent Edge Services es la primera red contenidos de capital 100% español y con infraestructura en más de 30 países. Basada en [Varnish Enterprise](https://www.varnish-software.com/) somos la única CDN del mundo que ofrece esta modalidad de Varnish como servicio con toda la potencia que esto conlleva. Además somos [Open Partner](https://www.varnish-software.com/partners/) de Varnish lo que nos da una garantía adicional a nuestro producto y servicio.
 
 ![](../../.gitbook/assets/Varnish-Software\_2.0\_POS\_Large.png)
 
 Nacimos con la idea de hacer la CDN que a nosotros nos hubiera gustado tener como clientes y como tal nuestro primer activo es el capital humano y la cercanía nuestro principal valor.&#x20;
 
-El objetivo de este site no es vender si no facilitar la vida a nuestros clientes, por tanto si estás leyendo esto, ya sabes quienes somos y probablemente conozcas nuestras bondades, es más, es posible que seas cliente, en cualquier caso, en nuestra [web](https://www.transparentedge.eu) tienes todo lo que necesitas saber a nivel comercial de nosotros y para todo lo demás siempre puedes enviar un correo a [equipo de ventas](mailto:sales@transparentedge.eu).
+El objetivo de este site no es vender si no facilitar la vida a nuestros clientes, por tanto si estás leyendo esto, ya sabes quienes somos y probablemente conozcas nuestras bondades, es más, es posible que seas cliente, en cualquier caso, en nuestra [web](https://www.transparentedge.eu/) tienes todo lo que necesitas saber a nivel comercial de nosotros y para todo lo demás siempre puedes enviar un correo a [equipo de ventas](mailto:sales@transparentedge.eu).

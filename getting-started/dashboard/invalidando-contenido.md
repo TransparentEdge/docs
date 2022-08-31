@@ -1,6 +1,6 @@
 # Invalidando contenido
 
-Para invalidar contenido, accede al apartado de invalidaciones a través del [panel](https://dashboard.transparentcdn.com).
+Para invalidar contenido, accede al apartado de invalidaciones a través del [panel](https://dashboard.transparentcdn.com/).
 
 ![](<../../.gitbook/assets/image (57).png>)
 
@@ -31,7 +31,7 @@ Por otro lado, en la parte inferior del apartado de invalidaciones se muestra un
 ### Invalidaciones simples (PURGES)
 
 {% hint style="info" %}
-Si estás familiarizado con la terminología de [_Varnish_](https://varnish-cache.org), a este tipo de invalidaciones se las conoce como _PURGES_.
+Si estás familiarizado con la terminología de [_Varnish_](https://varnish-cache.org/), a este tipo de invalidaciones se las conoce como _PURGES_.
 {% endhint %}
 
 Estas invalidaciones utilizan la referencia absoluta al objeto a invalidar, que en este caso sería, para entendernos, la URL completa con sus _Query String_ (si los tiene).

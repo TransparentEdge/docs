@@ -22,7 +22,7 @@ Una vez creado dicho fichero, pulsa _Guardar_ y tu sitio quedará registrado en 
 
 ### Gestión automática de certificados
 
-Si lo prefieres, podemos llevar la gestión de certificados automáticamente desde nuestra plataforma. Los certificados de tu sitio estarán firmados en ese caso por [Let's Encrypt](https://letsencrypt.org).
+Si lo prefieres, podemos llevar la gestión de certificados automáticamente desde nuestra plataforma. Los certificados de tu sitio estarán firmados en ese caso por [Let's Encrypt](https://letsencrypt.org/).
 
 Para activar esta opción, pincha en _Acciones_ sobre el candado del sitio que quieras activar (para que funcione el CNAME, nos debe estar apuntando).
 

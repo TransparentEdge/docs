@@ -2,7 +2,7 @@
 
 ### Registro
 
-El proceso de registro en la plataforma de autoprovisionamiento de Transparent Edge Services se inicia a través del botón “Contratar o Register”, localizado en la esquina superior derecha de la página principal ([https://www.transparentedge.eu/](https://www.transparentedge.eu)). Seleccionándolo, serás redireccionado al formulario disponible a tal efecto ([https://api.transparentcdn.com/signup/#/](https://api.transparentcdn.com/signup/#/)) y en él tendrás que completar cuatro pasos para hacer efectivo tu registro.
+El proceso de registro en la plataforma de autoprovisionamiento de Transparent Edge Services se inicia a través del botón “Contratar o Register”, localizado en la esquina superior derecha de la página principal ([https://www.transparentedge.eu/](https://www.transparentedge.eu/)). Seleccionándolo, serás redireccionado al formulario disponible a tal efecto ([https://api.transparentcdn.com/signup/#/](https://api.transparentcdn.com/signup/#/)) y en él tendrás que completar cuatro pasos para hacer efectivo tu registro.
 
 ![](<.gitbook/assets/image (17).png>)
 
@@ -28,7 +28,7 @@ Deberás introducir una contraseña de, al menos, ocho caracteres para poder con
 
 #### Página web
 
-Tras tu nombre y apellidos y dirección de correo electrónico, será necesario que indiques el dominio principal de tu sitio web, por ejemplo: “[www.prueba.com](http://www.prueba.com)”.
+Tras tu nombre y apellidos y dirección de correo electrónico, será necesario que indiques el dominio principal de tu sitio web, por ejemplo: “[www.prueba.com](http://www.prueba.com/)”.
 
 Una vez hayas concluido el proceso de registro y accedido al panel (_dashboard_) de _autoprovisioning_ de Transparent Edge Services, podrás observar cómo dicho dominio (_site_) ya ha sido añadido en la configuración de tu recién estrenado perfil. Por supuesto, tienes total libertad para añadir tantos nuevos dominios como precises o eliminar aquellos que ya no sean necesarios.
 

@@ -1,6 +1,6 @@
 # Actuando sobre el Query String
 
-En Transparent Edge Services implementamos [Varnish Enterprise](https://www.varnish-software.com) y por lo tanto puedes aprovechar todas las ventajas que esto supone.
+En Transparent Edge Services implementamos [Varnish Enterprise](https://www.varnish-software.com/) y por lo tanto puedes aprovechar todas las ventajas que esto supone.
 
 En este caso vamos a hablar de como usar el módulo [urlplus](https://docs.varnish-software.com/varnish-cache-plus/vmods/urlplus/)  en Transparent Edge Services para interactuar con el query string de una petición web.
 
@@ -61,4 +61,4 @@ Otras funciones que pueden serte de utilidad son&#x20;
 * **toupper**. Para convertir toda la URL a mayúsculas.
 * **query\_add**. Para añadir un parametro a la url
 
-En este [enlace](https://docs.varnish-software.com/varnish-cache-plus/vmods/urlplus/) puedes encontrar toda la documentación de este módulo de [Varnish Enterprise.](https://www.varnish-software.com)
+En este [enlace](https://docs.varnish-software.com/varnish-cache-plus/vmods/urlplus/) puedes encontrar toda la documentación de este módulo de [Varnish Enterprise.](https://www.varnish-software.com/)

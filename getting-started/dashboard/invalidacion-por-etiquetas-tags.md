@@ -107,7 +107,7 @@ Pulsamos sobre "PURGAR TAGS" y escribiremos los _tags_ por los que queramos inva
 
 #### Mediante API
 
-Todo lo que puedes hacer desde nuestro [dashboard](https://dashboard.transparetncdn.com) puedes hacerlo desde nuestro [API](https://docs.transparentedge.eu/getting-started/faq/glosario/api).
+Todo lo que puedes hacer desde nuestro [dashboard](https://dashboard.transparetncdn.com/) puedes hacerlo desde nuestro [API](https://docs.transparentedge.eu/getting-started/faq/glosario/api).
 
 En este caso, se debe realizar una petición POST autenticada al endpoint`/v1/companies/<company_id>/tag_invalidate/`, el **\<API\_TOKEN>** lo puedes conseguir siguiendo los pasos detallados en: [https://docs.transparentedge.eu/api/autenticacion](https://docs.transparentedge.eu/api/autenticacion)
 

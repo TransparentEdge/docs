@@ -1,6 +1,6 @@
 # Configuración inicial
 
-Tras haber concluido el proceso de registro y activado nuestra cuenta de usuario, podrás acceder al panel (_dashboard_) de autoprovisionamiento de Transparent Edge Services a través de la URL [https://dashboard.transparentcdn.com/](https://dashboard.transparentcdn.com) con tu usuario (tu correo de registro) y tu contraseña definida en el proceso de registro.&#x20;
+Tras haber concluido el proceso de registro y activado nuestra cuenta de usuario, podrás acceder al panel (_dashboard_) de autoprovisionamiento de Transparent Edge Services a través de la URL [https://dashboard.transparentcdn.com/](https://dashboard.transparentcdn.com/) con tu usuario (tu correo de registro) y tu contraseña definida en el proceso de registro.&#x20;
 
 Así, en tu primer inicio de sesión, serás redireccionado a un asistente (_wizard_) que te guiará, paso por paso, durante todo el proceso de configuración de la plataforma. Este asistente podrá ser invocado en un futuro siempre que desees. Por ejemplo, cuando sea preciso añadir un nuevo dominio (_site_), eliminar aquellos que ya no sean necesarios o, en general, realizar cualquier otro tipo de modificación en la configuración existente.
 
@@ -76,7 +76,7 @@ Por ejemplo, un código de respuesta para la comprobación del health check podr
 
 Tras cumplimentar aquellos datos relativos a la configuración del _back-end_, tendremos que dar de alta el sitio web que se asociará a dicho _backend_. Lo haremos en el siguiente paso haciendo clic en "Añadir sitio".
 
-Por ejemplo, un sitio web podría ser: [www.ejemplo.com](http://www.ejemplo.com).
+Por ejemplo, un sitio web podría ser: [www.ejemplo.com](http://www.ejemplo.com/).
 
 ![](<../../../.gitbook/assets/image (25).png>)
 
@@ -100,7 +100,7 @@ sub vcl\_recv {
 
 }
 
-Como puede observarse, esta no es más que una configuración inicial en la que se vincula el _backend_ cNNN\_ejemplo, cuyo origen, recordemos, es origen.ejemplo.com con el _site_ [www.ejemplo.com](http://www.ejemplo.com). Posteriormente se llevarán a cabo sucesivas modificaciones en dicha configuración a través de los modos disponibles, que son básico y avanzado. Los describimos a continuación.
+Como puede observarse, esta no es más que una configuración inicial en la que se vincula el _backend_ cNNN\_ejemplo, cuyo origen, recordemos, es origen.ejemplo.com con el _site_ [www.ejemplo.com](http://www.ejemplo.com/). Posteriormente se llevarán a cabo sucesivas modificaciones en dicha configuración a través de los modos disponibles, que son básico y avanzado. Los describimos a continuación.
 
 ![](<../../../.gitbook/assets/image (26).png>)
 
