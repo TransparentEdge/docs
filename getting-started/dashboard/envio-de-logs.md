@@ -40,7 +40,7 @@ Donde `ENDPOINT_URL` es la _URL_ que aloja el servicio S3, si el _bucket_ está 
 
 <figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
-### Categorizar logs por fecha en el destino
+### Categorizar logs por fecha y hora en destino
 
 A la hora de configurar el envío de logs, el campo "_Path_" (que es la ruta remota donde se almacenarán los logs) admite unas máscaras especiales que se expanden con la fecha actual:
 
