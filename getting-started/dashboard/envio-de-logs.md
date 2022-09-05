@@ -36,7 +36,7 @@ El campo "_Bucket_" acepta dos formatos:
 * **\<ENDPOINT\_URL**_**>/<**_**BUCKET\_NAME>**
 * **\<BUCKET\_NAME>** (Unicamente para AWS S3)
 
-Donde `ENDPOINT_URL` es la _URL_ que aloja el servicio S3, si el _bucket_ está alojado en AWS S3 se puede omitir y únicamente especificar `BUCKET_NAME`, si se desea incluir igualmente (por ejemplo, para apuntar a una región específica), se debe extraer del domino el nombre del _bucket_, por ejemplo `https://tcdn-testing.s3.us-east-1.amazonaws.com/tcdn-testing` se transformaría en `https://s3.us-east-1.amazonaws.com/tcdn-testing`.
+Donde `ENDPOINT_URL` es la _URL_ que aloja el servicio S3, si el _bucket_ está alojado en AWS S3 se puede omitir y únicamente especificar `BUCKET_NAME`, si se desea incluir igualmente (por ejemplo, para apuntar a una región específica), se debe extraer del domino el nombre del _bucket_, por ejemplo `https://tcdn-testing.s3.us-east-1.amazonaws.com/tcdn-testing` se transformaría en `https://s3.us-east-1.amazonaws.com/tcdn-testing`, si no se hace así el nombre del _bucket_ se incluirá al principio de la ruta remota.
 
 <figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
