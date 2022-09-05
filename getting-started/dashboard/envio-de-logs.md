@@ -23,19 +23,33 @@ En esta opción se pueden hacer llegar los logs a un FTP/sFTP arbitrario.
 
 Para configurarlo, simplemente se debe seleccionar el protocolo adecuado e introducir los datos requeridos, una vez activado y validado empezarán a llegar los _logs_ en el envío programado siguiente.
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Envío de logs Amazon S3 Compatible
 
+Esta opción permite enviar los _logs_ directamente a un _bucket_ S3 compatible.
 
+Para poder configurarlo se necesitan credenciales con acceso programático y una política asociada que permita, como mínimo realizar subidas al _bucket_ a utilizar.
 
-Ofrece la opción de enviar los _logs_ directamente a un _bucket_ de S3.
+El campo "_Bucket_" acepta dos formatos:
 
-Para poder configurarlo se necesitan credenciales con acceso programático y una política asociada que permita como mínimo realizar subidas en el _bucket_ a utilizar.
+* **\<ENDPOINT\_URL**_**>/<**_**BUCKET\_NAME>**
+* **\<BUCKET\_NAME>** (Unicamente para AWS S3)
 
-El _bucket_ a especificar debe ser su nombre, tal cual se ha configurado en S3 (no la URL), dicho nombre es el que se usó al crear el bucket en S3, las reglas de nombrado están [aquí](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html).
+Donde `ENDPOINT_URL` es la _URL_ que aloja el servicio S3, si el _bucket_ está alojado en AWS S3 se puede omitir y únicamente especificar `BUCKET_NAME`, si se desea incluir igualmente (por ejemplo, para apuntar a una región específica), se debe extraer del domino el nombre del _bucket_, por ejemplo `https://tcdn-testing.s3.us-east-1.amazonaws.com/tcdn-testing` se transformaría en `https://s3.us-east-1.amazonaws.com/tcdn-testing`.
 
 <figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+
+### Categorizar logs por fecha en el destino
+
+A la hora de configurar el envío de logs, el campo "_Path_" (que es la ruta remota donde se almacenarán los logs) admite unas máscaras especiales que se expanden con la fecha actual:
+
+* `%Y` - año, eg: 2022
+* `%m` - mes, eg: 09
+* `%d` - día, eg: 24
+* `%H` - hora, eg: 13
+
+Por ejemplo, si en el campo "_Path_" se especifica el valor `/tcdn-logs/%Y/%m/%d` y hoy es 24 de Agosto de 2022, cuando se ejecute el envío de logs, los ficheros serán almacenados remotamente en la ruta `/tcdn-logs/2022/08/22/*.gz`.
 
 ### Logs en streaming
 
