@@ -1,5 +1,9 @@
 # Modo básico
 
+{% hint style="danger" %}
+No utilices el modo básico si existe configuración avanzada desplegada, ya que sobreescribirá la configuración avanzada, si tienes cualquier duda contacta con soporte primero.
+{% endhint %}
+
 El modo básico nos permite configurar de manera rápida las reglas VCL más comunes, una redirección permanente, ver las reglas existentes, editarlas...
 
 La primera vez que accedemos al panel no tendremos ninguna regla definida:
