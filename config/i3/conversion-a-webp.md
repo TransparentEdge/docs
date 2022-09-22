@@ -15,9 +15,9 @@ sub vcl_recv {
 }
 ```
 
-También adminimos un ajuste de calidad opcional a la transformación a WebP, que por defecto es del 80%.
+También adminimos un ajuste de calidad opcional a la transformación a **WebP**, que por defecto es del **80%**.
 
-La sintaxis exacta para realizar esta operación es: auto\_webp:\<porcentaje>%.
+La sintaxis exacta para realizar esta operación es: `auto_webp:<porcentaje>%`.
 
 En el siguiente ejemplo se ve con más claridad:
 
