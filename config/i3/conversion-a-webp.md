@@ -13,5 +13,19 @@ sub vcl_recv {
         set req.http.TCDN-i3-transform = "auto_webp";
     }
 }
+```
 
+También adminimos un ajuste de calidad opcional a la transformación a WebP, que por defecto es del 80%.
+
+La sintaxis exacta para realizar esta operación es: auto\_webp:\<porcentaje>%.
+
+En el siguiente ejemplo se ve con más claridad:
+
+```c
+# i3 - auto_webp - con ajuste de calidad
+sub vcl_recv {
+    if (req.http.host == "www.mi-dominio.es") {
+        set req.http.TCDN-i3-transform = "auto_webp:90%";
+    }
+}
 ```
