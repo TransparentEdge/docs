@@ -27,16 +27,16 @@ Para configurarlo, simplemente se debe seleccionar el protocolo adecuado e intro
 
 ### Envío de logs Amazon S3 Compatible
 
-Esta opción permite enviar los _logs_ directamente a un _bucket_ S3 compatible.
+Esta opción permite enviar los _logs_ directamente a un _bucket_ compatible con S3.
 
-Para poder configurarlo se necesitan credenciales con acceso programático y una política asociada que permita, como mínimo realizar subidas al _bucket_ a utilizar.
+Para poder configurarlo se necesitan credenciales con acceso programático y una política asociada que permita, como mínimo, realizar subidas al _bucket_ que vamos a utilizar.
 
 El campo "_Bucket_" acepta dos formatos:
 
 * **\<ENDPOINT\_URL**_**>/<**_**BUCKET\_NAME>**
 * **\<BUCKET\_NAME>** (Unicamente para AWS S3)
 
-Donde `ENDPOINT_URL` es la _URL_ que aloja el servicio S3, si el _bucket_ está alojado en AWS S3 se puede omitir y únicamente especificar `BUCKET_NAME`, si se desea incluir igualmente (por ejemplo, para apuntar a una región específica), se debe extraer del domino el nombre del _bucket_, por ejemplo `https://tcdn-testing.s3.us-east-1.amazonaws.com/tcdn-testing` se transformaría en `https://s3.us-east-1.amazonaws.com/tcdn-testing`, si no se hace así el nombre del _bucket_ se incluirá al principio de la ruta remota.
+`ENDPOINT_URL` es la _URL_ que aloja el servicio S3. Si el _bucket_ está alojado en AWS S3 podemos utilizar únicamente el `BUCKET_NAME` como parámetro. Si se desea incluir igualmente , por ejemplo, para apuntar a una región específica, se debe extraer del domino el nombre del _bucket:_  `https://tcdn-testing.s3.us-east-1.amazonaws.com/tcdn-testing` se transformaría en `https://s3.us-east-1.amazonaws.com/tcdn-testing`, si no se hace así el nombre del _bucket_ se incluirá al principio de la ruta remota.
 
 <figure><img src="../../.gitbook/assets/image (5) (2).png" alt=""><figcaption></figcaption></figure>
 
