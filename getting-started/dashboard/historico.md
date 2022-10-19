@@ -19,7 +19,7 @@ Después de los gráficos se despliega la información de consumo mensual de anc
 
 En caso de tener más servicios contratados con Transparent Edge Services, se podrá visualizar su histórico cambiando la opción en la parte superior del panel. Ahí se podrá ver todo el consumo de cada servicio según el periodo de tiempo determinado:
 
-![](<../../.gitbook/assets/image (2) (2).png>)
+![](<../../.gitbook/assets/image (2) (1).png>)
 
 
 

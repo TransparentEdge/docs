@@ -4,7 +4,7 @@
 
 El proceso de registro en la plataforma de autoprovisionamiento de Transparent Edge Services se inicia a través del botón “Contratar o Register”, localizado en la esquina superior derecha de la página principal ([https://www.transparentedge.eu/](https://www.transparentedge.eu/)). Seleccionándolo, serás redireccionado al formulario disponible a tal efecto ([https://api.transparentcdn.com/signup/#/](https://api.transparentcdn.com/signup/#/)) y en él tendrás que completar cuatro pasos para hacer efectivo tu registro.
 
-![](<.gitbook/assets/image (17).png>)
+![](<.gitbook/assets/image (17) (1).png>)
 
 ### Datos personales
 

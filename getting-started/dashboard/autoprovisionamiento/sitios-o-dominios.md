@@ -4,7 +4,7 @@ En este apartado podrás ver todos los sitios configurados, añadir nuevos y act
 
 Si has seguido el asistente inicial, ya tendrás al menos un sitio configurado y verás algo similar al siguiente ejemplo:
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 Aquí se mostrarán todos los sitios configurados. Si tienes muchos, puedes filtrar con el buscador ubicado a la izquierda y ver cuáles tienen activada la gestión automática de certificados (en ese caso, el candado estará cerrado).
 
@@ -16,9 +16,9 @@ Un detalle importante es el aviso de la parte superior, que nos indica dónde te
 
 Añadir un sitio nuevo es un proceso sencillo, pero por motivos de seguridad se debe validar la posesión del dominio. Este proceso se explica detalladamente cuando pulsas sobre _**Añadir sitio**_,. Si tienes cualquier problema, no dudes en contactar con nosotros en [soporte@transparentedge.eu](mailto:soporte@transparentedge.eu)
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Una vez revisados los requisitos y tras haber cumplido uno de ellos, pulsa "Guardar y finalizar", al hacerlo se realizará la validación necesaria y si todo es correcto el sitio quedará registrado.
 
@@ -36,7 +36,7 @@ Para activar esta opción, pincha en _Acciones_ sobre el candado del sitio que q
 
 ![Candado sin activar](<../../../.gitbook/assets/image (41).png>)
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
 Ahora solo tendrás que pulsar sobre _**Quiero gestionar automáticamente el SSL para este site**_ para iniciar el proceso. No tardará más de cinco minutos en activarse.
 

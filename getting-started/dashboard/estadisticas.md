@@ -8,7 +8,7 @@ El panel se puede personalizar de acuerdo a las necesidades de cada cliente y mu
 
 Encontrarás también la información de los _requests_ y ancho de banda:
 
-![](<../../.gitbook/assets/image (1) (1).png>)
+![](<../../.gitbook/assets/image (1) (1) (1).png>)
 
 Después se despliegan las gráficas del _hit ratio_, donde está toda la información de la eficiencia de la caché. Así, muestra los objetos que no han logrado ser cacheados (_miss_), los objetos caducados (_expired_) y los que estaban caducados y se han servido a partir del objeto caducado (_stale_). Y conjuntamente, según la configuración, se puede visualizar todo el tiempo de respuesta (_response time_) de las peticiones.\
 
@@ -25,23 +25,23 @@ Los siguientes gráficos muestran los códigos de respuesta que han tenido todas
 
 Los siguientes gráficos muestran qué protocolo se está utilizando (https o http) y de dónde vienen las peticiones en términos de dispositivos:
 
-![](<../../.gitbook/assets/image (6).png>)
+![](<../../.gitbook/assets/image (6) (1).png>)
 
 Las siguientes tablas muestran las peticiones por país y las URL más pedidas de cada _site_:
 
-![](<../../.gitbook/assets/image (7).png>)
+![](<../../.gitbook/assets/image (7) (1).png>)
 
 El gráfico siguiente muestra todos los purgados que realizan los clientes a través del panel. A su lado encuentras la tabla de todos los contenidos que tiene cada _site,_ cuántas _requests_ recibe y cuánto ancho de banda consume.
 
-![](<../../.gitbook/assets/image (8).png>)
+![](<../../.gitbook/assets/image (8) (1).png>)
 
 El gráfico de códigos de status (_status codes_) permite visualizarlos. La tabla de referencias (_referer_) muestra de qué URL vienen las peticiones.
 
-![](<../../.gitbook/assets/image (9).png>)
+![](<../../.gitbook/assets/image (9) (1).png>)
 
 La tabla de _IP Address table_ muestra las IP de las que proceden las peticiones. El gráfico _Content Type,_ por su parte, permite visualizar la información sobre los contenidos que tiene cada _site_.
 
-![](<../../.gitbook/assets/image (10).png>)
+![](<../../.gitbook/assets/image (10) (1).png>)
 
 
 
