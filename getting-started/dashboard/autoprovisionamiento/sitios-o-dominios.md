@@ -14,17 +14,25 @@ Un detalle importante es el aviso de la parte superior, que nos indica dónde te
 
 ### Añadir Sitio
 
-Añadir un sitio nuevo es un proceso sencillo, pero para validar que realmente controlas el sitio web, se deberá dejar un fichero de texto en la raíz del servidor web. Este proceso se explica detalladamente cuando pulsas sobre _**Añadir sitio**_,. Si tienes cualquier problema, no dudes en contactar con nosotros en [soporte@transparentedge.eu](mailto:soporte@transparentedge.eu)
+Añadir un sitio nuevo es un proceso sencillo, pero por motivos de seguridad se debe validar la posesión del dominio. Este proceso se explica detalladamente cuando pulsas sobre _**Añadir sitio**_,. Si tienes cualquier problema, no dudes en contactar con nosotros en [soporte@transparentedge.eu](mailto:soporte@transparentedge.eu)
 
-![](<../../../.gitbook/assets/image (40).png>)
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-Una vez creado dicho fichero, pulsa _Guardar_ y tu sitio quedará registrado en la plataforma.
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+Una vez revisados los requisitos y tras haber cumplido uno de ellos, pulsa "Guardar y finalizar", al hacerlo se realizará la validación necesaria y si todo es correcto el sitio quedará registrado.
 
 ### Gestión automática de certificados
 
+{% hint style="info" %}
+Para más información sobre la gestión de certificados o para una gestión avanzada (por ejemplo, obtener certificados mediante _challenge_ DNS) consulta este apartado.
+{% endhint %}
+
 Si lo prefieres, podemos llevar la gestión de certificados automáticamente desde nuestra plataforma. Los certificados de tu sitio estarán firmados en ese caso por [Let's Encrypt](https://letsencrypt.org/).
 
-Para activar esta opción, pincha en _Acciones_ sobre el candado del sitio que quieras activar (para que funcione el CNAME, nos debe estar apuntando).
+Para activar esta opción, pincha en _Acciones_ sobre el candado del sitio que quieras activar, el sitio web debe apuntar a la CDN para que se pueda obtener el certificado correctamente.
+
+
 
 ![](<../../../.gitbook/assets/image (41).png>)
 
@@ -33,3 +41,5 @@ Para activar esta opción, pincha en _Acciones_ sobre el candado del sitio que q
 Ahora solo tendrás que pulsar sobre _**Quiero gestionar automáticamente el SSL para este site**_ para iniciar el proceso. No tardará más de cinco minutos en activarse.
 
 ![El candado se mostrará de color verde para un sitio activo.](<../../../.gitbook/assets/image (44).png>)
+
+Si el certificado se genera correctamente, lo podrás ver en el apartado de "Certificados", tras lo cual se renovará automáticamente cuando vaya a caducar, siempre que el dominio siga apuntando a la CDN.

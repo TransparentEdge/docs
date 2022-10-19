@@ -6,7 +6,7 @@ Para ello, hacemos uso de nuestra cabecera `TCDN-i3-transform`, indicándole el 
 
 La sintaxis exacta para esta operación es la siguiente: `quality:`_`<porcentaje>%`_.
 
-Esta operación, sin embargo, tiene una restricción importante: tan sólo es aplicable a aquellas imágenes en formato JPEG (la transformación a [WebP](https://docs.transparentedge.eu/config/i3/conversion-a-webp) tiene su propio ajuste de calidad). Para imágenes con otro formato, se puede considerar, alternativamente, el uso de la operación [`max_length`](definicion-del-tamano-content-lenght-maximo.md) ya que ésta no está sometida a ninguna restricción con respecto al formato de la imagen.
+Esta operación, sin embargo, tiene una restricción importante: tan sólo es aplicable a aquellas imágenes en formato JPEG (la [conversión a WebP](https://docs.transparentedge.eu/config/i3/conversion-a-webp) tiene su propio ajuste de calidad). Para imágenes con otro formato, se puede considerar, alternativamente, el uso de la operación [`max_length`](definicion-del-tamano-content-lenght-maximo.md) ya que ésta no está sometida a ninguna restricción con respecto al formato de la imagen.
 
 Por ejemplo, si quisiéramos que todas las imágenes de nuestro dominio `mi-dominio.es` que _cuelgan_ de la URL `/estaticos/imagenes` se sirvieran reduciendo su calidad a un 75%, nos bastaría con desplegar desde el [panel](../../getting-started/dashboard/) una [configuración](../../getting-started/dashboard/autoprovisionamiento/) [VCL](../vcl/) similar a la siguiente:
 
