@@ -16,16 +16,16 @@ Un detalle importante es el aviso de la parte superior, que nos indica dónde te
 
 Añadir un sitio nuevo es un proceso sencillo, pero por motivos de seguridad se debe validar la posesión del dominio. Este proceso se explica detalladamente cuando pulsas sobre _**Añadir sitio**_,. Si tienes cualquier problema, no dudes en contactar con nosotros en [soporte@transparentedge.eu](mailto:soporte@transparentedge.eu)
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 Una vez revisados los requisitos y tras haber cumplido uno de ellos, pulsa "Guardar y finalizar", al hacerlo se realizará la validación necesaria y si todo es correcto el sitio quedará registrado.
 
 ### Gestión automática de certificados
 
 {% hint style="info" %}
-Para más información sobre la gestión de certificados o para una gestión avanzada (por ejemplo, obtener certificados mediante _challenge_ DNS) [consulta este apartado](https://docs.transparentedge.eu/getting-started/dashboard/autoprovisionamiento/ssl%C3%A7).
+Para más información sobre la gestión de certificados o para una gestión avanzada (por ejemplo, obtener certificados mediante _challenge_ DNS) [consulta este apartado](https://docs.transparentedge.eu/getting-started/dashboard/autoprovisionamiento/ssl).
 {% endhint %}
 
 Si lo prefieres, podemos llevar la gestión de certificados automáticamente desde nuestra plataforma. Los certificados de tu sitio estarán firmados en ese caso por [Let's Encrypt](https://letsencrypt.org/).

@@ -8,7 +8,7 @@ El panel se puede personalizar de acuerdo a las necesidades de cada cliente y mu
 
 Encontrarás también la información de los _requests_ y ancho de banda:
 
-![](<../../.gitbook/assets/image (1) (1) (1).png>)
+![](<../../.gitbook/assets/image (1) (1).png>)
 
 Después se despliegan las gráficas del _hit ratio_, donde está toda la información de la eficiencia de la caché. Así, muestra los objetos que no han logrado ser cacheados (_miss_), los objetos caducados (_expired_) y los que estaban caducados y se han servido a partir del objeto caducado (_stale_). Y conjuntamente, según la configuración, se puede visualizar todo el tiempo de respuesta (_response time_) de las peticiones.\
 
@@ -17,7 +17,7 @@ Después se despliegan las gráficas del _hit ratio_, donde está toda la inform
 
 Cada vez que el _bot_ de Google visita el _site_ que esté bajo Transparent Edge Services, queda evidenciado en la gráfica _Google bot access._ El gráfico _Google crawler percent_ despliega el código de respuesta que ha tenido el _bot_ de Google en cada uno de sus accesos, lo que aporta una herramienta de monitorización interesante para el SEO de nuestros clientes.
 
-![](<../../.gitbook/assets/image (4).png>)
+![](<../../.gitbook/assets/image (4) (1).png>)
 
 Los siguientes gráficos muestran los códigos de respuesta que han tenido todas las peticiones que ha recibido el _site_ y de qué lugar geográfico han venido esas peticiones.
 
