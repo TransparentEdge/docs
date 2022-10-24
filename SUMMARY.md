@@ -1,14 +1,8 @@
 # Table of contents
 
 * [Te damos la bienvenida](README.md)
-* [Aterrizando en Transparent Edge Services](empezando-desde-cero.md)
+* [Aterrizando en Transparent Edge ](empezando-desde-cero.md)
 * [Proceso de alta](signup.md)
-* [Productos y Servicios](productos-y-servicios/README.md)
-  * [Edge Distributed Content](productos-y-servicios/web-optimization.md)
-  * [Transparent Video & Streaming](productos-y-servicios/video-and-streaming.md)
-  * [Edge Transcoding Services](productos-y-servicios/transcoding-services.md)
-  * [Edge Distributed Security](productos-y-servicios/secure-layer.md)
-  * [i3: optimizacion de imágenes](productos-y-servicios/i3-optimizacion-de-imagenes.md)
 
 ## Getting Started
 

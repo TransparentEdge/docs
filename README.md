@@ -16,8 +16,8 @@ Aquí encontrarás toda la documentación relativa al uso ¡y disfrute! de Trans
 [signup.md](signup.md)
 {% endcontent-ref %}
 
-{% content-ref url="productos-y-servicios/" %}
-[productos-y-servicios](productos-y-servicios/)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 {% content-ref url="getting-started/faq/" %}
