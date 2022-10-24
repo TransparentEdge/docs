@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Bienvenido](README.md)
+* [Te damos la bienvenida](README.md)
 * [Aterrizando en Transparent Edge Services](empezando-desde-cero.md)
 * [Proceso de alta](signup.md)
 * [Productos y Servicios](productos-y-servicios/README.md)
