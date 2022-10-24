@@ -6,7 +6,7 @@
 
 ## Getting Started
 
-* [Básicos y preguntas frecuentes](getting-started/faq/README.md)
+* [Conceptos básicos](getting-started/faq/README.md)
   * [Glosario](getting-started/faq/glosario/README.md)
     * [Origin](getting-started/faq/glosario/untitled.md)
     * [CNAME](getting-started/faq/glosario/cname-1.md)

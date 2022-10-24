@@ -2,9 +2,9 @@
 description: FAQ
 ---
 
-# Básicos y preguntas frecuentes
+# Conceptos básicos
 
-Bajo esta sección agrupamos todo lo que creemos que todos nuestros clientes deben saber del servicio:
+En esta esta sección agrupamos los conceptos básicos sobre nuestro servicio que debes tener claros para comenzar:
 
 {% content-ref url="glosario/" %}
 [glosario](glosario/)
