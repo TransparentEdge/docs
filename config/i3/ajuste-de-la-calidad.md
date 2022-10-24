@@ -1,6 +1,6 @@
 # Ajuste de la calidad
 
-[i3](./), nuestra solución para la [gestión imágenes](broken-reference) permite ajustar de manera dinámica y transparente la calidad tus imágenes.
+[i3](./), nuestra solución para la [gestión imágenes](../../productos-y-servicios/i3-optimizacion-de-imagenes.md) permite ajustar de manera dinámica y transparente la calidad tus imágenes.
 
 Para ello, hacemos uso de nuestra cabecera `TCDN-i3-transform`, indicándole el tipo de operación que deseamos; en este caso, `quality`. Esta operación requiere de un parámetro obligatorio para su ejecución: el nivel de calidad, expresado éste en porcentaje, que tendrá la imagen resultante con respecto a la imagen original.
 

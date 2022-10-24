@@ -46,7 +46,7 @@ Artículos facturables:
 * Punto de ingesta (Live).
 {% endhint %}
 
-En este producto se factura por minutos de transcodificación cuando hablamos de [VoD](broken-reference) y, por lo general, también se trabaja con un paquete de minutos o en pago por uso. Actualmente no es un servicio que puedas contratar de manera desasistida desde nuestra web, pero esperamos que puedas hacerlo en breve. Mientras, puedes ponerte en contacto con nuestro equipo de [ventas](mailto:sales@transparentedge.eu).
+En este producto se factura por minutos de transcodificación cuando hablamos de [VoD](../../productos-y-servicios/video-and-streaming.md) y, por lo general, también se trabaja con un paquete de minutos o en pago por uso. Actualmente no es un servicio que puedas contratar de manera desasistida desde nuestra web, pero esperamos que puedas hacerlo en breve. Mientras, puedes ponerte en contacto con nuestro equipo de [ventas](mailto:sales@transparentedge.eu).
 
 Cuando lo que estamos transcodificando son vídeos o audios en un formato _live_, necesitarás un punto de ingesta donde tus cámaras ingesten la señal para que sea posteriormente distribuida por Transparent Edge Services o por cualquier otra CDN (podemos trabajar con otra CDN por delante, no hay problema). Cuando la señal está en nuestro punto de ingesta, tenemos la capacidad de transcodificar esa señal para adaptarla en tiempo real a todos los dispositivos. Esta transcodificación será tarificada por horas de transcodificación, no por minutos. Por lo tanto, en esta modalidad de _transcoding_ tienes dos elementos facturables: las horas de transcodificación y el punto de ingesta.
 

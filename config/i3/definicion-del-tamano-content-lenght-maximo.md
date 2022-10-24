@@ -1,6 +1,6 @@
 # Definición del tamaño (content-lenght) máximo
 
-[i3](./), nuestra solución para la [gestión imágenes](broken-reference) permite restringir de manera dinámica y transparente  el tamaño (`Content-Length`) máximo tus imágenes, mediante un degradado progresivo en la calidad de las mismas.
+[i3](./), nuestra solución para la [gestión imágenes](../../productos-y-servicios/i3-optimizacion-de-imagenes.md) permite restringir de manera dinámica y transparente  el tamaño (`Content-Length`) máximo tus imágenes, mediante un degradado progresivo en la calidad de las mismas.
 
 Para ello, hacemos uso de nuestra cabecera `TCDN-i3-transform`, indicándole el tipo de operación que deseamos; en este caso, `max_length`. A diferencia de otras operaciones, como la [conversión a formato WebP](conversion-a-webp.md), esta operación requiere de un parámetro obligatorio para su ejecución: el tamaño máximo que tendrá la imagen resultante. Este parámetro tiene el formato _`<tamaño>[<unidad>]`_; así, si no se establece ninguna unidad, se asume implícitamente que el tamaño se expresa en _bytes_. Los valores admitidos para _`<unidad>`_ son `b` (_bytes_), `k` (_kilobytes_) y `m` (_megabytes_). Un valor válido, por ejemplo, sería `640k`.
 

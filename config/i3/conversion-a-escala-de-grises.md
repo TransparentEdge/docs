@@ -1,6 +1,6 @@
 # Conversión a escala de grises
 
-[i3](./), nuestra solución para la [gestión imágenes](broken-reference) permite convertir de manera dinámica y transparente tus imágenes a escala de grises.
+[i3](./), nuestra solución para la [gestión imágenes](../../productos-y-servicios/i3-optimizacion-de-imagenes.md) permite convertir de manera dinámica y transparente tus imágenes a escala de grises.
 
 Para ello, hacemos uso de nuestra cabecera `TCDN-i3-transform`, indicándole el tipo de operación que deseamos; en este caso, `grayscale`.
 

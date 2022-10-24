@@ -16,7 +16,7 @@ Pero no queramos darnos de baja antes de empezar. Para crear una cuenta en Trans
 
 ## Tu primera configuración
 
-Intentamos ponerte las cosas fáciles y nos gustan las cosas sencillas. Por eso hemos desarrollado un [wizard](getting-started/dashboard/autoprovisionamiento/configuraciones-basicas.md) que te ayudará a crear tu primera configuración en Transparent Edge.
+Intentamos ponerte las cosas fáciles y nos gustan las cosas sencillas. Por eso hemos desarrollado un [_wizard_](getting-started/dashboard/autoprovisionamiento/configuraciones-basicas.md) __ que te ayudará a crear tu primera configuración en Transparent Edge.
 
 Recuerda: nos encanta escucharte y mejorar nuestro servicio es nuestra prioridad número uno. Por lo tanto, si ves que algo no te gusta o te parece confuso o crees que se puede hacer mejor de otra manera o más simple, te animamos a que nos escribas un [_email_](mailto:product@transparentedge.eu). Estaremos encantados de ayudarte.
 

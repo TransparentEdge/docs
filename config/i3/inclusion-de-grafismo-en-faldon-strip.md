@@ -1,6 +1,6 @@
 # Inclusión de grafismo en faldón (strip)
 
-[i3](./), nuestra solución para la [gestión imágenes](broken-reference) permite incluir de manera dinámica y transparente faldones (_strips_) en tus imágenes.
+[i3](./), nuestra solución para la [gestión imágenes](../../productos-y-servicios/i3-optimizacion-de-imagenes.md) permite incluir de manera dinámica y transparente faldones (_strips_) en tus imágenes.
 
 Para ello, hacemos uso de nuestra cabecera `TCDN-i3-transform`, indicándole el tipo de operación que deseamos; en este caso, `strip`. A diferencia de otras operaciones, como la [conversión a formato WebP](conversion-a-webp.md), esta operación requiere de un parámetro obligatorio para su ejecución: la URL del faldón (_strip_) que se superpondrá sobre la imagen original.
 
