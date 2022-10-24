@@ -16,7 +16,7 @@
     * [Caching](getting-started/faq/glosario/caching.md)
     * [Cache-Control](getting-started/faq/glosario/cache-control.md)
     * [Cloud computing](getting-started/faq/glosario/cloud-computing.md)
-    * [Cloud Computing Architecture](getting-started/faq/glosario/cloud-computing-architecture.md)
+    * [Cloud computing architecture](getting-started/faq/glosario/cloud-computing-architecture.md)
     * [Cloud Services](getting-started/faq/glosario/cloud-services.md)
     * [DASH](getting-started/faq/glosario/dash.md)
     * [Data Center](getting-started/faq/glosario/data-center.md)
