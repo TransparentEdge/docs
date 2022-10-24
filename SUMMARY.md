@@ -15,7 +15,7 @@
     * [Brotli Compression](getting-started/faq/glosario/brotli-compression.md)
     * [Caching](getting-started/faq/glosario/caching.md)
     * [Cache-Control](getting-started/faq/glosario/cache-control.md)
-    * [Cloud Computing](getting-started/faq/glosario/cloud-computing.md)
+    * [Cloud computing](getting-started/faq/glosario/cloud-computing.md)
     * [Cloud Computing Architecture](getting-started/faq/glosario/cloud-computing-architecture.md)
     * [Cloud Services](getting-started/faq/glosario/cloud-services.md)
     * [DASH](getting-started/faq/glosario/dash.md)
