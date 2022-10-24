@@ -1,3 +1,3 @@
-# Cloud Services
+# Cloud services
 
-Cualquier servicio puesto a disposición de los usuarios a través de internet desde el servidor de un proveedor de computación en la nube (_cloud computing_).
+El concepto de _cloud services_ engloba cualquier servicio puesto a disposición a través de Internet desde el servidor de un proveedor de computación en la nube (_cloud computing_).
