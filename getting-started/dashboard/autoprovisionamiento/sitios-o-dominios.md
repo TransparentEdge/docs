@@ -4,7 +4,7 @@ En este apartado podrás ver todos los sitios configurados, añadir nuevos y act
 
 Si has seguido el asistente inicial, ya tendrás al menos un sitio configurado y verás algo similar al siguiente ejemplo:
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (2).png" alt=""><figcaption></figcaption></figure>
 
 Aquí se mostrarán todos los sitios configurados. Si tienes muchos, puedes filtrar con el buscador ubicado a la izquierda y ver cuáles tienen activada la gestión automática de certificados (en ese caso, el candado estará cerrado).
 

@@ -70,7 +70,7 @@ Para obtener un certificado se debe crear una "Certificate Request":
 2. Haz clic en "Nuevo ..."
 3. Haz clic en "Solicitud de certificado (desafío HTTP)"
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 4\. Selecciona los dominios que quieres que formen parte del certificado
 
@@ -149,7 +149,7 @@ Una vez creada la solicitud de certificado, se mostrará una tabla con las petic
 
 Si finalmente se genera el certificado aparecerá automáticamente en la tabla del apartado de certificados.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (65).png" alt=""><figcaption></figcaption></figure>
 
 #### Si el proveedor DNS es Transparent Edge Services
 

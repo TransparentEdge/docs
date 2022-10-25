@@ -2,39 +2,13 @@
 
 ### Registro
 
-El proceso de registro en la plataforma de autoprovisionamiento de Transparent Edge Services se inicia a través del botón “Contratar o Register”, localizado en la esquina superior derecha de la página principal ([https://www.transparentedge.eu/](https://www.transparentedge.eu/)). Seleccionándolo, serás redireccionado al formulario disponible a tal efecto ([https://api.transparentcdn.com/signup/#/](https://api.transparentcdn.com/signup/#/)) y en él tendrás que completar cuatro pasos para hacer efectivo tu registro.
+El proceso de registro en la plataforma de autoprovisionamiento de Transparent Edge Services se inicia a través del botón “Registrarme”, localizado en la esquina superior derecha de la página principal ([https://www.transparentedge.eu/](https://www.transparentedge.eu/)). Seleccionándolo, serás redireccionado al formulario disponible a tal efecto ([https://api.transparentcdn.com/signup/#/](https://api.transparentcdn.com/signup/#/)) y en él tendrás que completar dos pasos para hacer efectivo tu registro.
 
-![](<.gitbook/assets/image (17) (1).png>)
+<figure><img src=".gitbook/assets/alta-1.jpg" alt=""><figcaption></figcaption></figure>
 
-### Datos personales
+### Selección de paquete de solución
 
-En primer lugar, será necesario cumplimentar la información referente a tus datos personales:
-
-![](<.gitbook/assets/Captura de pantalla 2020-06-09 a las 14.23.57.png>)
-
-#### Nombre y Apellidos
-
-#### Dirección de correo electrónico
-
-La dirección de correo electrónico es para Transparent Edge Services el principal medio de contacto contigo. Por eso es fundamental no solo que la dirección que nos des sea válida, sino también que tengas acceso a ella misma y -muy importante- que la consultes con frecuencia. Además, esta dirección de correo electrónico será el nombre de usuario con el que te autenticarás en la plataforma.
-
-#### Confirmar dirección de correo electrónico
-
-#### Contraseña
-
-Deberás introducir una contraseña de, al menos, ocho caracteres para poder continuar con el proceso de registro.
-
-#### Confirmar contraseña
-
-#### Página web
-
-Tras tu nombre y apellidos y dirección de correo electrónico, será necesario que indiques el dominio principal de tu sitio web, por ejemplo: “[www.prueba.com](http://www.prueba.com/)”.
-
-Una vez hayas concluido el proceso de registro y accedido al panel (_dashboard_) de _autoprovisioning_ de Transparent Edge Services, podrás observar cómo dicho dominio (_site_) ya ha sido añadido en la configuración de tu recién estrenado perfil. Por supuesto, tienes total libertad para añadir tantos nuevos dominios como precises o eliminar aquellos que ya no sean necesarios.
-
-#### Paquete de soporte
-
-Por último, tendrás que seleccionar el paquete de soporte que mejor se adapte a tus necesidades de entre las siguientes opciones:
+En primer lugar, será necesario elegir la solución que mejor se adapta a tus necesidades entre las siguiente opciones:
 
 **Básico**
 
@@ -44,13 +18,31 @@ Por último, tendrás que seleccionar el paquete de soporte que mejor se adapte 
 
 Encontrarás información más detallada sobre cada uno de estos paquetes (tiempo de respuesta, tipo de soporte ofrecido, coste, etc.) en [https://www.transparentedge.eu/precios/](https://www.transparentedge.eu/precios/) Si tus necesidades cambian en el futuro, podrás solicitar la modificación de tu paquete de soporte a través de la dirección de correo electrónico [soporte@transparentedge.eu](mailto:soporte@transparentedge.eu).
 
-Es necesario rellenar todos los campos solicitados para poder continuar con el proceso de registro.
+<figure><img src=".gitbook/assets/alta-2.jpg" alt=""><figcaption></figcaption></figure>
 
-### Datos de facturación
+### Datos básicos y de facturación
 
-Tras cumplimentar tus datos personales, deberás rellenar aquellos campos referidos a tus datos de facturación:
+En este segundo paso tendrás la oportunidad de introducir un código promocional (_voucher_) en el espacio habilitado para ello dentro del resumen de **servicios contratados.** A continuación, debes rellenar los **datos básicos** siguientes:
 
-![](<.gitbook/assets/Captura de pantalla 2020-06-09 a las 14.25.03.png>)
+#### Nombre y Apellidos
+
+#### Dirección de correo electrónico
+
+La dirección de correo electrónico es para Transparent Edge Services el principal medio de contacto contigo. Por eso es fundamental no solo que la dirección que nos des sea válida, sino también que tengas acceso a ella misma y -muy importante- que la consultes con frecuencia. Además, esta dirección de correo electrónico será el nombre de usuario con el que te autenticarás en la plataforma.
+
+#### Página web
+
+Tras tu nombre y apellidos y dirección de correo electrónico, será necesario que indiques el dominio principal de tu sitio web, por ejemplo: “[www.prueba.com](http://www.prueba.com/)”.
+
+Una vez hayas completado el proceso de registro y accedas al panel (_dashboard_) de _autoprovisioning_ de Transparent Edge Services, podrás observar cómo el dominio introducido (_site_) ya ha sido añadido en la configuración de tu recién estrenado perfil. Por supuesto, tienes total libertad para añadir tantos nuevos dominios como precises o eliminar aquellos que ya no sean necesarios.
+
+#### Contraseña
+
+Deberás introducir una contraseña de, al menos, ocho caracteres y que contenga una mayúscula, una minúscula y un número para poder continuar con el proceso de registro.
+
+<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+Tras cumplimentar tus datos básicos, deberás rellenar aquellos campos referidos a **tus datos de facturación:**
 
 **Empresa**
 
@@ -60,19 +52,11 @@ El código de identificación fiscal (CIF) de tu empresa o tu número de identif
 
 **Dirección**
 
-**Ciudad**
+<figure><img src=".gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
-**Código Postal**
+Es necesario rellenar todos los campos solicitados para poder continuar con el proceso de registro.
 
-**País**
-
-### Resumen
-
-Una vez introducidos en el formulario de registro tanto tus datos personales como tus datos de facturación, se te mostrará un extracto de los mismos que tendrás que confirmar antes de continuar.
-
-Asimismo, en ese punto te informaremos de cuánto pagarás cada mes atendiendo tanto al paquete de soporte previamente elegido, como al volumen de tráfico generado.
-
-Antes de continuar, deberás seleccionar el _checkbox_ correspondiente con la aceptación de los términos y condiciones de uso de la plataforma. Además, aquí tendrás la oportunidad de introducir un código promocional (_voucher_) si dispones de uno.
+Una vez introducidos en el formulario de registro los datos necesarios, deberás seleccionar el _checkbox_ correspondiente con la aceptación de los términos y condiciones de uso de la plataforma. También deberás marcar el _checkbox_ de las condiciones general de contratación.
 
 ### Autorización de pago
 

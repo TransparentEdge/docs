@@ -4,7 +4,7 @@ description: FAQ
 
 # Conceptos básicos
 
-En esta esta sección agrupamos los conceptos básicos sobre nuestro servicio que debes tener claros para comenzar:
+En esta esta sección agrupamos los conceptos básicos sobre nuestro servicio que debes tener claros para comenzar.
 
 {% content-ref url="glosario/" %}
 [glosario](glosario/)

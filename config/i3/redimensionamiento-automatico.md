@@ -1,6 +1,6 @@
 # Redimensionamiento automático
 
-[i3](./), nuestra solución para la [gestión imágenes](../../productos-y-servicios/i3-optimizacion-de-imagenes.md) permite redimensionar de manera dinámica y transparente tus imágenes.
+[i3](./), nuestra solución para la [gestión imágenes](broken-reference) permite redimensionar de manera dinámica y transparente tus imágenes.
 
 Para ello, hacemos uso de nuestra cabecera `TCDN-i3-transform`, indicándole el tipo de operación que deseamos; en este caso, `resize`. A diferencia de otras operaciones, como la [conversión a formato WebP](conversion-a-webp.md), esta operación requiere de un parámetro obligatorio para su ejecución: las dimensiones que tendrá imagen resultante. Este parámetro tiene el formato _`<ancho>`_`x`_`<alto>`_, expresadas ambas unidades en píxeles y admitiendo un valor máximo, para cada dimensión, de 4096 píxeles. Un valor válido, por ejemplo, sería `400x300`.
 
