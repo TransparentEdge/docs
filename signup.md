@@ -40,7 +40,7 @@ Una vez hayas completado el proceso de registro y accedas al panel (_dashboard_)
 
 Deberás introducir una contraseña de, al menos, ocho caracteres y que contenga una mayúscula, una minúscula y un número para poder continuar con el proceso de registro.
 
-<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 Tras cumplimentar tus datos básicos, deberás rellenar aquellos campos referidos a **tus datos de facturación:**
 
@@ -51,10 +51,6 @@ Tras cumplimentar tus datos básicos, deberás rellenar aquellos campos referido
 El código de identificación fiscal (CIF) de tu empresa o tu número de identificación fiscal (NIF).
 
 **Dirección**
-
-****
-
-<figure><img src=".gitbook/assets/altas-3.jpg" alt=""><figcaption></figcaption></figure>
 
 Es necesario rellenar todos los campos solicitados para poder continuar con el proceso de registro.
 
