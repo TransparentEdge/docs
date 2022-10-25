@@ -52,7 +52,7 @@ El código de identificación fiscal (CIF) de tu empresa o tu número de identif
 
 **Dirección**
 
-<figure><img src=".gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/altas-3.jpg" alt=""><figcaption></figcaption></figure>
 
 Es necesario rellenar todos los campos solicitados para poder continuar con el proceso de registro.
 
