@@ -18,7 +18,7 @@ Añadir un sitio nuevo es un proceso sencillo, pero por motivos de seguridad se 
 
 <figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 Una vez revisados los requisitos y tras haber cumplido uno de ellos, pulsa "Guardar y finalizar", al hacerlo se realizará la validación necesaria y si todo es correcto el sitio quedará registrado.
 

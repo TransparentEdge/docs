@@ -54,6 +54,8 @@ El código de identificación fiscal (CIF) de tu empresa o tu número de identif
 
 Es necesario rellenar todos los campos solicitados para poder continuar con el proceso de registro.
 
+<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
 Una vez introducidos en el formulario de registro los datos necesarios, deberás seleccionar el _checkbox_ correspondiente con la aceptación de los términos y condiciones de uso de la plataforma. También deberás marcar el _checkbox_ de las condiciones general de contratación.
 
 ### Autorización de pago
