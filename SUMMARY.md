@@ -29,7 +29,7 @@
     * [Internet Exchange Point](getting-started/faq/glosario/internet-exchange-point.md)
     * [Last Modified](getting-started/faq/glosario/last-modified.md)
     * [Load balancing](getting-started/faq/glosario/load-balancing.md)
-    * [MultiCDN](getting-started/faq/glosario/multicdn.md)
+    * [Multi-CDN](getting-started/faq/glosario/multicdn.md)
     * [NoSQL (not only SQL)](getting-started/faq/glosario/nosql-not-only-sql.md)
     * [Origin Shield](getting-started/faq/glosario/origin-shield.md)
     * [OTT (Over The Top)](getting-started/faq/glosario/ott-over-the-top.md)
