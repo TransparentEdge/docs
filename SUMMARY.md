@@ -53,7 +53,7 @@
     * [TCP (Transmission Control Protocol)](getting-started/faq/glosario/transmission-control-protocol.md)
     * [Virtual machine](getting-started/faq/glosario/virtual-machine.md)
     * [VPS (Virtual private server)](getting-started/faq/glosario/virtual-private-server.md)
-    * [Web Service](getting-started/faq/glosario/web-services.md)
+    * [Web service](getting-started/faq/glosario/web-services.md)
   * [Empecemos por el principio](getting-started/faq/empecemos-por-el-principio.md)
   * [Cosas a tener en cuenta](getting-started/faq/cosas-a-tener-en-cuenta.md)
   * [Modelo de facturación](getting-started/faq/facturacion.md)
