@@ -25,7 +25,7 @@
     * [GSLB](getting-started/faq/glosario/gslb.md)
     * [HLS (HTTP Live Streaming)](getting-started/faq/glosario/hls-http-live-streaming.md)
     * [HTTP/2](getting-started/faq/glosario/http-2.md)
-    * [Infrastructure as a Service (IaaS)](getting-started/faq/glosario/infrastructure-as-a-service-iaas.md)
+    * [IaaS (Infrastructure as a Service)](getting-started/faq/glosario/infrastructure-as-a-service-iaas.md)
     * [Internet Exchange Point](getting-started/faq/glosario/internet-exchange-point.md)
     * [Last Modified](getting-started/faq/glosario/last-modified.md)
     * [Load balancing](getting-started/faq/glosario/load-balancing.md)
