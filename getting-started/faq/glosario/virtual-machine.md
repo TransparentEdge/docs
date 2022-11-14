@@ -1,8 +1,9 @@
-# Virtual Machine
+# Virtual machine
 
-Una máquina virtual es un software que emula a un sistema de computación. Gracias a ello puede ejecutar programas o sistemas operativos completos.
+\
+Una _virtual machine_ o máquina virtual es un _software_ que emula a un sistema de computación. Gracias a ello puede ejecutar programas o sistemas operativos completos.
 
-Existen dos categorías principales de máquinas virtuales:
+Existen dos grandes categorías de máquinas virtuales:&#x20;
 
-* Máquina virtual de sistema: Permite que varios sistemas operativos coexistan sobre una misma computadora, con un sólido aislamiento el uno del otro. A la capa de software que permite dicha virtualización se la conoce como monitor de máquina virtual o [hipervisor](https://es.wikipedia.org/wiki/Hipervisor) y, a grandes rasgos, este puede ejecutarse directamente sobre el hardware del anfitrión o sobre un sistema operativo ya instalado.
-* Máquina virtual de proceso: En este caso se ejecuta como un proceso más del sistema operativo realizando una interpretación entre el código fuente y el código máquina para ejecutar la aplicación independientemente de la plataforma de hardware y el sistema operativo. El ejemplo más claro en este caso es la máquina virtual de Java.
+* Máquina virtual de sistema: Permite que varios sistemas operativos coexistan en una misma computadora con un sólido aislamiento el uno del otro. La capa de _software_ que permite dicha virtualización se denomina monitor de máquina virtual o [hipervisor](https://es.wikipedia.org/wiki/Hipervisor) y, a grandes rasgos, puede ejecutarse directamente sobre el _hardware_ del anfitrión o sobre un sistema operativo ya instalado.&#x20;
+* Máquina virtual de proceso: Funciona como un proceso más del sistema operativo. Para ello, realiza una interpretación entre el código fuente y el código máquina que permite ejecutar la aplicación, independientemente de la plataforma de _hardware_ y el sistema operativo. El ejemplo más claro en este caso es la máquina virtual de Java.

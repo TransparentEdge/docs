@@ -1,3 +1,3 @@
-# SDS (Software Defined Storage)
+# SDS (Software defined storage)
 
-Es una arquitectura de almacenamiento que separa el software para la gestión de almacenamiento de su hardware. Se concibe generalmente para ejecutarse en cualquier sistema x86 o estándar del sector, separando la dependencia del software de su hardware propietario.\
+El SDS o _software defined storage_ es una arquitectura de almacenamiento en la que el _software_ para la gestión de almacenamiento está separado de su _hardware_. Está generalmente concebido para ejecutarse en cualquier sistema x86 o estándar del sector, por lo que el _software_ no depende de ningún _hardware_ propietario.\
