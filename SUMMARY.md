@@ -32,7 +32,7 @@
     * [Multi-CDN](getting-started/faq/glosario/multicdn.md)
     * [NoSQL (not only SQL)](getting-started/faq/glosario/nosql-not-only-sql.md)
     * [Origin shield](getting-started/faq/glosario/origin-shield.md)
-    * [OTT (Over The Top)](getting-started/faq/glosario/ott-over-the-top.md)
+    * [OTT (over the top)](getting-started/faq/glosario/ott-over-the-top.md)
     * [Platform as a Service (PaaS)](getting-started/faq/glosario/platform-as-a-services-paas.md)
     * [PoP (Point of Presence)](getting-started/faq/glosario/pop-point-of-presence.md)
     * [Private Cloud](getting-started/faq/glosario/private-cloud.md)
