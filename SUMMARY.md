@@ -42,7 +42,7 @@
     * [Query string](getting-started/faq/glosario/query-string.md)
     * [Reverse Proxy](getting-started/faq/glosario/reverse-proxy.md)
     * [RTT (Round-trip time)](getting-started/faq/glosario/round-trip-time.md)
-    * [SDS (Software Defined Storage)](getting-started/faq/glosario/sds-software-defined-storage.md)
+    * [SDS (Software defined storage)](getting-started/faq/glosario/sds-software-defined-storage.md)
     * [Smooth Streaming](getting-started/faq/glosario/smooth-streaming.md)
     * [SaaS (Software as a Service)](getting-started/faq/glosario/software-as-a-service.md)
     * [TLS Acceleration](getting-started/faq/glosario/ssl-acceleration.md)
