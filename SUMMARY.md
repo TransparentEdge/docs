@@ -49,7 +49,7 @@
     * [Status code](getting-started/faq/glosario/status-code.md)
     * [TTFB (Time to first byte)](getting-started/faq/glosario/time-to-first-byte-ttfb.md)
     * [TTL (Time to live)](getting-started/faq/glosario/time-to-live-ttl.md)
-    * [TLS (Transport Layer Security)](getting-started/faq/glosario/transport-layer-security.md)
+    * [TLS (Transport layer security)](getting-started/faq/glosario/transport-layer-security.md)
     * [TCP (Transmission Control Protocol)](getting-started/faq/glosario/transmission-control-protocol.md)
     * [Virtual Machine](getting-started/faq/glosario/virtual-machine.md)
     * [VPS (Virtual Private Server)](getting-started/faq/glosario/virtual-private-server.md)
