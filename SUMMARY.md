@@ -19,7 +19,7 @@
     * [Cloud computing architecture](getting-started/faq/glosario/cloud-computing-architecture.md)
     * [Cloud services](getting-started/faq/glosario/cloud-services.md)
     * [DASH](getting-started/faq/glosario/dash.md)
-    * [Data Center](getting-started/faq/glosario/data-center.md)
+    * [Data center](getting-started/faq/glosario/data-center.md)
     * [Edge Server](getting-started/faq/glosario/edge-server.md)
     * [ETag](getting-started/faq/glosario/etag.md)
     * [GSLB](getting-started/faq/glosario/gslb.md)
