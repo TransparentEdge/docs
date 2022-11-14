@@ -1,3 +1,3 @@
-# Private Cloud
+# Private cloud
 
-Es un modelo de computación en la nube donde los servicios IT son provisionados sobre infraestructura IT privada para uso de una única organización. Una _private cloud_ está gestionada habitualmente a través de los recursos de internet.
+Un _private cloud_ o nube privada es un modelo de computación donde los servicios IT se ofrecen a una única organización a través de una infraestructura IT privada. Se gestiona habitualmente mediante los recursos de Internet.
