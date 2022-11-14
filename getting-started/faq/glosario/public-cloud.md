@@ -1,3 +1,3 @@
-# Public cloud
+# Public Cloud
 
-Una _public cloud_ o nube pública es un tipo de servicio de computación que los proveedores ofrecen a través del Internet y que está disponible para todo el mundo. Puede ser un servicio gratuito o venderse bajo demanda. Así, algunos proveedores ofrecen a los clientes la posibilidad de pagar por el uso de la CPU, el almacenamiento o el ancho de banda.
+Son los servicios de computación ofrecidos por proveedores a través del internet público y están disponibles para todo el mundo. Pueden ser gratuitos o pueden venderse bajo demanda, ofreciendo a los clientes la posibilidad de pagar por uso de CPU, almacenamiento o ancho de banda.
