@@ -1,3 +1,3 @@
-# RTT (Round-trip time)
+# RTT (Round-trip Time)
 
-El RTT (_round-trip time_ o tiempo de ida y vuelta) es el tiempo, expresado en milisegundos, que una petición de red necesita para ir desde el punto de inicio hasta su destino y volver.
+Se refiere a la duración necesaria, en milisegundos, para que una petición de red vaya desde el punto de comienzo hasta su destino y vuelva al punto de inicio.
