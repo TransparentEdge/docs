@@ -1,3 +1,3 @@
 # TCP (Transmission Control Protocol)
 
-El TCP (Transmission Control Protocol __ o protocolo de control de transmisión) es uno de los principales protocolos de Internet. Se creó en los inicios de la Red y complementa al protocolo IP (Internet protocol o protocolo de Internet). Estos dos protocolos juntos forman el modelo TCP/IP.
+Es uno de los principales protocolos de internet. Se originó en la implementación de la red inicial, complementando el Protocolo de Internet (IP). Por lo tanto, el conjunto completo es comúnmente conocido como TCP/IP.

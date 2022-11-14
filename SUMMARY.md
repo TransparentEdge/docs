@@ -51,7 +51,7 @@
     * [TTL (Time to live)](getting-started/faq/glosario/time-to-live-ttl.md)
     * [TLS (Transport layer security)](getting-started/faq/glosario/transport-layer-security.md)
     * [TCP (Transmission Control Protocol)](getting-started/faq/glosario/transmission-control-protocol.md)
-    * [Virtual Machine](getting-started/faq/glosario/virtual-machine.md)
+    * [Virtual machine](getting-started/faq/glosario/virtual-machine.md)
     * [VPS (Virtual Private Server)](getting-started/faq/glosario/virtual-private-server.md)
     * [Web Service](getting-started/faq/glosario/web-services.md)
   * [Empecemos por el principio](getting-started/faq/empecemos-por-el-principio.md)
