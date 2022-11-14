@@ -44,7 +44,7 @@
     * [RTT (Round-trip time)](getting-started/faq/glosario/round-trip-time.md)
     * [SDS (Software defined storage)](getting-started/faq/glosario/sds-software-defined-storage.md)
     * [Smooth Streaming](getting-started/faq/glosario/smooth-streaming.md)
-    * [SaaS (Software as a Service)](getting-started/faq/glosario/software-as-a-service.md)
+    * [SaaS (Software as a service)](getting-started/faq/glosario/software-as-a-service.md)
     * [TLS Acceleration](getting-started/faq/glosario/ssl-acceleration.md)
     * [Status Code](getting-started/faq/glosario/status-code.md)
     * [TTFB (Time-to-first-byte)](getting-started/faq/glosario/time-to-first-byte-ttfb.md)
