@@ -4,7 +4,7 @@ description: Página principal
 
 # Te damos la bienvenida
 
-Aquí encontrarás toda la documentación relativa al uso ¡y disfrute! de Transparent Edge. Si ya sabes lo que buscas, puedes acceder rápidamente a la referencia de la [API](https://api.transparentcdn.com/docs). Si acabas de llegar, querrás seguramente empezar por el principio: [Aterrizando en Transparent Edge Services](empezando-desde-cero.md)
+Aquí encontrarás toda la documentación relativa al uso ¡y disfrute! de Transparent Edge. Si ya sabes lo que buscas, puedes acceder rápidamente a la referencia de la [API](https://api.transparentcdn.com/docs). Si acabas de llegar, querrás seguramente empezar por el principio: [Aterrizando en Transparent Edge](empezando-desde-cero.md).
 
 
 
