@@ -47,7 +47,7 @@
     * [SaaS (Software as a service)](getting-started/faq/glosario/software-as-a-service.md)
     * [TLS Acceleration](getting-started/faq/glosario/ssl-acceleration.md)
     * [Status Code](getting-started/faq/glosario/status-code.md)
-    * [TTFB (Time-to-first-byte)](getting-started/faq/glosario/time-to-first-byte-ttfb.md)
+    * [TTFB (Time to first byte)](getting-started/faq/glosario/time-to-first-byte-ttfb.md)
     * [TTL (Time-to-live)](getting-started/faq/glosario/time-to-live-ttl.md)
     * [TLS (Transport Layer Security)](getting-started/faq/glosario/transport-layer-security.md)
     * [TCP (Transmission Control Protocol)](getting-started/faq/glosario/transmission-control-protocol.md)
