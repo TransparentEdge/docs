@@ -39,7 +39,7 @@
     * [Public cloud](getting-started/faq/glosario/public-cloud.md)
     * [Private CDN](getting-started/faq/glosario/private-cdn.md)
     * [Purge](getting-started/faq/glosario/purge.md)
-    * [Query String](getting-started/faq/glosario/query-string.md)
+    * [Query string](getting-started/faq/glosario/query-string.md)
     * [Reverse Proxy](getting-started/faq/glosario/reverse-proxy.md)
     * [RTT (Round-trip Time)](getting-started/faq/glosario/round-trip-time.md)
     * [SDS (Software Defined Storage)](getting-started/faq/glosario/sds-software-defined-storage.md)
