@@ -36,7 +36,7 @@
     * [PaaS (Platform as a Service)](getting-started/faq/glosario/platform-as-a-services-paas.md)
     * [PoP (Point of Presence)](getting-started/faq/glosario/pop-point-of-presence.md)
     * [Private cloud](getting-started/faq/glosario/private-cloud.md)
-    * [Public Cloud](getting-started/faq/glosario/public-cloud.md)
+    * [Public cloud](getting-started/faq/glosario/public-cloud.md)
     * [Private CDN](getting-started/faq/glosario/private-cdn.md)
     * [Purge](getting-started/faq/glosario/purge.md)
     * [Query String](getting-started/faq/glosario/query-string.md)
