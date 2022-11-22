@@ -64,7 +64,7 @@
   * [Formato de logs](getting-started/faq/formato-de-logs.md)
   * [Cabeceras predefinidas](getting-started/faq/informacion-extra-sobre-peticiones.md)
   * [Cabeceras por defecto](getting-started/faq/cabeceras-por-defecto/README.md)
-    * [geo\_country\_code](getting-started/faq/cabeceras-por-defecto/geo\_country\_code.md)
+    * [Geo\_Country\_Code](getting-started/faq/cabeceras-por-defecto/geo\_country\_code.md)
     * [X-Device](getting-started/faq/cabeceras-por-defecto/x-device.md)
     * [Vary](getting-started/faq/cabeceras-por-defecto/vary.md)
     * [Cabeceras de caché](getting-started/faq/cabeceras-por-defecto/cabeceras-de-cache.md)
