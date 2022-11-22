@@ -1,8 +1,8 @@
-# Las IP de Transparent Edge Services
+# Las IP de Transparent Edge
 
-Como parte de nuestra política de transparencia, es importante que los nodos de Transparent Edge Services puedan ser identificados en todo momento no solo por nuestros clientes, sino por cualquier persona que quiera consultarlos.
+Como parte de nuestra política de transparencia, es importante que los nodos de Transparent Edge puedan ser identificados en todo momento no solo por nuestros clientes, sino **** también por cualquier persona que quiera consultarlos.
 
-Por eso publicamos un [_endpoint_](https://api.transparentcdn.com/v1/companies/ipranges/) de nuestra API donde aparecen todas nuestras IP públicas.
+Por eso publicamos un [_endpoint_](https://api.transparentcdn.com/v1/companies/ipranges/) de nuestra API donde aparecen todas nuestras IP públicas:
 
 ```javascript
 curl -s https://api.transparentcdn.com/v1/companies/ipranges/ | jq

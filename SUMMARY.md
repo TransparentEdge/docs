@@ -73,7 +73,7 @@
     * [True-Client-IP y X-Forwarded-For](getting-started/faq/cabeceras-por-defecto/true-client-ip-y-x-forwarded-for.md)
   * [Forzando el No-Cache](getting-started/faq/forzando-no-cachear.md)
   * [Arquitectura](getting-started/faq/arquitectura/README.md)
-    * [Las IP de Transparent Edge Services](getting-started/faq/arquitectura/ips-de-transparent-cdn.md)
+    * [Las IP de Transparent Edge](getting-started/faq/arquitectura/ips-de-transparent-cdn.md)
     * [Localizaciones y PoP](getting-started/faq/arquitectura/localizaciones-y-pop.md)
     * [Capas de caché](getting-started/faq/arquitectura/capas-de-cache.md)
   * [Efectividad de la caché](getting-started/faq/hitratio.md)
