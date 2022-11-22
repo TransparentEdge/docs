@@ -1,6 +1,6 @@
 # Age
 
-La cabecera de respuesta **Age** nos indica en segundos cuánto tiempo lleva ese objeto en la caché del nodo que está sirviendo la petición.
+La cabecera de respuesta _**Age**_ nos indica en segundos cuánto tiempo lleva ese objeto en la caché del nodo que está sirviendo la petición.
 
 ```
 curl -v -H "User-Agent: TCDN" https://www.transparentedge.eu/ > /dev/null
