@@ -1,6 +1,6 @@
-# Forzando el no-cache
+# Forzando el No-Cache
 
-## Lo que nos gusta a todos: enviar las cabeceras desde origen
+## **Lo que nos gusta a todos: enviar las cabeceras desde origen**
 
 En Transparent Edge somos partidarios de que nuestros clientes tengan la mayor autonomía. Por eso animamos siempre a que la configuración de la CDN sea lo más simple posible y que las cabeceras de caché, siempre que se pueda, se envíen desde los servidores de origen. En este [enlace](../../guias/configurar-mis-servidores-para-enviar-cabeceras-de-cache.md) tienes información sobre cómo hacerlo.
 
