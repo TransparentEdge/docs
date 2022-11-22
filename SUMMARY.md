@@ -71,7 +71,7 @@
     * [Age](getting-started/faq/cabeceras-por-defecto/age.md)
     * [TP-Cache](getting-started/faq/cabeceras-por-defecto/tp-cache.md)
     * [True-Client-IP y X-Forwarded-For](getting-started/faq/cabeceras-por-defecto/true-client-ip-y-x-forwarded-for.md)
-  * [Forzando el no-cache](getting-started/faq/forzando-no-cachear.md)
+  * [Forzando el No-Cache](getting-started/faq/forzando-no-cachear.md)
   * [Arquitectura](getting-started/faq/arquitectura/README.md)
     * [Las IP de Transparent Edge Services](getting-started/faq/arquitectura/ips-de-transparent-cdn.md)
     * [Localizaciones y PoP](getting-started/faq/arquitectura/localizaciones-y-pop.md)
