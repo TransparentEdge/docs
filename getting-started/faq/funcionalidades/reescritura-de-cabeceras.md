@@ -1,8 +1,10 @@
 # Reescritura de cabeceras
 
-Al estar basados en [Varnish](https://www.varnish-software.com/), en particular en Varnish Plus, tenemos mucha flexibilidad a la hora de modificar el comportamiento por defecto de tu sitio web. La reescritura de cabeceras es algo muy común que se puede hacer sin demasiados problemas. Los casos más comunes son:
+Al estar basados en [Varnish](https://www.varnish-software.com/), en particular en Varnish Enterprise, en Transparent Edge tenemos mucha flexibilidad a la hora de modificar el comportamiento por defecto de tu sitio web.&#x20;
 
-#### Reescritura de la cabecera de Host
+La reescritura de cabeceras es algo muy común que se puede hacer sin demasiados problemas. Los casos más comunes son:
+
+#### Reescritura de la cabecera de _Host_
 
 El caso de uso típico.
 
@@ -15,7 +17,7 @@ sub vcl_recv{
 }
 ```
 
-#### Reescritura de la cabecera Cache-Control
+#### Reescritura de la cabecera _Cache-Control_
 
 ```javascript
 sub vcl_backend_response {
@@ -28,7 +30,7 @@ sub vcl_backend_response {
 
 #### Borrado de cabeceras
 
-Basándonos en el ejemplo anterior, podemos asegurarnos de borrar la cabecera Cache-Control que llega desde el origen antes de efectuar el forzado del tiempo de caché.
+Basándonos en el ejemplo anterior, podemos asegurarnos de borrar la cabecera _Cache-Control_ que llega desde el origen antes de efectuar el forzado del tiempo de caché.
 
 ```javascript
 sub vcl_backend_response {    
