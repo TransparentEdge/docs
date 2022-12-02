@@ -81,7 +81,7 @@
   * [Códigos de error 503](getting-started/faq/codigos-de-error-503.md)
   * [Funcionalidades](getting-started/faq/funcionalidades/README.md)
     * [Protección ante caídas del origen](getting-started/faq/funcionalidades/proteccion-ante-caidas-del-origen.md)
-    * [Rate Limit](getting-started/faq/funcionalidades/rate-limit.md)
+    * [Rate limit](getting-started/faq/funcionalidades/rate-limit.md)
     * [Geolocalización y geobloqueo](getting-started/faq/funcionalidades/geolocalizacion-y-geobloqueo.md)
     * [Prefetching](getting-started/faq/funcionalidades/prefechting.md)
     * [Refetching](getting-started/faq/funcionalidades/refetching.md)
