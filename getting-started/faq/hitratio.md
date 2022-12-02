@@ -1,7 +1,3 @@
----
-description: Hitratio
----
-
 # Efectividad de la caché
 
 El _hit ratio_ es uno de los indicadores más importantes en Transparent Edge. Nos indica cómo de efectivo está siendo Transparent Edge en su trabajo y, por tanto, cuánto se está optimizando el sitio web en particular.
