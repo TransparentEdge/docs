@@ -95,7 +95,7 @@
   * [Analítica](getting-started/dashboard/estadisticas.md)
   * [Invalidando contenido](getting-started/dashboard/invalidando-contenido.md)
   * [Invalidación por etiquetas (tags)](getting-started/dashboard/invalidacion-por-etiquetas-tags.md)
-  * [Prefetching Cache](getting-started/dashboard/prefetch.md)
+  * [Prefetching caché](getting-started/dashboard/prefetch.md)
   * [Envío de logs](getting-started/dashboard/envio-de-logs.md)
   * [Autoprovisionamiento](getting-started/dashboard/autoprovisionamiento/README.md)
     * [Configuración inicial](getting-started/dashboard/autoprovisionamiento/configuraciones-basicas.md)
