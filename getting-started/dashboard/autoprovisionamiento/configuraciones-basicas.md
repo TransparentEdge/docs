@@ -18,7 +18,11 @@ A nivel de CDN, el _backend_ es su origen.
 
 Los datos requeridos para la correcta configuración del _backend_ son los siguientes:
 
-![](<../../../.gitbook/assets/image (24).png>)
+![](<../../../.gitbook/assets/Captura de pantalla 2022-12-22 a las 16.31.02.png>)
+
+<figure><img src="../../../.gitbook/assets/Captura de pantalla 2022-12-22 a las 16.33.42.png" alt=""><figcaption></figcaption></figure>
+
+
 
 #### Nombre
 
@@ -76,11 +80,17 @@ Por ejemplo, un código de respuesta para la comprobación del health check podr
 
 Tras cumplimentar aquellos datos relativos a la configuración del _back-end_, tendremos que dar de alta el sitio web que se asociará a dicho _backend_. Lo haremos en el siguiente paso haciendo clic en "Añadir sitio".
 
-Por ejemplo, un sitio web podría ser: [www.ejemplo.com](http://www.ejemplo.com/).
+Por ejemplo, un sitio web podría ser: [www.example.com](http://www.ejemplo.com/).
 
-![](<../../../.gitbook/assets/image (25).png>)
+![](<../../../.gitbook/assets/Captura de pantalla 2022-12-22 a las 16.37.49.png>)
 
-A fin de asegurar que el sitio web indicado nos pertenece, se nos ordenará que situemos un archivo con el nombre tcdn.txt en la raíz de dicho sitio web y con un contenido específico (15e3fa052eec7e562214b54459f8c890), de tal modo que una petición del tipo [http://www.ejemplo.com/tcdn.txt](http://www.ejemplo.com/tcdn.txt) devuelva el texto previamente facilitado. En caso de cualquier problema y/o duda a este respecto, puedes ponerte en contacto con Transparent CDN a través de la dirección de correo electrónico [soporte@transparentcdn.com](mailto:soporte@transparentcdn.com).
+A fin de asegurar que el sitio web indicado nos pertenece, se nos ordenará que situemos un archivo con el nombre tcdn.txt en la raíz de dicho sitio web y con un contenido específico (el del código de verificación), de tal modo que una petición del tipo [http://www.exemple.com/tcdn.txt](http://www.ejemplo.com/tcdn.txt) devuelva el texto previamente facilitado.&#x20;
+
+También se puede seguir la alternativa de crear un registro DNS de tipo TXT con el nombre “\_tcdn\_challenge” y contenido del código de verificación.
+
+<figure><img src="../../../.gitbook/assets/Captura de pantalla 2022-12-22 a las 16.39.51.png" alt=""><figcaption></figcaption></figure>
+
+En caso de cualquier problema y/o duda a este respecto, puedes ponerte en contacto con Transparent Edge a través de la dirección de correo electrónico [soporte@transparentedge.eu](mailto:soporte@transparentcdn.com).
 
 #### VCLs
 
@@ -100,7 +110,7 @@ sub vcl\_recv {
 
 }
 
-Como puede observarse, esta no es más que una configuración inicial en la que se vincula el _backend_ cNNN\_ejemplo, cuyo origen, recordemos, es origen.ejemplo.com con el _site_ [www.ejemplo.com](http://www.ejemplo.com/). Posteriormente se llevarán a cabo sucesivas modificaciones en dicha configuración a través de los modos disponibles, que son básico y avanzado. Los describimos a continuación.
+Como puede observarse, esta no es más que una configuración inicial en la que se vincula el _backend_ cNNN\_ejemplo, cuyo origen, recordemos, es origen.ejemplo.com con el _site_ [www.ejemplo.com](http://www.ejemplo.com/). Posteriormente se llevarán a cabo sucesivas modificaciones en dicha configuración a través de los modos disponibles, que son básico y avanzado.&#x20;
 
 ![](<../../../.gitbook/assets/image (26).png>)
 
