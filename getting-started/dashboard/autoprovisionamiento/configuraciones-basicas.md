@@ -80,13 +80,13 @@ Por ejemplo, un código de respuesta para la comprobación del health check podr
 
 Tras cumplimentar aquellos datos relativos a la configuración del _back-end_, tendremos que dar de alta el sitio web que se asociará a dicho _backend_. Lo haremos en el siguiente paso haciendo clic en "Añadir sitio".
 
-Por ejemplo, un sitio web podría ser: [www.example.com](http://www.ejemplo.com/).
+Vamos a verlo con un dominio de ejemplo: `www.example.es`
 
 ![](<../../../.gitbook/assets/Captura de pantalla 2022-12-22 a las 16.37.49.png>)
 
-A fin de asegurar que el sitio web indicado nos pertenece, se nos ordenará que situemos un archivo con el nombre tcdn.txt en la raíz de dicho sitio web y con un contenido específico (el del código de verificación), de tal modo que una petición del tipo [http://www.exemple.com/tcdn.txt](http://www.ejemplo.com/tcdn.txt) devuelva el texto previamente facilitado.&#x20;
+A fin de asegurar que el sitio web indicado nos pertenece, se nos ordenará que situemos un archivo con el nombre `tcdn.txt` en la raíz de dicho sitio web y con un contenido específico (el del código de verificación), de tal modo que una petición del tipo `http://www.example.es/tcdn.txt` devuelva el texto previamente facilitado.&#x20;
 
-También se puede seguir la alternativa de crear un registro DNS de tipo TXT con el nombre “\_tcdn\_challenge” y contenido del código de verificación.
+También se puede seguir la alternativa de crear un registro DNS de tipo TXT con el nombre “`_tcdn_challenge`” y contenido del código de verificación.
 
 <figure><img src="../../../.gitbook/assets/Captura de pantalla 2022-12-22 a las 16.39.51.png" alt=""><figcaption></figcaption></figure>
 
@@ -100,25 +100,23 @@ VCL (Varnish Configuration Language) no es más que un lenguaje de _script_ util
 
 Por ejemplo, los valores de _backend_ y _site_ referidos previamente desembocarían en la siguiente configuración VCL:
 
-sub vcl\_recv {
-
-&#x20;   if (req.http.get == «www.ejemplo.com») {&#x20;
-
-&#x20;       set req.backend\_hint = cNNN\_ejemplo.backend();&#x20;
-
-&#x20;   }&#x20;
-
+```clike
+sub vcl_recv {
+    if (req.http.host == "www.example.es") {
+        set req.backend_hint = cNNN_ejemplo.backend();
+    }
 }
+```
 
-Como puede observarse, esta no es más que una configuración inicial en la que se vincula el _backend_ cNNN\_ejemplo, cuyo origen, recordemos, es origen.ejemplo.com con el _site_ [www.ejemplo.com](http://www.ejemplo.com/). Posteriormente se llevarán a cabo sucesivas modificaciones en dicha configuración a través de los modos disponibles, que son básico y avanzado.&#x20;
+Como puede observarse, esta no es más que una configuración inicial en la que se vincula el _backend_ `cNNN_ejemplo` con el site _site_ `www.example.es`. Esto permitirá a la CDN recuperar los recursos no cacheados (_MISS_).
 
-![](<../../../.gitbook/assets/image (26).png>)
+Puedes finalizar el asistente aquí y terminar la configuración VCL más adelante.
 
 #### Resumen
 
-Por último, el asistente de configuración te informará de las modificaciones que deberás llevar a cabo en los ajustes de DNS para apuntar el dominio previamente indicado en el registro CNAME (Canonical NAME) de Transparent Edge Services.
+Por último, el asistente de configuración te informará de las modificaciones que deberás llevar a cabo en los ajustes de DNS para apuntar el dominio previamente indicado en el registro CNAME (Canonical NAME) de Transparent Edge.
 
-Por ejemplo, nuestro registro CNAME asignado sería: caching.cNNN.edge2befaster.net.
+Por ejemplo, nuestro registro CNAME asignado sería: `caching.cNNN.edge2befaster.net`.
 
 Este CNAME lo podrás ubicar tanto en el correo de activación como en la parte superior del panel de Autoprovisionamiento.
 
