@@ -15,7 +15,7 @@ Encontrarás también la información de los _requests_ y ancho de banda:
 
 Después se despliegan las gráficas del _hit ratio_, donde está toda la información de la eficiencia de la caché. Así, muestra los objetos que no han logrado ser cacheados (_miss_), los objetos caducados (_expired_) y los que estaban caducados y se han servido a partir del objeto caducado (_stale_). Y conjuntamente, según la configuración, se puede visualizar todo el tiempo de respuesta (_response time_) de las peticiones.
 
-![](<../../.gitbook/assets/Captura de pantalla 2022-12-21 a las 17.56.10.png>)
+<figure><img src="../../.gitbook/assets/Captura de pantalla 2022-12-21 a las 17.56.10 (1).png" alt=""><figcaption></figcaption></figure>
 
 Los siguientes gráficos muestran los códigos de respuesta que han tenido todas las peticiones que ha recibido el _site_ y de qué lugar geográfico han venido esas peticiones.
 
@@ -39,7 +39,7 @@ El gráfico de códigos de status (S_tatus codes_) permite visualizarlos. La tab
 
 La tabla _IP Address table_ muestra las IP de las que proceden las peticiones. El gráfico _Content Type,_ por su parte, permite visualizar la información sobre los contenidos que tiene cada _site_.
 
-![](<../../.gitbook/assets/image (10) (1).png>)
+![](../../.gitbook/assets/ip-address.jpg)
 
 {% hint style="info" %}
 Recuerda que todo lo que puedes hacer desde nuestro [_dashboard_](https://dashboard.transparetncdn.com)_,_ puedes hacerlo también desde nuestro [API](../faq/glosario/api.md).
