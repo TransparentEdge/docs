@@ -1,4 +1,4 @@
-# Certificados SSL/TLS
+# Certificados SSL
 
 En este apartado podrás ver qué certificados has añadido a la plataforma, así como modificarlos o solicitar uno nuevo.
 
@@ -85,7 +85,7 @@ Requisitos:
 * Un proveedor DNS compatible (puedes consultar la lista de proveedores en la gestión de credenciales, que veremos más adelante)
 * Poseer las claves necesarias para actualizar registros DNS
 
-Si has delegado el DNS a Transparent Edge, no tienes que disponer de ninguna clave y los requisitos anteriores se cumplen automáticamente, sólo tendrías que crear un credencial con el proveedor "[Transparent Edge DNS](ssl.md#si-el-proveedor-dns-es-transparent-edge-services)".
+Si has delegado el DNS a Transparent Edge, no tienes que disponer de ninguna clave y los requisitos anteriores se cumplen automáticamente, sólo tendrías que crear un credencial con el proveedor "[Transparent Edge DNS](ssl.md#si-el-proveedor-dns-es-transparent-edge)".
 
 #### 1.1 Credenciales - (ejemplo con AWS Route53)
 
@@ -126,7 +126,7 @@ Si finalmente se genera el certificado aparecerá automáticamente en la tabla d
 
 <figure><img src="../../../.gitbook/assets/image (65).png" alt=""><figcaption></figcaption></figure>
 
-#### Si el proveedor DNS es Transparent Edge Services
+#### Si el proveedor DNS es Transparent Edge
 
 En el caso de que hayas delegado la gestión de los DNS a nuestra CDN no necesitarás tener a mano ningún credencial aunque sí que tendrás que crearlo, debes seguir los pasos habituales para crear una nueva credencial y seleccionar "Transparent Edge DNS".
 
