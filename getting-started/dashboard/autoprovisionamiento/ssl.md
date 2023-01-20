@@ -76,16 +76,16 @@ Puedes consultar el histórico de peticiones en cualquier momento:
 
 ### Certificados autogenerados DNS
 
-Este tipo de certificado, al igual que el HTTP, es autogestionado por la CDN pero los certificados se generan mediante un desafío DNS.
+Este tipo de certificado al igual que el HTTP es gestionado por la CDN, la diferencia está en que los certificados se generan mediante un desafío DNS.
 
 Esto implica que no es estrictamente necesario que los dominios apunten a la CDN y tiene una ventaja muy grande: se pueden solicitar certificados [wildcard](https://en.wikipedia.org/wiki/Wildcard\_certificate).
 
 Requisitos:
 
-* Proveedor DNS compatible (puedes consultar la lista de proveedores en la gestión de credenciales, que veremos más adelante)
+* Un proveedor DNS compatible (puedes consultar la lista de proveedores en la gestión de credenciales, que veremos más adelante)
 * Poseer las claves necesarias para actualizar registros DNS
 
-Si has delegado el DNS a Transparent Edge Services, no tienes que disponer de claves y los requisitos anteriores se cumplen automáticamente.
+Si has delegado el DNS a Transparent Edge, no tienes que disponer de ninguna clave y los requisitos anteriores se cumplen automáticamente, sólo tendrías que crear un credencial con el proveedor "Transparent Edge DNS".
 
 #### 1.1 Credenciales - (ejemplo con AWS Route53)
 
