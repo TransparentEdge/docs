@@ -62,26 +62,17 @@ Este tipo de certificado es autogestionado por la CDN, tanto su expedición inic
 
 Para obtener un certificado se debe crear una "Certificate Request":
 
-1. Accede al apartado de "Certificados"
-2. Haz clic en "Nuevo ..."
-3. Haz clic en "Solicitud de certificado (desafío HTTP)"
+**Aprovisionamiento > Certificados > Nuevo > Solicitud de certificado (desafío HTTP)**
 
-<figure><img src="../../../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
+Selecciona los dominios que quieres que formen parte del certificado, opcionalmente puedes marcar la casilla "Standalone", esto implica que este certificado no podrá formar parte de una SAN con otros certificados de tu compañía, recomendamos no seleccionarla a no ser que sea necesario.
 
-4\. Selecciona los dominios que quieres que formen parte del certificado
-
-5\. Opcionalmente, marca la casilla "Standalone", esto implica que este certificado no podrá formar una SAN con otros certificados de tu compañía, recomendamos no seleccionarla a no ser que sea necesario.
-
-6\. Pulsa en "Crear", esto creará la "Certificate Request" y se mostrará el histórico de peticiones, dicho histórico te mostrará el estado de tu solicitud.
-
-<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+Al pulsar "Crear" se creará la "Certificate Request" y se mostrará el histórico de peticiones,  en dicho histórico podrás consultar el estado de tu solicitud.
 
 <figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 Puedes consultar el histórico de peticiones en cualquier momento:
 
-1. "Opciones ..."
-2. "Histórico de peticiones HTTP"
+**Aprovisionamiento > Certificados > Opciones > Histórico de peticiones HTTP**
 
 ### Certificados autogenerados DNS
 
