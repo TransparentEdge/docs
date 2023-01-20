@@ -128,7 +128,7 @@ Si finalmente se genera el certificado aparecerá automáticamente en la tabla d
 
 #### Si el proveedor DNS es Transparent Edge Services
 
-En el caso de que hayas delegado la gestión de los DNS a nuestra CDN no necesitarás tener a mano ningún credencial aunque sí que tendrás que crearlo, debes seguir los pasos habituales para crear una nueva credencial y seleccionar "Transparent Edge Services DNS".
+En el caso de que hayas delegado la gestión de los DNS a nuestra CDN no necesitarás tener a mano ningún credencial aunque sí que tendrás que crearlo, debes seguir los pasos habituales para crear una nueva credencial y seleccionar "Transparent Edge DNS".
 
 El campo que aparecerá lo puedes dejar vacío o escribir cualquier texto, no tendrá uso alguno.
 
