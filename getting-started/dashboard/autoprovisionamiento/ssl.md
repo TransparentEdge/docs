@@ -1,12 +1,12 @@
 # Certificados SSL/TLS
 
-En este apartado podrás ver qué certificados propios has añadido a la plataforma, así como modificarlos o solicitar uno nuevo.
+En este apartado podrás ver qué certificados has añadido a la plataforma, así como modificarlos o solicitar uno nuevo.
 
-Podrás gestionar tres tipos de certificados:
+Podrás gestionar tus certificados de tres formas:
 
-* Personalizados
-* Autogenerados HTTP
-* Autogenerados DNS
+* [Personalizados](ssl.md#certificados-personalizados)
+* [Autogenerados HTTP](ssl.md#certificados-autogenerados-http)
+* [Autogenerados DNS](ssl.md#certificados-autogenerados-dns)
 
 Los certificados personalizados son aquellos que ya posees o has obtenido por otros medios y serás el encargado de mantenerlos actualizados.
 
@@ -16,9 +16,9 @@ Los certificados autogenerados se generan mediante procesos internos de la CDN y
 
 Si ya dispones de un certificado digital para tu dominio, puedes incorporarlo a la CDN fácilmente, tan sólo debes tener a mano dicho certificado en formato [PEM](https://es.wikipedia.org/wiki/X.509#Extensiones\_de\_archivo\_de\_certificados).
 
-Para poder importar un certificado, tendrás que tener listos dos ficheros: uno con la cadena completa del certificado y otro con la clave privada, ambos codificados en Base64 (normalmente llevan la extensión _.pem_ o _.crt_). Si tu proveedor es Digicert, te suele dar varias opciones a la hora de descargar el certificado.
+Para poder importar un certificado, tendrás que tener listos dos ficheros: uno con la cadena completa del certificado y otro con la clave privada, ambos codificados en Base64 (normalmente llevan la extensión _.pem_ o _.crt_). Muchos proveedores de certificados suelen dar varias opciones en cuanto al formato a la hora de descargar el certificado.
 
-Podrás saber si el certificado tiene el formato correcto si al abrirlo con un editor de textos puedes ver los campos "BEGIN CERTIFICATE" y "END CERTIFICATE".
+Podrás saber si el certificado tiene el formato correcto si al abrirlo con un editor de texto puedes ver los campos "BEGIN CERTIFICATE" y "END CERTIFICATE".
 
 En el caso de que debas concatenar la cadena completa del certificado por tu cuenta, la forma correcta de hacerlo es la siguiente:
 
@@ -27,7 +27,7 @@ En el caso de que debas concatenar la cadena completa del certificado por tu cue
 (El certificado primario: tu_dominio.crt)
 -----END CERTIFICATE-----
 -----BEGIN CERTIFICATE-----
-(El certificado intermedio: DigiCertCA.crt)
+(El certificado intermedio: CA.crt)
 -----END CERTIFICATE-----
 -----BEGIN CERTIFICATE-----
 (El certificado raíz: TrustedRoot.crt)
@@ -42,19 +42,15 @@ Clave privada: private.key
 -----END PRIVATE KEY-----
 ```
 
-A continuación se detalla el proceso a seguir para agregar un nuevo certificado personalizado o renovarlo:
+Una vez lo tengas listo, accede a nuestro panel:
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+**Aprovisionamiento > Certificados > Nuevo > Certificado personalizado**
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+Aparecerá una ventana donde podrás pegar el contenido de la clave pública y privada de tu certificado.
 
 Si el certificado es correcto una vez pulses en "Crear" podrás ver el certificado añadido en la tabla del panel y se desencadenará un proceso interno en la CDN que desplegará dicho certificado en toda la plataforma, este proceso no tarda más de 5 minutos, tras lo cual los dominios que encajen con dicho certificado lo usarán automáticamente.
 
-El proceso de renovación es igual de sencillo, podrás ver en el panel qué día caducará el certificado para planearlo de antemano (también recibirás una notificación por correo), básicamente consiste en editar el certificado actual (haciendo clic en el icono del lápiz), como se muestra a continuación:
-
-<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+El proceso de renovación es igual de sencillo, podrás ver en el panel qué día caducará el certificado para planearlo de antemano (también recibirás una notificación por correo), básicamente consiste en editar el certificado actual (haciendo clic en el icono del lápiz).
 
 {% hint style="warning" %}
 Sólamente es posible editar los certificados personalizados, el resto de certificados (autogenerados HTTP y autogenerados DNS), tan sólo se pueden eliminar o leer, ya que se gestionan y renuevan internamente.
