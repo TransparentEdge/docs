@@ -103,7 +103,7 @@ Una vez hayas finalizado haz clic en "Crear".
 
 Puedes editar o eliminar credenciales desde este mismo apartado, recuerda que las renovaciones de los certificados generados mediante desafío DNS utilizarán las credenciales asignadas con los valores que tengan en ese momento.
 
-<figure><img src="../../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22) (2).png" alt=""><figcaption></figcaption></figure>
 
 #### 1.2 Nueva solicitud de certificado DNS - (ejemplo con AWS Route53)
 
@@ -131,6 +131,8 @@ Si finalmente se genera el certificado aparecerá automáticamente en la tabla d
 En el caso de que hayas delegado la gestión de los DNS a nuestra CDN no necesitarás tener a mano ningún credencial aunque sí que tendrás que crearlo, debes seguir los pasos habituales para crear una nueva credencial y seleccionar "Transparent Edge DNS".
 
 El campo que aparecerá lo puedes dejar vacío o escribir cualquier texto, no tendrá uso alguno.
+
+<figure><img src="../../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
 
 
 
