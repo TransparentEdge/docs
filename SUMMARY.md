@@ -104,7 +104,7 @@
     * [Despliegues de configuración](getting-started/dashboard/autoprovisionamiento/despliegues-de-configuracion/README.md)
       * [Modo básico](getting-started/dashboard/autoprovisionamiento/despliegues-de-configuracion/modo-basico.md)
       * [Modo avanzado](getting-started/dashboard/autoprovisionamiento/despliegues-de-configuracion/configuracion-avanzada.md)
-    * [Certificados SSL/TLS](getting-started/dashboard/autoprovisionamiento/ssl.md)
+    * [Certificados SSL](getting-started/dashboard/autoprovisionamiento/ssl.md)
 
 ## Configuration <a href="#config" id="config"></a>
 
