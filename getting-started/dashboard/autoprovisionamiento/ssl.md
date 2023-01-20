@@ -85,52 +85,40 @@ Requisitos:
 * Un proveedor DNS compatible (puedes consultar la lista de proveedores en la gestión de credenciales, que veremos más adelante)
 * Poseer las claves necesarias para actualizar registros DNS
 
-Si has delegado el DNS a Transparent Edge, no tienes que disponer de ninguna clave y los requisitos anteriores se cumplen automáticamente, sólo tendrías que crear un credencial con el proveedor "Transparent Edge DNS".
+Si has delegado el DNS a Transparent Edge, no tienes que disponer de ninguna clave y los requisitos anteriores se cumplen automáticamente, sólo tendrías que crear un credencial con el proveedor "[Transparent Edge DNS](ssl.md#si-el-proveedor-dns-es-transparent-edge-services)".
 
 #### 1.1 Credenciales - (ejemplo con AWS Route53)
 
 Antes de nada tenemos que crear las credenciales necesarias para actualizar registros DNS en nuestro proveedor, en este ejemplo AWS Route53, o cómo mínimo, el registro [ACME](https://en.wikipedia.org/wiki/Automatic\_Certificate\_Management\_Environment) necesario, que en nuestro ejemplo sería `_acme-challenge.example.com`.
 
-1. Accede al apartado "Certificados"
-2. Haz clic en "Opciones ..."
-3. Haz clic en "Gestión de credenciales DNS"
+**Aprovisionamiento > Certificados > Opciones > Gestión de credenciales DNS**
 
-<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+Se mostrará una tabla con las credenciales existentes, haz clic en "Nueva Credencial"
 
-4\. Se mostrará una tabla con las credenciales existentes, haz clic en "Nueva Credencial"
+Introduce un alias para identificar a este credencial y selecciona el proveedor DNS, en este ejemplo "AWS (Route53)"
 
-5\. Introduce un alias para identificar a este credencial y selecciona el proveedor DNS, en este ejemplo "AWS (Route53)"
+Aparecerán automáticamente los campos necesarios para la credencial, esto difere entre proveedores - consulta la documentación del proveedor en caso de duda o contacta con nosotros.
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
-
-6\. Se mostrarán automáticamente los campos necesarios para la credencial, esto difere entre proveedores - consulta la documentación del proveedor en caso de duda o contacta con nosotros.
-
-7\. Una vez hayas rellenado los campos requeridos haz clic en "Crear"
-
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+Una vez hayas finalizado haz clic en "Crear".
 
 Puedes editar o eliminar credenciales desde este mismo apartado, recuerda que las renovaciones de los certificados generados mediante desafío DNS utilizarán las credenciales asignadas con los valores que tengan en ese momento.
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
 
 #### 1.2 Nueva solicitud de certificado DNS - (ejemplo con AWS Route53)
 
-Ahora que ya contamos con los credenciales procederemos a crear la solicitud de certificado.
+Ahora que ya contamos con los credenciales procederemos a crear la solicitud de certificado:
 
-1. Haz clic en "Nuevo ..."
-2. Selecciona "Solicitud de certificado (desafío DNS)
+**Aprovisionamiento > Certificados > Nuevo > Solicitud de certificado (desafío DNS)**
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+Se mostrará un asistente donde deberás escribir los dominios que quieres que contemple el nuevo certificado, en este ejemplo queremos "`example.com`" y "`*.example.com`", escribimos cada uno en una línea, así:
 
-Se mostrará un asistente donde deberás escribir los dominios que quieres que contemple el nuevo certificado, en este ejemplo queremos "`example.com`" y "`*.example.com`":
-
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+```
+example.com
+*.example.com
+```
 
 En el siguiente apartado debemos seleccionar los credenciales que irán asociados a esta "Solicitud de certificado DNS", hay que tener en cuenta que estas solicitudes son permanentes y se reutilizan cuando llega la hora de renovar el certificado, por lo que si cambian los credenciales éstos se deben actualizar como corresponda.
-
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
-
-
 
 Una vez creada la solicitud de certificado, se mostrará una tabla con las peticiones DNS activas y podrás consultar el estado de la solicitud.
 
@@ -143,8 +131,6 @@ Si finalmente se genera el certificado aparecerá automáticamente en la tabla d
 En el caso de que hayas delegado la gestión de los DNS a nuestra CDN no necesitarás tener a mano ningún credencial aunque sí que tendrás que crearlo, debes seguir los pasos habituales para crear una nueva credencial y seleccionar "Transparent Edge Services DNS".
 
 El campo que aparecerá lo puedes dejar vacío o escribir cualquier texto, no tendrá uso alguno.
-
-<figure><img src="../../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
 
 
 
