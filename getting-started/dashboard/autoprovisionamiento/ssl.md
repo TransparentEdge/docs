@@ -38,7 +38,7 @@ En el caso de la clave privada, la estructura es la siguiente:
 
 ```
 -----BEGIN PRIVATE KEY-----
-Clave privada: private.key
+(Clave privada: private.key)
 -----END PRIVATE KEY-----
 ```
 
