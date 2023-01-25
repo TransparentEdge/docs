@@ -11,17 +11,17 @@ Algunos de los códigos de error más frecuentes son:
 * **503** - _Service Unavailable_
 * **504** - _Gateway Timeout_
 
-Las CDN, por motivos técnicos, enmascaramos esa almalgama de _status codes_ en uno solo. En Transparent Edge **utilizamos el código `503` para cualquier error de servidor `5xx`.**
+En las CDNs es una práctica habitual el enmascarar los distintos códigos de error en uno solo. En Transparent Edge **utilizamos el código `503` para cualquier error de servidor `5xx`.**
 
 Un error **`503`** proveniente de la CDN puede tener muchos motivos. Estos vienen clasificados en las cabeceras de respuesta y en el própio código HTML del error devuelto con más información relevante que puede ayudar a discernir el tipo de error. Estas cabeceras empiezan por `TCDN-` y todas tienen al final un valor numérico que nos permite identificar con precisión la petición, por ejemplo: `TCDN-BENG-504:275330054`.
 
-Este comportamiento se puede cambiar si se establece la cabecera **`X-Show-Origin-Errors`**, por ejemplo:
+Este comportamiento se puede cambiar si se establece la cabecera **`X-Show-Origin-Errors`** de esta forma:
 
 ```
 set req.http.X-Show-Origin-Errors = "1";
 ```
 
-En este caso el código de estado será el mismo que devuelve origen, así como su contenido.
+En este caso el código de estado será el mismo que devuelve origen, así como su contenido. Dicha regla se puede incluir dentro de un condicional si no se desea el que aplique globalmente.
 
 ## Lista de códigos
 
