@@ -18,7 +18,9 @@ Un error **`503`** proveniente de la CDN puede tener muchos motivos. Estos viene
 Este comportamiento se puede cambiar si se establece la cabecera **`X-Show-Origin-Errors`** de esta forma:
 
 ```
-set req.http.X-Show-Origin-Errors = "1";
+sub vcl_recv {
+    set req.http.X-Show-Origin-Errors = "1";
+}
 ```
 
 En este caso el código de estado será el mismo que devuelve origen, así como su contenido. Dicha regla se puede incluir dentro de un condicional si no se desea el que aplique globalmente.
