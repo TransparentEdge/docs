@@ -15,6 +15,14 @@ Las CDN, por motivos técnicos, enmascaramos esa almalgama de _status codes_ en 
 
 Un error **`503`** proveniente de la CDN puede tener muchos motivos. Estos vienen clasificados en las cabeceras de respuesta y en el própio código HTML del error devuelto con más información relevante que puede ayudar a discernir el tipo de error. Estas cabeceras empiezan por `TCDN-` y todas tienen al final un valor numérico que nos permite identificar con precisión la petición, por ejemplo: `TCDN-BENG-504:275330054`.
 
+Este comportamiento se puede cambiar si se establece la cabecera **`X-Show-Origin-Errors`**, por ejemplo:
+
+```
+set req.http.X-Show-Origin-Errors = "1";
+```
+
+En este caso el código de estado será el mismo que devuelve origen, así como su contenido.
+
 ## Lista de códigos
 
 * **`TCDN-BENG-5xx`** - _Backend Error No Grace_
@@ -36,3 +44,7 @@ Un error **`503`** proveniente de la CDN puede tener muchos motivos. Estos viene
 * **`TCDN-NBD`** - _No Backend Defined_
 
 > El dominio existe en la CDN, pero no se le ha asignado ningún _backend_.
+
+* **`TCDN-OENG`** - Origin Error No Grace
+
+> Se ha producido un error **`5xx`** en origen y se está respetando lo que devuelve éste gracias a la cabecera **`X-Show-Origin-Errors`**.
