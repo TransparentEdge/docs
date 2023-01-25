@@ -45,6 +45,6 @@ En este caso el código de estado será el mismo que devuelve origen, así como 
 
 > El dominio existe en la CDN, pero no se le ha asignado ningún _backend_.
 
-* **`TCDN-OENG`** - Origin Error No Grace
+* **`TCDN-OENG`** - _Origin Error No Grace_
 
 > Se ha producido un error **`5xx`** en origen y se está respetando lo que devuelve éste gracias a la cabecera **`X-Show-Origin-Errors`**.
