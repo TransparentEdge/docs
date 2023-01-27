@@ -97,7 +97,7 @@ Se mostrará una tabla con las credenciales existentes, haz clic en "Nueva Crede
 
 Introduce un alias para identificar a este credencial y selecciona el proveedor DNS, en este ejemplo "AWS (Route53)"
 
-Aparecerán automáticamente los campos necesarios para la credencial, esto difere entre proveedores - consulta la documentación del proveedor en caso de duda o contacta con nosotros.
+Aparecerán automáticamente los campos necesarios para la credencial, esto difiere entre proveedores - consulta la documentación del proveedor en caso de duda o contacta con nosotros.
 
 Una vez hayas finalizado haz clic en "Crear".
 
