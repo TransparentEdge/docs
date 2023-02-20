@@ -6,7 +6,7 @@
 
 Para descargar el plugin debemos dirigirnos a la sección del panel de administración de wordpress destinada a tal efecto. La encontraremos en el desplegable lateral bajo la leyenda de "plugins". Una vez ahí pulsaremos en "Add plugins". En el buscador situado en la parte superior izquierda introduciremos w3 total cache.
 
-![](<../.gitbook/assets/001 (2).png>)
+![](<../.gitbook/assets/001 (1).png>)
 
 Una vez que tengamos el plugin instalado tendremos que activarlo. Simplemente haremos clic en activar y tendremos w3-total-cache activado en nuestro sitio web.
 
@@ -14,7 +14,7 @@ Una vez que tengamos el plugin instalado tendremos que activarlo. Simplemente ha
 
 Ya con el plugin activado procederemos a su configuración. Veremos como tendremos disponible bajo la pestaña "Performance" del menú lateral el submenú "General Settings". Nos dirigiremos a este apartado para configurar el plugin con los parámetros de Transparent Edge Services.
 
-![](<../.gitbook/assets/003 (2).png>)
+![](<../.gitbook/assets/003 (1).png>)
 
 En esta pantalla, en la sección "FSD CDN", poner check en "Enabled" y seleccionar Transparent CDN. No es relevante el campo que elijamos en el desplegable "CDN".
 

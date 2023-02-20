@@ -68,7 +68,7 @@ Selecciona los dominios que quieres que formen parte del certificado, opcionalme
 
 Al pulsar "Crear" se creará la "Certificate Request" y se mostrará el histórico de peticiones,  en dicho histórico podrás consultar el estado de tu solicitud.
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 Puedes consultar el histórico de peticiones en cualquier momento:
 
@@ -124,7 +124,7 @@ Una vez creada la solicitud de certificado, se mostrará una tabla con las petic
 
 Si finalmente se genera el certificado aparecerá automáticamente en la tabla del apartado de certificados.
 
-<figure><img src="../../../.gitbook/assets/image (65).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (65) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### Si el proveedor DNS es Transparent Edge
 

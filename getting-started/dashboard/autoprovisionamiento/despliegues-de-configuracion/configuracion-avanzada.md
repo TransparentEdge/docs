@@ -4,15 +4,15 @@ Nuestro _dashboard_ ofrece la posibilidad de añadir configuración VCL personal
 
 Para ello, cambia el modo de "Básico" a "Avanzado":
 
-![](<../../../../.gitbook/assets/image (29).png>)
+![](<../../../../.gitbook/assets/image (19).png>)
 
 En la imagen anterior, puedes ver el histórico de configuraciones. Si aún no tienes ninguna, mostrará "No hay datos".
 
-![](<../../../../.gitbook/assets/image (31).png>)
+![](<../../../../.gitbook/assets/image (51).png>)
 
 Selecciona "Añadir configuración VCL" y aparecerá una ventana emergente donde podrás editar el código VCL o bien pegar uno que ya tengas guardado en tu equipo.
 
-![](<../../../../.gitbook/assets/image (30).png>)
+![](<../../../../.gitbook/assets/image (65).png>)
 
 Tras editar la configuración, pulsa en "Guardar". El código entrará en un flujo de validaciones y, si todo es correcto, se aplicará en producción.
 
@@ -22,13 +22,13 @@ El despliegue de la configuración no es inmediato, pero como máximo puede tard
 
 Puedes consultar el estado en el historial de configuraciones. Aparecerá una nueva entrada con la fecha de alta y te mostrará si ya está desplegado o no en producción.
 
-![](<../../../../.gitbook/assets/image (34).png>)
+![](<../../../../.gitbook/assets/image (18).png>)
 
 Cuando aparezca el _tic_ verde en validado y estado, sabremos que la nueva configuración está aplicada.
 
 Siguiendo con las opciones del historial de configuraciones, a la derecha, bajo "Acciones", tenemos los siguientes botones:
 
-![](<../../../../.gitbook/assets/image (33).png>)
+![](<../../../../.gitbook/assets/image (7).png>)
 
 * **Ver:** Nos proporciona una vista de solo lectura del código.
 * **Duplicar:** Duplica la entrada seleccionada y nos permite editarla y aplicarla si deseamos.

@@ -8,11 +8,11 @@ description: HTTPS
 
 Si no tienes un certificado SSL para tu site, Transparent Edge Services puede gestionar uno automáticamente por ti. Solo tienes que habilitarlo en el panel de autoprovision, en la sección de Sites:
 
-![Sacando certificados automáticamente](<../.gitbook/assets/image (63).png>)
+![Sacando certificados automáticamente](<../.gitbook/assets/image (17).png>)
 
 Al pulsar el candado, se abrirá un cuadro de diálogo con instrucciones y los requisitos para la gestión automática:
 
-![Requisitos para la gestión automática de certificados](<../.gitbook/assets/image (64).png>)
+![Requisitos para la gestión automática de certificados](<../.gitbook/assets/image (55).png>)
 
 Una vez sacado el certificado, el candado se volverá verde y ya puedes despreocuparte. En unos minutos estará desplegado y se renovará automáticamente sin ninguna intervención por tu parte.
 

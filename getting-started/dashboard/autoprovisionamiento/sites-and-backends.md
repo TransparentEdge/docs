@@ -4,7 +4,7 @@ Aquí podrás ver todos los _backends_ configurados, modificarlos, añadirlos o 
 
 Si has seguido el asistente inicial, ya tendrás al menos un _backend_ configurado y verás algo similar al siguiente ejemplo:
 
-![](<../../../.gitbook/assets/image (36).png>)
+![](<../../../.gitbook/assets/image (63).png>)
 
 Para cada _backend_ se muestran unos detalles básicos, así como el estado de su _health check._ En el campo de acciones, podrás eliminarlo, modificarlo o visualizar su configuración.
 
@@ -12,7 +12,7 @@ Para cada _backend_ se muestran unos detalles básicos, así como el estado de s
 
 Dar de alta un nuevo _backend_ en la plataforma no lleva más de cinco minutos. Pulsa en "Añadir backend" y se mostrará un diálogo como el siguiente:
 
-![](<../../../.gitbook/assets/image (37).png>)
+![](<../../../.gitbook/assets/image (58).png>)
 
 Tendrás entonces que rellenar los siguientes apartados básicos:
 
@@ -33,7 +33,7 @@ Con esto ya tendríamos el _backend_ configurado. Restaría pulsar_Guardar_ para
 
 Para cada _backend_ configurado, en el campo de Acciones tenemos disponibles los siguientes botones para eliminar, modificar y visualizar la configuración:
 
-![](<../../../.gitbook/assets/image (38).png>)
+![](<../../../.gitbook/assets/image (4).png>)
 
 Antes de eliminar o modificar un _backend_ (en caso de cambiarle el nombre), asegúrate de que ninguna configuración VCL dependa de él o dejará de funcionar correctamente.
 

@@ -8,7 +8,7 @@ El modo básico nos permite configurar de manera rápida las reglas VCL más com
 
 La primera vez que accedemos al panel no tendremos ninguna regla definida:
 
-![](<../../../../.gitbook/assets/image (47).png>)
+![](<../../../../.gitbook/assets/image (29).png>)
 
 ### Añadir una regla
 
@@ -31,7 +31,7 @@ Tendremos que rellenar los siguientes campos, que pueden variar según la planti
 
 **Ejemplo**:
 
-![](<../../../../.gitbook/assets/image (48).png>)
+![](<../../../../.gitbook/assets/image (21).png>)
 
 Una vez tengamos todo listo, pulsamos sobre _Guardar_.
 
@@ -39,7 +39,7 @@ Una vez tengamos todo listo, pulsamos sobre _Guardar_.
 
 Cuanto tengamos definidas varias reglas, podemos ver todas ellas desde el panel, donde podremos borrarlas o modificarlas:
 
-![](<../../../../.gitbook/assets/image (49).png>)
+![](<../../../../.gitbook/assets/image (9).png>)
 
 Una vez tengamos todo tal y como queremos, podemos pulsar sobre _**Validar y desplegar reglas.**_  Estas entrarán en un flujo de validación y despliegue.
 

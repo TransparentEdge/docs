@@ -16,7 +16,7 @@ Un detalle importante es el aviso de la parte superior, que nos indica dónde te
 
 Añadir un sitio nuevo es un proceso sencillo, pero por motivos de seguridad se debe validar la posesión del dominio. Este proceso se explica detalladamente cuando pulsas sobre _**Añadir sitio**_,. Si tienes cualquier problema, no dudes en contactar con nosotros en [soporte@transparentedge.eu](mailto:soporte@transparentedge.eu)
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
@@ -34,12 +34,12 @@ Para activar esta opción, pincha en _Acciones_ sobre el candado del sitio que q
 
 
 
-![Candado sin activar](<../../../.gitbook/assets/image (41).png>)
+![Candado sin activar](<../../../.gitbook/assets/image (10).png>)
 
-<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
 
 Ahora solo tendrás que pulsar sobre _**Quiero gestionar automáticamente el SSL para este site**_ para iniciar el proceso. No tardará más de cinco minutos en activarse.
 
-![El candado se mostrará de color verde para un sitio activo.](<../../../.gitbook/assets/image (44).png>)
+![El candado se mostrará de color verde para un sitio activo.](<../../../.gitbook/assets/image (40).png>)
 
 Si el certificado se genera correctamente, lo podrás ver en el apartado de "Certificados", tras lo cual se renovará automáticamente cuando vaya a caducar, siempre que el dominio siga apuntando a la CDN.

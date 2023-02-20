@@ -10,11 +10,11 @@ Para la autenticación de la API usamos el sistema de federación de OAuth2. Est
 
 Antes de nada, vamos a necesitar los valores de `client_id` __ y `client_secret`se pueden obtener desde el panel: [https://dashboard.transparentcdn.com/user/edit](https://dashboard.transparentcdn.com/user/edit) pinchando tu nombre de usuario, después en "Opciones de Cuenta" y finalmente en "Gestión de Claves":
 
-![](<../.gitbook/assets/image (55).png>)
+![](<../.gitbook/assets/image (35).png>)
 
 Apunta los valores que aparecen, nos harán falta en los siguientes pasos:
 
-![](<../.gitbook/assets/image (56).png>)
+![](<../.gitbook/assets/image (49).png>)
 
 A continuación se da un ejemplo, con datos falsos, de como sería todo el proceso de obtención del token de acceso (API\_TOKEN).
 

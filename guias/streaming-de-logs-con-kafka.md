@@ -45,7 +45,7 @@ Las plantillas, vienen preconfiguradas con todos los datos necesarios, pero a co
 
 * La(s) dirección(es) IP(s) desde donde conectarán tus consumers. Que las puedes añadir desde el propio panel (al añadirlas, se necesita un margen de 5 minutos hasta que estén activas en nuestro _firewall_):
 
-![](<../.gitbook/assets/image (53).png>)
+![](<../.gitbook/assets/image (20).png>)
 
 ## Consumiendo los logs
 
@@ -378,11 +378,11 @@ Actualmente, creamos los _topics_ con 2 particiones por defecto (se pueden aumen
 
 * Iniciamos 3 _consumers_, los 3 en el **mismo **_**consumer group**_: Uno de ellos, consume de la partición 0, otro de la 1, y el último queda totalmente parado. Conseguimos procesamiento en paralelo y alta disponibilidad. (La alta disponibilidad también la logramos con 2 _consumers_, si uno falla, el otro consumirá de las dos particiones). Los mensajes estarán repartidos entre el _consumer 1_ y el _consumer 2_.
 
-![](<../.gitbook/assets/image (51).png>)
+![](<../.gitbook/assets/image (16).png>)
 
 * Iniciamos 2 _consumers_, cada uno en **distinto **_**consumer group**_: Los 2 van a recibir TODOS los mensajes del topic y estarán totalmente aislados. Es útil si queremos realizar un procesamiento distinto de los mensajes recibidos para cada uno de ellos. A este esquema podemos añadir más _consumers_, el resultado será el mismo, cada uno de ellos recibirá todos los mensajes de todas las particiones.
 
-![](<../.gitbook/assets/image (52).png>)
+![](<../.gitbook/assets/image (54).png>)
 
 Dado que trabajamos con logs y a no ser que se requieran varios post-procesos distintos, lo más interesante es tener los _consumers_ en el mismo _consumer group_, y **es más que probable que solamente un **_**consumer**_** sea suficiente dado el rendimiento que ofrece Kafka**. Se pueden iniciar mas _consumers_ si uno de ellos no puede consumir en tiempo real, o si queremos procesamiento en paralelo + alta disponibilidad.
 
@@ -401,30 +401,27 @@ El formato que contiene el objeto JSON viene definido por Modsecurity, que es un
 Dicho JSON contiene **todos** los datos relevantes de la request: el código http, las cabeceras de respuesta, las cabeceras de la petición, la URL, el método, la IP del cliente ... básicamente toda la información. Y además, contiene un campo con todos los detalles relacionados con el ataque detectado.
 
 {% hint style="info" %}
-Se hace referencia a los campos separándolos por un punto, ya que es la notación que se utiliza en [jq](https://stedolan.github.io/jq/), un procesador JSON. Por ejemplo, si hacemos referencia al campo `.transaction.messages[0].message` en jq, lo mismo en Python sería:`["transaction"]["messages"][0]`
+Se hace referencia a los campos separándolos por un punto, ya que es la notación que se utiliza en [jq](https://stedolan.github.io/jq/), un procesador JSON. Por ejemplo, si hacemos referencia al campo `.transaction.messages.message` en `jq`, lo mismo en Python sería:`["transaction"]["messages"]["message"]`
 {% endhint %}
 
-Una sóla request, puede hacer que salten una o varias reglas del WAF, es por ello que el campo `.transaction.messages`, es un _array_. Vamos a verlo con un ejemplo
+Una sóla request, puede hacer que salten una o varias reglas del WAF, es por ello que el campo `.transaction.messages`, es un _array_ en el formato original de Modsecurity.&#x20;
 
-Aquí accedemos al campo "messages" utilizando `jq`, pero perfectamente lo podríamos hacer en Python u otros lenguajes. Revisamos el campo "message" del primer ataque detectado para cada requests (`messages[0]`).
+Para facilitar el tratamiento de los logs, desde la CDN os los enviamos separando cada ataque, por lo tanto, el campo `.transaction.messages` deja de ser un _array_ y se transforma en un único objeto json que contiene la información de un sólo ataque.
+
+Es decir, si un usuario malintencionado realiza una petición POST a `/wp-admin` y desde la CDN detectamos 2 ataques en esa misma petición, recibiréis 2 logs.
+
+Aquí accedemos al campo "messages" utilizando `jq`, pero perfectamente lo podríamos hacer en Python u otros lenguajes. Revisamos el campo "message" del ataque detectado para cada requests.
 
 ```bash
-$ tail -3 audit.log | jq '.transaction.messages[0].message'
+$ tail -3 audit.log | jq '.transaction.messages.message'
 "Host header is a numeric IP address"
 "Possible Remote File Inclusion (RFI) Attack: URL Payload Used w/Trailing Question Mark Character (?)"
 "XSS Attack Detected via libinjection"
 ```
 
-Por supuesto, no todas las requests coinciden con más de una regla, si intentamos acceder al segundo componente de "messages" (`messages[1]`), vemos que en muchos aparece "null", es la forma que tiene `jq` de decirnos que no encontró nada en ese índice del _array_.
+Uno de los campos importantes que contiene `messages` es `ruleId`. Se trata de un valor numérico que nos permitirá establecer excepciones.
 
-```bash
-$ tail -3 audit.log | jq '.transaction.messages[1].message'
-null
-"NoScript XSS InjectionChecker: HTML Injection"
-null
-```
-
-El RuleID, que es bastante importante a la hora de añadir excepciones, también se encuentra dentro de "messages", en general, contiene éstos campos:
+Este es un ejemplo del contenido del campo `messages`:
 
 ```bash
 {
