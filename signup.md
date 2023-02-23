@@ -10,17 +10,15 @@ El proceso de registro en la plataforma de autoprovisionamiento de Transparent E
 
 En primer lugar, tienes que elegir la solución que mejor se adapta a tus necesidades entre las siguiente opciones:
 
-**Básico**
-
 **Avanzado**
 
 **Business**
 
 Encuentras información más detallada sobre cada paquete (tiempo de respuesta, tipo de soporte ofrecido, coste, etc.) en [https://www.transparentedge.eu/precios/](https://www.transparentedge.eu/precios/). Si tus necesidades cambian en el futuro, podrás solicitar la modificación de tu paquete de soporte a través de la dirección de correo electrónico [soporte@transparentedge.eu](mailto:soporte@transparentedge.eu).
 
-<figure><img src=".gitbook/assets/alta-2.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Captura de Pantalla 2023-02-23 a las 14.10.13.png" alt=""><figcaption></figcaption></figure>
 
-### Datos básicos y de facturación
+Datos básicos y de facturación
 
 En este segundo paso tienes la oportunidad de introducir un código promocional (_voucher_) en el espacio habilitado para ello dentro del resumen de **servicios contratados.** A continuación, debes rellenar los siguientes **datos básicos**:
 
