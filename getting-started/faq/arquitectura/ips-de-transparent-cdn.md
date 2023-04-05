@@ -6,3 +6,5 @@ Por ello se publica un _endpoint_ en nuestra API donde aparecen todas nuestras d
 
 Dicho endpoint contiene todas las direcciones IP que pueden contactar con el backend/origen, es muy importante que se permita el acceso desde dichas direcciones y que ningún sistema de protección las bloquee.
 
+Existe una dirección alternativa que permite consultar las mismas direcciones IP en plano: [https://www.transparentedge.eu/ips.txt](https://www.transparentedge.eu/ips.txt)
+
