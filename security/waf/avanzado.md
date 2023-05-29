@@ -1,6 +1,6 @@
 # Configuración
 
-Esta implementación avanzada de WAF se basa en el _software_ [modsecurity](https://www.modsecurity.org/) y protegerá tus sitios _web_ de una manera más efectiva.
+Esta implementación avanzada de WAF protegerá tus sitios _web_ de una manera más efectiva.
 
 Para activar el WAF tan sólo tienes que activar nuestra cabecera `TCDN-WAF-Enabled`.
 
@@ -36,7 +36,7 @@ sub vcl_recv {
 
 Sin embargo, ésta dista de ser la mejor opción.
 
-El WAF proporciona, en su lugar, la cabecera `TCDN-WAF-Set-SecRuleEngine` que nos permite ajustar el comportamiento del _motor_ (_engine_) de [modsecurity](https://www.modsecurity.org/). Esta cabecera acepta tres valores:
+El WAF proporciona, en su lugar, la cabecera `TCDN-WAF-Set-SecRuleEngine` que nos permite ajustar el comportamiento del _motor_ (_engine_) de reglas. Esta cabecera acepta tres valores:
 
 * `#On`. Se trata del comportamiento por defecto: el WAF lleva a cabo las acciones necesarias para bloquear aquellas peticiones (_requests_) consideradas _peligrosas_.
 * `#Off`. Desactiva temporalmente el WAF.
@@ -77,5 +77,5 @@ sub vcl_recv {
 }
 ```
 
-Obviamente, éstos no son más que pequeños ejemplos de casos de uso muy específicos. Si tienes cualquier duda respecto a cómo integrar esta funcionalidad en tu propio dominio, por favor, no dudes en contactarnos a través de la dirección de correo electrónico [soporte@transparentcdn.com](mailto:soporte@transparetncdn.com).
+Obviamente, éstos no son más que pequeños ejemplos de casos de uso muy específicos. Si tienes cualquier duda respecto a cómo integrar esta funcionalidad en tu propio dominio, por favor, no dudes en contactarnos a través de la dirección de correo electrónico help+cdn@transparentedge.eu.
 
