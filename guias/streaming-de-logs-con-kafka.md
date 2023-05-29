@@ -39,7 +39,7 @@ Las plantillas, vienen preconfiguradas con todos los datos necesarios, pero a co
 #### Otros datos:
 
 * El _Topic_ al que suscribirse que será **`c<ID>`**
-* **El prefijo de **_**Consumer Group**_** al que unir tus **_**consumers.** _ Por ejemplo, si tu `<ID>` (identificador de cliente) es el `83`, te suscribirás al topic `c83`, y podrás unir tus _consumers_ a cualquier _"Consumer Group"_ que comience por `c83_` como por ejemplo `c83_group1`, `c83_test`, `c83_pre` ... Puedes consultar más información sobre los consumer groups [aquí](https://docs.transparentcdn.com/guias/streaming-de-logs-con-kafka#que-son-los-consumer-groups).
+* **El prefijo de **_**Consumer Group**_** al que unir tus **_**consumers.**_ Por ejemplo, si tu `<ID>` (identificador de cliente) es el `83`, te suscribirás al topic `c83`, y podrás unir tus _consumers_ a cualquier _"Consumer Group"_ que comience por `c83_` como por ejemplo `c83_group1`, `c83_test`, `c83_pre` ... Puedes consultar más información sobre los consumer groups [aquí](https://docs.transparentcdn.com/guias/streaming-de-logs-con-kafka#que-son-los-consumer-groups).
 
 #### Nosotros necesitaremos:
 
@@ -396,7 +396,7 @@ Por ejemplo, si tu compañia tiene el `<ID>` (identificador de cliente) 83, debe
 
 ### Formato de los logs del Audit
 
-El formato que contiene el objeto JSON viene definido por Modsecurity, que es uno de los componenetes que utilizamos en el servicio de WAF.
+El formato del servicio de WAF es un objeto JSON estándar.
 
 Dicho JSON contiene **todos** los datos relevantes de la request: el código http, las cabeceras de respuesta, las cabeceras de la petición, la URL, el método, la IP del cliente ... básicamente toda la información. Y además, contiene un campo con todos los detalles relacionados con el ataque detectado.
 
@@ -404,7 +404,7 @@ Dicho JSON contiene **todos** los datos relevantes de la request: el código htt
 Se hace referencia a los campos separándolos por un punto, ya que es la notación que se utiliza en [jq](https://stedolan.github.io/jq/), un procesador JSON. Por ejemplo, si hacemos referencia al campo `.transaction.messages.message` en `jq`, lo mismo en Python sería:`["transaction"]["messages"]["message"]`
 {% endhint %}
 
-Una sóla request, puede hacer que salten una o varias reglas del WAF, es por ello que el campo `.transaction.messages`, es un _array_ en el formato original de Modsecurity.&#x20;
+Una sola request, puede hacer que salten una o varias reglas del WAF, es por ello que el campo `.transaction.messages`, es un _array_ de diferentes mensajes.&#x20;
 
 Para facilitar el tratamiento de los logs, desde la CDN os los enviamos separando cada ataque, por lo tanto, el campo `.transaction.messages` deja de ser un _array_ y se transforma en un único objeto json que contiene la información de un sólo ataque.
 
