@@ -8,7 +8,7 @@ description: >-
 
 Para la autenticación de la API usamos el sistema de federación de OAuth2. Esto quiere decir que para hacer peticiones a la API, hace falta tener un token de acceso para la autenticación.
 
-Antes de nada, vamos a necesitar los valores de `client_id` __ y `client_secret`se pueden obtener desde el panel: [https://dashboard.transparentcdn.com/user/edit](https://dashboard.transparentcdn.com/user/edit) pinchando tu nombre de usuario, después en "Opciones de Cuenta" y finalmente en "Gestión de Claves":
+Antes de nada, vamos a necesitar los valores de `client_id` y `client_secret`se pueden obtener desde el panel: [https://dashboard.transparentcdn.com/user/edit](https://dashboard.transparentcdn.com/user/edit) pinchando tu nombre de usuario, después en "Opciones de Cuenta" y finalmente en "Gestión de Claves":
 
 ![](<../.gitbook/assets/image (35).png>)
 
@@ -35,7 +35,7 @@ Esta petición devolverá un resultado, en formato JSON, similar a este:
 {
   "access_token": "58530ad8f1879786dbfad7Gh1a3b94c1dae1070280fdb",
   "token_type": "Bearer",
-  "expires_in": 31535999,
+  "expires_in": 36000,
   "refresh_token": "63553322177e88fHa8Kb25b122542e35733ce2a9cc24",
   "scope": "read write"
 }
