@@ -1,6 +1,6 @@
 # TCDN-Command
 
-En Transparent Edge Services usamos la cabecera `TCDN-Command` **** como una forma de invocar funciones preprogramadas por nosotros para hacerte la vida más fácil y que tus configuraciones sean más sencillas de realizar.
+En Transparent Edge Services usamos la cabecera `TCDN-Command` como una forma de invocar funciones preprogramadas por nosotros para hacerte la vida más fácil y que tus configuraciones sean más sencillas de realizar.
 
 Este comando nos permite hacer ciertas cosas que, de otra manera, tendrías que hacer desde cero. Es importante que entiendas su uso, ya que no es algo trivial: un mal uso puede hacer que tu _web_ no se comporte como piensas que debe hacerlo.
 
@@ -28,9 +28,9 @@ Nótese la importancia de la coma para separar de manera correcta ambos comandos
 Actualmente, la cabecera `TCDN-Command` soporta estos valores:
 
 * `brotli_compress`
-* [`deny_request`](../../security/bloqueando-por-direccion-ip.md)``
-* [`limit_rate`](../../security/waf/limit\_rate.md)``
-* [`pass`](../../getting-started/faq/forzando-no-cachear.md)``
+* [`deny_request`](../../security/bloqueando-por-direccion-ip.md)
+* [`limit_rate`](../../security/waf/limit\_rate.md)
+* [`pass`](../../getting-started/faq/forzando-no-cachear.md)
 * [`redirect_https`](../../getting-started/faq/funcionalidades/redirecciones.md#redirecion-a-https)
 * [show-captcha](https://docs.transparentedge.eu/security/waf/captcha)
 * [protect-with-token](https://docs.transparentedge.eu/security/waf/contenido-protegido-por-token)

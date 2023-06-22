@@ -14,7 +14,7 @@ Artículos facturables:
 * Storage (si trabajas en modo _pull_).
 {% endhint %}
 
-En estos dos productos facturamos por GB transferidos y todas las [funcionalidades](funcionalidades/) están incluidas en el precio del servicio. Intentamos ser lo más previsibles que podemos con la emisión de tus facturas para evitarte sorpresas, por eso solemos trabajar en un modelo de compromiso de tráfico o _**commitment** _ y un exceso. En base a tu experiencia y las previsiones de tráfico de tu sitio web, puedes contratar un _commitment_ de tráfico con los TB que creas necesarios y será por lo que se te facturará mensualmente. En caso de que un mes excedas ese _commitment_ de tráfico, se te aplicará un cargo sobre el tráfico excedido. Cuanto más grande sea el _commitment_, más barato te saldrá el precio del GB transferido.
+En estos dos productos facturamos por GB transferidos y todas las [funcionalidades](funcionalidades/) están incluidas en el precio del servicio. Intentamos ser lo más previsibles que podemos con la emisión de tus facturas para evitarte sorpresas, por eso solemos trabajar en un modelo de compromiso de tráfico o _**commitment**_ y un exceso. En base a tu experiencia y las previsiones de tráfico de tu sitio web, puedes contratar un _commitment_ de tráfico con los TB que creas necesarios y será por lo que se te facturará mensualmente. En caso de que un mes excedas ese _commitment_ de tráfico, se te aplicará un cargo sobre el tráfico excedido. Cuanto más grande sea el _commitment_, más barato te saldrá el precio del GB transferido.
 
 {% hint style="info" %}
 Pongamos, por ejemplo, que contratas un paquete de 10TB a un precio de 500€ (0,05€/GB) con un exceso de 0,06€/GB.
@@ -46,7 +46,7 @@ Artículos facturables:
 * Punto de ingesta (Live).
 {% endhint %}
 
-En este producto se factura por minutos de transcodificación cuando hablamos de [VoD](broken-reference) y, por lo general, también se trabaja con un paquete de minutos o en pago por uso. Actualmente no es un servicio que puedas contratar de manera autónoma **** desde nuestra web. Para hacerlo, puedes ponerte en contacto con nuestro equipo de [Ventas](mailto:sales@transparentedge.eu).
+En este producto se factura por minutos de transcodificación cuando hablamos de [VoD](broken-reference) y, por lo general, también se trabaja con un paquete de minutos o en pago por uso. Actualmente no es un servicio que puedas contratar de manera autónoma desde nuestra web. Para hacerlo, puedes ponerte en contacto con nuestro equipo de [Ventas](mailto:sales@transparentedge.eu).
 
 Cuando lo que estamos transcodificando son vídeos o audios en un formato _live_, necesitarás un punto de ingesta donde tus cámaras ingesten la señal para que sea posteriormente distribuida por Transparent Edge o por cualquier otra CDN (podemos trabajar con otra CDN por delante, no hay problema). Cuando la señal está en nuestro punto de ingesta, tenemos la capacidad de transcodificar esa señal para adaptarla en tiempo real a todos los dispositivos. Esta transcodificación será tarificada por horas de transcodificación, no por minutos. Por lo tanto, en esta modalidad de _transcoding_ tienes dos elementos facturables: las horas de transcodificación y el punto de ingesta.
 
@@ -64,5 +64,5 @@ Artículos facturables:
 Otra cosa a tener en cuenta cuando contratas este servicio de WAF avanzado es que es una capa extra de la CDN y por eso tu tráfico pasará por la CDN antes de pasar por el WAF, con los costes asociados que eso supone. Normalmente hacemos un _commitment_ conjunto de CDN + WAF para tratar de adaptarnos a tus necesidades.
 
 {% hint style="info" %}
-Recuerda que todo lo que puedes hacer desde nuestro [_dashboard_](https://dashboard.transparetncdn.com) __ puedes hacerlo desde nuestro [API](glosario/api.md).
+Recuerda que todo lo que puedes hacer desde nuestro [_dashboard_](https://dashboard.transparetncdn.com) puedes hacerlo desde nuestro [API](glosario/api.md).
 {% endhint %}

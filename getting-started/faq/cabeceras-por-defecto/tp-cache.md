@@ -8,7 +8,7 @@ Transparent Edge se compone de dos capas de caché.&#x20;
 
 En todas las peticiones que pasan por la CDN y, de manera opcional, por el Mid-Tier, introducimos una cabecera que nos permite saber si el objeto ha sido servido desde la caché o si, por el contrario, ha tenido que ir a buscarlo a la siguiente capa u origen.
 
-Estas cabeceras son _**TP-Cache**_ (en capa 1) y _**TP2-Cache**_ (solo en Mid-Tier). Esta cabecera puede tener el valor _**HIT**_ o _ **MISS**_ en función, como decíamos, de si el objeto ha sido o no servido desde la caché.
+Estas cabeceras son _**TP-Cache**_ (en capa 1) y _**TP2-Cache**_ (solo en Mid-Tier). Esta cabecera puede tener el valor _**HIT**_ o _**MISS**_ en función, como decíamos, de si el objeto ha sido o no servido desde la caché.
 
 Vamos a poner varios ejemplos:
 

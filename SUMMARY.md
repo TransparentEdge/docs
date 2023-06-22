@@ -153,8 +153,6 @@
 * [Plugin para wordpress](integraciones/configuracion-plugin.md)
 * [Google Cloud Platform](integraciones/google-cloud-platform.md)
 * [Amazon Web Services](integraciones/amazon-web-services.md)
-* [Plugin para magento](integraciones/plugin-para-magento.md)
-* [Plugin para Prestashop](integraciones/plugin-para-prestashop.md)
 
 ## Guias y tutoriales <a href="#guias" id="guias"></a>
 

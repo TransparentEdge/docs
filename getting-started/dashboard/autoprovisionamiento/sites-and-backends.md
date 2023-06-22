@@ -18,7 +18,7 @@ Tendrás entonces que rellenar los siguientes apartados básicos:
 
 * **Nombre**: Elige un nombre sencillo que ayude a identificar al _backend._ Va siempre prefijado por un código único, asignado automáticamente en el alta de autoprovisionamiento. Será el nombre usado en las configuraciones VCL.
 * **IP Origen**: La dirección IP o el dominio que apunta al servidor de origen. En el caso de usar un dominio, la única restricción es que no puede coincidir con el dominio definido en [_Sitios_](https://docs.transparentcdn.com/getting-started/dashboard/autoprovisionamiento/sitios-o-dominios)_._
-* **Puerto**: __ El puerto a usar para conectar a origen. Suele ser 80 o 443.
+* **Puerto**: El puerto a usar para conectar a origen. Suele ser 80 o 443.
 * **SSL**: Marca esta opción si la comunicación entre Transparent Edge Services y el servidor de origen debe ir cifrada.
 
 Ahora, en el apartado "Configurar Health Check", especificaremos la petición que realizaremos desde Transparent Edge Services para monitorizar el estado del _backend_:

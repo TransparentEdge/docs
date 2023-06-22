@@ -94,7 +94,7 @@ En caso de cualquier problema y/o duda a este respecto, puedes ponerte en contac
 
 #### VCLs
 
-Una vez ha sido cumplimentada en el asistente de configuración (_wizard_) __ la información referente tanto al origen (_backend_) como al dominio (_site_), se nos mostrará un extracto con la configuración VCL (Varnish Configuration Language) generada.
+Una vez ha sido cumplimentada en el asistente de configuración (_wizard_) la información referente tanto al origen (_backend_) como al dominio (_site_), se nos mostrará un extracto con la configuración VCL (Varnish Configuration Language) generada.
 
 VCL (Varnish Configuration Language) no es más que un lenguaje de _script_ utilizado para configurar y agregar lógica a la caché de Varnish.&#x20;
 
@@ -123,6 +123,6 @@ Este CNAME lo podrás ubicar tanto en el correo de activación como en la parte 
 
 
 {% hint style="info" %}
-Recuerda que todo lo que puedes hacer desde nuestro __ [_dashboard_](https://dashboard.transparetncdn.com), puedes hacerlo desde nuestro [API](../../faq/glosario/api.md).
+Recuerda que todo lo que puedes hacer desde nuestro [_dashboard_](https://dashboard.transparetncdn.com), puedes hacerlo desde nuestro [API](../../faq/glosario/api.md).
 {% endhint %}
 

@@ -23,4 +23,3 @@ Los pasos a seguir son sencillos: dentro del [portal](https://dashboard.transpar
 
 ![](<../../.gitbook/assets/Captura de pantalla 2020-05-21 a las 17.09.32.png>)
 
-****

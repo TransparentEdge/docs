@@ -2,7 +2,7 @@
 
 Nuestra API posee diferentes endpoints que pueden ser utilizados para visualizar el estado de las diferentes órdenes de trabajo. Podremos obtener una lista de todas las órdenes de trabajo registradas para cada compañía lanzando una petición **GET**, previa [autenticación](https://docs.transparentedge.eu/api/autenticacion), a este endpoint: `https://api.transparentcdn.com/v1/media/{company_id}/transcode`
 
-Obtendremos, como respuesta, una relación de todas las órdenes de trabajo que hayamos encolado para nuestro id de compañía, estén estas procesadas por el _TransparentEdge Transcoding Service_ o no. El formato será el de un array de objetos en el que apareceran los campos "_order\_id",_  con el identificador único del trabajo, _"status" ,_ que nos indica el estado actual de la petición __ y _"timestamp"_ el cual indicará el _timestamp_ en el que la petición de trabajo fue procesada por _TransparentEdge Transcoding Service._ Podríamos esperar una respuesta similar a esta:
+Obtendremos, como respuesta, una relación de todas las órdenes de trabajo que hayamos encolado para nuestro id de compañía, estén estas procesadas por el _TransparentEdge Transcoding Service_ o no. El formato será el de un array de objetos en el que apareceran los campos "_order\_id",_  con el identificador único del trabajo, _"status" ,_ que nos indica el estado actual de la petición y _"timestamp"_ el cual indicará el _timestamp_ en el que la petición de trabajo fue procesada por _TransparentEdge Transcoding Service._ Podríamos esperar una respuesta similar a esta:
 
 ```javascript
 [

@@ -48,7 +48,7 @@ Si has modificado el comportamiento de la _cache key_ con la cabecera _Vary_, en
 
 Dentro de las invalidaciones de tipo PURGE existe una forma de invalidado suave que se conoce como SOFTPURGE, la cual realiza la invalidación de una forma menos agresiva.&#x20;
 
-Para llevar a cabo una invalidación con desde nuestro __ [_dashboard_](https://dashboard.transparentcdn.com) puedes seguir esta [guía](../dashboard/invalidando-contenido.md).
+Para llevar a cabo una invalidación con desde nuestro [_dashboard_](https://dashboard.transparentcdn.com) puedes seguir esta [guía](../dashboard/invalidando-contenido.md).
 
 ### Invalidaciones recursivas o BAN
 
@@ -71,5 +71,5 @@ En según qu casos, este tipo de invalidados puede resultar muy peligroso. Por e
 
 
 {% hint style="info" %}
-Recuerda que todo lo que puedes hacer desde nuestro [_dashboard_](https://dashboard.transparetncdn.com) __ puedes hacerlo desde nuestro [API](glosario/api.md).
+Recuerda que todo lo que puedes hacer desde nuestro [_dashboard_](https://dashboard.transparetncdn.com) puedes hacerlo desde nuestro [API](glosario/api.md).
 {% endhint %}

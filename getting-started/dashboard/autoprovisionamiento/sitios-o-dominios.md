@@ -34,7 +34,11 @@ Para activar esta opción, pincha en _Acciones_ sobre el candado del sitio que q
 
 
 
-![Candado sin activar](<../../../.gitbook/assets/image (10).png>)
+<div align="center">
+
+<img src="../../../.gitbook/assets/image (10).png" alt="Candado sin activar">
+
+</div>
 
 <figure><img src="../../../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
 

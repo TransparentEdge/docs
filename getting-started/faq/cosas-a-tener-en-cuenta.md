@@ -14,7 +14,7 @@ La primera y la más sencilla es que, después de una actualización de contenid
 
 Otra opción es que integres vía API el proceso de invalidación dentro del sistema de publicación, de manera que tu sistema lo detecte automáticamente cuando cambies un contenido y lance una invalidación a través de nuestro [API](https://api.transparentcdn.com/docs).&#x20;
 
-Si estás usando [WordPress](https://docs.transparentcdn.com/integraciones/configuracion-plugin), [Magento](../../integraciones/plugin-para-magento.md) o [Prestashop](../../integraciones/plugin-para-prestashop.md), tenemos _plugins_ a tu disposición que se encargan precisamente de integrar el CMS con Transparent Edge para que no tengas que preocuparte de nada.
+Si estás usando [WordPress](https://docs.transparentcdn.com/integraciones/configuracion-plugin), [Magento](broken-reference) o [Prestashop](broken-reference), tenemos _plugins_ a tu disposición que se encargan precisamente de integrar el CMS con Transparent Edge para que no tengas que preocuparte de nada.
 
 ### **IP del cliente**
 

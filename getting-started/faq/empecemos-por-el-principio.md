@@ -50,4 +50,4 @@ Transparent Edge es la primera y única red de entrega de contenidos española y
 
 ![](../../.gitbook/assets/Varnish-Software\_2.0\_POS\_Large.png)
 
-El objetivo de este _site_ no es vender, sino facilitar la vida a nuestros clientes. Por eso, si estás leyendo esto, ya sabes quiénes somos y, probablemente, conozcas nuestras bondades. Es más, es posible que seas cliente ya. En cualquier caso, en nuestra **** [web](https://www.transparentedge.eu/) tienes todo lo que necesitas saber a nivel comercial de nosotros y para todo lo demás siempre puedes enviar un correo al [equipo de ventas](mailto:sales@transparentedge.eu).
+El objetivo de este _site_ no es vender, sino facilitar la vida a nuestros clientes. Por eso, si estás leyendo esto, ya sabes quiénes somos y, probablemente, conozcas nuestras bondades. Es más, es posible que seas cliente ya. En cualquier caso, en nuestra [web](https://www.transparentedge.eu/) tienes todo lo que necesitas saber a nivel comercial de nosotros y para todo lo demás siempre puedes enviar un correo al [equipo de ventas](mailto:sales@transparentedge.eu).

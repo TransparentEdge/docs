@@ -35,5 +35,5 @@ Siguiendo con las opciones del historial de configuraciones, a la derecha, bajo 
 * **Volver a producción:** Se usa para aplicar una entrada antigua en producción. Es muy útil para dar marcha atrás a un cambio.
 
 {% hint style="info" %}
-Recuerda que todo lo que puedes hacer desde nuestro __ [_dashboard_](https://dashboard.transparetncdn.com), puedes hacerlo desde nuestro [API](../../../faq/glosario/api.md).
+Recuerda que todo lo que puedes hacer desde nuestro [_dashboard_](https://dashboard.transparetncdn.com), puedes hacerlo desde nuestro [API](../../../faq/glosario/api.md).
 {% endhint %}

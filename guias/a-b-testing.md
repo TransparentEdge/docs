@@ -26,6 +26,6 @@ sub vcl_recv {
 
 En el ejemplo anterior, vemos cómo se establece una cabecera:`abtesting` para distinguir entre las distintas variantes, después, dependiendo de la IP del cliente, le asignamos una distinta. Esto lo podríamos hacer en base a cualquier otra cabecera u otros parámetros de la request. Aquí estamos haciendo un balanceo entre las variantes del 30%/70%, ya que las IPs que terminen en 0, 1 o 2 irían con la variante "B", y el resto con "A".
 
-Por último, establecemos la cabecera `X-Vary-TCDN` , una cabecera especial interna que gestiona las variantes de caché, __ incluyendo el valor de `abtesting` y guardando así una versión distinta del objeto en la caché para cada variante, logrando así obtener los beneficios tanto de la CDN como los del _A/B testing._
+Por último, establecemos la cabecera `X-Vary-TCDN` , una cabecera especial interna que gestiona las variantes de caché, incluyendo el valor de `abtesting` y guardando así una versión distinta del objeto en la caché para cada variante, logrando así obtener los beneficios tanto de la CDN como los del _A/B testing._
 
 En cuanto al servidor de origen, éste sólo tendría que servir la variante adecuada según la cabecera `abtesting` cuando se produzca un _miss_ en el sistema de caché.

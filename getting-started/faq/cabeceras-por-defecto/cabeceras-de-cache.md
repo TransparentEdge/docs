@@ -8,7 +8,7 @@ En Transparent Edge, la cabecera Cache-Control tiene preferencia sobre todas las
 
 La cabecera **Cache-Control** es una mejora en HTTP/1.1 que simplifica los mecanismos de caché que había hasta el momento en el protocolo HTTP/1.0. Con esta cabecera indicamos tanto a las cachés intermedias como a la caché del navegador si un objeto debe o no guardarse y por cuánto tiempo.
 
-Como todas las cabeceras en HTTP, _**Cache-Control**_** ** es un par **clave-valor,** siendo la clave siempre la palabra _Cache-Control_. Desde el punto de vista de respuesta del servidor, el valor puede tomar los siguientes estados:
+Como todas las cabeceras en HTTP, _**Cache-Control**_ es un par **clave-valor,** siendo la clave siempre la palabra _Cache-Control_. Desde el punto de vista de respuesta del servidor, el valor puede tomar los siguientes estados:
 
 #### **Public**
 
@@ -36,7 +36,7 @@ Esta opción fuerza a la caché a que vaya a por una copia nueva del objeto a or
 
 #### **Proxy-Revalidate**
 
-Funciona igual que _**Must-Revalidate** _ pero solo afecta a los _proxies_.
+Funciona igual que _**Must-Revalidate**_ pero solo afecta a los _proxies_.
 
 #### **Max-Age**
 

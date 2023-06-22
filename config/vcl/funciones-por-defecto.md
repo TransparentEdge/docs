@@ -6,7 +6,7 @@
 
 Esta función se llama cuando entra una _request_ nueva. Desde esta función puedes modificar el comportamiento o contenido de la _request_ y decidir cómo procesarla.&#x20;
 
-En esta función se debe configurar un [_backend_](../../getting-started/dashboard/autoprovisionamiento/sites-and-backends.md) __ al que enviar la petición.
+En esta función se debe configurar un [_backend_](../../getting-started/dashboard/autoprovisionamiento/sites-and-backends.md) al que enviar la petición.
 
 
 

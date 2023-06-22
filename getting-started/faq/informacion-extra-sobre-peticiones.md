@@ -20,5 +20,5 @@ Sabemos que gestionar agentes de usuario puede ser una pesadilla, por lo que, a 
 
 A pesar de la generalización cada vez más global de los certificados HTTPS, todavía hay servicios web que utilizan el protocolo HTTP para comunicarse en plano. En la cabecera _X-Forwarded-Proto_, reflejada también en los _logs_, tendrás los valores "http" y "https" indicando si la petición original se realizó en plano o cifrada.
 
-&#x20;``&#x20;
+&#x20;
 
