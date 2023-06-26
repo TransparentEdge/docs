@@ -1,2 +1,0 @@
-# Depurando el problema
-

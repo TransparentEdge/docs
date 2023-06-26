@@ -143,11 +143,6 @@
   * [Contenido protegido por token](security/waf/contenido-protegido-por-token.md)
   * [Límite de tráfico](security/waf/limit\_rate.md)
 
-## Diagnostics
-
-* [Errores comunes](diagnostics/errores-comunes.md)
-* [Depurando el problema](diagnostics/depurando-el-problema.md)
-
 ## Integraciones
 
 * [Plugin para wordpress](integraciones/configuracion-plugin.md)
@@ -157,7 +152,6 @@
 ## Guias y tutoriales <a href="#guias" id="guias"></a>
 
 * [Edge Computing](guias/edge-computing/README.md)
-  * [Key value Storage](guias/edge-computing/key-value-storage.md)
   * [ESI Tags](guias/edge-computing/esi-tags.md)
 * [Actuando sobre el Query String](guias/actuando-sobre-el-query-string.md)
 * [Trabajando con cookies](guias/trabajando-con-cookies.md)
