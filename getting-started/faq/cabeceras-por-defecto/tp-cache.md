@@ -1,10 +1,6 @@
 # TP-Cache
 
-Como explicamos en el documento
-
-[https://soporte.transparentcdn.com/projects/incidencias/wiki/Arquitectura\_de\_caches?parent=Wiki](https://soporte.transparentcdn.com/projects/incidencias/wiki/Arquitectura\_de\_caches?parent=Wiki),&#x20;
-
-Transparent Edge se compone de dos capas de caché.&#x20;
+Como explicamos en el documento [https://docs.transparentedge.eu/getting-started/faq/arquitectura/capas-de-cache](https://docs.transparentedge.eu/getting-started/faq/arquitectura/capas-de-cache) Transparent Edge se compone de dos capas de caché.&#x20;
 
 En todas las peticiones que pasan por la CDN y, de manera opcional, por el Mid-Tier, introducimos una cabecera que nos permite saber si el objeto ha sido servido desde la caché o si, por el contrario, ha tenido que ir a buscarlo a la siguiente capa u origen.
 
