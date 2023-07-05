@@ -105,6 +105,7 @@
       * [Modo básico](getting-started/dashboard/autoprovisionamiento/despliegues-de-configuracion/modo-basico.md)
       * [Modo avanzado](getting-started/dashboard/autoprovisionamiento/despliegues-de-configuracion/configuracion-avanzada.md)
     * [Certificados SSL](getting-started/dashboard/autoprovisionamiento/ssl.md)
+  * [Gestión de usuarios](getting-started/dashboard/gestion-de-usuarios.md)
 
 ## Configuration <a href="#config" id="config"></a>
 
