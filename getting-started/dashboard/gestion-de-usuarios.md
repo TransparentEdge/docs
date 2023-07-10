@@ -20,5 +20,7 @@ El proceso de creción de usuario es muy sencillo. El botón para hacerlo se enc
 
 Una vez desplegado el modal, se debe completar la información requerida: el email del nuevo miembro de la compañía, su nombre, apellido, los permisos que tendrá asociados y se le deberá asignar una contraseña que posteriormente el nuevo usuario podrá cambiar.
 
+Cuando todo esto ya se haya realizado, el nuevo usuario recibirá en la bandeja de entrada de su correo electrónico toda la información para poder acceder al panel. Y el administrador de la compañía podrá gestionar toda la información desde 'Administración de usuarios'.
+
 
 
