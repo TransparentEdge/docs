@@ -22,9 +22,9 @@ Content-Type: text/html
 ...
 ```
 
-El objeto quedará etiquetado con "portada" y "estaticos1". Por lo tanto, si realizamos una petición de invalidación por cualquiera de esos dos _tags_, invalidaremos dicho objeto y todos los que incluyan dicho _tag_. Esto nos permite agrupar los objetos relacionados entre sí que deban ser invalidados a la vez, sin importar qué URL tengan.&#x20;
+The object will be tagged "main" and "static1". Therefore, if we make an invalidation request for any of those two tags, we will invalidate that object and all those that include that tag. This enables us to group related objects that need to be invalidated at the same time, regardless of their URL.
 
-Cada objeto puede tener múltiples _tags_ asociados y se invalidará ese objeto y todos los que contengan dicho _tag_ y estén cacheados si uno de los _tags_ coincide con una petición a invalidar.
+Each object can have multiple associated tags. If a request is made to invalidate by tag, all the objects that share that tag will be invalidated at once.
 
 ### Relaciones entre _tags_ y objetos
 
