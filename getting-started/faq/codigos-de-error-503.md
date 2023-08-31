@@ -50,3 +50,9 @@ En este caso el código de estado será el mismo que devuelve origen, así como 
 * **`TCDN-OENG`** - _Origin Error No Grace_
 
 > Se ha producido un error **`5xx`** en origen y se está respetando lo que devuelve éste en lugar de enmascararlo con un **`503`** gracias a la cabecera **`X-Show-Origin-Errors`**.
+>
+>
+>
+> * **`TCDN-OK`** - Request OK
+>
+> > La petición se ha servido con éxito.
