@@ -33,6 +33,17 @@ Este servicio no viene activado por defecto. Si quieres activarlo, puedes hacerl
 * **Campo 16**: _Referer_.
 * **Campo 17**: _Real protocol_ (puesto que deshacemos el HTTPS en una capa anterior a la de caché, este campo es necesario para identificar si la petición original ha sido pedida por HTTP o por HTTPS).
 * **Campo 18**: _Country Code._
+* **Campo 19**: Campo interno en desuso.
+* **Campo 20**: [Origin Error.](broken-reference)
+* **Campo 21**: TTL restante del objeto
+
+
+
+
+
+* **Field 19**: Internal field. Deprecated
+* Field 20: [Origin Error.](broken-reference)
+* Field 21: Remaining TTL of the object.
 
 
 
