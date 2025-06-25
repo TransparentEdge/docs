@@ -1,9 +1,9 @@
 # Amazon Web Services
 
-Un caso de uso muy evidente es el de colocar Transparent Edge Services por delante de tu plataforma de **Amazón Web Services**, incluso aunque tengas el servicio de **CloudFront** contratado, no solo gozarás de un mayor portfolio de funcionalidades en el capa de CDN, si no que verás reducido considerablemente el coste de **AWS** debido principalmente a que en Transparent CDN dispondrás de tarifas más reducidas con respecto al tráfico que en AWS, llegando incluso a suponer, según el caso por supuesto, ahorro de costes de entre 35-45%.
+A very clear use case is to place Transparent Edge Services in front of your **Amazon Web Services** (AWS) platform, even if you have the **CloudFront** service. Not only will you have a wider range of CDN functionalities, but you will also significantly reduce the cost of **AWS**. This reduction is mainly due to the lower pricing for traffic in Transparent Edge compared to AWS. In some cases, this cost savings can be as high as 35-45%, depending on the specific scenario.
 
-Todo esto es posible sin tocar absolutamente nada de tu plataforma en AWS, lo único que tienes que hacer es configurar el CNAME que te dá aws como [origen](../getting-started/dashboard/autoprovisionamiento/sites-and-backends.md) de Transparent Edge Services.
+All of this is possible without making any changes to your AWS platform. All you have to do is configure the CNAME provided by AWS as the [origin](../getting-started/dashboard/auto-provisioning/sites.md) of Transparent Edge.
 
 ### S3
 
-Del mismo modo que puedes colocar CloudFront o tu plataforma de autoescalado configurando el CNAME del servicio de AWS como origen de Transparent Edge Services, puedes hacer lo mismo con **S3**. De manera que puede reducir el tráfico que llegue a **S3** de manera considerable cacheando el contenido en Transparent Edge Services y sirviendo todos los objetos que tengas en ese bucket desde nuestros edge.
+Similarly, just like you can place CloudFront or your auto-scaling platform by configuring the CNAME of the AWS service as the origin of Transparent Edge, you can do the same with **S3**. This allows you to significantly reduce the traffic reaching S3 by caching the content in Transparent Edge and serving all the objects in that bucket from our edge servers.

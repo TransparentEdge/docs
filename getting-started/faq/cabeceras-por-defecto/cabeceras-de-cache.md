@@ -1,53 +1,53 @@
-# Cabeceras de caché
+# Cache headers
 
-Las cabeceras de caché son clave para el correcto funcionamiento de un sistema de cachés en general y de Transparent Edge en particular. Conocer su uso aumentará significativamente la velocidad de carga de una página web y, por tanto, mejorará la experiencia de usuario.
+Cache headers are key to the correct functioning of a cache system in general, and of Transparent Edge in particular. Using them significantly increases the load speed of web pages, improving the user experience.
 
-Hay varios tipos de cabecera mediante los cuales Transparent Edge entiende que debe o no guardar un objeto en su caché, pero en este documento vamos a centrarnos en la cabecera _**Cache-Control**_.
+Transparent Edge uses several types of headers to know whether or not to store an object in its cache, but in this document, we're going to focus on the **Cache-Control** header.
 
-En Transparent Edge, la cabecera Cache-Control tiene preferencia sobre todas las demás cabeceras de caché, por lo que en caso de encontrarse con varias, será a esta a la que haremos caso.
+At Transparent Edge, the **Cache-Control** header takes preference over all other cache headers—so if there are more than one, it’s the only one we’ll pay heed to.
 
-La cabecera **Cache-Control** es una mejora en HTTP/1.1 que simplifica los mecanismos de caché que había hasta el momento en el protocolo HTTP/1.0. Con esta cabecera indicamos tanto a las cachés intermedias como a la caché del navegador si un objeto debe o no guardarse y por cuánto tiempo.
+The **Cache-Control** header is an improvement in HTTP/1.1 which simplifies the previous caching mechanisms in the HTTP/1.0 protocol. We use this header to indicate to intermediate caches and the browser cache whether or not an object should be stored and for how much time.
 
-Como todas las cabeceras en HTTP, _**Cache-Control**_ es un par **clave-valor,** siendo la clave siempre la palabra _Cache-Control_. Desde el punto de vista de respuesta del servidor, el valor puede tomar los siguientes estados:
+Like all HTTP headers, **Cache-Control** is a key-value pair, where the key is always the word **Cache-Control**. In terms of the server’s response, this value can be:
 
-#### **Public**
+#### **public**
 
-La opción _**Public**_ se usa para indicar a la caché que este objeto es público y, por tanto, cacheable. No suele encontrarse sola en el P.
+The **Public** header indicates to the cache that the object is public and therefore cacheable. It’s not typically found alone in the Cache-Control header.
 
-#### **Private**
+#### **private**
 
-A diferencia de _Public_, la cabecera _**Private**_ indica que este contenido no debe cachearse porque es contenido de usuario personalizado y debe, por la lógica de la aplicación, bajar hasta los servidores de origen del cliente.
+Unlike Public, the **Private** header indicates that the content should not be cached because it is user-personalized content and should only be stored on the client's local device.
 
-#### **No-Cache**
+#### **no-cache**
 
-La cabecera _**No-Cache**_ evita que un objeto se cachee en Transparent Edge. Aunque sí se almacena, nunca se usa.
+The **No-Cache** header prevents an object from being cached in Transparent Edge. Even if the object is stored, it is never used.
 
-#### **No-Store**
+#### **no-store**
 
-Está opción impide a la caché que ese objeto sea almacenado y, por tanto, cacheado.
+This option prevents the cache from storing—and therefore caching—the object.
 
 {% hint style="info" %}
-Tanto _Private_ como _No-Cache_ y _No-Store_, aunque con matices, tienen el mismo efecto en una navegación:  hacen que el contenido baje hasta los servidores de origen del cliente.
+The Private, No-Cache, and No-Store headers all have the same effect on browsing (with slight differences): They force the content to be cached on the client’s origin servers.
 {% endhint %}
 
-#### **Must-Revalidate**
+#### **must-revalidate**
 
-Esta opción fuerza a la caché a que vaya a por una copia nueva del objeto a origen, por lo que debería obviar el resto de cabeceras de caché e ir a buscar una copia nueva.
+This option forces the cache to go to the origin for a new copy of the object, telling it to disregard the rest of the cache headers and go get a new copy.
 
-#### **Proxy-Revalidate**
+#### **proxy-revalidate**
 
-Funciona igual que _**Must-Revalidate**_ pero solo afecta a los _proxies_.
+This works just like **Must-Revalidate** but only affects proxies.
 
-#### **Max-Age**
+#### **max-age**
 
-Con _**Max-Age**_ indicamos a Transparent Edge durante cuánto tiempo en segundos queremos guardar ese objeto en la caché y, por tanto, marcarlo como válido. Una vez ese tiempo llegue a su fin, el objeto se marca como caducado y se fuerza a ir a los servidores de origen del cliente a por una copia nueva. Esta opción afecta tanto a _proxies_ como a cachés de navegadores.
+This header is used to indicate to Transparent Edge how many seconds we want the object to be stored in the cache and marked as valid. Once this time has passed, the object is marked as expired and the system is forced to go to the client’s origin servers for a new copy. This option affects both proxies and browser caches.
 
-#### **S-Maxage**
+#### **s-maxage**
 
-_**S-Maxage**_ es exactamente igual que _Max-Age_, con la salvedad de que solo afecta al comportamiento de los _proxies_ y no de las cachés de los navegadores. Se pueden usar en conjunción para lograr comportamientos especiales, por ejemplo:
+This is exactly the same as Max-Age, except it only affects the behavior of proxies and not browser caches. The two can be used in conjunction to create special behaviors, for example:
 
 ```
 Cache-Control: max-age=0, s-maxage=3600
 ```
 
-En este caso especial, el objeto se guardará en Transparent Edge durante una hora (3600s), pero no se guardará en el navegador.
+In this special case, the object will be stored on Transparent Edge for one hour (3600 s), but it won’t be stored in the browser.

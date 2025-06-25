@@ -1,3 +1,3 @@
-# Cloud computing
+# Cloud Computing
 
-_Cloud computing_ es un concepto genérico utilizado para describir la oferta de _hardware_ y _software_ de la que se puede disponer a través de Internet para almacenar y acceder a datos y programas mediante la Red en lugar de en el disco duro de un ordenador. En este contexto, la nube es el propio Internet.
+Cloud computing is a generic concept used to describe the hardware and software available through the Internet for storing and accessing data and programs through the network rather than on the hard drive of a computer. In this context, the cloud is the Internet itself.

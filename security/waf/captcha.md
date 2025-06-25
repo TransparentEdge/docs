@@ -1,14 +1,14 @@
 # CAPTCHA
 
-Esta función nos permite bloquear las peticiones que se hacen a nuestro sitio _web_ por parte de _bots_ o, dicho con otras palabras, garantizar que el tráfico recibido proviene de seres humanos.
+This function allows us to block requests made to our website by bots, ensuring that the traffic received comes from humans.&#x20;
 
-Con este propósito en mente, los CAPTCHAs (_Completely Automated Public Turing test to tell Computers and Humans Apart_) consisten en pequeñas pruebas (desafíos) automatizadas, es decir, realizadas por una máquina y, en consecuencia, sin intervención humana, y que permiten discriminar cuándo el usuario es un ser humano y cuándo un programa automático (_bot_). Concretamente, la implementación de esta función se ha realizado basándose en la solución [reCAPTCHA](https://www.google.com/recaptcha/about/) ofrecida por Google.
+With this purpose in mind, CAPTCHAs (Completely Automated Public Turing test to tell Computers and Humans Apart) consist of small automated tests or challenges that can differentiate between human users and automated programs (bots). Specifically, the implementation of this function is based on the [reCAPTCHA](https://www.google.com/recaptcha/about/) solution offered by Google.&#x20;
 
-Esta función se invoca a través de nuestra cabecera `TCDN-Command`; así, debemos incluir el valor `show-captcha`. Concretamente, la sintaxis de la función es la siguiente: `show-captcha[:`_`<ttl>`_`]`.
+This function is invoked through our `TCDN-Command` header; therefore, we need to include the value `show-captcha.` The syntax of the function is as follows: `show-captcha[:`_`<ttl>`_`]`.&#x20;
 
-Internamente, cuando un usuario resuelve de manera satisfactoria el desafío presentado por el CAPTCHA, se asigna una _cookie_ en su navegador llamada `TCDN-Captcha-UID`. Esta _cookie_ permite identificar de manera inequívoca la sesión del usuario y, en consecuencia, evita que se le vuelva a requerir una y otra vez que supere el desafío del CAPTCHA. Sin embargo, dicha _cookie_ tiene un tiempo de vida (`ttl`, _time to live_) finito: una hora; transcurrida ésta, un nuevo desafío deberá ser resuelto por el usuario. No obstante, el parámetro opcional _`<ttl>`_ permite, precisamente, controlar el tiempo de vida de esta _cookie_ de sesión.
+Internally, when a user successfully completes the CAPTCHA challenge, a cookie called `TCDN-Captcha-UID` is assigned to their browser. This cookie allows for the unique identification of the user's session and prevents them from being repeatedly asked to pass the CAPTCHA challenge. However, this cookie has a finite time to live `(ttl)` of one hour. Once this time has elapsed, the user will need to complete a new CAPTCHA challenge. However, the optional parameter  _`<ttl>`_ allows us to control the lifetime of this session cookie.&#x20;
 
-Por ejemplo, si quisiéramos limitar la presencia de _bots_ en nuestro dominio `mi-dominio.es`, pero sin importunar excesivamente a nuestros usuarios legítimos, podríamos plantear la presencia de un CAPTCHA con un TTL de ocho horas. Así, nos bastaría con desplegar desde el [panel](../../getting-started/dashboard/) una [configuración](../../getting-started/dashboard/autoprovisionamiento/) [VCL](../../config/vcl/) similar a la siguiente:
+For example, if we wanted to limit the presence of bots on our domain `mi-dominio.es` without excessively inconveniencing legitimate users, we could implement a CAPTCHA with an 8-hour TTL. In this case, we would deploy a [VCL](../../config/vcl/) [configuration](broken-reference) similar to the following from the [dashboard:](../../getting-started/dashboard/)
 
 ```c
 # show-captcha
@@ -19,7 +19,6 @@ sub vcl_recv {
 }
 ```
 
-De este modo, si el usuario resuelve satisfactoriamente el desafío presentado por el CAPTCHA, se le asignará la _cookie_ `TCDN-Captcha-UID` y podrá continuar navegando con normalidad durante las siguientes ocho horas, cuando se le volverá a presentar el CAPTCHA. Alternativamente, si el usuario es incapaz de resolver la prueba, obtendrá como respuesta un _status code_ 403 (_Robots are not allowed here!_).
+In this way, if the user successfully completes the CAPTCHA challenge, they will be assigned the TCDN-Captcha-UID cookie and can continue browsing normally for the next eight hours, after which they will be presented with the CAPTCHA again. Alternatively, if the user is unable to solve the challenge, they will receive a 403 status code response (Robots are not allowed here!).
 
-Obviamente, éste no es más que un pequeño ejemplo de un caso de uso muy específico. Si tienes cualquier duda respecto a cómo integrar esta funcionalidad en tu propio dominio, por favor, no dudes en contactarnos a través de la dirección de correo electrónico [soporte@transparentcdn.com](mailto:soporte@transparetncdn.com).
-
+Of course, this is just a small example of a very specific use case. If you have any questions about how to integrate this functionality into your own domain, please don't hesitate to contact us at [soporte@transparentcdn.com](mailto:soporte@transparentcdn.com).

@@ -1,3 +1,3 @@
-# Edge server
+# Edge Server
 
-Si hacemos referencia a la CDN, un _edge server_ es un servidor cuyo principal propósito es el de servir el contenido lo más cerca posible a quien lo solicita, reduciendo así la latencia, los tiempos de carga y el ancho de banda consumido. Normalmente estos servidores están ubicados en los extremos lógicos de una red y proporcionan un punto de entrada a esta o permiten que distintas redes se comuniquen entre sí.
+In the context of the CDN, an edge server is a server whose main purpose is to serve content as close as possible to the person requesting it, reducing latency, load times, and bandwidth consumed. These servers are typically located at the logical extreme of a network, providing an entry point into the network or allowing communication between different networks.

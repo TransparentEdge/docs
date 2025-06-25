@@ -1,12 +1,12 @@
-# Funciones por defecto
+# Default Functions
 
-## [Del lado del cliente](https://varnish-cache.org/docs/trunk/users-guide/vcl-built-in-subs.html)
+## [On the client side](https://varnish-cache.org/docs/trunk/users-guide/vcl-built-in-subs.html)
 
 ### vcl\_recv
 
-Esta función se llama cuando entra una _request_ nueva. Desde esta función puedes modificar el comportamiento o contenido de la _request_ y decidir cómo procesarla.&#x20;
+This function is called when a new request enters. From this function, you can modify the behavior or content of the request and decide how to process it.&#x20;
 
-En esta función se debe configurar un [_backend_](../../getting-started/dashboard/autoprovisionamiento/sites-and-backends.md) al que enviar la petición.
+In this function, you should configure a [backend](../../getting-started/dashboard/auto-provisioning/sites.md) to which the request should be sent.
 
 
 
@@ -14,28 +14,28 @@ vcl\_(recv|miss|backend\_fetch|backend\_response|hash|deliver)
 
 ### vlc\_hash
 
-Llamada después de la vcl\_recv. En esta función se modifica el comportamiento a la hora de almacenar el objeto en la caché.
+Called after vcl\_recv. In this function, the caching behavior is modified when storing the object in the cache.
 
 ### vcl\_miss
 
-Se llama inmediatamente después de buscar el objeto en la caché y siempre y cuando este no haya sido encontrado.
+It is called immediately after looking up the object in the cache and only if it has not been found.
 
 ### vlc\_deliver
 
-Esta función se llama antes de enviar el objeto al cliente.
+This function is called before sending the object to the client.
 
-## Del lado del origen
+## On the origin side
 
 ### vcl\_backend\_fetch
 
-Esta función se llama antes de enviar la _request_ al _backend_ para recuperar el objeto.
+This function is called before sending the request to the backend to retrieve the object.
 
 ### vcl\_backend\_response
 
-Está función es llamada cuando llega la respuesta del _backend_ de forma exitosa.
+This function is called when the backend response arrives successfully.
 
 
 
 {% hint style="warning" %}
-En el resto de funciones predefinidas en Varnish Enterprise plus no está permitida la modificación por parte del usuario en Transparent Edge Services para garantizar en todo momento la seguridad y estabilidad de los _sites_ de nuestros clientes. No obstante, [aquí](https://varnish-cache.org/docs/trunk/users-guide/vcl-built-in-subs.html) puedes consultarlas.
+The rest of the predefined functions in Varnish Enterprise Plus are not allowed to be modified by the user in Transparent CDN, to ensure the security and stability of our clients' sites at all times. However, you can check them out [here](https://varnish-cache.org/docs/trunk/users-guide/vcl-built-in-subs.html).
 {% endhint %}

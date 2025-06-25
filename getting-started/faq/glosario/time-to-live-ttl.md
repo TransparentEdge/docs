@@ -1,3 +1,3 @@
-# TTL (Time to live)
+# TTL (Time-to-live)
 
-Si hacemos referencia a la CDN, el TTL (_time to live_ o tiempo de vida) es el tiempo en el cual un objeto está cacheado. El sistema de caché tiene en cuenta distintos factores para determinar el tiempo de vida de un objeto. Configurar correctamente estos parámetros garantizará el correcto funcionamiento de la caché, evitando el gasto innecesario de recursos y asegurando una experiencia óptima de los usuarios.
+In reference to the CDN, TTL (time to live) is the amount of time an object is cached. The cache system takes different factors into account to determine the lifetime of an object. Correctly configuring these parameters will guarantee the cache works correctly, avoiding unnecessary use of resources and ensuring an optimal user experience.

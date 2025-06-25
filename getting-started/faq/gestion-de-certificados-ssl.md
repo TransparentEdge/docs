@@ -1,25 +1,24 @@
 # SSL
 
-Transparent Edge puede hacer de terminador SSL para los _sites_ que lo requieran cacheando las peticiones de igual manera que si se tratara de HTTP. En este caso, el tráfico viaja cifrado entre el usuario y Transparent Edge. En nuestras cachés se descifra el certificado y todo el tráfico dentro la plataforma de Transparent Edge viaja en HTTP, dándonos así la posibilidad de aplicar tecnologías de web caching también al tráfico SSL. El tráfico entre Transparent Edge y el servidor de origen del cliente puede ir tanto en HTTP como HTTPS, según quiera el cliente.&#x20;
+When required, Transparent Edge can do SSL terminations by caching requests as if they were in HTTP. In this case, the traffic is sent encrypted between the user and Transparent Edge. The certificate is then decrypted in our caches and all the traffic within the Transparent Edge platform is sent in HTTP. This lets us apply web caching technology to the SSL traffic. The traffic between Transparent Edge and the client's origin server can be sent in HTTP or HTTPS, at the client’s discretion.
 
-Por defecto damos HTTP2 sobre tlsv1.2 y tlsv1.3.\
+By default, we use HTTP2 on tlsv1.2 and tlsv1.3.
 
+## Automatic management of SSL
 
-## Autogestión de certificados SSL
+At Transparent Edge, there are always several different ways of doing something. In this case, we give you two options for serving a secure website.
 
-En Transparent Edge tendrás siempre varias alternativas para hacer una misma cosa. En este caso, te ofrecemos dos posibilidades para poder servir tu sitio web de manera segura.&#x20;
+The first is for you to purchase your certificates from your trusted provider, and once you have them you can upload them to our platform or send us a [ticket](<mailto:support@transparentedge.eu >) so we can do it for you.
 
-La primera es que compres tus certificados a tu proveedor de confianza y, una vez los tengas, los subas a nuestra plataforma o nos mandes un [ticket](mailto:support@transparentcdn.com) para que podamos hacerlo por ti.
+To upload certificates to the platform, go to our[ client portal](https://dashboard.transparentcdn.com/), select Provisioning from the left side menu, and then click on **Certificates**.
 
-Para subir certificados a la plataforma, debes ir a nuestro [portal de cliente](https://dashboard.transparentcdn.com), seleccionar en el menú de la izquierda **Aprovisionamiento** y, luego, hacer clic en **Certificados.**&#x20;
+<figure><img src="../../.gitbook/assets/image (106).png" alt=""><figcaption></figcaption></figure>
 
-![](<../../.gitbook/assets/Captura de pantalla 2020-05-21 a las 17.01.13.png>)
+The second, and simpler, option is to leave the entire matter of certificates to us. We’ll take care of sending you valid certificates and renewing them, so you don’t have to do or worry about anything.
 
-La segunda opción -y la más sencilla- es que dejes todo el tema de certificados en nuestras manos. Nosotros nos encargaremos de emitirte un certificado válido y renovarlo sin ningún tipo de asistencia o preocupación por tu parte.
+#### For this to happen, the domain does have to be pointing to Transparent Edge.
 
-**Para esto, eso sí, el dominio debe apuntar ya a Transparent Edge.**
+It’s easy: in the Provisioning section of the[ portal](https://dashboard.transparentcdn.com/), click on the Sites tab and then on the padlock icon for the website you want to protect with SSL.
 
-Los pasos a seguir son sencillos: dentro del [portal](https://dashboard.transparentcdn.com), en la parte de **Aprovisionamiento**, haz clic sobre la pestaña de _sites_ y sobre el candado del sitio web que quieras proteger con SSL.
-
-![](<../../.gitbook/assets/Captura de pantalla 2020-05-21 a las 17.09.32.png>)
+<figure><img src="../../.gitbook/assets/image (62).png" alt=""><figcaption></figcaption></figure>
 

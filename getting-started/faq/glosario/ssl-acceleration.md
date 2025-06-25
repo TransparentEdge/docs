@@ -1,6 +1,5 @@
 # TLS Acceleration
 
-TLS acceleration, anteriormente llamado SSL acceleration, es un método que consiste en liberar al procesador de las tareas más intensivas entre las necesarias para establecer y mantener una sesión TLS, tales como el [intercambio de claves](https://es.wikipedia.org/wiki/Seguridad\_de\_la\_capa\_de\_transporte#Intercambio\_de\_claves) inicial.&#x20;
+TLS acceleration, formerly known as SSL acceleration, is a method of offloading processor-intensive tasks, like those needed to establish and maintain a TLS session and the [initial key exchange](https://es.wikipedia.org/wiki/Seguridad_de_la_capa_de_transporte#Intercambio_de_claves).
 
-\
-La mayoría de aceleradores TLS (_Transport Layer Security)_ utilizan tarjetas de procesamiento dedicadas o chips específicos ([ASICs](https://es.wikipedia.org/wiki/Circuito\_integrado\_de\_aplicaci%C3%B3n\_espec%C3%ADfica) y [RISC](https://es.wikipedia.org/wiki/Reduced\_instruction\_set\_computing)).
+Most TLS (Transport Layer Security) accelerators use dedicated processing cards or custom chips ([ASICs](https://es.wikipedia.org/wiki/Circuito_integrado_de_aplicaci%C3%B3n_espec%C3%ADfica) and[ RISC](https://es.wikipedia.org/wiki/Reduced_instruction_set_computing)).

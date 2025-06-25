@@ -1,10 +1,10 @@
-# Forzando el No-Cache
+# Forcing No-Cache
 
-## **Lo que nos gusta a todos: enviar las cabeceras desde origen**
+## Just what we all love: Sending headers from the origin
 
-En Transparent Edge somos partidarios de que nuestros clientes tengan la mayor autonomía. Por eso animamos siempre a que la configuración de la CDN sea lo más simple posible y que las cabeceras de caché, siempre que se pueda, se envíen desde los servidores de origen. En este [enlace](../../guias/configurar-mis-servidores-para-enviar-cabeceras-de-cache.md) tienes información sobre cómo hacerlo.
+At Transparent Edge we want our customers to have as much autonomy as they can. That's why we always encourage a CDN configuration that's as simple as possible and for cache headers to be sent from the origin servers whenever possible. This [link](https://docs.transparentedge.eu/guias/configurar-mis-servidores-para-enviar-cabeceras-de-cache) contains information on how to do it.
 
-Para forzar que un objeto no se cachee, puedes configurar la cabecera _Cache-Control_ con cualquiera de estos valores:
+To force an object to not be cached, you can configure the Cache-Control header with any of these values:
 
 ```
 no-cache
@@ -14,31 +14,29 @@ private
 must-revalidate
 ```
 
-Aunque cada una tiene pequeñas diferencias, en la práctica tienen el mismo efecto, que es que no se cachee el contenido. Si nos tenemos que decantar por una, usaremos _**No-Cache**_**.**
+Although there are small differences in each one, they have the same effect in practice which is for the content not to be cached. If we had to choose one, we’d use **no-cache**.
 
-## Forzar la cabecera de _No-Cache_ desde Transparent Edge&#x20;
+## Not caching or bypassing the cache of the CDN
 
-Aquí también vas a tener alternativas. Nosotros te vamos a proponer dos que posiblemente cubran el 95% de los casos de uso.
+The following covers the majority of use cases for not caching or bypassing the cache of the CDN.
 
-#### No cachear el objeto nunca en la CDN sin importar lo que venga de origen
+#### Bypass or ignore the cache of the CDN
 
-En esta opción vamos a hacer que el objeto nunca se cachee en la CDN independientemente de las cabeceras de caché que vengan de origen. Para ello usaremos la cabecera _**req.http.TCDN-Command**_ dentro de la función _vcl\_recv_.
+With this option we can ignore the cache and go directly to the origin to retrieve a fresh object always. Note that this doesn't prevent the object from entering in the cached after the backend response is executed, but it ensures that the client will never receive a cached response. Just call `bypass_cache` to ignore, skip or bypass the cache.&#x20;
 
 ```javascript
 sub vcl_recv {    
-    if ((bereq.http.host == "www.transparentedge.eu") && (bereq.url ~ "/my-new-url")) {
-        set req.http.TCDN-Command = "pass, " + req.http.TCDN-Command;
+    if (req.http.host == "www.transparent.com" && req.url ~ "^/admin") {
+        call bypass_cache;
     }
 } 
 ```
 
-Este fragmento de código forzará que el objeto se salte la caché de Varnish y, por tanto, nunca se almacenará en la CDN. Esta configuración no afecta sobre las cachs del navegador. Si buscas que sí lo haga, tal vez sea mejor usar la siguiente opción.
-
-#### No cachear el objeto en la CDN reescribiendo las cabeceras de origen
+#### Don’t cache the object in the CDN by rewriting the origin headers
 
 ```javascript
 sub vcl_backend_response {    
-    if ((bereq.http.host == "www.transparentedge.eu") && (bereq.url ~ "/my-new-url")) {
+    if ((bereq.http.host == "www.transparent.com") && (bereq.url ~ "/my-new-url")) {
             unset beresp.http.Cache-Control;
             set beresp.http.Cache-Control = "max-age=0";
             set beresp.ttl = 0s;
@@ -46,6 +44,6 @@ sub vcl_backend_response {
 } 
 ```
 
-Con este código vamos a sobreescribir las cabeceras que vengan de origen y a ponerles el tiempo que nosotros queremos almacenar en caché ese objeto. En nuestro caso son 0s, tanto en el TTL interno, que forzará que ese objeto se guarde en la caché de Transparent Edge, como en la cabecera de caché que queremos que se propague al navegador (_Cache-Control_).
+With this code, we rewrite the headers that come from the origin and add the amount of time we want the object stored in the cache. In our case, it is 0s—both for the internal TTL which will force the object to be stored in the Transparent Edge cache, and for the cache header to be sent to the browser (Cache-Control).
 
-[Aquí](funcionalidades/reescritura-de-cabeceras.md) puedes consultar también cómo hacer reescrituras de cabeceras con más detalle.
+You can also get more details about rewriting headers [here](https://docs.transparentedge.eu/v/english/getting-started/faq/funcionalidades/reescritura-de-cabeceras).

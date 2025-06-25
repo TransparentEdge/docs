@@ -1,13 +1,17 @@
-# Query string
+# Query String
 
-La cadena de consulta (_query string_) es la parte de una [URL](https://es.wikipedia.org/wiki/URL) que contiene los datos que deben enviarse a la aplicación web. Por lo general incluye campos añadidos a la base de la URL por la aplicación de cliente o, por ejemplo, como parte de un formulario HTML.
+The query string is the part of a URL that contains the data to be sent to the web application. It generally includes fields added to the base URL by the client application, for example as part of an HTML form.
 
-`www.ejemplo.net/web.php?campo1=valor1&campo2=valor2`
+```
+www.ejemplo.net/web.php?campo1=valor1&campo2=valor2
+```
 
-El ejemplo anterior hace referencia a un sitio web dinámico. En este caso, el servidor crea automáticamente la página de respuesta cuando el navegador la solicita. Para ello utiliza los datos incluidos en la URL.
+The example above is for a dynamic website. In this case, the server automatically creates the response page when the browser requests it, using the data that appears in the URL.
 
-Existen otros métodos para generar páginas dinámicas, por ejemplo, separando las _query strings_ mediante el caracter `/` . Gracias a la configuración del servidor, podemos generar URL más amigables, como la siguiente:
+There are other methods of generating dynamic pages, such as separating the query strings using the “/” character. The server configuration lets us generate friendly URLs, like the one below:
 
-`www.ejemplo.net/principal/blog/132`
+```
+www.ejemplo.net/main/blog/132
+```
 
-En este caso, el nombre de la variable viene predefinido en el servidor según la posición que tenga en la URL y el valor es directamente su contenido (principal, blog, 132).
+In this case, the name of the variable is predefined on the server based on the variable’s position in the URL, and the content of the variable is its value (main, blog, 132).

@@ -1,11 +1,29 @@
-# Cabeceras por defecto
+# Default headers
 
-Estas son las cabeceras que analiza esta sección:
+{% content-ref url="geo_country_code.md" %}
+[geo\_country\_code.md](geo_country_code.md)
+{% endcontent-ref %}
 
-* _Geo\_Country\_Code_
-* _X-Device_
-* _Vary_
-* Cabeceras de caché
-* _Age_
-* _TP-Cache_
-* _True-Client-IP_ (y _X-Forwarded-For_)
+{% content-ref url="x-device.md" %}
+[x-device.md](x-device.md)
+{% endcontent-ref %}
+
+{% content-ref url="vary.md" %}
+[vary.md](vary.md)
+{% endcontent-ref %}
+
+{% content-ref url="cabeceras-de-cache.md" %}
+[cabeceras-de-cache.md](cabeceras-de-cache.md)
+{% endcontent-ref %}
+
+{% content-ref url="age.md" %}
+[age.md](age.md)
+{% endcontent-ref %}
+
+{% content-ref url="tp-cache.md" %}
+[tp-cache.md](tp-cache.md)
+{% endcontent-ref %}
+
+{% content-ref url="true-client-ip-y-x-forwarded-for.md" %}
+[true-client-ip-y-x-forwarded-for.md](true-client-ip-y-x-forwarded-for.md)
+{% endcontent-ref %}

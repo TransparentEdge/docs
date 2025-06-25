@@ -1,3 +1,3 @@
 # ETag
 
-_ETag_ o _entity tag_ es uno de los mecanismos que HTTP proporciona para la validación de caché web y que posibilita hacer peticiones condicionales. Esto permite que los cachés sean más eficientes y ahorren ancho de banda, ya que un servidor web no necesita enviar una respuesta completa si el contenido sigue siendo el mismo.
+The ETag or entity tag is one of the mechanisms that HTTP provides for web cache validation, which allows clients to make conditional requests. This allows caches to be more efficient and saves bandwidth, as a web server does not need to send a full response if the content has not changed.

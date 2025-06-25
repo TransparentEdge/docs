@@ -1,79 +1,81 @@
-# Proceso de alta
+# Sign up process
 
-### Registro
+### Sign up
 
-El proceso de registro en la plataforma de autoprovisionamiento de Transparent Edge comienza a través del botón “Registrarme”, localizado en la esquina superior derecha de la página principal ([https://www.transparentedge.eu/](https://www.transparentedge.eu/)). Su selección redirecciona al formulario en el que tienes que completar dos pasos para hacer efectivo tu resgistro ([https://api.transparentcdn.com/signup/#/](https://api.transparentcdn.com/signup/#/)).
+The process of signing up on Transparent Edge’s self-service platform begins by clicking the “Sign up” button in the top right corner of the [home page](https://www.transparentedge.eu/en/). You will be redirected to a form where you have to complete two steps to create [your account](https://signup.transparentedge.eu/#/).
 
-<figure><img src=".gitbook/assets/alta-1.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://lh3.googleusercontent.com/g_l3iv6jkGvDPpovpcwjIC2NzOp6jViQ3NiqDwtJyn3SFahPts3c-nydkzyBXfnklTKbsN5lpg1Pq8nvJCoF_o1wEC-gR395D2uh4_Ydl3buLjOTsaRXEyhKf9a2ISiQXu9ZYGpen1wDsGskLWoxgQ" alt=""><figcaption></figcaption></figure>
 
-### Selección de paquete de solución
+### Select your solution package
 
-En primer lugar, tienes que elegir la solución que mejor se adapta a tus necesidades entre las siguiente opciones:
+First, you have to choose the solution that best meets your needs from the following options:
 
-**Avanzado**
+**Advanced**
 
 **Business**
 
-Encuentras información más detallada sobre cada paquete (tiempo de respuesta, tipo de soporte ofrecido, coste, etc.) en [https://www.transparentedge.eu/precios/](https://www.transparentedge.eu/precios/). Si tus necesidades cambian en el futuro, podrás solicitar la modificación de tu paquete de soporte a través de la dirección de correo electrónico [soporte@transparentedge.eu](mailto:soporte@transparentedge.eu).
+You can find more detailed information about each package (response time, type of support provided, cost, etc.) [here](https://www.transparentedge.eu/en/prices/). If your needs ever change in the future, you can request to change your support package by sending an email to [soporte@transparentedge.eu](mailto:soporte@transparentedge.eu).
 
 <figure><img src=".gitbook/assets/Captura de Pantalla 2023-02-23 a las 14.10.13.png" alt=""><figcaption></figcaption></figure>
 
-Datos básicos y de facturación
+### Contact and billing information
 
-En este segundo paso tienes la oportunidad de introducir un código promocional (_voucher_) en el espacio habilitado para ello dentro del resumen de **servicios contratados.** A continuación, debes rellenar los siguientes **datos básicos**:
+In this second step, you can enter a promotional code or voucher in the space provided in the **contracted services** summary. You then have to fill in the following **contact information**:
 
-#### Nombre y apellidos
+#### **Full name**
 
-#### Dirección de correo electrónico
+#### **Email address**
 
-La dirección de correo electrónico es para Transparent Edge el principal medio de contacto contigo. Por eso es fundamental que la dirección que nos des sea válida, que tengas acceso a ella y -muy importante- que la consultes con frecuencia. Además, esta dirección de correo electrónico será el nombre de usuario con el que te autenticarás en la plataforma.
+This email address will be Transparent Edge’s main means of contacting you. So it’s essential that the email address you give us is valid, that you have access to it, and—very important—that you check it often. Plus, this email address will be your username when you log into the platform.
 
-#### Página web
+#### Web page
 
-Tras tu nombre y apellidos y dirección de correo electrónico, es necesario que indiques el dominio principal de tu sitio web, por ejemplo: “[www.prueba.com](http://www.prueba.com/)”.
+After your full name and email address, you have to enter the primary domain of your website, e.g.: “[www.prueba.com](http://www.prueba.com/)”.
 
-Una vez hayas completado el proceso de registro y accedas al panel (_dashboard_) de _autoprovisioning_ de Transparent Edge, podrás observar cómo el dominio introducido (_site_) ya ha sido añadido en la configuración de tu perfil recién estrenado. Por supuesto, tienes total libertad para añadir tantos dominios nuevos como precises o eliminar aquellos que ya no sean necesarios.
+Once you have completed the registration process and you log in to Transparent Edge’s self-service dashboard, you will see that the domain (site) you entered has been added to the settings of your brand-new profile. Of course, you are free to add as many new domains as you need or delete any that are no longer necessary.
 
-#### Contraseña
+#### Password
 
-Para continuar con el proceso de registro, debes introducir una contraseña de, al menos, ocho caracteres y que contenga una mayúscula, una minúscula y un número.
+To continue with the registration process, you have to enter a password with at least eight characters that contains one uppercase letter, one lowercase letter, and one number.
 
-<figure><img src=".gitbook/assets/image (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Captura de pantalla 2023-02-06 a las 18.50.12.png" alt=""><figcaption></figcaption></figure>
 
-Tras cumplimentar tus datos básicos, rellena aquellos campos referidos a **tus datos de facturación:**
+After filling in your contact information, fill in the fields with **your billing information:**
 
-**Empresa**
+#### Company name
 
-**CIF / NIF**
+#### Tax ID
 
-El código de identificación fiscal (CIF) de tu empresa o tu número de identificación fiscal (NIF).
+Your company’s tax ID code (CIF in Spain) or your personal tax ID number (NIF in Spain).
 
-**Dirección**
+#### Address
 
-Es necesario rellenar todos los campos solicitados para poder continuar con el proceso de registro.
+You have to fill in all the fields to be able to continue with the registration process.
 
-<figure><img src=".gitbook/assets/image (56).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Captura de pantalla 2023-02-06 a las 18.53.58.png" alt=""><figcaption></figcaption></figure>
 
-Una vez introducidos en el formulario de registro los datos necesarios, deberás seleccionar el _checkbox_ correspondiente con la aceptación de los términos y condiciones de uso de la plataforma. También deberás marcar el _checkbox_ de las condiciones general de contratación.
+Once you've entered all the required information into the form, you’ll have to click the checkbox to accept the terms and conditions of use for the platform. You’ll also have to click the checkbox for the terms and conditions of the contract.
 
-### Autorización de pago
+#### Payment authorization
 
-En última instancia, deberás formalizar la autorización de pago. Para ello se te redireccionará a través de la pasarela de Transparent Edge y tendrás que introducir los datos de tu tarjeta bancaria.
+Finally, you’ll have to confirm the payment authorization. To do so, you’ll be redirected through Transparent Edge’s gateway and you’ll have to enter your credit card data.
 
-El cobro se realiza al final de cada mes en función tanto del paquete de soporte contratado como del consumo realizado.
+You will be charged at the end of each month based on the support package you purchased as well as your consumption.
 
-En caso de que el método de pago elegido sea rechazado por parte de la pasarela, se te mostrará el correspondiente mensaje de error y se te redireccionará nuevamente al formulario de registro a fin de verificar los datos introducidos y modificarlos en caso de que hayas cometido algún error al introducirlos previamente.
+If your payment method is rejected by the gateway, you’ll see an error message and be redirected to the registration form where you can verify the information you entered previously and fix any errors.
 
-## Activación de la cuenta de usuario
+### User account activation
 
-Una vez el proceso de registro ha concluido de manera exitosa, debes necesariamente activar tu recién estrenada cuenta. Para ello es preciso hacer clic sobre el enlace “VERIFICA TU CORREO” que figura en el mensaje de bienvenida que recibirás en tu bandeja de entrada.
+Once you have completed the registration process, you’ll have to activate your brand-new account. To do so, click on the “VERIFY YOUR EMAIL” link in the welcome message you receive in your inbox.
 
-Este mensaje de bienvenida se envía automáticamente a la dirección de correo electrónico indicada en el formulario de registro una vez completado este. Dispondrás de 48 horas a partir de ese momento para confirmar tu correo. Hasta que la cuenta no haya sido activada, no tendrás acceso a la plataforma de _autoprovisioning_ de Transparent Edge.
+This welcome message is automatically sent to the email address you entered in the registration form once you have completed that step. You’ll then have 48 hours to confirm your email. You won’t have access to Transparent Edge’s self-service platform until your account is activated.
 
-En ese correo se te informará el CNAME (_Canonical NAME_) de Transparent Edge al que debes apuntar y ajustar el DNS.
+That email will also tell you Transparent Edge’s CNAME (Canonical NAME) so you can note it and adjust the DNS.
 
-Por ejemplo, nuestro registro CNAME asignado sería: caching.cNNN.edge2befaster.net.
+For instance, our assigned CNAME record would be: caching.cNNN.edge2befaster.net.
 
-Además del CNAME, es importante que exista un fichero «tcdn.txt» en la raíz de tu sitio web con el contenido incluido en el correo de activación.&#x20;
+In addition to the CNAME, it's important for there to be a «tcdn.txt» file in the root directory of your website with the content of the activation email.
 
-En caso de no haber recibido ningún correo electrónico, revisa en primer lugar si ha llegado a la carpeta _spam_ de tu buzón. Si tampoco lo has recibido ahí, ponte en contacto con Transparent Edge a través de la dirección de correo altas@transparentedge.eu para que activemos manualmente tu cuenta de usuario.
+If you don’t receive an email, first check your spam folder. If it's not there either, contact Transparent Edge by sending an email to [altas@transparentedge.eu](mailto:altas@transparentedge.eu) so we can manually activate your user account.
+
+\

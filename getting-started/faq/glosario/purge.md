@@ -1,5 +1,5 @@
 # Purge
 
-_Purge_ (purgar) es sinónimo de invalidación de contenido. Cuando trabajamos con sistemas de caché, muchas veces es necesario invalidar el contenido y forzar a las cachés a ir al servidor de origen a por una copia nueva.&#x20;
+To purge means to invalidate content. When we work with cache systems, it’s often necessary to invalidate content and force the caches to go to the origin server for a new copy.
 
-Si quieres saber más sobre los diferentes métodos de invalidación, haz clic [aquí.](../metodos-de-invalidado.md)
+To find out more about the different invalidation methods, click [here.](https://docs.transparentedge.eu/v/english/getting-started/faq/metodos-de-invalidado)

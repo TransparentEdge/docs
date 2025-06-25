@@ -1,5 +1,5 @@
-# Origin shield
+# Origin Shield
 
-El _origin shield_ es una capa extra de cacheo en la CDN ubicada entre los servidores _edge_ y el servidor de origen. También se conoce como _edge_ de segundo nivel o capa 2.
+Origin shield is an extra caching layer of the CDN that sits between the edge servers and the origin server. It is also known as second-level edge or layer 2.
 
-Actúa como un embudo, evitando que al servidor o servidores de origen lleguen peticiones de los múltiples servidores _edge_.
+It acts as a funnel, preventing the origin server or servers from receiving requests from multiple edge servers.

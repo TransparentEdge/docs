@@ -1,29 +1,43 @@
-# Histórico
+# Historic
 
-En esta página se encuentra toda la información histórica del servicio prestado por Transparent Edge. Por defecto, se muestran los últimos seis meses, pero se puede filtrar por último año, mes, semana o página en concreto.&#x20;
+This page contains all the historical information of the service provided by Transparent Edge.&#x20;
 
-Según el filtro elegido, se recalculan todos los paneles de información del servicio. Asimismo, todos los gráficos e información que se sirven pueden ser descargados en formato PNG, SVG o CSV haciendo clic en la parte superior izquierda de cada uno de los paneles.&#x20;
+The last six months are displayed by default but you can filter by the last year, month or week, or by specific website.&#x20;
 
-Si se necesita compartir de acuerdo al filtro realizado, se puede copiar el enlace y enviarlo a otro usuario para que visualice la información consultada.&#x20;
+Depending on the filter chosen, all the information panels are recalculated. All the graphs and information provided can also be downloaded in PNG, SVG or CSV format by clicking on the top left of each panel.
 
-El primer y el segundo panel muestran con más detalle la información de los _requests_ por segundo y el ancho de banda, desglosados según _site_ y periodo de tiempo. Normalmente esta información corresponde a la del día en el que se está consultando. Asimismo, se puede filtrar de tal modo que se desplieguen de manera agregada, mostrando el total de la suma de todos los _sites_, o de manera desagregada, con todos los gráficos apilados para contabilizar el total de _requests_ por segundo y el ancho de banda de todos los _sites_ vinculados a Transparent Edge.
+If you need to share information already filtered, you can copy the link and send it to another user to view the same information.&#x20;
 
-![](<../../.gitbook/assets/Captura de pantalla 2022-12-21 a las 16.52.32.png>)
+The first and second panels offer more detailed information on requests per second and bandwidth, itemized by site and time period. The panel normally displays information for today. It can also be filtered so that they are displayed together, showing the total for all sites, or separately, showing all graphs stacked to count the total requests per second and bandwidth of all sites linked to Transparent Edge.
 
-El tercer y cuarto panel muestran la información del primer y segundo panel (_request_ por segundo y ancho de banda) pero desplegada en porcentajes, dando otro tipo de visualización más gráfica de esta información.
+<figure><img src="../../.gitbook/assets/image (67).png" alt=""><figcaption></figcaption></figure>
 
-![](<../../.gitbook/assets/Captura de pantalla 2022-12-21 a las 16.55.33.png>)
+The third and fourth panels show the information from the first and second panels (request per second and bandwidth) but displayed as a pie chart, giving more graphic visualization of this information.
 
-Después de los gráficos se despliega la información de consumo mensual de ancho de banda y las _requests_ recibidas para que nuestros clientes tengan una visualización del consumo que han realizado para su propio control. Con estos datos se pueden realizar previsiones del consumo a futuro del mes en curso, una información valiosa para todos los departamentos de la empresa.
+<figure><img src="../../.gitbook/assets/image (76).png" alt=""><figcaption></figcaption></figure>
 
-![](<../../.gitbook/assets/Captura de pantalla 2022-12-21 a las 16.57.20.png>)
+After these graphs, the monthly bandwidth consumption information and requests received are displayed, providing our customers with information on their consumption. With this data, it is possible to make forecasts of future consumption for the current month, which is valuable information for all company departments.
 
-En caso de tener más servicios contratados con Transparent Edge, se podrá visualizar su histórico cambiando la opción en la parte superior del panel. Ahí se podrá ver todo el consumo de cada servicio según el periodo de tiempo determinado:
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
-![](<../../.gitbook/assets/Captura de pantalla 2022-12-21 a las 16.58.57.png>)
+If you have more services contracted with Transparent Edge, you can view their history by changing the option at the top of the panel. There, you will be able to see all the consumption of each service over a period of time.
 
+### Consumption Alerts
 
+<figure><img src="../../.gitbook/assets/historic-header.png" alt=""><figcaption></figcaption></figure>
+
+At the top of the page, you will find the **"Limit Alerts"** button, which allows you to create a new consumption alert for your service. This alert is designed to notify you when your service's consumption exceeds a predefined threshold.
+
+You can customize the alert to trigger specific actions, such as:
+
+* Sending an **email notification**. Your email notifications must be activated in the [notification panel](https://dashboard.transparentcdn.com/user/notifications) to receive alerts.
+* Delivering a **Slack notification**.
+* Forwarding the alert data in **JSON format** to a specified URL.
+
+This feature ensures you stay informed and can take timely action to manage your service consumption effectively.
+
+<figure><img src="../../.gitbook/assets/limit-alerts-widget.png" alt=""><figcaption><p>Limit alerts widget</p></figcaption></figure>
 
 {% hint style="info" %}
-Recuerda que todo lo que puedes hacer desde nuestro [_dashboard_](https://dashboard.transparetncdn.com) puedes hacerlo desde nuestro [API](../faq/glosario/api.md).
+Remember that everything you can do from our [dashboard](https://dashboard.transparentcdn.com/auth/login?redirect=%2F), you can do from our [API](https://docs.transparentedge.eu/v/english/guias/api).
 {% endhint %}

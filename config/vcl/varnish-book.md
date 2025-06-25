@@ -1,8 +1,8 @@
 # Varnish book
 
-Transparent Edge Services está basada en [Varnish Enterprise](https://www.varnish-software.com/) y como tal, puedes disfrutar de prácticamente todo lo que puedes hacer con la versión Enterprise de Varnish pero además con la ventaja de ofrecerlo como un servicio, reduciendo de esta manera el coste de la propiedad.&#x20;
+Transparent CDN is based on [Varnish Enterprise](https://www.varnish-software.com/), and as such, you can enjoy almost everything you can do with the Enterprise version of Varnish, but with the added advantage of it being offered as a service, reducing the cost of ownership.
 
-A continuación, te dejamos el enlace para descargar el Varnish Book para que entiendas la potencia que Transparent Edge Services y Varnish Enterprise te ofrecen. Eso sí, al tratarse de una plataforma como servicio tenemos algunas [limitaciones](limitaciones.md).
+Below, we provide the link to download the Varnish Book, so you can understand the power that Transparent CDN and Varnish Enterprise offer you. However, please note that being a platform as a service, we do have some [limitations](limitaciones.md).
 
 {% file src="../../.gitbook/assets/varnish-book.pdf" %}
 Varnish Book

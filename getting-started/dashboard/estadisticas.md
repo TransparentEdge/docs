@@ -1,46 +1,49 @@
-# Analítica
+# Analytics
 
-En esta página encontrarás más información actualizada y en tiempo real, muy valiosa para tu negocio. A diferencia del histórico, la analítica tiene una retención máxima de datos de las últimas 36 horas (paras visualizar información más antigua, puedes consultar en el histórico).&#x20;
+On this page you will find more real-time information that is very valuable for your business. Unlike the historic, analytics retains data for the past 36 hours (to view older information, you can consult the historic section).
 
-Se puede filtrar según las necesidades, pero por defecto se aplica a la hora previa al momento consultado. El periodo máximo de tiempo que se puede aplicar en los filtros es de seis horas.&#x20;
+It can be filtered according to your needs, but the previous hour filter it is applied by default. The maximum period that can be applied for filtering is six hours.
 
-El panel se puede personalizar de acuerdo a tus necesidades. Muestra las siguientes opciones:\
+The panel can be customized according to your needs. It displays the following options.
 
+<figure><img src="../../.gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
 
-![](<../../.gitbook/assets/Captura de pantalla 2022-12-21 a las 17.53.04.png>)
+You will also find the requests and bandwidth information.
 
-Encontrarás también la información de los _requests_ y ancho de banda:
+<figure><img src="../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
-![](<../../.gitbook/assets/Captura de pantalla 2022-12-21 a las 17.55.20.png>)
+Hit ratio graphs are then displayed, which include all the cache efficiency information. The missed objects are displayed, along with the expired objects and stale objects. As a whole, depending on the settings, the entire response time of the requests can be displayed.
 
-Después se despliegan las gráficas del _hit ratio_, donde está toda la información de la eficiencia de la caché. Así, muestra los objetos que no han logrado ser cacheados (_miss_), los objetos caducados (_expired_) y los que estaban caducados y se han servido a partir del objeto caducado (_stale_). Y conjuntamente, según la configuración, se puede visualizar todo el tiempo de respuesta (_response time_) de las peticiones.
+<figure><img src="../../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/Captura de pantalla 2022-12-21 a las 17.56.10 (1).png" alt=""><figcaption></figcaption></figure>
+The following graphs display the response codes of all the requests received by the site and the geographical location from where these requests are sent.
 
-Los siguientes gráficos muestran los códigos de respuesta que han tenido todas las peticiones que ha recibido el _site_ y de qué lugar geográfico han venido esas peticiones.
+<figure><img src="../../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
 
-![](../../.gitbook/assets/country-request.jpg)
+The following graphics show every response code returned to the requests received and the geographical origin of this requests.
 
-Los siguientes gráficos muestran qué protocolo se está utilizando (HTTPS o HTTP) y de dónde vienen las peticiones en términos de dispositivos:
+<figure><img src="../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
 
-![](../../.gitbook/assets/protocol-user-agent.jpg)
+The following graphs display the protocol being used (HTTPS or HTTP) and the source of the requests in terms of devices.
 
-Las peticiones por país y las URL más pedidas de cada _site_ las encuentras aquí:
+![](<../../.gitbook/assets/image (12).png>)
 
-![](../../.gitbook/assets/url-request.jpg)
+Requests by country and the most requested URLs per site are found here.
 
-El gráfico siguiente muestra todos los purgados que realizan los clientes a través del panel. A su lado encuentras la tabla de todos los contenidos que tiene cada _site,_ cuántas _requests_ recibe y cuánto ancho de banda consume.
+<figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
 
-![](../../.gitbook/assets/purges-grafico.jpg)
+The next graph displays all the purges performed by clients through the panel. Next to it is the table of all the contents of each site, how many requests it receives, and how much bandwidth it consumes.
 
-El gráfico de códigos de status (S_tatus codes_) permite visualizarlos. La tabla de referencias (_Referer table_) muestra de qué URL vienen las peticiones.
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
-![](../../.gitbook/assets/status-codes.jpg)
+All this is displayed in the status codes graph, and the referrer table displays the URLs from where the requests are sent.
 
-La tabla _IP Address table_ muestra las IP de las que proceden las peticiones. El gráfico _Content Type,_ por su parte, permite visualizar la información sobre los contenidos que tiene cada _site_.
+<figure><img src="../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
 
-![](../../.gitbook/assets/ip-address.jpg)
+The IP address table shows the IPs from where the requests are sent. The content type graph, on the other hand, displays information on the contents of each site.
+
+<figure><img src="../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-Recuerda que todo lo que puedes hacer desde nuestro [_dashboard_](https://dashboard.transparetncdn.com)_,_ puedes hacerlo también desde nuestro [API](../faq/glosario/api.md).
+Remember that everything you can do from our [dashboard](https://dashboard.transparentcdn.com/auth/login?redirect=%2F), you can do from our [API](https://docs.transparentedge.eu/v/english/guias/api).
 {% endhint %}

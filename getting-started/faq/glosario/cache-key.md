@@ -1,33 +1,33 @@
 # Cache key
 
-Una c_ache key_ o clave de caché es la forma que tiene la CDN de guardar un objeto en su caché. De manera predeterminada, la _cache key_ está formada por:
+A cache key is how the CDN saves an object to its cache. By default, the cache key is made up of:
 
 ```
 [Host header] + [url] + [Query Stream]
 ```
 
-A partir de ahí podemos complicar la _cache key_ todo lo que queramos, añadiendo más elementos para guardar más versiones del mismo objeto. Veámoslo con un ejemplo:
+From there, we can complicate the cache key as much as we wish, adding more elements to save more versions of the same object. Let’s look at an example:
 
 ```
 https://www.transparentedge.eu/index.html?param=1
-
+​
 https://www.transparentedge.eu/index.html?param=2
 ```
 
-Para Transparent Edge y, en general, para cualquier otro sistema de cachés HTTP, estos son objetos distintos. Por lo tanto, aunque el primero esté cacheado, volverá a bajar a origen cuando se solicite el segundo ya que en la caché de la CDN son dos objetos distintos.
+For Transparent Edge—and generally, for any other system of HTTP caches—these are distinct objects. Therefore, even if the first one is cached, it will download again to the origin when the second one is requested because in the CDN cache they are distinct objects.
 
-Mediante la cabecera [Vary](../cabeceras-por-defecto/vary.md) podemos modificar el comportamiento y guardar más versiones del mismo objeto, tal y como decíamos anteriormente. Por ejemplo, dado un objeto como este:
+We can use the[ Vary](https://docs.transparentedge.eu/v/english/getting-started/faq/cabeceras-por-defecto/vary) header to modify the behavior and save more versions of the same object, as previously mentioned. For instance, with an object like this:
 
 ```
 https://www.transparentedge.eu/index.html?param=1
 ```
 
-Y una cabecera Vary como esta
+And a Vary header like this:
 
 ```
 Vary: User-Agent
 ```
 
-Podemos hacer que en la caché de la CDN se guarden tantos objetos como el número de _user-agent_ (agente de usuario) que lo solicita.
+We can make the CDN cache save as many objects as the number of user-agents requesting them.
 
-En el ejemplo anterior, la caché nos guardaría un objeto por cada _user-agent_ distinto (existen muchísimos). Esto haría que el sistema de cachés no fuera efectivo. Por lo tanto, no es recomendable tener una cabecera _Vary_ por _user-agent_ o por _cookie_. Podría ser interesante, sin embargo, tenerlo por la cabecera _X-Device_, de manera que puedas servir diferentes versiones del objeto en función del tipo de dispositivo que solicita el recurso.
+In the previous example, the cache would save one object for each distinct user-agent (there are many). This would render the cache system ineffective. That’s why we don’t recommend having a Vary header with a user-agent or cookie value. It could be interesting, however, to have an X-Device value, to be able to serve different versions of an object depending on the type of device requesting the resource.\

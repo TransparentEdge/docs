@@ -1,12 +1,10 @@
 ---
-description: Página principal
+description: Main page
 ---
 
-# Te damos la bienvenida
+# Welcome
 
-Aquí encontrarás toda la documentación relativa al uso ¡y disfrute! de Transparent Edge. Si ya sabes lo que buscas, puedes acceder rápidamente a la referencia de la [API](https://api.transparentcdn.com/docs). Si acabas de llegar, querrás seguramente empezar por el principio: [Aterrizando en Transparent Edge](empezando-desde-cero.md).
-
-
+Here you’ll find all the documentation about using—and enjoying!—Transparent Edge. If you already know what you’re looking for, you ​can quickly access the [API](https://api.transparentcdn.com/docs) reference. If you just got here, you’ll most likely want to start at the beginning:&#x20;
 
 {% content-ref url="empezando-desde-cero.md" %}
 [empezando-desde-cero.md](empezando-desde-cero.md)
@@ -28,7 +26,14 @@ Aquí encontrarás toda la documentación relativa al uso ¡y disfrute! de Trans
 [vcl](config/vcl/)
 {% endcontent-ref %}
 
+{% content-ref url="config/network-access-control-list/" %}
+[network-access-control-list](config/network-access-control-list/)
+{% endcontent-ref %}
+
+{% content-ref url="config/transcoding/" %}
+[transcoding](config/transcoding/)
+{% endcontent-ref %}
+
 {% content-ref url="broken-reference" %}
 [Broken link](broken-reference)
 {% endcontent-ref %}
-

@@ -1,5 +1,5 @@
 # HLS (HTTP Live Streaming)
 
-HLS o HTTP _live streaming_ es un protocolo de comunicaciones de transmisión de velocidad de bits adaptable, basado en HTTP e implementado por Apple Inc. como parte de su _software_ QuickTime, Safari, OS X e iOS. Funciona de forma similar a MPEG-DASH en cuanto a que también divide la transmisión en pequeños segmentos HTTP descargables.
+HLS or HTTP Live Streaming is an HTTP-based adaptive bitrate streaming communications protocol developed by Apple Inc. as part of its QuickTime, Safari, OS X, and iOS software. It works similarly to MPEG-DASH in that it also breaks the stream into small HTTP-based downloadable segments.
 
-Mediante listas de reproducción m3u extendidas, se hace llegar al cliente el listado de los distintos canales de transmisión (_streams_) junto con las tasas de bits (_bitrates_) disponibles. Al estar basado en HTTP, este protocolo pasa por cualquier cortafuegos o _proxy_.
+A list of available streams, encoded at different bit rates, is sent to the client using an extended M3U playlist. Because it is based on HTTP, this protocol can traverse any firewall or proxy server.

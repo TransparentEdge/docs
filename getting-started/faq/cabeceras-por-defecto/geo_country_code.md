@@ -1,17 +1,17 @@
-# Geo\_Country\_Code
+# geo\_country\_code
 
-De manera predeterminada, en Transparent Edge geolocalizamos todas las peticiones que pasan por nuestros sistemas enviando a origen siempre una cabecera con el código del país desde el que se hizo la petición. Esta cabecera es **Geo\_Country\_Code**.
+By default, Transparent Edge geolocates all requests that pass through our systems by sending a header to the origin with the country code from which the request was made. This is the **Geo\_Country\_Code** header.
 
 ```
 geo_country_code: ES
 ```
 
-Si el sistema no ha sido capaz de ubicar la IP del usuario, envía el _string_ _Unknown_ dentro de la cabecera.
+If the system was unable to locate the user's IP, it sends the Unknown string in the header.
 
-Gracias a esta funcionalidad, somos capaces de hacer multitud de cosas en función de la localización del usuario final, por ejemplo:
+Thanks to this feature, there are a great many things we can do based on the location of the end user, such as:
 
-* Bloquear/permitir contenido desde determinados países.&#x20;
-* Enviar las peticiones a un origen u otro en base a la localización geográfica del usuario final.&#x20;
-* Servir contenido especial por países.&#x20;
-* Reescribir cabeceras en base al país de procedencia de la petición.&#x20;
-* Reglas personalizadas (_custom_) en base a esa cabecera.
+* Block/permit content from certain countries.
+* Send requests to different origins based on the geographical location of the end user.
+* Serve special content by country.
+* Rewrite headers based on the country the request came from.
+* Custom rules based on that header.

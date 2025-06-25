@@ -1,3 +1,3 @@
 # Brotli Compression
 
-Brotli Compression es un algoritmo de compresión desarrollado por Google. Es de código abierto y su objetivo es reducir el tamaño de archivos.
+Brotli Compression is an open-source compression algorithm developed by Google. It is used to reduce file size.

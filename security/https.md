@@ -1,44 +1,38 @@
----
-description: HTTPS
----
-
 # HTTPS
 
-## Gestión automática de certificados
+## Automatic Certificate Management
 
-Si no tienes un certificado SSL para tu site, Transparent Edge Services puede gestionar uno automáticamente por ti. Solo tienes que habilitarlo en el panel de autoprovision, en la sección de Sites:
+If you don't have an SSL certificate for your site, Transparent Edge Services can manage one for you automatically. You just need to enable it in the self-provisioning panel, either in the Sites section or in the Certificates section.
 
-![Sacando certificados automáticamente](<../.gitbook/assets/image (17).png>)
+In the case of doing it from the Sites section, you simply need to click on the lock icon that appears on the right side of the list. This will open a dialog box with instructions and requirements for the automatic management:
 
-Al pulsar el candado, se abrirá un cuadro de diálogo con instrucciones y los requisitos para la gestión automática:
+<figure><img src="../.gitbook/assets/certificado-http.png" alt=""><figcaption><p>New certificate</p></figcaption></figure>
 
-![Requisitos para la gestión automática de certificados](<../.gitbook/assets/image (55).png>)
+In a few minutes, it will be deployed and automatically renewed without any intervention on your part.
 
-Una vez sacado el certificado, el candado se volverá verde y ya puedes despreocuparte. En unos minutos estará desplegado y se renovará automáticamente sin ninguna intervención por tu parte.
+## Custom Certificates
 
-
-
-## Certificados custom
-
-Al margen de los certificados autogestionados por Transparent Edge Services, puedes subir tus propios certificados a la plataforma, por ejemplo wildcards. Para ello, basta con acceder a la parte de "Certificados" dentro del dashboard de autoprovision, y pulsar sobre el botón de "Añadir certificado personalizado". En el cuadro emergente, se introducirá en la parte izquierda el certificado en formato PEM (son texto y comienzan con la cadena ------BEGIN CERTIFICATE), con las CA, si las hubiera, concatenadas. En la parte derecha, se introducirá la clave privada del certificado (también texto, suelen comenzar por ---------BEGIN PRIVATE KEY), y al guardar (previa validación del mismo) se almacenará el certificado y se desplegará en unos minutos
+In addition to the certificates managed by Transparent Edge Services, you can upload your own certificates to the platform, such as wildcard certificates. To do this, simply access the "Certificates" section within the autoprovision dashboard and click on the "Add Custom Certificate" button. In the popup box, you will enter the certificate in PEM format on the left side (it is a text and starts with the string "-----BEGIN CERTIFICATE"), with any intermediate CAs concatenated if applicable. On the right side, you will enter the private key of the certificate (also text, usually starting with "-----BEGIN PRIVATE KEY"), and upon saving (after validation), the certificate will be stored and deployed within a few minutes.
 
 ## Protocolos
 
-En Transparent Edge Services ofrecemos seguridad en las conexiones adecuadas al estado del arte, mediante el protocolo TLS. Soportamos tanto TLSv1.2 como TLSv1.3, habiendo quedado obsoletas todas las versiones anteriores siguiendo las recomendaciones de la RFC 8996.
+At Transparent Edge Services, we provide state-of-the-art security for connections through the TLS protocol. We support both TLSv1.2 and TLSv1.3, following the recommendations of RFC 8996, which rendered all previous versions obsolete.
 
-## Cifrados
+## Ciphers
 
-La _suite_ de cifrados usada en Transparent Edge Services es estándar y está en permanente adaptación a las buenas prácticas aceptadas comúnmente en ciberseguridad, proporcionando un equilibrio adaptado entre la compatibilidad con el mayor número de dispositivos y la seguridad del cifrado, incluyendo los siguientes:
+The cipher suite used in Transparent Edge Services is standard and constantly evolving to align with commonly accepted cybersecurity best practices. It offers a balanced approach between compatibility with a wide range of devices and encryption security. Some of the supported ciphers include:
 
 ```
 "EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH"
 ```
 
-## Características soportadas
+## Supported Features&#x20;
 
-Las siguientes _features_ son soportadas por los terminadores de Transparent Edge Services:
+The following features are supported by Transparent Edge terminators:
 
-* _**TLS Resumption**_: Usamos tickets e identificadores de sesión para implementarlo. Esto hace el TTFB mucho menor para visitantes recurrentes.
-* _**OCSP Stapling**_: Para acelerar lo más posible la validación de los certificados por parte del cliente.
-* _**HSTS**_: El uso de Varnish permite que la cabecera se pueda añadir por VCL en la subrutina _vcl\_deliver_ aunque el origen no la esté incluyendo.
-* _**Perfect Forward Secrecy**_: Incorporamos Diffie-Helman para el uso de PFS.
+* **TLS Resumption:** We utilize session tickets and session identifiers to implement TLS resumption. This significantly reduces the time to the first byte (TTFB) for returning visitors.
+* **OCSP Stapling:** We implement OCSP stapling to expedite certificate validation by the client.
+* **HSTS:** With the use of Varnish, the HSTS header can be added via VCL in the _vcl\_deliver_ subroutine, even if the origin server does not include it.
+* **Perfect Forward Secrecy:** We incorporate Diffie-Hellman for the implementation of PFS.
+
+\

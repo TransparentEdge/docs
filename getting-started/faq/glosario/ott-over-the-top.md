@@ -1,5 +1,5 @@
-# OTT (Over the Top)
+# OTT (Over The Top)
 
-Los OTT u _over the top_ son servicios de _streaming media_ que se ofrecen a los usuarios de forma directa a través de Internet, sin la implicación de las plataformas de cable, transmisión y televisión satelital, que tradicionalmente controlan y distribuyen el contenido.
+An OTT or over-the-top is a media service offered directly to viewers via the Internet, bypassing the cable, broadcast, and satellite television platforms that traditionally control and distribute content.
 
-El término se aplica principalmente a suscripciones basadas en servicios de vídeo bajo demanda que ofrecen contenidos de cine y televisión.
+The term mainly applies to subscription-based video-on-demand services that offer film and television content.

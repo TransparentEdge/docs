@@ -1,6 +1,3 @@
 # CNAME
 
-Un CNAME es un tipo de registro DNS que nos ayuda a dirigir un subdominio a otro dominio que actúa de _canonical_. Con él no apuntamos un dominio hacia una IP, sino a un dominio (subdominio, en realidad), que es el que en última instancia apunta a la IP del recurso al que acceder.
-
-
-
+A CNAME is a type of DNS record that maps one domain name (an alias) to another (the canonical name). The CNAME record always points to another domain name, never to an IP address; this second domain is ultimately what points to the IP address of the resource being accessed.

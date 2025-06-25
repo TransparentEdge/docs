@@ -1,15 +1,13 @@
-# True-Client-IP y X-Forwarded-For
+# True-Client-IP and X-Forwarded-For
 
-La dirección IP del cliente queda enmascarada por la red de cachés de Transparent Edge. Esto quiere decir que el servidor de origen del cliente siempre va a recibir conexiones de una dirección IP de **nuestra red de cachés**. Además, dicha red de cachés varía en el tiempo, con lo cual no se puede filtrar a nivel de dirección IP (nivel 3 OSI).
+The client’s IP address is masked by Transparent Edge’s cache network. This means that the client’s origin server is always going to receive connections from an IP address in **our cache network**. Plus, that cache network will vary over time, making it impossible to filter by IP address (level 3 OSI).
 
-Para ello, lo que hacemos en Transparent Edge es crear cabeceras HTTP extra al estándar que nos permiten pasar al cliente la dirección IP del usuario real que está navegando. De esta forma, el cliente puede tomar las medidas oportunas con la dirección aunque el servidor esté detrás de la red de caché. Eso se realiza con las cabeceras _X-Forwarded-For_ y/o _True-Client-IP_.
+To do so, at Transparent Edge we create extra non-standard HTTP headers to be able to send our clients the IP addresses of the actual users who are doing the browsing. This lets clients take the appropriate actions with the addresses even though the server is behind the cache network. This is done using the X-Forwarded-For and/or True-Client-IP headers.
 
-Ahora le toca al cliente poder capturar dicha cabecera y operar con ella.
+From there, it’s up to the client to capture the header and operate with it.
 
-### ¿Qué diferencia hay entre X-Forwarded-For y True-Client-IP?
+### What's the difference between X-Forwarded-For and True-Client-IP?
 
-_**X-Forwarded-For**_ es una cabecera HTTP estándar donde los diferentes _softwares_ de _proxy_ añaden la dirección del cliente, incluso los sistemas corporativos. Esto quiere decir que si las peticiones atraviesan varias capas, varias direcciones aparecerán separadas por comas en dicha cabecera. Eso implica que el cliente ha de "separar" la última dirección IP o analizar varias de ellas.
+**X-Forwarded-For** is a standard HTTP header where the software of various proxies adds the client’s IP address, including corporate systems. This means that if a request crosses several layers, several addressees will appear in the header separated by commas. As a result, clients will either have to “separate” the last IP address or analyze several of them.
 
-_**True-Client-IP**_ es la última dirección IP antes de llegar a los servidores de Transparent Edge. Correspondería a la primera IP de _X-Forwarded-For_. Por lo tanto, corresponde con la dirección real del cliente que inició la conexión.
-
-###
+**True-Client-IP** returns the last IP address before the request reaches the Transparent Edge servers. It corresponds to the first IP address of X-Forwarded-For and is therefore the actual address of the client that initiated the connection.

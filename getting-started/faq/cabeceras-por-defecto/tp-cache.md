@@ -1,35 +1,39 @@
 # TP-Cache
 
-Como explicamos en el documento [https://docs.transparentedge.eu/getting-started/faq/arquitectura/capas-de-cache](https://docs.transparentedge.eu/getting-started/faq/arquitectura/capas-de-cache) Transparent Edge se compone de dos capas de caché.&#x20;
+As we explain in the document
 
-En todas las peticiones que pasan por la CDN y, de manera opcional, por el Mid-Tier, introducimos una cabecera que nos permite saber si el objeto ha sido servido desde la caché o si, por el contrario, ha tenido que ir a buscarlo a la siguiente capa u origen.
+[https://docs.transparentedge.eu/v/english/getting-started/faq/arquitectura/capas-de-cache](https://docs.transparentedge.eu/v/english/getting-started/faq/arquitectura/capas-de-cache)
 
-Estas cabeceras son _**TP-Cache**_ (en capa 1) y _**TP2-Cache**_ (solo en Mid-Tier). Esta cabecera puede tener el valor _**HIT**_ o _**MISS**_ en función, como decíamos, de si el objeto ha sido o no servido desde la caché.
+Transparent Edge is made up of two cache layers.
 
-Vamos a poner varios ejemplos:
+We can optionally add a header in the Mid-Tier to all the requests that pass through the CDN to let us know whether the object was served from the cache or whether it was necessary to go to the next layer or the origin server to find it.
+
+These headers are **TP-Cache** (in layer 1) and **TP2-Cache** (only in Mid-Tier). This header can have the value **HIT** or **MISS** depending on whether or not the object was served from the cache.
+
+Let's look at some examples:
 
 ```
 TP-Cache: HIT
-TP2-Cache: MISS 
+TP2-Cache: MISS
 ```
 
-En este caso, el objeto ha sido servido desde una de las cachés de capa 1, sin que haya sido necesario ir a buscar dicho objeto al Mid-Tier.
+In this case, the object was served from one of the layer 1 caches, without having to go to the Mid-Tier to find it.
 
 ```
 TP-Cache: MISS
 TP2-Cache: HIT
 ```
 
-Este es justo el caso contrario: el objeto no estaba o estaba caducado en capa 1 y, al pedirlo al Mid-Tier, esta caché ha encontrado una versión fresca del objeto, que se ha servido desde esta capa. Por ello, la petición no ha tenido que ser pedida en última instancia a los servidores de origen del cliente.
+This is the opposite scenario: The object was not in layer 1 or was expired there, and when requesting it from the Mid-Tier that cache found a fresh version of the object which was served from that layer. Therefore, the request did not ultimately have to go to the client's origin servers.
 
 ```
 TP-Cache: MISS
 TP2-Cache: MISS
 ```
 
-En este último caso no se ha encontrado una copia del objeto válida en caché, bien porque era un objeto no cacheable o bien porque estaba caducado, por lo que la petición ha bajado directamente a los servidores de origen del cliente.
+In this final case, a valid copy of the object was not found in the cache, either because it was not a cacheable object or because it was expired, so the request went directly to the client's origin servers.
 
-En este documento, por claridad, hemos hablado de la cabecera _Cache-Control_, pero Transparent Edge cumple con el estándar y se ciñe a lo que reza la [RFC](http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html), por lo que puede utilizarse cualquiera de las cabeceras de caché disponibles en la misma.
+For reasons of clarity, in this document we have been speaking about the Cache-Control header, but Transparent Edge complies with the letter and spirit of the [RFC](https://www.rfc-editor.org/rfc/rfc2616#section-14), so any of the cache headers available there can be used.
 
 ```
 curl -v -H "User-Agent: TCDN" https://www.transparentcdn.com/ > /dev/null
@@ -49,4 +53,3 @@ curl -v -H "User-Agent: TCDN" https://www.transparentcdn.com/ > /dev/null
 < Vary: , Accept-Encoding
 < strict-transport-security: max-age=31536000; includeSubDomains; preload
 ```
-

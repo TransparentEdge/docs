@@ -1,16 +1,15 @@
-# El panel
+# Dashboard
 
-El panel de Transparent Edge es la herramienta que permite a los usuarios controlar qué está pasando en tiempo real con su tráfico y conocer también el tiempo de los consumos, tanto del servicio de Delivery como del de Storage y Transcoding.&#x20;
+The Transparent Edge Dashboard is the tool that allows users to control what's happening to their traffic in real-time and to know the consumptions of all the contracted services.
 
-El panel contiene un módulo de alertas, configurable por el usuario, para informarle cuando alcanza un determinado nivel de tráfico. Se le notifica por correo.
+It can be run via API for the creation of custom dashboards integrated into the client infrastructure with all desired information, and is available in both Spanish and English.
 
-Es explotable vía API para la creación de _dashboards_ propios con la información que se desee y está disponible tanto en español como en inglés.&#x20;
+On the main page, users can instantly view all the historical information about the service provided by Transparent Edge.&#x20;
 
-En la página de entrada, y de un solo vistazo, se puede tener toda la información histórica del servicio prestado por Transparent Edge, tanto para la parte de Delivery como para el Transcoding y el Storage. Además, se puede filtrar por fechas.\
+In the left-hand menu, users have direct access to the different sections that their permissions allow, such as user management, billing or the different services that Transparent provides for the client. \
 
 
-<figure><img src="../../.gitbook/assets/Captura de pantalla 2022-12-21 a las 16.40.28.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (105).png" alt=""><figcaption></figcaption></figure>
 
-\
 \
 \

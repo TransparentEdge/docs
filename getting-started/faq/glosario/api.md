@@ -1,5 +1,5 @@
 # API
 
-Una API es una gama de rutinas, protocolos, definiciones y herramientas para desarrollar e integrar el _software_ de aplicaciones. Las API especifican cómo deben interactuar los componentes de _software_ y se utilizan para los componentes GUI (componentes de la interfaz gráfica de usuario).
+An API is a set of routines, protocols, definitions, and tools for developing and integrating application software. APIs specify how the software components interact and they are used for GUI (Graphic User Interface) components.
 
-Puedes consultar nuestra API completa [aquí](https://api.transparentcdn.com/docs).\
+You can consult our complete API [here](https://api.transparentcdn.com/docs).

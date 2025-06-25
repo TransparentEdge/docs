@@ -1,5 +1,5 @@
 # DASH
 
-La transmisión dinámica adaptativa sobre HTTP (DASH), también conocida como MPEG-DASH, es una técnica de reproducción en tiempo real (_streaming_) de tasa de bits (_bitrate_) adaptativa que permite la transmisión de contenido multimedia de alta calidad a través de Internet por medio de servidores web HTTP convencionales. MPEG-DASH funciona al dividir el contenido en una secuencia de pequeños segmentos HTTP. Cada segmento contiene un corto intervalo de vídeo/audio y existen múltiples segmentos distintos para cada _bitrate_.
+Dynamic Adaptive Streaming over HTTP (DASH)—also known as MPEG-DASH—is an adaptive bitrate streaming technique that enables high-quality streaming of multimedia content over the Internet delivered from conventional HTTP web servers. MPEG-DASH works by breaking the content into a sequence of small HTTP segments. Each segment contains a short interval of video/audio and there are multiple different segments for each bitrate.
 
-Cuando el contenido se reproduce mediante un cliente MPEG-DASH, este se encarga de seleccionar los segmentos con el mayor _bitrate_.
+When the content is played by a MPEG-DASH client, the client automatically selects the segment with the highest possible bitrate.

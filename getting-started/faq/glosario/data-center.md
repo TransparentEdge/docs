@@ -1,3 +1,3 @@
-# Data center
+# Data Center
 
-Un _data center_ es un centro que aloja instalaciones informáticas como servidores, enrutadores, conmutadores y cortafuegos, así como otros componentes como equipos de respaldo, sistemas de extinción de incendios o aire acondicionado. Aquí los datos son almacenados, tratados y distribuidos al personal autorizado o incorporados a procesos para que puedan consultarse y/o modificarse.\
+A data center is a facility that houses computer systems like servers, routers, switches, and firewalls, as well as other components like backup equipment and fire-suppression and air-conditioning systems. Data centers store, process, and distribute data to authorized persons and incorporate data into processes so they can be consulted and/or modified.

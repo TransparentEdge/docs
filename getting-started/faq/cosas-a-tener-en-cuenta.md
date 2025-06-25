@@ -1,53 +1,54 @@
-# Cosas a tener en cuenta
+---
+description: >-
+  There are several things to keep in mind when working with a CDN in front of
+  your web service. These are the most important ones:
+---
 
-Hay varias cosas a tener en cuenta cuando trabajas con una CDN por delante de tu servicio web. Estas son las más importantes:
+# Things to consider
 
-### Actualización del contenido
+## Updating content
 
-Cuando trabajas con una CDN, debes ser consciente de que tienes un elemento delante de tu sitio web que está cacheando el contenido que publicas. Si quieres actualizar cualquier elemento de la página, es importante que te asegures de que, una vez esté a tu gusto, ese contenido cacheado se elimine de la caché de la CDN para dar paso al contenido nuevo.
+When you work with a CDN, be aware that there is an element in front of your website which is caching all the content you publish. If you want to update an element on the page, once you have it how you want it, you must be sure to delete the cached content from the CDN cache to make way for the new content.
 
-Para eliminar ese contenido, proceso que se conoce como invalidar contenido, tienes varias opciones.
+The process of deleting that content is known as invalidating, and there are several options for doing so.
 
-La primera y la más sencilla es que, después de una actualización de contenido, vayas a nuestro [portal](https://dashboard.transparentcdn.com) a la sección de **Invalidaciones** y, pulsando el botón _Purge URLs_, introduzcas las URL a invalidar.
+The first and easiest option is to go to the **Invalidations** section of our[ portal](https://dashboard.transparentcdn.com/auth/login?redirect=%2F) following an update, click the Purge URL button, and enter the URL you wish to invalidate.
 
 ![](<../../.gitbook/assets/Captura de pantalla 2020-05-21 a las 9.59.08.png>)
 
-Otra opción es que integres vía API el proceso de invalidación dentro del sistema de publicación, de manera que tu sistema lo detecte automáticamente cuando cambies un contenido y lance una invalidación a través de nuestro [API](https://api.transparentcdn.com/docs).&#x20;
+Another option is to use the API to integrate the invalidation process into the publication system. This way, your system will automatically detect when you change content and launch an invalidation through our [API](https://api.transparentcdn.com/docs).
 
-Si estás usando [WordPress](https://docs.transparentcdn.com/integraciones/configuracion-plugin), [Magento](broken-reference) o [Prestashop](broken-reference), tenemos _plugins_ a tu disposición que se encargan precisamente de integrar el CMS con Transparent Edge para que no tengas que preocuparte de nada.
+If you are using[ WordPress](https://docs.transparentcdn.com/integraciones/configuracion-plugin),[ Magento](https://docs.transparentedge.eu/integraciones/plugin-para-magento), or[ Prestashop](https://docs.transparentedge.eu/integraciones/plugin-para-prestashop), we have plugins available that are specifically geared toward integrating the CMS with Transparent Edge so you don’t have to worry about it.
 
-### **IP del cliente**
+## Client IP
 
-Cuando estás detrás de nuestra CDN no te va llegar la dirección IP de cliente de la manera habitual, ya que es Transparent Edge la que hace las peticiones en nombre del cliente a los servidores de origen. Pero, ¡tranquilidad!, no está todo perdido.
+When you are behind our CDN, you won’t see the client IP address in the usual way. This is because Transparent Edge is making the requests to the origin servers on the client's behalf. But don't worry, all is not lost.
 
-Para lidiar con esta situación, lo que hacemos en Transparent Edge es crear cabeceras HTTP extra que nos permiten pasar al cliente la dirección IP del usuario real que está navegando. Así, aunque el servidor esté detrás de la red de caché, el cliente puede tomar las medidas oportunas en función de la IP real. Esto lo realizamos con las cabeceras _X-Forwarded-For_ y/o _True-Client-Ip_.
+To deal with this situation, Transparent Edge has created extra HTTP headers that allow us to send customers the IP address of the real user who is doing the browsing. So, even though the server is behind the cache network, the customer can still take the appropriate actions based on the real IP address. We do this with X-Forwarded-For and/or True-Client-IP headers.
 
-Te lo explicamos con detalle [aquí](cabeceras-por-defecto/true-client-ip-y-x-forwarded-for.md).
+We explain it in detail[ here](https://docs.transparentedge.eu/v/english/getting-started/faq/cabeceras-por-defecto/true-client-ip-y-x-forwarded-for).
 
-### **Sistemas IPS/IDS**
+## IPS/IDS Systems
 
-Si en tu plataforma de origen cuentas con sistemas IDS/IPS, debes extremar las precauciones, ya que estos sistemas, aunque están pensados para proteger tu plataforma, pueden causar problemas cuando trabajas con una CDN por delante.&#x20;
+If you have IPS/IDS systems on your origin platform, you need to be extremely careful. Even though these systems are intended to protect your platform, they can cause problems when working behind a CDN.
 
-Una de las muchas bondades de los IPS es que son capaces de detectar cuándo desde una IP en concreto se está accediendo a un recurso de manera no lícita.&#x20;
+One of the many benefits of IPS systems is that they can detect when a particular IP address is accessing a resource illicitly.
 
-Como comentábamos anteriormente, cuando contamos con una CDN por delante, las peticiones que se hagan a tu servidor de origen serán todas desde IP pertenecientes a la CDN. Por eso puede darse el caso de que el IPS piense que las IP de la CDN están haciendo más peticiones de lo que debería una IP y sean baneadas como si de un ataque se tratara.&#x20;
+As mentioned above, when you are behind a CDN, all the requests to your origin server will come from the CDN's IP addresses. So, the IPS may think that the CDN's IP addresses are making more requests than any one IP should make and restrict them as if it were an attack.
 
-Obviamente, nos encontramos ante un falso positivo que se puede subsanar, pero es algo a tener muy en cuenta.
+This is obviously a false positive that can be corrected, but it’s something to keep in mind.
 
-En Transparent Edge publicamos va API nuestros rangos de [IP](https://api.transparentcdn.com/v1/companies/ipranges/), por lo que la forma recomendada de actuar cuando cuentas con este tipo de sistemas es la de incluir todas las IP de Transparent Edge en una _whitelist_ dentro del IPS.
+At Transparent Edge we publish our [IP](https://api.transparentcdn.com/v1/companies/ipranges/) ranges through our API. If you have these types of systems, we recommend including all the Transparent Edge IP addresses on a whitelist within the IPS.
 
-### **Dominios raíz**
+## Root domains
 
-En Transparent Edge, como en muchas otras CDN, la manera más común de poner a funcionar el servicio es haciendo un sencillo cambio a nivel DNS de forma que, por ejemplo, el subdominio www de tu _site_ deje de ser un registro de tipo A y pase a ser un registro de tipo CNAME que nosotros te daremos con el alta del servicio.
+With Transparent Edge—like with many other CDNs—the most common way to start running the service is by making a simple DNS change so that, for instance, the www subdomain of your website will no longer be an A record but a CNAME record that we’ll give you when you sign up.
 
-Hasta aquí, todo bien. Pero si tu sitio web funciona directamente con el dominio canónico, es decir, sin el www o cualquier otro dominio (p.e: **https://misite.com** en lugar del **htttps://www.misite.com**), vas a tener que hacer algún trabajo extra:
+So far, so good. But if your website runs directly with the canonical domain—that is, without the www or any other domain (e.g.: **https://mysite.com** instead of **htttps://www.mysite.com**), you’re not done quite yet:
 
-* No todos los proveedores de DNS soportan esta opción, pero si tu dominio no tiene registros MX asociados, en teoría si podrías hacer el CNAME del dominio canónico. Repetimos: esta opción, pese a ser la más fácil, no está disponible en todos los proveedores de DNS.
-* Otra opción sería delegarnos la gestión del dominio dentro de nuestro sistema DNS.
+* If your domain doesn’t have any MX records added to it, in theory you’ll be able to use the CNAME of the canonical domain, although not all DNS providers support this option. We repeat: This is the easiest option, but it’s not available with all DNS providers.
+* Another option would be to let us take care of the domain management within our DNS system.
 
-### _**Set-Cookies**_** y páginas con autenticación básica**
+## Set-Cookies and pages with basic authentication
 
-Las páginas web que lleven en la respuesta la cabecera _Set-Cookies_ o _Authorization_ no serán cacheadas por defecto en Transparent Edge.
-
-###
-
+Web pages whose responses have the Set-Cookies or Authorization headers are cached in Transparent Edge by default.

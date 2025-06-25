@@ -1,8 +1,8 @@
 # Vary
 
-La cabecera _Vary_ es una cabecera útil a la vez que peligrosa. Se usa para decir a las cachés (ya sea la del navegador, un proxy o una CDN como Transparent Edge) que guarden versiones del mismo objeto en función de una cabecera dada. Veamos algunos ejemplos de buen y mal uso de ella:
+The Vary header can be very useful, but sometimes dangerous. It is used to tell caches (either the browser cache, a proxy, or a CDN like Transparent Edge) to save different versions of the same object depending on a given header. Let’s look at some examples of how to use it well and what not do to.
 
-### Mal uso de la cabecera Vary
+### Bad use of the Vary header
 
 ```
 HTTP/1.1 200 OK
@@ -19,11 +19,11 @@ Connection: keep-alive
 TP-Cache: HIT
 ```
 
-En este ejemplo, en las cabeceras de respuesta de la petición de arriba, vemos que se está enviando la cabecera _Vary: Cookies_. Esta acción insta a las cachés a guardar una versión del mismo objeto (por ejemplo, una imagen o una portada) por cada _cookie_ distinta que llegue. Es decir, este tipo de petición tendría un _hit ratio_ muy bajo, posiblemente por debajo del 10 %, por lo que el sistema de cachés no sería efectivo.&#x20;
+In the response headers in this example, we can see the Vary: Cookies header. This tells the caches to save a different version of the same object—like an image or a homepage—for each different cookie received. In other words, this type of request would have a very low hit ratio, possibly below 10%, rendering the cache system ineffective.&#x20;
 
-Otro ejemplo de mal uso sería el _Vary: User-Agent_, que nos guardaría una versión del mismo objeto por cada _user-agent_ que nos visite. Y, te avisamos, los _user-agent_ que hay son unos cuantos.
+Another bad use example is the Vary: User-agent header, which would save a different version of the same object for every user-agent that visits the site. Be warned, there are quite a few user-agents out there!
 
-### Buen uso de la cabecera _Vary_
+### Good use of the Vary header
 
 ```
 HTTP/1.1 200 OK
@@ -40,10 +40,10 @@ Connection: keep-alive
 TP-Cache: HIT
 ```
 
-Aquí guardamos una versión del mismo objeto en función del si el objeto está comprimido o no. Esto se hace para guardar retrocompatibilidad con navegadores antiguos y es el típico caso de buen uso de esta cabecera.
+Here we are saving a different version of an object based on whether or not the object is compressed. This is done to maintain backward compatibility with old browsers and is the typical example of using this header well.
 
-Otro ejemplo de buen uso sería la cabecera _Vary: X-Device_. Con el _Vary_ de esta manera, decimos a Transparent Edge que guarde una misma versión del objeto en función de la cabecera _X-Device_, que puede tener el valor de _desktop_, _mobile_ o _tablet_.
+Another example is the Vary: X-Device header. When we use Vary this way, we tell Transparent Edge to save a different version of the object based on the X-Device value, which can be desktop, mobile, or tablet.
 
-Puedes ver más sobre la detección de móviles [aquí](../funcionalidades/deteccion-de-dispositivos.md).
+You can read more about detecting mobile devices [here](https://docs.transparentedge.eu/v/english/getting-started/faq/funcionalidades/deteccion-de-dispositivos).
 
-Más sobre esta cabecera [aquí](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.htm).
+Learn more about this header[ here](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).

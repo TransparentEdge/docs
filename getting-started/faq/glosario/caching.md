@@ -1,3 +1,3 @@
 # Caching
 
-El _caching_ o cacheo es el proceso de almacenar datos en un caché. Un caché es un espacio de almacenamiento temporal. Un ejemplo de ello son los archivos que se solicitan automáticamente al mirar una página web y se almacenan en el disco duro, en un subdirectorio de caché en el directorio del navegador.
+Caching is the process of storing data in a cache. A cache is a temporary storage space. One example are the files that are automatically requested when you look at a web page, and that are stored on the hard drive in a cache subdirectory of the browser directory.

@@ -1,3 +1,3 @@
 # GSLB
 
-GSLB (servidor de balanceo de carga global) es un método de distribución de tráfico entre servidores que se encuentran en diferentes puntos geográficos. El uso de GSLB asegura que las peticiones se distribuyen correctamente y tienen en cuenta la ubicación de la persona que las utiliza, mejorando de esta forma la latencia y evitando que un solo servidor o grupo de servidores lleve todo el peso del tráfico.
+GSLB (Global Server Load Balancing) is a method of distributing Internet traffic to a network of servers in different geographical locations. GSLB ensures that requests are correctly distributed and that they take into account the location of the person using them, improving latency and preventing a single server or group of servers from carrying the entire weight of the traffic.

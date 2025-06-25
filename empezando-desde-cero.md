@@ -1,28 +1,29 @@
-# Aterrizando en Transparent Edge&#x20;
+# Landing in Transparent Edge
 
-Esta guía pretende ayudarte a empezar a usar Transparent Edge lo más rápido posible.
+This guide is intended to help you start using Transparent Edge as quickly as possible.
 
-Lo primero y más importante: siempre estamos cerca de ti para ayudarte con lo que necesites. Siéntete totalmente libre de [contactar con nosotros](mailto:soporte@transparentedge.eu) para cualquier duda o incluso para que hagamos la configuración inicial por ti.
+First and foremost: We're always standing by to help with whatever you may need. Feel free to [contact us](mailto:soporte@transparentedge.eu) if you have any questions or even if you want us to do the initial configuration for you.
 
-## Sobre Transparent Edge
+## About Transparent Edge
 
-Si estás leyendo esto es muy posible que ya nos conozcas e incluso que sepas cómo funciona exactamente una CDN. No obstante, antes de empezar te animamos a que te des una vuelta por nuestra documentación para familiarizarte con todas las posibilidades que ofrece Transparent Edge. Un buen punto de partida podría ser [aquí](https://docs.transparentedge.eu/getting-started/faq/empecemos-por-el-principio).
+If you’re reading this, it's quite possible that you already know us and that you even know exactly how a CDN works. However, before you begin, we encourage you to have a look through our documentation to familiarize yourself with all the possibilities offered by Transparent Edge. [This](https://docs.transparentedge.eu/v/english/getting-started/faq/empecemos-por-el-principio) would be a good place to start.
 
-## Darte de alta
+## Sign up
 
-Bueno, vemos que ya has tomado la decisión. Aun así, queremos que sepas que con nosotros siempre hay vuelta atrás. Podrás dar de baja el servicio, muy a nuestro pesar, enviando un simple [_email_](mailto:unsuscribe@transparentcdn.com).
+Well, we can see you’ve made the decision. Still, we’d like you to know that it's never too late to turn back. You can cancel your service—much to our regret—by sending a simple [email](mailto:unsubscribe@transparentedge.eu).
 
-Pero no queramos darnos de baja antes de empezar. Para crear una cuenta en Transparent Edge puedes hacerlo desde nuestra página de [_signup_](https://api.transparentcdn.com/signup#/). Te lo explicamos todo[ aquí.](signup.md)
+But let’s not cancel before we’ve even gotten started. To create a Transparent Edge account, just go to our [sign-up](https://signup.transparentedge.eu/#/)[ ](https://signup.transparentedge.eu/#/)page. We explain everything [here](https://docs.transparentedge.eu/v/english/signup).
 
-## Tu primera configuración
+## Your first configuration
 
-Intentamos ponerte las cosas fáciles y nos gustan las cosas sencillas. Por eso hemos desarrollado un [_wizard_](getting-started/dashboard/autoprovisionamiento/configuraciones-basicas.md) que te ayudará a crear tu primera configuración en Transparent Edge.
+We try to make things easy for you and we like simple things. That’s why we've developed a [wizard](https://docs.transparentedge.eu/getting-started/dashboard/autoprovisionamiento/configuraciones-basicas) to help you create your first Transparent Edge configuration.
 
-Recuerda: nos encanta escucharte y mejorar nuestro servicio es nuestra prioridad número uno. Por lo tanto, si ves que algo no te gusta o te parece confuso o crees que se puede hacer mejor de otra manera o más simple, te animamos a que nos escribas un [_email_](mailto:product@transparentedge.eu). Estaremos encantados de ayudarte.
+Remember: We love listening to you and improving our service is our number one priority. So, if you see something you don’t like or that seems confusing, or that you think can be done better or more simply, we encourage you to write us an [email](mailto:product@transparentedge.eu).&#x20;
 
-## Y ahora, ¿qué?
+We’d be more than happy to help you.
 
-Enhorabuena, tu sitio web ya está funcionando a través de Transparent Edge, pero solo es el principio. Transparent Edge, al estar basado en [Varnish Enterprise](https://www.varnish-software.com/), te abre un mundo de posibilidades a la hora de configurar la CDN. En nuestro portal de documentación encontrarás los casos de uso más habituales y te explicamos cómo llevarlos a cabo en nuestra sección de guías y tutoriales.
+## So now what?
 
-Si todavía quieres ir más allá, puedes consultar nuestro manual de [Referencia VCL](config/vcl/), que te dará un conocimiento profundo sobre lo que se puede hacer con Varnish y Transparent Edge.
+Congratulations, your website is functioning through Transparent Edge, but that’s just the beginning. Transparent Edge is based on [Varnish Enterprise](https://www.varnish-software.com/) software, opening up a world of possibilities when it comes to configuring the CDN. In our documentation portal, you’ll find the most common use cases and we explain how to implement them in our guides and tutorials section.
 
+If you'd like to go even further, you can consult our [VCL Reference](https://docs.transparentedge.eu/config/vcl) manual, which will give you a deep understanding of what can be done with Varnish and Transparent Edge.

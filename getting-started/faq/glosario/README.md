@@ -1,4 +1,4 @@
-# Glosario
+# Glosary
 
-Te ofrecemos un catálogo de términos clave que aparecen a lo largo de toda esta documentación para que puedas entender mejor nuestro servicio.
+We have created a catalog of key terms that appear throughout this documentation to help you better understand our service.
 

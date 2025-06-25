@@ -1,10 +1,10 @@
 # VCL Objects
 
-En VCL hay diferentes tipos de objetos que tienes que conocer. A estos objetos se puede acceder desde la configuración VCL y así pueden ser modificados.
+In VCL, there are different types of objects that you need to know. These objects can be accessed and modified from the VCL configuration.
 
-* **req.** Es el objeto de la _request_. Se accede principalmente desde la función vcl\_recv. Cuando Varnish recibe la _request_, este objeto es creado y, desde ese momento, es accesible.
-* **bereq.** Es el objeto que se envía al _backend_. Se crea justo antes de enviar el objeto al _backend_ u origen. Está basado en el objeto req.
-* **beresp.** Es la respuesta del _backend_. Contiene las cabeceras de la respuesta del _backend_ a Transparent CDN. Si quieres modificarlo, este objeto es accesible desde la función **vcl\_backend\_response.**
-* **resp.** Es la respuesta HTTP justo antes de ser enviada al cliente. Puedes modificar este objeto en la función **vcl\_deliver.**
-* **obj.** Es un objeto de solo lectura y es el objeto que está almacenado en la caché.
+* **req.** It is the request object. It is mainly accessed from the vcl\_recv function. When Varnish receives the request, this object is created and accessible to be accessed.
+* **bereq.** It is the object sent to the backend. It is created just before sending the object to the backend or origin. It is based on the req object.
+* **beresp.** It is the backend response. It contains the headers of the backend's response to Transparent CDN. If you want to modify them, this object is accessible from the **vcl\_backend\_response** function.
+* **resp.** It is the HTTP response just before being sent to the client. You can modify this object in the **vcl\_deliver** function.
+* **obj.** It is a read-only object and represents the object stored in the cache.
 

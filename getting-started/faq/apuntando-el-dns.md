@@ -1,40 +1,40 @@
-# Apuntando el DNS
+# DNS Pointing
 
-Tras completar el alta del servicio en Transparent Edge, te llegará un correo de bienvenida. En él podrás encontrar un [CNAME](glosario/cname-1.md) para terminar la configuración.&#x20;
+After you sign up for Transparent Edge, you’ll receive a welcome email. It will include a[ CNAME](https://docs.transparentedge.eu/v/english/getting-started/faq/glosario/cname-1) to complete the configuration.
 
-Dicho CNAME tiene la siguiente estructura:
+The CNAME will have the following structure:
 
 `<SERVICIO>.<ID_CLIENTE>.edge2befaster.net`
 
-Vamos a ver cómo configurar todo con el siguiente CNAME de ejemplo:
+We’re going to look at how to do the configuration using this CNAME as an example:
 
 **caching.c4.edge2befaster.net**
 
-Este es el CNAME al que apuntar tus dominios. También lo encontraras visible en todo momento en nuestro [_dashboard_](https://dashboard.transparentcdn.com) en la pestaña de **Provisioning.**
+This is the CNAME to point your domains at. You can also always find it in the Provisioning tab of our[ dashboard](https://dashboard.transparentcdn.com/auth/login?redirect=%2F).
 
 ![](<../../.gitbook/assets/Captura de pantalla 2020-06-24 a las 9.16.44.png>)
 
-Una vez tengas claro cuál es tu CNAME asignado, lo único que tienes que hacer es ir a tu proveedor DNS (normalmente es el mismo en el que has comprado tus dominios) y cambiar el registro que quieres pasar por Transparent Edge.
+Once you know your assigned CNAME, you just have to go to your DNS provider (normally it’s where you bought your domains) and change the record you want to pass through Transparent Edge.
 
-Antes de seguir, déjanos apuntar que esta forma de trabajar, mediante CNAME, solo es válida para **subdominios**, como _www.tudominio.com_ o _blog.tudominio.com_, nunca para apuntar directamente a _tudominio.com_ sin subdominio. Esta limitación viene impuesta por la [RFC 1912](https://www.ietf.org/rfc/rfc1912.txt) y, aunque tiene excepciones, hay muchos servidores DNS que directamente no te permiten hacerlo.
+Before we continue, we’d just like to mention that this way of working, using a CNAME, is only valid for **subdomains** like www.yourdomain.com or blog.yourdomain.com, never to point directly at yourdomain.com without a subdomain. This limitation is imposed by the[ RFC 1912](https://www.ietf.org/rfc/rfc1912.txt) and, although there are exceptions, many DNS servers simply don’t allow it.
 
-Lo más normal es que quieras pasar el subdominio _www.tudominio.com._ En este caso, una vez dentro ya de tu proveedor DNS, tienes que localizar el registro **www,** que lo más probable es que apunte a una dirección IP mediante un registro de tipo[ A](https://www.ietf.org/rfc/rfc1912.txt). Algo así:
+Typically, you’ll want it to be the subdomain www.yourdomain.com. In this case, once you’re in your DNS provider, you’ll have to find the **www** record, which most likely points to an IP address with an[ A](https://www.ietf.org/rfc/rfc1912.txt) record. Something like this:
 
 ```
 www.tudominio.com	    A	    1.1.1.1
 ```
 
-Lo que tienes que hacer es eliminar ese registro y crear uno que, en lugar de ser de tipo A, sea de tipo CNAME y apunte a **caching.c4.edge2befaster.net**&#x20;
+You’ll have to delete that record and create a new one that is a CNAME instead of an A record, pointing to **caching.c4.edge2befaster.net.** Such as:
 
 ```
 www.tudominio.com    CNAME    caching.c4.edge2befaster.net 
 ```
 
-Este cambio no es automático y depende de dos cosas principalmente:
+This change does not happen automatically and how long it takes primarily depends on two things:
 
-1. Del tiempo que tarde tu proveedor DNS en aplicar los cambios, que suele ser casi inmediato.
-2. Del tiempo de propagación DNS. Según la RFC, puede tardar hasta 24 horas en verse el cambio, pero, por lo general, suelen ser solo unos minutos. Este _delay_ viene dado por la propia arquitectura de los DNS en Internet y los tiempos de cacheo asociados a cada dominio.
+1. The time your DNS provider takes to apply the changes, which is usually immediate.
+2. The DNS propagation time. According to the RFC, it can take up to 24 hours to see the change, but it generally only takes a few minutes. This delay is due to the DNS architecture itself and the caching times of each domain.
 
 {% hint style="warning" %}
-Es recomendable que, cuando vayas a hacer un cambio de DNS en el que quieres que los cambios se vean reflejados en el menor tiempo posible, bajes el TTL de tu dominio al menor tiempo posible.
+If you want to make a DNS change where the changes appear as quickly as possible, we recommend lowering your domain’s TTL as much as you can.
 {% endhint %}

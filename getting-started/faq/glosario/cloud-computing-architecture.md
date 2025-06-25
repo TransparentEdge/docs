@@ -1,3 +1,3 @@
-# Cloud computing architecture
+# Cloud Computing Architecture
 
-La arquitectura de computación en la nube comprende los componentes y subcomponentes necesarios para la computación en la nube (_cloud computing_). Estos componentes consisten habitualmente en una plataforma _front-end_, plataformas _back-end_, una entrega basada en la nube y una red.
+Cloud computing architecture includes all the components and subcomponents required for cloud computing. These components typically consist of a front-end platform, back-end platforms, a cloud-based delivery, and a network.

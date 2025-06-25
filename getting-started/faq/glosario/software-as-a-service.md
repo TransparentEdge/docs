@@ -1,4 +1,3 @@
-# SaaS (Software as a service)
+# SaaS (Software as a Service)
 
-El SaaS o _software as a service_ es un modelo de distribución de _software_ en el que este está disponible a través de Internet (aplicaciones basadas en la nube) en lugar de estar instalado localmente. En este caso, el proveedor del servicio aloja toda la infraestructura necesaria para que funcione la aplicación y el cliente únicamente hace uso de las funciones de dicho _software_.
-
+Software as a service is a software distribution model in which the software is available through the Internet (cloud-based applications) instead of being installed locally. In this case, the service provider hosts all the infrastructure required for the application to run and the client merely makes use of the software’s functions.

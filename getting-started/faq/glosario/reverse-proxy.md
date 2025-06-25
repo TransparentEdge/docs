@@ -1,5 +1,5 @@
 # Reverse Proxy
 
-Un _reverse proxy_ o _proxy_ inverso es un tipo de servidor _proxy_ que se sitúa entre el cliente y el servidor en una infraestructura de red. Se encarga de manejar las peticiones entrantes, interactuando en nombre del cliente con el servidor. Esto proporciona una capa de abstracción adicional porque el cliente no llega a conocer las características o la existencia del servidor o servidores, sino que se comunica directamente con el _proxy_ inverso.
+A reverse proxy is a type of proxy server that sits between the client and the server on a network infrastructure. It manages incoming requests, interacting with the server on behalf of the client. This provides an additional layer of abstraction because the client never learns of the characteristics or existence of the server or servers, instead communicating directly with the reverse proxy.
 
-Un _reverse proxy_ suele utilizarse por cuestiones de seguridad, balanceo de carga, cacheo, optimización de los tiempos de carga, etc.\
+A reverse proxy is often used for safety, load balancing, caching, optimizing load times, etc.
