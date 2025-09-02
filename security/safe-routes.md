@@ -4,6 +4,8 @@
 
 In the dashboard’s sidebar menu, you’ll find the **Safe Routes** section, where you can create and manage secure links.
 
+## New Safe Route
+
 By clicking the **“New Safe Route”** button, a modal will open where you can: assign a **name** to the link, add a brief **description** (optional), select the **associated site,** enter the URL and define the **duration of the temporary cookie**.
 
 Once a Safe Route is created, it will appear in the section’s table, from where you can **copy the URL** and share it only with people you fully trust.
