@@ -151,6 +151,7 @@
   * [Automatic Reactions](security/anomaly-detection/automatic-reactions.md)
   * [Detection History](security/anomaly-detection/detection-history.md)
 * [Under attack mode](security/under-attack-mode.md)
+* [Safe routes](security/safe-routes.md)
 * [Global Whitelists](security/global-whitelists.md)
 
 ## Integrations <a href="#integraciones" id="integraciones"></a>
