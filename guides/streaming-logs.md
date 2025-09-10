@@ -4,7 +4,7 @@
 If you have any questions about the real-time log streaming service, please contact us at [support@transparentedge.eu](mailto:support@transparentedge.eu).
 {% endhint %}
 
-To activate the real-time log streaming service, simply access the dashboard at [https://dashboard.transparentcdn.com/](https://dashboard.transparentcdn.com/) and go to the Logs section. In the Streaming tab, you will find everything you need.
+To activate the real-time log streaming service, simply access the dashboard at [https://dashboard.transparentcdn.com/](https://dashboard.transparentcdn.com/) , go to the Services section and activate the Streaming Logs service, you will find everything you need.
 
 Once the service is activated, **you can download a zip** file that contains the necessary digital certificates to authenticate your consumers, as well as a set of preconfigured templates with your data for consuming logs using Filebeat, Logstash, and Python.
 
@@ -34,8 +34,8 @@ The templates are preconfigured with all the necessary data, but let's go throug
 
 #### Other data:
 
-* The Topic to subscribe to will be **`c<ID>`**
-* **The prefix of the Consumer Group to join your consumers.** For example, if your `ID` is `83`, you will subscribe to the topic `c83`, and you can join your consumers to any "Consumer Group" starting with `c83_`, such as `c83_group1`, `c83_test`, `c83_pre`... You can find more information about consumer groups [here.](streaming-logs.md)
+* There several Topics to subscribe, the default topic for the delivery logs to will be **`c<ID>` .**  The rest of the topics will be described below and depend on the services subscribed.
+* **The prefix of the Consumer Group to join your consumers.** For example, if your `ID` is `83`, you will subscribe to the topic `c83`and you can join your consumers to any "Consumer Group" starting with `c83_`, such as `c83_group1`, `c83_test`, `c83_pre`... You can find more information about consumer groups [here.](streaming-logs.md)
 
 #### We will need:&#x20;
 
@@ -76,11 +76,11 @@ Let's now go through a simple deployment of Filebeat on a Debian server as a fir
 
 The official documentation can be found at: [https://www.elastic.co/guide/en/beats/filebeat/current/index.html](https://www.elastic.co/guide/en/beats/filebeat/current/index.html)&#x20;
 
-We will use the following example data, but remember that the zip file you downloaded after activating the service already contains a template called **`filebeat.yml`** with all the necessary information.
+We will use the following example data, but remember that the zip file you downloaded after activating the service already contains a template called **`filebeat.yml`** with all the necessary information:
 
 * Certificates `c83.crt.pem` y `c83.key.pem`
 * Password: `password`
-* Topic: `c83`
+* Topic (default delivery logs topic): `c83`   &#x20;
 * Consumer group: `c83_filebeat`\
 
 
@@ -199,7 +199,7 @@ filter {
   grok {
     match => {
         "message" => [
-            "%{DATA:clientip} - %{DATA:user} \[(.*)\] \"%{WORD:verb} %{DATA:request} %{DATA:httpversion}\" %{NUMBER:statuscode} %{DATA:bytes} \"%{DATA:useragent}\" %{DATA:hitmiss} \"%{DATA:content-type}\" \"%{DATA:layer}\" %{NUMBER:requesttime} \"%{DATA:clientid}\" \"%{DATA:referer}\" %{DATA:forwardedproto} %{DATA:country}(.*)",
+            "%{DATA:clientip} - %{DATA:user} \[(.*)\] \"%{WORD:verb} %{DATA:request} %{DATA:httpversion}\" %{NUMBER:statuscode} %{DATA:bytes} \"%{DATA:useragent}\" %{DATA:hitmiss} \"%{DATA:content-type}\" \"%{DATA:layer}\" %{NUMBER:requesttime} \"%{DATA:clientid}\" \"%{DATA:referer}\" %{DATA:forwardedproto} %{DATA:country} \"%{DATA:bm}\" \"%{DATA:tcdn_debug}\" %{NUMBER:remain_ttl}(.*)",
             "%{DATA:clientip} - %{DATA:user} \[(.*)\] %{DATA:vod_host} \"%{WORD:verb} %{DATA:request} %{DATA:httpversion}\" %{NUMBER:statuscode} %{DATA:bytes} \"%{DATA:referer}\" \"%{DATA:useragent}\" \"%{DATA:content-type}\" \"%{DATA:hitmiss}\" \"%{DATA:layer}\" \"%{DATA:clientid}\" %{NUMBER:requesttime} %{DATA:forwardedproto} %{DATA:country}(.*)",
             "%{DATA:clientip} - %{DATA:user} \[(.*)\] %{DATA:vod_host} \"%{WORD:verb} %{DATA:request} %{DATA:httpversion}\" %{NUMBER:statuscode} %{DATA:bytes} \"%{DATA:referer}\" \"%{DATA:useragent}\" \"%{DATA:content-type}\" \"%{DATA:hitmiss}\" \"%{DATA:layer}\" \"%{DATA:clientid}\" %{NUMBER:requesttime} %{DATA:forwardedproto}(.*)"
         ]
@@ -383,6 +383,273 @@ Currently, we create topics with 2 partitions by default (which can be increased
 
 Since we work with logs, and unless multiple different post-processes are required, it is most interesting to have the consumers in the same consumer group. **It is highly likely that only one consumer is sufficient given the performance offered by Kafka.** Additional consumers can be started if one of them cannot consume in real-time or if we want parallel processing + high availability.
 
+## Consuming Delivery Logs.
+
+The delivery logs can be consuming through the topic `c<ID>` &#x20;
+
+The format of the delivery logs is the following:
+
+```
+%{VCL_Log:client-id}x %{VCL_Log:TrueClientIp}x %l %u %t "%r" %s %b "%{User-agent}i" %{TP-Cache}o "%{Content-Type}o" "L1" %D "%{VCL_Log:client-id}x" "%{Referer}i" %{VCL_Log:ForwardedProto}x %{VCL_Log:CountryCode}x "%{X-VSF-RuleName}i" "%{VCL_Log:tcdndebug}x" %{VCL_Log:obj-ttl}x
+```
+
+It can be mapping with the following:
+
+```
+        "tcdn": {
+          "type": "object",
+          "properties": {
+            "varnish": {
+              "type": "object",
+              "properties": {
+                "timestamp": {
+                  "type": "date",
+                  "format": "dd/MMM/yyyy:H:m:s Z"
+                },
+                "clientip": {
+                  "type": "ip"
+                },
+                "ttl": {
+                  "type": "long"
+                },
+                "bytes": {
+                  "type": "long"
+                },
+                "response": {
+                  "type": "long"
+                },
+                "response_time": {
+                  "type": "float"
+                },
+                "referer": {
+                  "type": "keyword"
+                },
+                "request": {
+                  "type": "keyword"
+                },
+                "agent": {
+                  "type": "keyword"
+                },
+                "clientid": {
+                  "type": "keyword"
+                },
+                "auth": {
+                  "type": "keyword"
+                },
+                "ident": {
+                  "type": "keyword"
+                },
+                "countrycode": {
+                  "type": "keyword"
+                },
+                "regioncode": {
+                  "type": "keyword"
+                },
+                "rulename": {
+                  "type": "keyword"
+                },
+                "path": {
+                  "type": "keyword"
+                },
+                "tcdndebug": {
+                  "type": "keyword"
+                },
+                "content_type": {
+                  "type": "keyword"
+                },
+                "cached": {
+                  "type": "keyword"
+                },
+                "vxid": {
+                  "type": "keyword"
+                },
+                "vhost": {
+                  "type": "keyword"
+                },
+                "node": {
+                  "type": "keyword"
+                },
+                "proto": {
+                  "type": "keyword"
+                },
+                "tcdndebugreason": {
+                  "type": "keyword"
+                },
+                "httpversion": {
+                  "type": "keyword"
+                },
+                "method": {
+                  "type": "keyword"
+                },
+                "whitelisted": {
+                  "type": "keyword"
+                },
+                "ipfrom": {
+                  "type": "keyword"
+                },
+                "crawler": {
+                  "type": "keyword"
+                }
+              }
+            }
+          }
+        }        
+```
+
+More information about consuming delivery logs [here](streaming-logs.md#consuming-the-logs).
+
+## Consuming Delivery L2 (midtier) Logs.
+
+If you have the Midtier service enabled, you can also consume real-time midtier logs through the topic `c<ID>_delivery_l2` &#x20;
+
+The format of the midtier logs is the following:
+
+```
+%{VCL_Log:client-id}x %{VCL_Log:TrueClientIp}x %l %u %t "%m http://%{TCDN-Original-Request-Host}i%U%q %H" %s %b "%{User-agent}i" %{TP2-Cache}o "%{Content-Type}o" "L2" %D "%{VCL_Log:client-id}x" "%{Referer}i" %{VCL_Log:ForwardedProto}x %{VCL_Log:CountryCode}x "%{X-VSF-RuleName}i" "%{VCL_Log:tcdndebug}x" %{VCL_Log:obj-ttl}x
+```
+
+It can be mapping with the same mapping as delivery logs.
+
+## Consuming Backend Delivery Logs.
+
+If you have the backend analytics service enabled, you can also consume real-time backend delivery logs through the topic `c<ID>_backend`&#x20;
+
+The format of the backend delivery logs is the following:
+
+```
+"%{VSL:Timestamp:Start[3]}x" "%{Varnish:time_firstbyte}x" "%t" "%{vary}o" "%{host}i" "%{x-vary-tcdn}i" "%{VSL:Begin[2]}x" "%{VCL_Log:TCDN-Host}x"
+```
+
+It can be mapping with the following:
+
+```
+"tcdn": {
+          "type": "object",
+          "properties": {
+            "varnish": {
+              "type": "object",
+              "properties": {
+                "agent": {
+                  "type": "keyword"
+                },
+                "asn": {
+                  "type": "keyword"
+                },
+                "backend": {
+                  "type": "keyword"
+                },
+                "backend-goto": {
+                  "type": "keyword"
+                },
+                "backend-name": {
+                  "type": "keyword"
+                },
+                "midtier-backend": {
+                  "type": "keyword"
+                },
+                "bytes": {
+                  "type": "long"
+                },
+                "cache-control": {
+                  "type": "keyword"
+                },
+                "clientid": {
+                  "type": "keyword"
+                },
+                "clientip": {
+                  "type": "ip"
+                },
+                "countrycode": {
+                  "type": "keyword"
+                },
+                "method": {
+                  "type": "keyword"
+                },
+                "orig-host": {
+                  "type": "keyword"
+                },
+                "orig-url": {
+                  "type": "keyword"
+                },
+                "origin": {
+                  "type": "keyword"
+                },
+                "path": {
+                  "type": "keyword"
+                },
+                "referer": {
+                  "type": "keyword"
+                },
+                "regioncode": {
+                  "type": "keyword"
+                },
+                "request": {
+                  "type": "keyword"
+                },
+                "response": {
+                  "type": "long"
+                },
+                "response_time": {
+                  "type": "float"
+                },
+                "t-bereq": {
+                  "type": "float"
+                },
+                "t-beresp": {
+                  "type": "float"
+                },
+                "t-berespbody": {
+                  "type": "float"
+                },
+                "t-berespbody-acc": {
+                  "type": "float"
+                },
+                "t-connected": {
+                  "type": "float"
+                },
+                "t-error": {
+                  "type": "float"
+                },
+                "t-error-acc": {
+                  "type": "float"
+                },
+                "t-fetch": {
+                  "type": "float"
+                },
+                "t-process": {
+                  "type": "float"
+                },
+                "t-start": {
+                  "type": "float"
+                },
+                "t-ttfb": {
+                  "type": "float"
+                },
+                "timestamp": {
+                  "type": "date",
+                  "format": "dd/MMM/yyyy:H:m:s Z"
+                },
+                "vary": {
+                  "type": "keyword"
+                },
+                "vhost": {
+                  "type": "keyword"
+                },
+                "x-vary-tcdn": {
+                  "type": "keyword"
+                },
+                "vxid": {
+                  "type": "keyword"
+                },
+                "edge": {
+                  "type": "keyword"
+                }
+              }
+            }
+          }
+        }
+```
+
 ## Consuming WAF Logs
 
 If you have the WAF service enabled, you can also consume real-time audit logs. Unlike the delivery service, these logs are in JSON format.&#x20;
@@ -444,5 +711,63 @@ Here is an example of the content of the `messages` field:
     "maturity": "0",
     "accuracy": "0"
   }
+}
+```
+
+## Consuming Bot Mitigation Logs
+
+If you have the BotMitigation service enabled, you can also consume real-time logs. Unlike the delivery service, these logs are in JSON format.&#x20;
+
+You can use the Python consumer mentioned earlier, with the only difference being the topic to which you subscribe. In this case, the topic will have the following format: `c<ID>_botm`.&#x20;
+
+For example, if your company has the `<ID>` (client identifier) 83, you should subscribe to the topic `c83_botm`.
+
+### BotM Log Format&#x20;
+
+The format of the BotMitigation service is a standard JSON object.&#x20;
+
+This JSON contains all the relevant data about request: host, url, user-agent ... , the specific data about the IP address reputation: assess-ip, country, ip-from ( unknown or the identified BOT), crawler (unknown or the identified Crawler), whitelisted (true only if a whitelisted IP) and the data about the response: status code, reason (risk, abuse, allowlist ...), action (block, captcha, jschallenge, bypass).
+
+Here are two examples of the content of the botm logs:
+
+```c
+{
+    "timestamp": "2025-05-25T15:27:34+00:00",
+    "edge": "edgeserver-0",
+    "status": 200,
+    "reason": "ACL: global CDN allowlist",
+    "errors": "",
+    "cache": "MISS",
+    "assess-ip": "1.2.3.4",
+    "action": "captcha",
+    "country": "US",
+    "r-time": 0.000,
+    "client-id": "83",
+    "host": "www.ejemplo.com",
+    "url": "/.well-known/traffic-advice",
+    "whitelisted": "true",
+    "ip-from": "googlebot",
+    "crawler": "googlebot",
+    "user-agent": "Chrome Privacy Preserving Prefetch Proxy"
+}
+
+{
+    "timestamp": "2025-05-25T15:41:10+00:00",
+    "edge": "edgeserver-0",
+    "status": 403,
+    "reason": "abuse",
+    "errors": "",
+    "cache": "HIT",
+    "assess-ip": "5.6.7.8",
+    "action": "jschallenge",
+    "country": "ES",
+    "r-time": 0.000,
+    "client-id": "83",
+    "host": "www.ejemplo.com",
+    "url": "/ejemplo/1003743918584_0.html",
+    "whitelisted": "",
+    "ip-from": "unknown",
+    "crawler": "unknown",
+    "user-agent": "Mozilla/5.0 (Linux; Android 11; MP05 Build/RP1A.201005.001; wv)"
 }
 ```
