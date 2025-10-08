@@ -334,7 +334,7 @@ if (req.http.host == "www.example.com") {
 
 
 
-## How to invalidate contentect from python
+## How to invalidate content from python
 
 Below is a simple example in Python of how to invalidate content on our platform.
 
