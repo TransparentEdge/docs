@@ -36,7 +36,7 @@ Host: www.example.com
 
 HTTP/1.1 200 OK Content-Type: text/html
 Content-Length: 875
-Surrogate-Key: shop main-shop
+Surrogate-Keys: shop main-shop
 ```
 
 ```http
@@ -46,7 +46,7 @@ Host: www.example.com
 HTTP/1.1 200 OK
 Content-Type: text/html
 Content-Length: 4123
-Surrogate-Key: shop product-tshirt
+Surrogate-Keys: shop product-tshirt
 ```
 
 In the example above, we have two objects (`/shop and /shop/product/24656-tshirt`) with three tags (s`hop, main-shop, and product-tshirt`). Two of them (`main-shop and product-tshirt`) are assigned to a single object, and a third (`shop`) is assigned to both.
