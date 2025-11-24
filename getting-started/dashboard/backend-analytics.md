@@ -6,11 +6,11 @@ If you have advanced analytics enabled, you can find here a comprehensive set of
 
 As with the other Transparent Edge panels, you can narrow your search by dates (and times) and, of course, filter while browsing the information or before viewing it.&#x20;
 
-<figure><img src="../../.gitbook/assets/image.png" alt="Date/time filter"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt="Date/time filter"><figcaption></figcaption></figure>
 
 Likewise, you can customize the widgets according to your needs, adding more or replacing the less frequently used ones with others that are more useful for your business. You can arrange the widgets according to your preferences: click and drag!
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### Response times
 
@@ -62,7 +62,7 @@ However, if the Vary header is not configured correctly, it can reduce the benef
 
 With this information, you will be able to compare and track the behavior of these headers.
 
-![Vary headers](https://hackmd.io/_uploads/B10UzCRn1g.png)
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 #### Information concerning the Backend
 
@@ -74,7 +74,7 @@ These two widgets refer directly to the backend. They provide information on req
 
 Here we can visually observe how many requests (and their consumed bandwidth) belong to the different cache-setting parameters, including non-cached items.
 
-![Cache control](https://hackmd.io/_uploads/HywOvC0nJx.png)
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 #### ASN & Referer
 
