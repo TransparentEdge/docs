@@ -16,8 +16,7 @@ All parameters of the anomalies can only be modified if the service has been con
 
 <figure><img src="../../.gitbook/assets/anomalies-pic2.jpg" alt="" width="375"><figcaption><p>Active or edit Anomaly Detection</p></figcaption></figure>
 
-Remember that you can always go back and modify that configuration directly from the 'Settings' button, also present in the site's dropdown menu.\
-
+Remember that you can always go back and modify that configuration directly from the 'Settings' button, also present in the site's dropdown menu.<br>
 
 {% content-ref url="detection-types.md" %}
 [detection-types.md](detection-types.md)

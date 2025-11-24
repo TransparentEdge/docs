@@ -145,7 +145,7 @@ This method is easier and more secure than standard DNS validation with API cred
 
 No secrets required, but you will need to create a "CNAME Verification" type credential:
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 The CNAME that you will need to point to your domains to will be displayed, which will be the same for all the domains, but different per company, for example:
 

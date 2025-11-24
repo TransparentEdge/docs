@@ -30,4 +30,4 @@ Vary: User-Agent
 
 We can make the CDN cache save as many objects as the number of user-agents requesting them.
 
-In the previous example, the cache would save one object for each distinct user-agent (there are many). This would render the cache system ineffective. That’s why we don’t recommend having a Vary header with a user-agent or cookie value. It could be interesting, however, to have an X-Device value, to be able to serve different versions of an object depending on the type of device requesting the resource.\
+In the previous example, the cache would save one object for each distinct user-agent (there are many). This would render the cache system ineffective. That’s why we don’t recommend having a Vary header with a user-agent or cookie value. It could be interesting, however, to have an X-Device value, to be able to serve different versions of an object depending on the type of device requesting the resource.<br>

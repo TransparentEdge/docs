@@ -92,6 +92,7 @@
 * [Dashboard](getting-started/dashboard/README.md)
   * [Historic](getting-started/dashboard/historico.md)
   * [Analytics](getting-started/dashboard/estadisticas.md)
+  * [Backend Analytics](getting-started/dashboard/backend-analytics.md)
   * [Invalidating content](getting-started/dashboard/invalidating-content.md)
   * [Content invalidation by tags](getting-started/dashboard/content-invalidation-by-tags.md)
   * [Prefetching Cache](getting-started/dashboard/prefetch.md)

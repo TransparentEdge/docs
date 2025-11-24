@@ -34,7 +34,7 @@ Requests by country and the most requested URLs per site are found here.
 
 The next graph displays all the purges performed by clients through the panel. Next to it is the table of all the contents of each site, how many requests it receives, and how much bandwidth it consumes.
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 All this is displayed in the status codes graph, and the referrer table displays the URLs from where the requests are sent.
 

@@ -49,4 +49,4 @@ By default, the following exceptions are included:
 * Empty or non-`HTTP(S)` protocol referers are excluded because it is impractical to do so without harming the website due to the Referrer Policy.
 {% endhint %}
 
-\
+<br>

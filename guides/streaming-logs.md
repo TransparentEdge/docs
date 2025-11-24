@@ -81,8 +81,7 @@ We will use the following example data, but remember that the zip file you downl
 * Certificates `c83.crt.pem` y `c83.key.pem`
 * Password: `password`
 * Topic (default delivery logs topic): `c83`   &#x20;
-* Consumer group: `c83_filebeat`\
-
+* Consumer group: `c83_filebeat`<br>
 
 First, we download and install the Filebeat package on our server:
 
@@ -376,8 +375,7 @@ Currently, we create topics with 2 partitions by default (which can be increased
 
 <figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
-* We start 2 consumers, each in a **different consumer group:** Both will receive ALL messages from the topic and will be completely isolated. This is useful if we want to perform different processing on the received messages for each consumer. We can add more consumers to this scheme, and the result will be the same: each of them will receive all messages from all partitions.\
-
+* We start 2 consumers, each in a **different consumer group:** Both will receive ALL messages from the topic and will be completely isolated. This is useful if we want to perform different processing on the received messages for each consumer. We can add more consumers to this scheme, and the result will be the same: each of them will receive all messages from all partitions.<br>
 
 <figure><img src="../.gitbook/assets/assets_-M7HYJERlemP2N6HqnBC_-MIrq0bNG6FL8WOs_rjg_-MIs6kI0UvVQhMi-xLT4_image.webp" alt=""><figcaption></figcaption></figure>
 

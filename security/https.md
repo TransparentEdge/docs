@@ -35,4 +35,4 @@ The following features are supported by Transparent Edge terminators:
 * **HSTS:** With the use of Varnish, the HSTS header can be added via VCL in the _vcl\_deliver_ subroutine, even if the origin server does not include it.
 * **Perfect Forward Secrecy:** We incorporate Diffie-Hellman for the implementation of PFS.
 
-\
+<br>

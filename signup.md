@@ -78,4 +78,4 @@ In addition to the CNAME, it's important for there to be a «tcdn.txt» file in 
 
 If you don’t receive an email, first check your spam folder. If it's not there either, contact Transparent Edge by sending an email to [altas@transparentedge.eu](mailto:altas@transparentedge.eu) so we can manually activate your user account.
 
-\
+<br>

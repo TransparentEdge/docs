@@ -23,7 +23,7 @@ If you have adquired the Bot Mitigation service, you'll be able to access its se
 
 The screenshot below shows a small part of the available options:
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>A demo of the available settings</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption><p>A demo of the available settings</p></figcaption></figure>
 
 
 

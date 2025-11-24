@@ -26,7 +26,6 @@ If you also have the [Anomaly Detection System](anomaly-detection/), you can con
 
 You can enable Under Attack Mode for specific ASNs, countries, or IP ranges, URLs, domains... The configuration flexibility is comprehensive.
 
-\
+<br>
 
-
-\
+<br>

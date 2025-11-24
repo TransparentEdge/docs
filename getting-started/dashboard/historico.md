@@ -18,7 +18,7 @@ The third and fourth panels show the information from the first and second panel
 
 After these graphs, the monthly bandwidth consumption information and requests received are displayed, providing our customers with information on their consumption. With this data, it is possible to make forecasts of future consumption for the current month, which is valuable information for all company departments.
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 If you have more services contracted with Transparent Edge, you can view their history by changing the option at the top of the panel. There, you will be able to see all the consumption of each service over a period of time.
 

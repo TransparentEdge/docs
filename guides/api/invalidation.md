@@ -23,8 +23,7 @@ In this request, we need to include a list or array within a JSON object where w
 }
 ```
 
-We can execute this call using [curl](https://www.mit.edu/afs.new/sipb/user/ssen/src/curl-7.11.1/docs/curl.html) or any interface that allows making HTTP requests. Here is an example of how a call would be composed to invalidate the resources _recurso1_ and _imagen2_.\
-
+We can execute this call using [curl](https://www.mit.edu/afs.new/sipb/user/ssen/src/curl-7.11.1/docs/curl.html) or any interface that allows making HTTP requests. Here is an example of how a call would be composed to invalidate the resources _recurso1_ and _imagen2_.<br>
 
 ```json
 curl -XPOST -H 'Authorization: Bearer TOKEN' -d '{"urls":["http://www.servidor.com/recurso1","http://fotos.servidor2.com/imagen2.jpg"]}' -H "Content-Type: application/json" https://api.transparentcdn.com/v1/companies/42/invalidate/
