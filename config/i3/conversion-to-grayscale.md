@@ -4,7 +4,7 @@
 
 To do this, we use our `TCDN-i3-transform` header, specifying the desired operation, which in this case is `grayscale`.&#x20;
 
-For example, if you wanted to serve grayscale images on your domain `mi-dominio.es`, you can simply deploy a [VCL](../vcl/) [configuration](broken-reference) similar to the following from the [dashboard:](../../getting-started/dashboard/)
+For example, if you wanted to serve grayscale images on your domain `mi-dominio.es`, you can simply deploy a [VCL](../vcl/) [configuration](/broken/pages/-M7H_VntHNSVzpPseiCS) similar to the following from the [dashboard:](../../getting-started/dashboard/)
 
 <pre class="language-c"><code class="lang-c"><strong># i3 - grayscale
 </strong>sub vcl_recv {
