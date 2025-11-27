@@ -1,4 +1,4 @@
-# Initial configuration
+# Initial steps
 
 After activating our user account, you will be able to access the Transparent Edge panel through the URL [https://dashboard.transparentcdn.com/](https://dashboard.transparentcdn.com/auth/login?redirect=%2F) using your username (registered email) and password defined during the registration process.
 
@@ -97,7 +97,7 @@ sub vcl_recv {
 }
 ```
 
-As can be seen, this is just an initial configuration that links the backend `cNNN_example` with the site `www.example.es`. This allows the CDN to retrieve non-cached resources (MISS).
+As can be seen, this is just an initial configuration that links the backend `cNNN_example` with the site `www.example.es`. This link can also be made through [**Easy Setup** ](configuration.md)in a simpler way. This allows the CDN to retrieve non-cached resources (MISS).
 
 You can end the wizard here and complete the VCL configuration later.
 
