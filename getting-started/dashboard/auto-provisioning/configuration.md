@@ -34,3 +34,7 @@ In **Security & Access Control** we have:
 * **Add exception to the WAF:** A configuration that allows the WAF to bypass specific rules, preventing the blocking of allowed requests or behaviors.
 * **Rate limit:** a mechanism that restricts the number of requests a client can make to a server within a given time period.
 
+With the template already selected, we will choose whether the rule will apply to all inbound requests or, alternatively, if we want to define it for a custom filter rule. In the latter case, we must fill in the required values. Once everything is completed, we save, and our new rule will be implemented.
+
+From the rules table, we can edit, delete, and deactivate the rules that have already been created.
+
