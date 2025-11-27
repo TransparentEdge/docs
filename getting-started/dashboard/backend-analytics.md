@@ -62,7 +62,7 @@ However, if the Vary header is not configured correctly, it can reduce the benef
 
 With this information, you will be able to compare and track the behavior of these headers.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 #### Information concerning the Backend
 
@@ -74,7 +74,7 @@ These two widgets refer directly to the backend. They provide information on req
 
 Here we can visually observe how many requests (and their consumed bandwidth) belong to the different cache-setting parameters, including non-cached items.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### ASN & Referer
 

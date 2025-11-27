@@ -102,7 +102,6 @@
     * [Configuration](getting-started/dashboard/auto-provisioning/configuration.md)
     * [Backends](getting-started/dashboard/auto-provisioning/backends.md)
     * [Sites](getting-started/dashboard/auto-provisioning/sites.md)
-    * [Configuration deployments](getting-started/dashboard/auto-provisioning/despliegues-de-configuracion.md)
     * [Network ACLs](getting-started/dashboard/auto-provisioning/network-acls.md)
     * [TLS/SSL Certificates](getting-started/dashboard/auto-provisioning/ssl.md)
   * [User management](getting-started/dashboard/user-management.md)
