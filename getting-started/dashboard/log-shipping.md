@@ -1,66 +1,85 @@
 # Log shipping
 
-The log sending feature is included in any service package. It just needs to be activated and set up for it to start.
+The log shipping feature is included in all service plans. It only needs
+to be activated and configured to start working.
 
 ### Format and frequency
 
-In batch mode, logs are extracted, compressed and sent every hour. On average, there is one compressed log file for each edge node belonging to our delivery platform, provided requests have been processed on these and related with any of the sites involved.
+In batch mode, logs are collected, compressed, and sent every hour.
+Typically, one compressed log file is generated for each edge node in
+our delivery platform, as long as that node has processed requests for
+any associated site.
 
-Every compressed log file has the following name mask::
+Each compressed log file follows this naming pattern:
 
 ```
 <YYYYMMDDHH>-<CID>-<COUNTRY CODE>-<HASH>.log.gz
 ```
 
-Thereby:
+Where:
 
-1. The first field corresponds to the send date (`YYYYMMDDHH`).
-2. The second is the unique client /company ID.
-3. The next one represents the country code associated to the geographical location of the edge node meeting those requests.
-4. Last but not least, a hash code is included which identifies the edge node itself. This field is used internally for traceability and debugging purposes.
+1.  `YYYYMMDDHH` is the timestamp of the batch.
+2.  `<CID>` is the unique client/company ID.
+3.  `<COUNTRY CODE>` is the country associated with the edge node that served the requests.
+4.  `<HASH>` is an internal hash that identifies the edge node, used for traceability and debugging.
 
-For instance:  `2023022010-4-spain-c7658c0dd514f6523f7a98ddd0dbb448.log.gz`
+Example:
 
-### Log shipping to a FTP / sFTP server
+```
+2023022010-4-spain-c7658c0dd514f6523f7a98ddd0dbb448.log.gz
+```
 
-This choice allows the log to be sent to an arbitrary FTP / sFTP server.
+### Log shipping to an FTP / SFTP server
 
-To set it up properly, simply specify the correct protocol and fill in the gaps with the remaining parameters required. Once this choice is activated and its parameters validated, sending will begin within the next hour.
+This option sends logs to any FTP or SFTP server.
+
+To configure it, select the appropriate protocol and fill in the
+required connection parameters. After activation and validation, log
+delivery will begin within the next hour.
 
 <figure><img src="../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
 
-### Log shipping to an Amazon S3 bucket compatible
+### Log shipping to an Amazon S3--compatible bucket
 
-This choice allows the log sending to a compatible Amazon S3 bucket.
+This option sends logs to an Amazon S3 bucket or any S3-compatible service.
 
-In order to properly set it up, an access and secret key credential pair must be provided that must also be associated with a policy allowing, at least, file uploading into the bucket that is to be used.
+To configure it, provide an access key and secret key with a policy that
+allows at least file uploads to the target bucket.
 
-`Bucket` field allows two name masks:
+The `Bucket` field accepts two formats:
 
-* `<ENDPOINT URL>/<BUCKET NAME>`
-* `<BUCKET NAME>` (just in case of Amazon S3 bucket)
+-   `<ENDPOINT URL>/<BUCKET NAME>`
+-   `<BUCKET NAME>` (for Amazon S3 buckets)
 
-`<ENDPOINT URL>` corresponds to the URL hosting the S3 service. In the scenario where the bucket is hosted in Amazon S3, it is possible to use just the `<BUCKET NAME>` as the sole parameter.
+`<ENDPOINT URL>` is the base URL of the S3 service. For Amazon S3, you may use only the bucket name.
+If including the endpoint, for example, to target a specific
+region, make sure the bucket name is *not* duplicated in the domain.
 
-Anywise, if it must also be included, for instance, to point to a specific geographical region, the bucket name must be removed from the domain itself: `https://tcdn-testing.s3.us-east-1.amazonaws.com/tcdn-testing would become https://s3.us-east-1.amazonaws.com/tcdn-testing`. If this is not done, the bucket name will be included at the beginning of the remote path.
+For example:
+
+`https://tcdn-testing.s3.us-east-1.amazonaws.com/tcdn-testing` should be written as: `https://s3.us-east-1.amazonaws.com/tcdn-testing`.
+Otherwise, the bucket name will be added automatically at the start of the remote path.
 
 <figure><img src="../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
 
-### Sorting out compressed log files by date and time
+### Sorting compressed log files by date and time
 
-When log sending is being configured, `path` field, which represents the remote path where compressed log files will be stored, allows for a set of special date--related masks:
+The `path` field defines the remote folder where log files will be
+stored and accepts the following date-related placeholders:
 
-* `%Y`, year
-* `%m`, month
-* `%d`, day
-* `%H`, hour
+-   `%Y`: year
+-   `%m`: month
+-   `%d`: day
+-   `%H`: hour
 
-For instance, if the value of `path` field is `/tcdn-logs/%Y/%m/%d` and today is February 20, 2023, when the process is executed, the compressed log files will be remotely stored in the path `/tcdn-logs/2023/02/20`.
+For example, if the `path` is `/tcdn-logs/%Y/%m/%d` and today is
+February 20, 2023, the logs will be stored in `/tcdn-logs/2023/02/20`.
 
-### Log sending by streaming
+### Log streaming
 
-Furthermore, there is another way of log sending to the client, in this case, in real time. Please check [this link](../../guides/streaming-logs.md) out to see more details on how to configure this feature.
+Logs can also be delivered in real time. See [Streaming Logs](../../guides/streaming-logs.md) for details on configuring log
+streaming.
 
 {% hint style="info" %}
-Remember that every single task you can do from our [dashboard](https://dashboard.transparentcdn.com/) can also be accomplished from our [API](../faq/glosario/api.md).
+Remember: anything you can do from the [dashboard](https://dashboard.transparentcdn.com/) can also be done through our [API](../faq/glosario/api.md).
 {% endhint %}
