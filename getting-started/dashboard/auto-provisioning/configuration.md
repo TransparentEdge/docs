@@ -6,7 +6,7 @@ Our dashboard provides two configuration methods. The first one, **Easy Setup**,
 
 The Easy Setup is based on 'if-then' conditional logic. When the conditions of a defined rule are met, a specific action is applied. This system allows you to configure key actions on your sites in a simple and agile way with just a couple of clicks.
 
-To create a new rule, we must select the site where our configuration will be implemented.Once selected, click the '**Add Rule'** button, which will open a modal displaying the rule templates grouped by category.
+To create a new rule, we must select the site where our configuration will be implemented. Once selected, click the '**Add Rule'** button, which will open a modal displaying the rule templates grouped by category.
 
 In '**Cache & Performance'** we can find:
 
