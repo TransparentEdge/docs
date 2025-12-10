@@ -8,6 +8,8 @@ The Easy Setup is based on 'if-then' conditional logic. When the conditions of a
 
 To create a new rule, we must select the site where our configuration will be implemented. Once selected, click the '**Add Rule'** button, which will open a modal displaying the rule templates grouped by category.
 
+<figure><img src="../../../.gitbook/assets/imagen-docu.jpg" alt=""><figcaption></figcaption></figure>
+
 In **Cache & Performance** we can find:
 
 * **Bypass cache:** Select the pages where requests skip the cache and go straight to the origin server.
