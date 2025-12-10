@@ -8,7 +8,7 @@ The Easy Setup is based on 'if-then' conditional logic. When the conditions of a
 
 To create a new rule, we must select the site where our configuration will be implemented. Once selected, click the '**Add Rule'** button, which will open a modal displaying the rule templates grouped by category.
 
-In '**Cache & Performance'** we can find:
+In **Cache & Performance** we can find:
 
 * **Bypass cache:** Select the pages where requests skip the cache and go straight to the origin server.
 * **Cache time for CDN:** Specify the TTL for the request.
@@ -20,7 +20,7 @@ In **Headers & Response** we can see:
 * **Header rewrite:** Rewrite any response header before inserting in the cache.
 * **Unset header:** Unset an origin header.
 
-In R**outing & Redirects** are:
+In **Routing & Redirects** are:
 
 * **Assing backend:** Assign each site to its corresponding backend for precise and controlled routing.
 * **Permanent redirect (301):** Set up a permanent redirect for your website.
