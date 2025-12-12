@@ -133,7 +133,7 @@ Some examples of page cache configuration:
 
 <figure><img src="../.gitbook/assets/wordpress-5.png" alt=""><figcaption></figcaption></figure>
 
-In any case, and as there are too many settings, we have prepared a plugin configuration file, which can be activated from 'General Settings > Import/Export Settings'. Download your configuration file [here](https://chat.transparentedge.eu/file-upload/dJxdRHgaK2migZA6W/w3totalcache.json?download).
+In any case, and as there are too many settings, we have prepared a plugin configuration file, which can be activated from 'General Settings > Import/Export Settings'. Download your configuration file [here](https://www.transparentedge.eu/statics/w3totalcache.json).
 
 <figure><img src="https://lh3.googleusercontent.com/Bs0MkdEjULUJ7luhP2OVNyJSFOEJNcuihEscS0dRA5fuafP6dF9wfNrBbBO_kmvoTor4Lve1EBiFt1YoV99GwG2k_LNjyyKYyTk0qxAy5odhNnfu5MvWnAsmVPyRYR5vww3KCf6Euck6BDTd4fBDEdc" alt=""><figcaption></figcaption></figure>
 
