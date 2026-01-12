@@ -65,7 +65,7 @@ HEAD
 
 This is a complicated error. It means that the connection has been closed due to exceeding the wait time. If the error occurs on the client server, it will become a 503 in Transparent Edge. Under normal conditions, it’s often due to a communication problem: either an internal firewall, an internal server error, or a firewall/proxy between Transparent Edge and the client. Any “connection close” or “closing connection” message in the client’s server logs could mean a 408. Historically, we’ve had problems with Apache modules that cause this error, like the mpm\_itk ([http://mpm-itk.sesse.net/](http://mpm-itk.sesse.net/)).
 
-## Errores de servidor
+## Server Errors
 
 **500 Internal Server Error**
 
