@@ -14,7 +14,7 @@ Transparent Edge employs a variety of advanced techniques to identify and mitiga
 
 To activate it, simply press the "Under attack?" button located at the top of your dashboard. A modal will appear, allowing you to select which of your sites is under attack using a toggle switch.
 
-<figure><img src="../.gitbook/assets/under-attack.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/UAM-demo.png" alt=""><figcaption></figcaption></figure>
 
 When you activate Under attack mode, visitors will be shown an interstitial page for a short period while their request is validated, after which they can continue browsing without any issues.
 
