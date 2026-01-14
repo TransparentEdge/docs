@@ -54,11 +54,19 @@ You can perform the following actions on any of the configurations:
 * **`Duplicate`** - Opens an editor to deploy a new configuration prefilled with the code of this particular configuration.
 * **`Back to production`** - A quick way to deploy an older configuration again, it's a "rollback" button.
 
-### Deploying a new configuration
+#### Deploying a new configuration
 
 To deploy a new configuration, click on the "ADD VCL CONFIG" button or, if you want to edit over an older configuration, use the "Duplicate" button instead.
 
 An editor will be displayed where you can edit the VCL code or you can copy it to your favorite editor and paste it later.
+
+**AI Assistant**
+
+Within the **new configuration creation modal**, an **AI assistant** is included that allows you to generate **VCL code** based on a description of the desired behavior.&#x20;
+
+The assistant translates the request into VCL code, which can then be **copied and pasted into the VCL editor** below, where the user can **validate it, modify it manually if needed, and deploy the configuration**.
+
+<figure><img src="../../../.gitbook/assets/Captura de pantalla 2026-01-14 a las 13.44.45.png" alt=""><figcaption></figcaption></figure>
 
 The editor embeds some autocompletion that can be activated using the `CTRL` key.
 
