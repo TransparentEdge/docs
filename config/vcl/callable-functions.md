@@ -50,7 +50,7 @@ sub vcl_recv {
 ### **Bypass Cache**
 
 * **Command**: `call bypass_cache;`
-* **Description**: Bypasses/ignores the cache for the current request.
+* **Description**: Bypasses/ignores the cache for the current request for both level 1 and level 2 cache (midtier).
 * **Example**:
 
 {% code fullWidth="false" %}
@@ -61,7 +61,7 @@ sub vcl_recv {
     }
 }
 
-# If your configuration has Midtier enabled, you can bypass level 2 cache with:
+# If your configuration has Midtier enabled, and you only want to disable level 2 cache, use the following:
 sub vcl_backend_fetch {
     if (bereq.url ~ "^/dynamic-content") {
        set bereq.http.TCDN-Midtier-Cache-Control = "max-age=0, no-cache, no-store";
