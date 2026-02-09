@@ -45,6 +45,11 @@ sub vcl_recv {
 sub vcl_recv {
     call redirect_https;
 }
+
+# If your configuration has Midtier enabled, you can bypass level 2 cache with:
+sub vcl_backend_fetch {
+   set bereq.http.TCDN-Midtier-Cache-Control = "max-age=0, no-cache, no-store";
+}
 ```
 
 ### **Bypass Cache**
