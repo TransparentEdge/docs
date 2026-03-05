@@ -146,6 +146,7 @@
   * [Configuration](security/waf/configuration.md)
   * [CAPTCHA](security/waf/captcha.md)
   * [Content protected by token](security/waf/token.md)
+  * [WAF False Positive Reporting](security/waf/waf-false-positive-reporting.md)
   * [Rate limit](security/waf/rate_limit.md)
 * [Anomaly Detection](security/anomaly-detection/README.md)
   * [Detection Types](security/anomaly-detection/detection-types.md)
