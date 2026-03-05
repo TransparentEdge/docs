@@ -4,7 +4,7 @@ In this section, you'll be able to view/add or delete the sites managed by our C
 
 Provisioning -> Sites
 
-<figure><img src="../../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Captura de pantalla 2026-03-05 a las 11.45.39.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 An important notice that you can see in this section is the CNAME where you must point your sites to your DNS configuration.
