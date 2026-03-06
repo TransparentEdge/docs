@@ -33,7 +33,9 @@ From this point on, if you wish, we can take care of everything else.
 <figure><img src="../../../.gitbook/assets/Captura de pantalla 2026-03-05 a las 10.21.28.png" alt=""><figcaption></figcaption></figure>
 
 \
-If you choose to do so, we will handle the **backend configuration** through VCL settings — that is, specifying the origin server where the website is hosted. We will also take care of setting up the **HTTP to HTTPS redirect**.
+If you choose to do so, we will automatically locate where your current backend is, create a new one on the platform, set up the configuration to associate that site with that backend, generate and upload an SSL certificate automatically. So that all you need to do is update your DNS records.
+
+We will also handle the backend configuration through VCL settings, specifying the origin server where your website is hosted, and set up the HTTP to HTTPS redirect.
 
 {% hint style="warning" %}
 In the event that your site has not been verified within 24 hours after having selected this option, all the configuration created automatically will be deleted.
@@ -45,7 +47,7 @@ If you choose to do it yourself, remember that it is important to carry out the 
 
 ### What is the lock icon next to my sites?
 
-This is our legacy method to obtain certificates, please refer to [this section of the documentation](ssl.md).
+If the padlock appears open, your site does not have an SSL certificate configured. If it appears closed and green, your site has a valid HTTPS configuration. By clicking on the open padlock, you can [configure a certificate for your site.](ssl.md)
 
 ### I can't verify my site / I have to add a lot of sites at once
 
