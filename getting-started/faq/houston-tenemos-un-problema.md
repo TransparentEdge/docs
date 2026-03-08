@@ -2,7 +2,7 @@
 
 We want you to be as autonomous as possible on a day-to-day basis, but we know that sometimes you might need a hand. So, if you have any technical questions or problems—if even if you’re unhappy with the office coffee machine—don’t hesitate to write to our support team.
 
-You can also go into the[ ticket](https://soporte.transparentcdn.com) [management](https://soporte.transparentcdn.com) system on our[ portal](https://dashboard.transparentcdn.com/auth/login?redirect=%2F), where you can open a ticket or talk to us through our chat.
+You can also go into our[ portal](https://dashboard.transparentedge.eu/), where you can open a ticket or talk to us through our chat.
 
 Plus, in honor of our name, we’re happy to share a list of email addresses that you can use at any time:
 
