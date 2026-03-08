@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Sign up process
 
 ### Sign up
