@@ -7,10 +7,8 @@ You can also go into the[ ticket](https://soporte.transparentcdn.com) [managemen
 Plus, in honor of our name, we’re happy to share a list of email addresses that you can use at any time:
 
 * [**Support**](mailto:help+cdn@transparentedge.eu)
-* [**System**](mailto:sistemas@transparentedge.eu)
 * [**Sales**](mailto:sales@transparentedge.eu)
 * [**Marketing**](mailto:marketing@transparentedge.eu)
 * [**HR**](mailto:joinus@transparentedge.eu)
-* [**Enrique Rodriguez** ](mailto:erodriguez@transparentedge.eu)**(Customer satisfaction)**
 * [**Diego Suarez** ](https://app.gitbook.com/u/gesKMEaSCfWVT5pfAimTHIEOxQr2)**(CTO)**
 * [**Jorge Román** ](mailto:jroman@transparentedge.eu)**(CEO)**

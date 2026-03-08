@@ -16,7 +16,7 @@ But let’s not cancel before we’ve even gotten started. To create a Transpare
 
 ## Your first configuration
 
-We try to make things easy for you and we like simple things. That’s why we've developed a [wizard](https://docs.transparentedge.eu/getting-started/dashboard/autoprovisionamiento/configuraciones-basicas) to help you create your first Transparent Edge configuration.
+We try to make things easy for you and we like simple things. That’s why we've developed a [wizard](https://docs.transparentedge.eu/getting-started/dashboard/auto-provisioning/configuration) to help you create your first Transparent Edge configuration.
 
 Remember: We love listening to you and improving our service is our number one priority. So, if you see something you don’t like or that seems confusing, or that you think can be done better or more simply, we encourage you to write us an [email](mailto:product@transparentedge.eu).&#x20;
 
