@@ -108,6 +108,7 @@
 
 ## Configuration <a href="#config" id="config"></a>
 
+* [Easy setup](config/easy-setup.md)
 * [VCL Reference](config/vcl/README.md)
   * [Default Functions](config/vcl/funciones-por-defecto.md)
   * [VCL Objects](config/vcl/vcl-objects.md)
