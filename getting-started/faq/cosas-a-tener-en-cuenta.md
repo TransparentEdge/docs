@@ -14,7 +14,7 @@ The process of deleting that content is known as invalidating, and there are sev
 
 The first and easiest option is to go to the **Invalidations** section of our[ portal](https://dashboard.transparentcdn.com/auth/login?redirect=%2F) following an update, click the Purge URL button, and enter the URL you wish to invalidate.
 
-![](<../../.gitbook/assets/Captura de pantalla 2020-05-21 a las 9.59.08.png>)
+![](<../../.gitbook/assets/Captura de pantalla 2026-03-16 a las 14.45.04.png>)
 
 Another option is to use the API to integrate the invalidation process into the publication system. This way, your system will automatically detect when you change content and launch an invalidation through our [API](https://api.transparentcdn.com/docs).
 
