@@ -8,7 +8,7 @@ On the main page, users can instantly view all the historical information about 
 
 In the left-hand menu, users have direct access to the different sections that their permissions allow, such as user management, billing or the different services that Transparent provides for the client. <br>
 
-<figure><img src="../../.gitbook/assets/image (105).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Captura de pantalla 2026-03-16 a las 13.04.10.png" alt=""><figcaption></figcaption></figure>
 
 \
 <br>

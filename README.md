@@ -10,10 +10,6 @@ Here you’ll find all the documentation about using—and enjoying!—Transpare
 [empezando-desde-cero.md](empezando-desde-cero.md)
 {% endcontent-ref %}
 
-{% content-ref url="signup.md" %}
-[signup.md](signup.md)
-{% endcontent-ref %}
-
 {% content-ref url="getting-started/faq/" %}
 [faq](getting-started/faq/)
 {% endcontent-ref %}
@@ -34,6 +30,6 @@ Here you’ll find all the documentation about using—and enjoying!—Transpare
 [transcoding](config/transcoding/)
 {% endcontent-ref %}
 
-{% content-ref url="/broken/pages/-M7H_jH-zmr7VmYezsPM" %}
-[Broken link](/broken/pages/-M7H_jH-zmr7VmYezsPM)
+{% content-ref url="config/easy-setup.md" %}
+[easy-setup.md](config/easy-setup.md)
 {% endcontent-ref %}

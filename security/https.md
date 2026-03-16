@@ -6,7 +6,7 @@ If you don't have an SSL certificate for your site, Transparent Edge Services ca
 
 In the case of doing it from the Sites section, you simply need to click on the lock icon that appears on the right side of the list. This will open a dialog box with instructions and requirements for the automatic management:
 
-<figure><img src="../.gitbook/assets/certificado-http.png" alt=""><figcaption><p>New certificate</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Captura de pantalla 2026-03-16 a las 12.05.35.png" alt=""><figcaption><p>New certificate</p></figcaption></figure>
 
 In a few minutes, it will be deployed and automatically renewed without any intervention on your part.
 
@@ -14,7 +14,7 @@ In a few minutes, it will be deployed and automatically renewed without any inte
 
 In addition to the certificates managed by Transparent Edge Services, you can upload your own certificates to the platform, such as wildcard certificates. To do this, simply access the "Certificates" section within the autoprovision dashboard and click on the "Add Custom Certificate" button. In the popup box, you will enter the certificate in PEM format on the left side (it is a text and starts with the string "-----BEGIN CERTIFICATE"), with any intermediate CAs concatenated if applicable. On the right side, you will enter the private key of the certificate (also text, usually starting with "-----BEGIN PRIVATE KEY"), and upon saving (after validation), the certificate will be stored and deployed within a few minutes.
 
-## Protocolos
+## Protocols
 
 At Transparent Edge Services, we provide state-of-the-art security for connections through the TLS protocol. We support both TLSv1.2 and TLSv1.3, following the recommendations of RFC 8996, which rendered all previous versions obsolete.
 

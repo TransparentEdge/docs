@@ -2,12 +2,11 @@
 
 * [Welcome](README.md)
 * [Landing in Transparent Edge](empezando-desde-cero.md)
-* [Sign up process](signup.md)
 
 ## Getting Started
 
 * [Basics concepts](getting-started/faq/README.md)
-  * [Glosary](getting-started/faq/glosario/README.md)
+  * [Glossary](getting-started/faq/glosario/README.md)
     * [API](getting-started/faq/glosario/api.md)
     * [Brotli Compression](getting-started/faq/glosario/brotli-compression.md)
     * [Cache-Control](getting-started/faq/glosario/cache-control.md)
@@ -133,7 +132,7 @@
   * [Create a transcode job](config/transcoding/create-a-transcode-job.md)
   * [Get job information](config/transcoding/get-job-information.md)
   * [Dashboard usage](config/transcoding/dashboard-usage.md)
-* [OpenAPI de TransparentCDN](https://api.transparentcdn.com/docs)
+* [TransparentCDN OpenAPI](https://api.transparentcdn.com/docs)
 
 ## Security
 

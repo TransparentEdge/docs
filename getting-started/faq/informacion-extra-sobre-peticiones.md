@@ -14,7 +14,7 @@ We update the databases weekly, but the accuracy of the region is limited by fac
 
 ## X-Device
 
-We know that managing user-agents can be a nightmare, which is why we standardize the `User-Agent` header of the original request and create an extra header with three possible values:  `mobile`, `tablet` y `desktop`.
+We know that managing user-agents can be a nightmare, which is why we standardize the `User-Agent` header of the original request and create an extra header with three possible values:  `mobile`, `tablet` and `desktop`.
 
 ## X-Forwarded-Proto
 

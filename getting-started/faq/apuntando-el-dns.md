@@ -4,7 +4,7 @@ After you sign up for Transparent Edge, you’ll receive a welcome email. It wil
 
 The CNAME will have the following structure:
 
-`<SERVICIO>.<ID_CLIENTE>.edge2befaster.net`
+`<SERVICE>.<CLIENT_ID>.edge2befaster.net`
 
 We’re going to look at how to do the configuration using this CNAME as an example:
 
@@ -21,13 +21,13 @@ Before we continue, we’d just like to mention that this way of working, using 
 Typically, you’ll want it to be the subdomain www.yourdomain.com. In this case, once you’re in your DNS provider, you’ll have to find the **www** record, which most likely points to an IP address with an[ A](https://www.ietf.org/rfc/rfc1912.txt) record. Something like this:
 
 ```
-www.tudominio.com	    A	    1.1.1.1
+www.yourdomain.com	    A	    1.1.1.1
 ```
 
 You’ll have to delete that record and create a new one that is a CNAME instead of an A record, pointing to **caching.c4.edge2befaster.net.** Such as:
 
 ```
-www.tudominio.com    CNAME    caching.c4.edge2befaster.net 
+www.yourdomain.com    CNAME    caching.c4.edge2befaster.net 
 ```
 
 This change does not happen automatically and how long it takes primarily depends on two things:

@@ -12,7 +12,7 @@ If you’re reading this, it's quite possible that you already know us and that 
 
 Well, we can see you’ve made the decision. Still, we’d like you to know that it's never too late to turn back. You can cancel your service—much to our regret—by sending a simple [email](mailto:unsubscribe@transparentedge.eu).
 
-But let’s not cancel before we’ve even gotten started. To create a Transparent Edge account, just go to our [sign-up](https://signup.transparentedge.eu/#/)[ ](https://signup.transparentedge.eu/#/)page. We explain everything [here](https://docs.transparentedge.eu/v/english/signup).
+But let’s not cancel before we’ve even gotten started. To create a Transparent Edge account, just go to our [contact page](https://www.transparentedge.eu/contacto/). Our team will take care of explaining everything to you.
 
 ## Your first configuration
 
