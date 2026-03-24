@@ -16,13 +16,15 @@ You can also assign a [backend](../../getting-started/dashboard/auto-provisionin
 
 ### vcl\_hash
 
-Called after `vcl_recv`, immediately before the cache lookup. Add data to the hash to create separate cache entries for the same URL, for example, per-host or per-device-type variations.
+Called after `vcl_recv`, immediately before the cache lookup.&#x20;
+
+Add data to the hash to create separate cache entries for the same URL, for example, per-host or per-device-type variations.
 
 > **Warning:** Every unique hash key is a separate cache object. Adding a high-cardinality value (e.g. a session token) will produce one cache entry per user, effectively disabling caching for that resource.
 
 ### vcl\_miss
 
-Called after a cache lookup that found no valid object.
+Called after a cache lookup that found no valid object. At this point, the request will continue to the backend to retrieve the object.
 
 ### vcl\_hit
 
