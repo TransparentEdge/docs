@@ -12,7 +12,7 @@ Built-in subroutines called at key points in the request lifecycle. Override the
 
 Called at the start of every incoming request, before any cache lookup. Use it to normalise the request, strip unnecessary headers, or decide whether the request should bypass the cache.
 
-You can also assign a [backend](../../getting-started/dashboard/auto-provisioning/backends.md) here or do it in the `vcl_backend_fetch` subroutine.
+You can also assign a [backend](../../getting-started/dashboard/auto-provisioning/configuration.md) here or do it in the `vcl_backend_fetch` subroutine.
 
 ### vcl\_hash
 
