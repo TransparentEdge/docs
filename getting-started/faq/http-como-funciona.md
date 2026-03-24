@@ -16,7 +16,7 @@ In the response to this request, the web server sends the content itself along w
 
 On the first line, we see that the server responds with “HTTP/1.1 200 OK”. Here the server is using code 200 to tell the client that the requested resource has been found and served correctly. Section 10 of the[ RFC2616](https://tools.ietf.org/html/rfc2616#section-10) defines all the status codes that a web server can return in response to an HTTP request. Second, we see the Cache-Control header, which can be configured in the web server or in code. It tells the client’s browser (and all the caches the request passes through) that the object must be updated every 2592000 seconds in this case—or in other words, that the object can be stored on the browser’s cache for 30 days. To keep this brief, we’re not going to analyze the rest of the headers; instead, we’ll see what would happen if this request did pass through a cache like Transparent Edge. Let’s take a look:
 
-![](../../.gitbook/assets/Flujo-HTTP-2.png)
+![](../../.gitbook/assets/screen.png)
 
 This might appear to complicate things, but it's actually simpler than it seems. To help you understand it, we’ll follow the request through all its steps.
 
