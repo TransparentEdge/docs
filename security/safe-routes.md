@@ -2,7 +2,7 @@
 
 **Safe Routes** are a tool designed to make the daily work of teams easier when they need frequent access to certain areas of a website or application that are protected by advanced security measures, such as a **WAF** or **Bot Mitigation systems**.
 
-In the dashboard’s sidebar menu, you’ll find the **Safe Routes** section, where you can create and manage secure links.
+In the dashboard’s sidebar menu, you’ll find the **Safe Routes** section, where you can create and manage secure links. The URL generated in Safe Routes is the destination address to which the session is redirected when accessing through the secure link.
 
 ## New Safe Route
 
