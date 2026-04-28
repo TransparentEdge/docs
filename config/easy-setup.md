@@ -62,6 +62,10 @@ In **Other actions** we can find:
 
 
 
-With the template already selected, we will choose whether the rule will apply to all inbound requests or, alternatively, if we want to define it for a custom filter rule. In the latter case, we must fill in the required values. Once everything is completed, we save, and our new rule will be implemented.
+With the template already selected, we will choose whether the rule will apply to all inbound requests or, alternatively, if we want to define it for a custom filter rule. In the latter case, we can define more specific conditions on the incoming request. For example, **it is possible to check whether the client's IP is included or not in an access control list** (ACL), combining the condition type, the operator, and the name of the list we want to apply.
+
+<figure><img src="../.gitbook/assets/Captura de pantalla 2026-04-28 a las 12.53.35.png" alt="" width="563"><figcaption></figcaption></figure>
+
+Once everything is completed, we save, and our new rule will be implemented.
 
 From the rules table, we can edit, delete, and deactivate the rules that have already been created.
