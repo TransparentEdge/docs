@@ -141,7 +141,7 @@
 * [Blocking by IP Address](security/block-by-ip-address.md)
 * [Blocking Requests Geographically](security/block-by-geolocation.md)
 * [Avoiding Hotlinking](security/avoiding-hotlinking.md)
-* [Bot Mitigation](security/bot-mitigation.md)
+* [Bot Management](security/bot-mitigation.md)
 * [WAF](security/waf/README.md)
   * [Configuration](security/waf/configuration.md)
   * [CAPTCHA](security/waf/captcha.md)

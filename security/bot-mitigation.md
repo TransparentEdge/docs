@@ -2,9 +2,9 @@
 description: Mitigate automated threats based on IP address reputation.
 ---
 
-# Bot Mitigation
+# Bot Management
 
-Transparent Edge Bot Mitigation is in its core **a curated IP address reputation database that is updated in real time** that protects customer websites from malicious synthetic traffic.
+Transparent Edge Bot Management is in its core **a curated IP address reputation database that is updated in real time** that protects customer websites from malicious synthetic traffic.
 
 A bot is a software application that runs automated tasks against online services, there are bad bots and good bots.
 
@@ -17,9 +17,9 @@ Detecting a bot can be a trivial task if it's a simple bot, but advanced bots us
 
 <table><thead><tr><th width="183">Bot Type</th><th>Description</th></tr></thead><tbody><tr><td>Simple</td><td>Connects from a single IP address and uses automated scripts that do not try to impersonate as a browser.</td></tr><tr><td>Moderate</td><td>Uses a headless browser that can even execute javascript.</td></tr><tr><td>Advanced</td><td>Simulates mouse movements and clics, mimicking human behaviour. Uses browser automation technologies. Used by botnets.</td></tr><tr><td>Evasive</td><td>Same as advanced but leverages on VPNs, proxies and other spoofing methodologies to hide.</td></tr></tbody></table>
 
-## Bot Mitigation Settings
+## Bot Management Settings
 
-If you have adquired the Bot Mitigation service, you'll be able to access its settings where you can customize the threat detection level per site.
+If you have adquired the Bot Management service, you'll be able to access its settings where you can customize the threat detection level per site.
 
 The screenshot below shows a small part of the available options:
 
@@ -27,7 +27,7 @@ The screenshot below shows a small part of the available options:
 
 
 
-## How to enable Bot Mitigation
+## How to enable Bot Management
 
 After you've registered a site at the Bot Mitigation settings panel, you can activate an action if a bot is detected according to the established settings.
 

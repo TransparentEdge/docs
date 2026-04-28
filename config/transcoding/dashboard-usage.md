@@ -95,6 +95,38 @@ At least the output resolution or the desired aspect ratio must be specified.
 Keep in mind that, like the overlay profile, this profile is not compatible with profiles that already have a fixed output **resolution set,** nor with the **watermark profile.**
 {% endhint %}
 
+## New transcoding job
+
+Jobs are created through a four-step wizard. All steps must be completed before the job is submitted.
+
+<figure><img src="../../.gitbook/assets/Captura de pantalla 2026-04-28 a las 14.12.47.png" alt=""><figcaption></figcaption></figure>
+
+#### Origin
+
+Define the source path from which the file will be downloaded. In this field, you must enter the full URL or storage path pointing to the source media file.
+
+#### Destinations
+
+You must enter the URL or storage path where the output file will be sent once it has been transcoded. Use the + button to add multiple destinations if you need the result delivered to more than one location simultaneously.
+
+#### Jobs
+
+Configure the transcoding tasks that will be executed against the source file. Each job entry defines a specific output format. You can add multiple jobs to generate several renditions from the same source in a single run.
+
+**Label:** A human-readable identifier for this job entry (e.g. Iphone, HD-1080, Audio-AAC). Used to distinguish outputs when multiple jobs are configured.
+
+**Filename:** Name of the output file that will be generated (e.g. watermark.mp4). Include the file extension matching the expected output format.
+
+**Profile:** Select from the available profiles in the dropdown.
+
+Thumbnails: When enabled, the service will extract still images from the transcoded video at defined intervals. Thumbnails are delivered alongside the output file to the configured destination.
+
+**Priority:** Sets the processing priority for this job in the transcoding queue.
+
+#### Notifications
+
+Choose how you want to be notified when the job completes successfully.&#x20;
+
 ## Transcoding jobs
 
 As for the transcoding jobs, there are two options:
