@@ -30,6 +30,7 @@ In **Security & Access Control** we have:
 
 * **Request blocking:** Block the selected request with an error code.
 * **Add exception to the WAF:** A configuration that allows the WAF to bypass specific rules, preventing the blocking of allowed requests or behaviors. In this field, we must enter the identifier of the rule we want to be ignored.
+* **Bot Management action:** This action applies the mitigation response configured through the Bot Management service — such as a block, a JS Challenge, Bypass, or CAPTCHA.
 *   **Rate limit:** a mechanism that restricts the number of requests a client can make to a server within a given time period.
 
     * _Request:_ Defines how many requests are allowed within the selected time period before the action is triggered.
@@ -62,7 +63,7 @@ In **Other actions** we can find:
 
 
 
-With the template already selected, we will choose whether the rule will apply to all inbound requests or, alternatively, if we want to define it for a custom filter rule. In the latter case, we can define more specific conditions on the incoming request. For example, **it is possible to check whether the client's IP is included or not in an access control list** (ACL), combining the condition type, the operator, and the name of the list we want to apply.
+With the template already selected, we will choose whether the rule will apply to all inbound requests or, alternatively, if we want to define it for a custom filter rule. In the latter case, we can define more specific conditions on the incoming request. For example, **it is possible to check whether the client's IP is included or not in an access control list** (ACL), combining the condition type, the operator (is in/ is not in), and the name of the list we want to apply.
 
 <figure><img src="../.gitbook/assets/Captura de pantalla 2026-04-28 a las 12.53.35.png" alt="" width="563"><figcaption></figcaption></figure>
 
