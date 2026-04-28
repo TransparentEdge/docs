@@ -45,6 +45,12 @@ In the event that your site has not been verified within 24 hours after having s
 
 If you choose to do it yourself, remember that it is important to carry out the same steps manually.
 
+### Relocate site
+
+When relocating a site, it is transferred from the current company to a target company. To do so, click the Relocate button and select from the dropdown the company you want to move the site to. Once confirmed, the site will be associated with the new company.
+
+<figure><img src="../../../.gitbook/assets/Captura de pantalla 2026-04-28 a las 15.56.56.png" alt="" width="274"><figcaption></figcaption></figure>
+
 ### What is the lock icon next to my sites?
 
 If the padlock appears open, your site does not have an SSL certificate configured. If it appears closed and green, your site has a valid HTTPS configuration. By clicking on the open padlock, you can [configure a certificate for your site.](ssl.md)
