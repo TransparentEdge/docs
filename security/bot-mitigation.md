@@ -25,10 +25,6 @@ The screenshot below shows a small part of the available options:
 
 <figure><img src="../.gitbook/assets/Captura de pantalla 2026-05-11 a las 12.20.13.png" alt=""><figcaption><p>A demo of the available settings</p></figcaption></figure>
 
-
-
-## How to enable Bot Management
-
 After enabling Bot Management for a site via the Enable button, a set of configurable fields will appear for bot detection.
 
 ### **BattleBot**
