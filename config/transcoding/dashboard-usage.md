@@ -26,7 +26,7 @@ If you need to control the output dimensions, you can specify the width and heig
 The **Restrict bitrate** option lets you cap the maximum output bitrate (the number of bits per second that can be transferred in a video), which is useful when you want to keep the file under a certain size or ensure compatibility with bandwidth-constrained environments.
 
 {% hint style="warning" %}
-Keep in mind that if you fill in the width and height fields, you won't be able to use **the custom watermark** or **video filter profiles**, as they are not compatible with a fixed output resolution.
+Keep in mind that if you fill in the width and height fields, you won't be able to use **the custom watermark**, as they are not compatible with a fixed output resolution.
 {% endhint %}
 
 ### Audio settings
@@ -51,7 +51,7 @@ Overlays an image on top of your video. Typically used for logos or watermarks.
 * **Offset Y:** Margin in pixels from the vertical edge.
 
 {% hint style="warning" %}
-Keep in mind that this profile type is not compatible with profiles that have a fixed output resolution set (**the width and height fields** in the video settings), nor with the **video filter profile.**
+Keep in mind that this profile type is not compatible with profiles that have a fixed output resolution set (**the width and height fields** in the video settings)**.**
 {% endhint %}
 
 #### HLS segmentation (hls)
@@ -75,24 +75,7 @@ Converts the output to HLS format, the standard for adaptive streaming. The vide
 * **Entropy coder:** _(Optional)_ Internal compression method. `0` = CAVLC, faster and compatible with basic devices (baseline profile). `1` = CABAC, better compression (reduces size by \~10–15%) but slower and more demanding, requiring main or high profile.
 
 {% hint style="info" %}
-This profile is compatible with both overlay and video\_filter, so you can combine it with either of the other two.
-{% endhint %}
-
-#### Video filter
-
-Applies transformations directly to the video image. Useful for generating lower-resolution versions, converting a horizontal video to vertical format (9:16), and more.
-
-At least the output resolution or the desired aspect ratio must be specified.
-
-* **Scale W:** _(Optional)_ Output width in pixels. Accepts `-2` to let ffmpeg automatically calculate the value that preserves the aspect ratio based on Scale H.
-* **Scale H:** _(Optional)_ Output height in pixels. Accepts `-2` for automatic calculation based on Scale W.
-* **DAR:** _(Optional)_ Forces the Display Aspect Ratio in the container metadata without rescaling the pixels (e.g. `"16/9"`, `"9/16"`, `"4/3"`). Useful for correcting anamorphic videos or converting between horizontal and vertical formats.
-* **FPS:** Sets the frames per second of the output video. Useful when the source video has a variable or non-standard framerate, ensuring a more stable and consistent result.
-* **Pixel format:** Defines the pixel color format of the video. Used to ensure compatibility, especially when the original format is not supported by the target device or platform.
-* **Position:** Injection point in the ffmpeg command. Use `before` if the scaling should be applied before the base encoding, or `after` if it should be applied to the resulting stream.
-
-{% hint style="warning" %}
-Keep in mind that, like the overlay profile, this profile is not compatible with profiles that already have a fixed output **resolution set,** nor with the **watermark profile.**
+This profile is compatible with overlay.
 {% endhint %}
 
 ## New transcoding job
