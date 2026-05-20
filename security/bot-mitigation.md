@@ -15,7 +15,7 @@ Detecting a bot can be a trivial task if it's a simple bot, but advanced bots us
 
 <table><thead><tr><th width="183">Bot Type</th><th>Description</th></tr></thead><tbody><tr><td>Simple</td><td>Connects from a single IP address and uses automated scripts that do not try to impersonate as a browser.</td></tr><tr><td>Moderate</td><td>Uses a headless browser that can even execute javascript.</td></tr><tr><td>Advanced</td><td>Simulates mouse movements and clics, mimicking human behaviour. Uses browser automation technologies. Used by botnets.</td></tr><tr><td>Evasive</td><td>Same as advanced but leverages on VPNs, proxies and other spoofing methodologies to hide.</td></tr></tbody></table>
 
-### What is BotM?
+## What is BotM?
 
 BotM is our Bot Management engine, built directly into our CDN. It analyzes incoming requests in real time and assigns each client IP a **risk score** based on pre-computed threat intelligence data, identifying IPs associated with botnets, scrapers, VPNs, Tor exit nodes, proxies, datacenters, and other sources of automated or abusive traffic.
 
@@ -82,7 +82,7 @@ This lets you, for example, block known VPN or Tor IPs at a lower score than you
 
 <figure><img src="../.gitbook/assets/Captura de pantalla 2026-05-20 a las 13.46.28.png" alt=""><figcaption></figcaption></figure>
 
-## Select the action
+### Select the action
 
 Once the thresholds and flags have been configured, clicking Save configuration opens a modal to define what happens when a bot is detected.
 
