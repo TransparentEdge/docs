@@ -93,10 +93,6 @@ There are four available actions:
 * **jschallenge:** Presents a JavaScript-based challenge instead of a CAPTCHA.
 * **bypass:** Checks the IP against thresholds but takes no action. The result is available for use in downstream VCL logic (see [Advanced Configuration](../getting-started/dashboard/auto-provisioning/configuration.md)).
 
-{% hint style="info" %}
-You can also define a more tailored reaction by using the call [botm assessment](../config/vcl/callable-functions.md#botm-assessment).
-{% endhint %}
-
 #### Saving the Configuration
 
 After configuring thresholds, flags, and an action, save and choose how to apply it:
