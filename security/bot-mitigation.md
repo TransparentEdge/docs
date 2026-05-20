@@ -13,9 +13,24 @@ A bot is a software application that runs automated tasks against online service
 
 Detecting a bot can be a trivial task if it's a simple bot, but advanced bots use an ordinary web engine to scrape, navigate links at random intervals, use the mouse... they become almost humans.
 
-
-
 <table><thead><tr><th width="183">Bot Type</th><th>Description</th></tr></thead><tbody><tr><td>Simple</td><td>Connects from a single IP address and uses automated scripts that do not try to impersonate as a browser.</td></tr><tr><td>Moderate</td><td>Uses a headless browser that can even execute javascript.</td></tr><tr><td>Advanced</td><td>Simulates mouse movements and clics, mimicking human behaviour. Uses browser automation technologies. Used by botnets.</td></tr><tr><td>Evasive</td><td>Same as advanced but leverages on VPNs, proxies and other spoofing methodologies to hide.</td></tr></tbody></table>
+
+### What is BotM?
+
+BotM is our Bot Management engine, built directly into our CDN. It analyzes incoming requests in real time and assigns each client IP a **risk score** based on pre-computed threat intelligence data, identifying IPs associated with botnets, scrapers, VPNs, Tor exit nodes, proxies, datacenters, and other sources of automated or abusive traffic.
+
+When a request arrives, BotM:
+
+1. Looks up the client IP in a high-speed local cache.
+2. If not cached, queries the threat intelligence backend for an up-to-date score and set of flags for that IP.
+3. Compares the score and flags against the thresholds you configured for your site.
+4. Takes the configured action (block, challenge, or bypass) if the thresholds are exceeded.
+
+BotM adds minimal latency: lookups are served from cache whenever possible, with tight timeouts on backend calls so it never becomes a bottleneck on your traffic.
+
+### **BattleBot**
+
+At the top of the page, the **BattleBot** snippet is displayed — a lightweight JavaScript that can be inserted into the `<head>` of your website to add an extra layer of protection. When a user visits the site, the script runs a fast, transparent test against their browser's JavaScript engine, analysing characteristics such as floating-point number precision. The results are sent to our API for deep analysis, enabling more accurate bot detection on top of IP reputation scoring.
 
 ## Bot Management Settings
 
@@ -27,33 +42,45 @@ The screenshot below shows a small part of the available options:
 
 After enabling Bot Management for a site via the Enable button, a set of configurable fields will appear for bot detection.
 
-### **BattleBot**
-
-At the top of the page, the **BattleBot** snippet is displayed — a lightweight JavaScript that can be inserted into the `<head>` of your website to add an extra layer of protection. When a user visits the site, the script runs a fast, transparent test against their browser's JavaScript engine, analysing characteristics such as floating-point number precision. The results are sent to our API for deep analysis, enabling more accurate bot detection on top of IP reputation scoring.
-
 ### **Score threshold**
 
-Defines the minimum score at which the configured action is triggered. The range goes from 1 to 99, where lower values imply more aggressive detection with a higher chance of false positives, and higher values result in more conservative detection with fewer false positives. The recommended range is between 75 and 90.
+**Range:** 1-99
+
+Every IP has a risk score. Set the score at or above which the configured action fires. IPs scoring below this threshold are allowed through without restriction.
+
+* A **lower threshold** is more aggressive, it catches more IPs but may produce false positives.
+* A **higher threshold** is more conservative, only clearly malicious IPs are acted upon.
+
+The recommended range is between 75 and 90.
 
 ### **Flags**
 
 Flags allow you to fine-tune detection by combining an IP's reputation score with known behavioural categories or characteristics. Any combination of the following flags can be selected:
 
-| Flag                      | Description                                                                                                                                |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| **datacenter**            | The IP belongs to a datacenter or cloud provider and is unlikely to correspond to a real residential user.                                 |
-| **vpn**                   | The IP is associated with a VPN provider and may be used to mask the user's true location or identity.                                     |
-| **proxy**                 | The IP is acting as a proxy server, routing traffic on behalf of other clients.                                                            |
-| **tor**                   | The IP is a TOR exit node, commonly used for anonymous browsing and to bypass geo-restrictions.                                            |
-| **abuse**                 | The IP has been reported for abusive behaviour such as spam, brute-force attacks, or fraud.                                                |
-| **automated\_navigation** | The IP has been associated with automated browser activity, such as headless browsers or bot frameworks.                                   |
-| **scraper**               | The IP has been detected harvesting content from websites at scale.                                                                        |
-| **ai\_scraper**           | The IP belongs to an AI training crawler or data pipeline scraping content to train machine learning models.                               |
-| **botnet**                | The IP is part of a botnet and is likely being used to conduct coordinated malicious activity such as DDoS attacks or credential stuffing. |
+| Flag                      | Description                                        |
+| ------------------------- | -------------------------------------------------- |
+| **datacenter**            | IP originates from a datacenter (non-residential)  |
+| **vpn**                   | IP is associated with a VPN service                |
+| **proxy**                 | IP is a known open proxy                           |
+| **tor**                   | IP is a known Tor exit node                        |
+| **abuse**                 | IP has been reported for abusive behavior          |
+| **automated\_navigation** | IP has been detected performing automated browsing |
+| **scraper**               | IP is associated with scraping activity            |
+| **AI scraper**            | IP is associated with AI/LLM content scraping      |
+| **botnet**                | IP is part of a known botnet                       |
 
-#### **Flag threshold**
+#### **Flag Score threshold**
 
-Only active when at least one flag has been selected. Defines the minimum score an IP must reach for the configured action to be triggered in combination with the selected flags. This value must be lower than the Score threshold.
+**Range:** 1-99 (should be lower than the Score Threshold)
+
+A secondary rule to catch moderate-risk IPs that also exhibit specific suspicious characteristics. The action fires when **both** conditions are true:
+
+* The IP's score is at or above this threshold, **and**
+* At least one of the selected flags (see below) matches the IP's profile.
+
+This lets you, for example, block known VPN or Tor IPs at a lower score than you would block a generic risky IP.
+
+<figure><img src="../.gitbook/assets/Captura de pantalla 2026-05-20 a las 13.46.28.png" alt=""><figcaption></figcaption></figure>
 
 ## Select the action
 
@@ -61,84 +88,89 @@ Once the thresholds and flags have been configured, clicking Save configuration 
 
 There are four available actions:
 
-* block
-* captcha
-* jschallenge
-* bypass
+* **block:** Returns a `403 Forbidden` response immediately.
+* **captcha:** Redirects the user to a CAPTCHA challenge. On success, a signed cookie is set and the user continues normally. Only applies to `GET` requests; other methods are blocked with `403` until the captcha is resolved.
+* **jschallenge:** Presents a JavaScript-based challenge instead of a CAPTCHA.
+* **bypass:** Checks the IP against thresholds but takes no action. The result is available for use in downstream VCL logic (see [Advanced Configuration](../getting-started/dashboard/auto-provisioning/configuration.md)).
 
 {% hint style="info" %}
 You can also define a more tailored reaction by using the call [botm assessment](../config/vcl/callable-functions.md#botm-assessment).
 {% endhint %}
 
-#### Block
+#### Saving the Configuration
 
-For example if you want to protect your site `www.example.com` and you've checked to detect IP addresses categorized as abusive and with a minimum risk score of 60 the following VCL code will block the IP addresses that match those settings:
+After configuring thresholds, flags, and an action, save and choose how to apply it:
 
-```perl
+* **Create VCL automatically**: A custom VCL snippet is created and deployed for your site. No further action required.
+* **I'll configure it manually**: No VCL is generated. You can copy the snippet created at the top and paste it into the VCL editor. (see [Advanced Configuration](../getting-started/dashboard/auto-provisioning/configuration.md#write-your-vcl-code)).
+
+***
+
+### Advanced Configuration
+
+For scenarios that go beyond what the dashboard supports, you can configure BotM directly in VCL. This overrides any thresholds set in the dashboard. Note that you still need to enable BotM for the site.
+
+#### Basic Usage
+
+Set the `TCDN-BM-Action` header anywhere in `vcl_recv`:
+
+```vcl
 sub vcl_recv {
-    # Enable bot mitigation action
-    if (req.http.host == "www.example.com") {
-        set req.http.TCDN-BM-Action = "block";
-    }
-}
-```
-
-Of course the condition can be anything you like, perhaps you only want to protect some paths of your website:
-
-```perl
-sub vcl_recv {
-    # Enable bot mitigation action
-    if (req.http.host == "www.example.com") {
-        if (req.url ~ "^/admin") {
-            # Only for /admin*
-            set req.http.TCDN-BM-Action = "block";
-        }
-    }
-}
-```
-
-#### JavaScript challenge
-
-Instead of blocking the request directly, you can protect them using a JavaScript challenge that will filter most of the bots and automated request to your site.
-
-```perl
-sub vcl_recv {
-    # Enable bot mitigation action
     if (req.http.host == "www.example.com") {
         set req.http.TCDN-BM-Action = "jschallenge";
     }
 }
 ```
 
-#### Captcha
+#### Overriding Thresholds
 
-You can also force a captcha for the detected IP addresses, users that successfully complete the captcha will be able to enter your website and the risk of their IP address will decrease overtime.
+The full syntax for the header value is:
 
-```perl
+```
+<ACTION>@<SCORE_THRESHOLD>;<FLAG_SCORE_THRESHOLD>;<FLAGS>
+```
+
+* `ACTION`: one of `block`, `captcha`, `jschallenge`, or `bypass`
+* `SCORE_THRESHOLD`: score at or above which the action triggers (1-99)
+* `FLAG_SCORE_THRESHOLD`: score threshold applied when matching flags are present (1-99)
+* `FLAGS`: flag codes to check (e.g. `vt` for VPN + Tor), can be empty for no flags, check [BotM Flags API reference](https://api.botm.transparentedge.io/api/report/flags) to see the available flag letter codes
+
+#### Examples
+
+**Different action per country:**
+
+```vcl
 sub vcl_recv {
-    # Enable bot mitigation action
     if (req.http.host == "www.example.com") {
-        set req.http.TCDN-BM-Action = "captcha";
+        if (req.http.geo_country_code ~ "^(ES|PT)$") {
+            # Higher thresholds and JS challenge for ES/PT traffic
+            set req.http.TCDN-BM-Action = "jschallenge@90;70;vt";
+        } else {
+            # Block everything else that exceeds default thresholds configured in the dashboard
+            set req.http.TCDN-BM-Action = "block";
+        }
     }
 }
 ```
 
-#### Bypass
+**Act only on cache miss (bypass mode):**
 
-Lastly, maybe you only want the statistics that the detection engine provides automatically without blocking anything, in that case you can use the bypass option.
+Use `bypass` to run the assessment without taking immediate action. If the IP exceeds the configured thresholds, the header `tcdn-bm-deny-reason` is set and available in subsequent subroutines such as `vcl_miss`, `vcl_pass` or `vcl_backend_fetch`.
 
-```perl
+```vcl
 sub vcl_recv {
-    # Enable bot mitigation action
     if (req.http.host == "www.example.com") {
-        set req.http.TCDN-BM-Action = "bypass";
+        if (req.url ~ "^/img/") {
+            set req.http.TCDN-BM-Action = "bypass";
+        }
+    }
+}
+
+sub vcl_miss {
+    # Only present if the IP exceeded the configured thresholds
+    if (req.http.tcdn-bm-deny-reason) {
+        call deny_request;
     }
 }
 ```
-
-## **Last step**
-
-Below the action selector, a VCL snippet is provided for advanced use cases. Copy the snippet if you intend to insert it under your own conditions in the VCL editor.
-
-To apply the configuration automatically to all traffic on the site, click **Create VCL automatically**. If you prefer to handle the VCL insertion yourself, click **I'll configure it manually** to copy the snippet and integrate it on your own terms.
 
