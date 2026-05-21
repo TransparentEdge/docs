@@ -91,7 +91,7 @@ There are four available actions:
 * **block:** Returns a `403 Forbidden` response immediately.
 * **captcha:** Redirects the user to a CAPTCHA challenge. On success, a signed cookie is set and the user continues normally. Only applies to `GET` requests; other methods are blocked with `403` until the captcha is resolved.
 * **jschallenge:** Presents a JavaScript-based challenge instead of a CAPTCHA.
-* **bypass:** Checks the IP against thresholds but takes no action. The result is available for use in downstream VCL logic (see [Advanced Configuration](../getting-started/dashboard/auto-provisioning/configuration.md)).
+* **bypass:** Checks the IP against thresholds but takes no action. The result is available for use in downstream VCL logic (see [Advanced Configuration](bot-mitigation.md#advanced-configuration)).
 
 #### Saving the Configuration
 
