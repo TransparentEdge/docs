@@ -40,9 +40,27 @@ All this is displayed in the status codes graph, and the referrer table displays
 
 <figure><img src="../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
 
-The IP address table shows the IPs from where the requests are sent. The content type graph, on the other hand, displays information on the contents of each site.
+### IP Address table
 
-<figure><img src="../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
+The IP address table shows the IPs from where the requests are sent. Each row in the table represents a source IP address and provides information about the number of requests, bandwidth consumed, its risk level, and the available actions to manage it.
+
+**IP:** Source IP address of the requests. A colored dot provides a visual indication of the risk level.
+
+**Risk:** Risk score of the IP address (0–100). A score of 0 indicates no known risk.
+
+**Requests:** Number of requests received from the IP address and its percentage of the total traffic.
+
+**Bandwidth:** Volume of data transferred from the IP address and its percentage of the total bandwidth.
+
+**Actions:** Three action buttons: IP details, block/allow, and filter.
+
+
+
+#### **IP Information**
+
+Clicking the **IP Information** button opens a modal with a comprehensive analysis of the selected IP address, including geolocation, network information, risk score, and threat analysis.
+
+The **Threat Analysis** section is arguably the most relevant from a security perspective. It consolidates abuse reports, threat intelligence sources, and behavioral flags associated with the IP address.
 
 {% hint style="info" %}
 Remember that everything you can do from our [dashboard](https://dashboard.transparentcdn.com/auth/login?redirect=%2F), you can do from our [API](https://docs.transparentedge.eu/v/english/guias/api).
