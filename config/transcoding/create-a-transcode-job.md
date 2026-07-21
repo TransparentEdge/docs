@@ -122,4 +122,4 @@ To use it, you need to add another field named `"drm"` under the `"post-process"
 
 It is also possible to create a new transcoding job through our [dashboard.](https://dashboard.transparentcdn.com/) To do this, you need to expand the options of the button located at the top of the transcoding job list and follow the steps indicated in the displayed modal.
 
-<figure><img src="../../.gitbook/assets/transcoding-new-job.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Captura de pantalla 2026-07-21 a las 11.41.16.png" alt=""><figcaption></figcaption></figure>
