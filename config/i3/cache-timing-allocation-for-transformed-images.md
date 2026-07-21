@@ -2,7 +2,7 @@
 
 In [i3](./), our image management solution, setting the `max-age` and `s-maxage` values in the [`Cache-Control`](../../getting-started/faq/glosario/cache-control.md) header is done through two custom headers: `TCDN-i3-max-age` and `TCDN-i3-s-maxage`, both with the same semantics.&#x20;
 
-For example, if we wanted to serve images on our domain `mi-dominio.es` in [**WebP**](conversion-to-webp.md) format with a `max-age` of one minute (60 s) and an `s-maxage` of one month (2592000 s), we would simply need to deploy a [VCL](../vcl/) [configuration](/broken/pages/-M7H_VntHNSVzpPseiCS) similar to the following from the [dashboard:](../../getting-started/dashboard/)
+For example, if we wanted to serve images on our domain `mi-dominio.es` in [**WebP**](conversion-to-webp.md) format with a `max-age` of one minute (60 s) and an `s-maxage` of one month (2592000 s), we would simply need to deploy a [VCL](../vcl/) [configuration](https://app.gitbook.com/s/-M7HYJERlemP2N6HqnBC-1703796690/config) similar to the following from the [dashboard:](../../getting-started/dashboard/)
 
 ```c
 i3 - Cache-Control

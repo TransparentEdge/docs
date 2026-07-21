@@ -6,7 +6,7 @@ To do this, we use our `TCDN-i3-transform` header, specifying the desired operat
 
 The exact syntax for this operation is as follows: `blur[:`_`<porcentaje>`_`]`. If no percentage is specified, the default value of **50%** will be assumed.&#x20;
 
-For example, if you wanted all images on your domain `mi-dominio.es` that are located at the `URL /estaticos/imagenes` to be served with a 75% blur effect, you can simply deploy a [VCL](../vcl/) [configuration](/broken/pages/-M7H_VntHNSVzpPseiCS) similar to the following from the [dashboard:](../../getting-started/dashboard/)
+For example, if you wanted all images on your domain `mi-dominio.es` that are located at the `URL /estaticos/imagenes` to be served with a 75% blur effect, you can simply deploy a [VCL](../vcl/) [configuration](https://app.gitbook.com/s/-M7HYJERlemP2N6HqnBC-1703796690/config) similar to the following from the [dashboard:](../../getting-started/dashboard/)
 
 ```c
 # i3 - blur

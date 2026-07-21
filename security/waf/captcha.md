@@ -8,7 +8,7 @@ This function is invoked through our `TCDN-Command` header; therefore, we need t
 
 Internally, when a user successfully completes the CAPTCHA challenge, a cookie called `TCDN-Captcha-UID` is assigned to their browser. This cookie allows for the unique identification of the user's session and prevents them from being repeatedly asked to pass the CAPTCHA challenge. However, this cookie has a finite time to live `(ttl)` of one hour. Once this time has elapsed, the user will need to complete a new CAPTCHA challenge. However, the optional parameter  _`<ttl>`_ allows us to control the lifetime of this session cookie.&#x20;
 
-For example, if we wanted to limit the presence of bots on our domain `mi-dominio.es` without excessively inconveniencing legitimate users, we could implement a CAPTCHA with an 8-hour TTL. In this case, we would deploy a [VCL](../../config/vcl/) [configuration](/broken/pages/-M7H_VntHNSVzpPseiCS) similar to the following from the [dashboard:](../../getting-started/dashboard/)
+For example, if we wanted to limit the presence of bots on our domain `mi-dominio.es` without excessively inconveniencing legitimate users, we could implement a CAPTCHA with an 8-hour TTL. In this case, we would deploy a [VCL](../../config/vcl/) [configuration](https://app.gitbook.com/s/-M7HYJERlemP2N6HqnBC-1703796690/config) similar to the following from the [dashboard:](../../getting-started/dashboard/)
 
 ```c
 # show-captcha

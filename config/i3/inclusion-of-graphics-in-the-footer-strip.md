@@ -6,7 +6,7 @@ To do this, we use our `TCDN-i3-transform` header, specifying the desired operat
 
 The exact syntax for this operation is as follows: `strip:'`_`<url>`_`'`.&#x20;
 
-For example, if you wanted all images on your domain `mi-dominio.es` that are located at the URL `/estaticos/imagenes` to be served with the strip available at `/estaticos/grafismos/faldon.png`, you can simply deploy a [VCL](../vcl/) [configuration](/broken/pages/-M7H_VntHNSVzpPseiCS) similar to the following from the [dashboard](../../getting-started/dashboard/):
+For example, if you wanted all images on your domain `mi-dominio.es` that are located at the URL `/estaticos/imagenes` to be served with the strip available at `/estaticos/grafismos/faldon.png`, you can simply deploy a [VCL](../vcl/) [configuration](https://app.gitbook.com/s/-M7HYJERlemP2N6HqnBC-1703796690/config) similar to the following from the [dashboard](../../getting-started/dashboard/):
 
 ```c
 # i3 - strip
@@ -21,7 +21,7 @@ sub vcl_recv {
 
 Likewise, for the obtained result to be satisfactory, both images must have the same dimensions. Therefore, in certain situations, it will be necessary to combine this operation with the [automatic image resizing](automatic-resizing.md) operation itself.&#x20;
 
-For example, taking the previous case, if the strip has dimensions of 800 x 600 pixels, in order for it to fit perfectly onto the image, we must resize it beforehand. Thus, you can simply deploy a [VCL](../vcl/) [configuration](/broken/pages/-M7H_VntHNSVzpPseiCS) similar to the following from the [dashboard](../../getting-started/dashboard/):
+For example, taking the previous case, if the strip has dimensions of 800 x 600 pixels, in order for it to fit perfectly onto the image, we must resize it beforehand. Thus, you can simply deploy a [VCL](../vcl/) [configuration](https://app.gitbook.com/s/-M7HYJERlemP2N6HqnBC-1703796690/config) similar to the following from the [dashboard](../../getting-started/dashboard/):
 
 ```c
 # i3 - strip

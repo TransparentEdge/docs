@@ -19,7 +19,7 @@ sub vcl_recv {
 
 If you want to deactivate the WAF under certain conditions, you can simply `unset` the previously assigned header.
 
-For example, if you want to activate the WAF for your domain `mi-dominio.es` but exclude URLs that start `with /path/sin/waf/`, you can deploy a [VCL](../../config/vcl/vcl-objects.md) [configuration](/broken/pages/-M7H_VntHNSVzpPseiCS) similar to the following from the control [dashboard:](../../getting-started/dashboard/)
+For example, if you want to activate the WAF for your domain `mi-dominio.es` but exclude URLs that start `with /path/sin/waf/`, you can deploy a [VCL](../../config/vcl/vcl-objects.md) [configuration](https://app.gitbook.com/s/-M7HYJERlemP2N6HqnBC-1703796690/config) similar to the following from the control [dashboard:](../../getting-started/dashboard/)
 
 ```c
 # WAF avanzado
@@ -42,7 +42,7 @@ Instead, the WAF provides the header `TCDN-WAF-Set-SecRuleEngine`, which allows 
 * `#Off:` Temporarily deactivates the WAF.
 * `#DetectionOnly:` In this case, the WAF takes necessary actions to identify requests considered dangerous, but allows them to pass through the WAF. This behavior is useful for conducting preliminary testing to detect potential false positives and subsequently include any necessary exceptions if needed.
 
-Thus, going back to the previous example, we just need to deploy a [VCL](../../config/vcl/vcl-objects.md) [configuration](/broken/pages/-M7H_VntHNSVzpPseiCS) similar to the following from the [dashboard](../../getting-started/dashboard/):
+Thus, going back to the previous example, we just need to deploy a [VCL](../../config/vcl/vcl-objects.md) [configuration](https://app.gitbook.com/s/-M7HYJERlemP2N6HqnBC-1703796690/config) similar to the following from the [dashboard](../../getting-started/dashboard/):
 
 ```javascript
  # WAF avanzado
@@ -60,7 +60,7 @@ sub vcl_recv {
 
 If you notice that the WAF is considering certain requests as dangerous, even though they are perfectly valid, and you encounter false positives, you can include exceptions for such cases using the `TCDN-WAF-Allow-Rule-Exceptions` header.
 
-Continuing with the previous example, if you observe that requests to URLs under `/path/completely/secure/` are being blocked by the WAF due to rule violations (`ruleID_1, ruleID_2, ruleID_3, ..., ruleID_n`), you can specify that these matches should be treated as exceptions. To do so, you can deploy the following [VCL](../../config/vcl/vcl-objects.md) [configuration](/broken/pages/-M7H_VntHNSVzpPseiCS) from the [dashboard](../../getting-started/dashboard/):
+Continuing with the previous example, if you observe that requests to URLs under `/path/completely/secure/` are being blocked by the WAF due to rule violations (`ruleID_1, ruleID_2, ruleID_3, ..., ruleID_n`), you can specify that these matches should be treated as exceptions. To do so, you can deploy the following [VCL](../../config/vcl/vcl-objects.md) [configuration](https://app.gitbook.com/s/-M7HYJERlemP2N6HqnBC-1703796690/config) from the [dashboard](../../getting-started/dashboard/):
 
 ```c
 # WAF avanzado

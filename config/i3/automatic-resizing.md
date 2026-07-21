@@ -12,7 +12,7 @@ Furthermore, the dimension `<height>`is optional: if it is not specified, it is 
 
 Similarly, if we want to set dimensions and explicitly prevent the crop that is applied to maintain the aspect ratio, we can append the `fixed` suffix to the dimensions. A valid value, for example, would be `400x300,fixed.` Note that, for example, the value `400x,fixed` would also be valid, although the fixed suffix would be meaningless in this case.&#x20;
 
-For example, if we wanted to serve images from our domain `mi-dominio.es` with a size of `300 x 300 pixels`, located at the URL `/estaticos/imagenes`, we would simply deploy a [VCL](../vcl/) [configuration](/broken/pages/-M7H_VntHNSVzpPseiCS) similar to the following from the [dashboard](../../getting-started/dashboard/):
+For example, if we wanted to serve images from our domain `mi-dominio.es` with a size of `300 x 300 pixels`, located at the URL `/estaticos/imagenes`, we would simply deploy a [VCL](../vcl/) [configuration](https://app.gitbook.com/s/-M7HYJERlemP2N6HqnBC-1703796690/config) similar to the following from the [dashboard](../../getting-started/dashboard/):
 
 ```c
 # i3 - resize

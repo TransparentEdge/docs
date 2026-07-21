@@ -22,11 +22,11 @@ This function is invoked through our `TCDN-Command` header; therefore, we must i
 
 _`<secret>`_ is the only mandatory parameter, which defines the seed used in token generation. It is the private key that underpins the entire process.&#x20;
 
-Optionally, you can specify the parameters ,_`<valid from>`_, _`<valid until>`_ y _`<hash>`_ , and in a strict hard-coded manner within the [VCL](../../config/vcl/) [configuration](/broken/pages/-M7H_VntHNSVzpPseiCS). However, it is also possible to dynamically determine the value for these three parameters: either in the request itself through the query string, or by assigning corresponding cookies (`vf`, `vu`, and `h`).&#x20;
+Optionally, you can specify the parameters ,_`<valid from>`_, _`<valid until>`_ y _`<hash>`_ , and in a strict hard-coded manner within the [VCL](../../config/vcl/) [configuration](https://app.gitbook.com/s/-M7HYJERlemP2N6HqnBC-1703796690/config). However, it is also possible to dynamically determine the value for these three parameters: either in the request itself through the query string, or by assigning corresponding cookies (`vf`, `vu`, and `h`).&#x20;
 
 ### Example of a token with a static validity period&#x20;
 
-For example, if we want to protect the resource `/lista-reproduccion.m3u8?lang=es` on our domain `mi-dominio.es` using a token with a validity period of one year (e.g., 2022), we just need to deploy a similar [VCL](../../config/vcl/) [configuration](/broken/pages/-M7H_VntHNSVzpPseiCS) from the [dashboard:](../../getting-started/dashboard/)
+For example, if we want to protect the resource `/lista-reproduccion.m3u8?lang=es` on our domain `mi-dominio.es` using a token with a validity period of one year (e.g., 2022), we just need to deploy a similar [VCL](../../config/vcl/) [configuration](https://app.gitbook.com/s/-M7HYJERlemP2N6HqnBC-1703796690/config) from the [dashboard:](../../getting-started/dashboard/)
 
 ```c
 # protect-with-token
@@ -63,7 +63,7 @@ Only requests to `/lista-reproduccion.m3u8?lang=es&h=3caf5c965d2895f1705481d3a32
 
 ### Example of a token with a dynamic validity period&#x20;
 
-In the previous example, the validity period of the token is hard-coded in the configuration itself. If we want it to be dynamic, we can deploy a similar [VCL](../../config/vcl/) [configuration](/broken/pages/-M7H_VntHNSVzpPseiCS) from the [dashboard](../../getting-started/dashboard/):
+In the previous example, the validity period of the token is hard-coded in the configuration itself. If we want it to be dynamic, we can deploy a similar [VCL](../../config/vcl/) [configuration](https://app.gitbook.com/s/-M7HYJERlemP2N6HqnBC-1703796690/config) from the [dashboard](../../getting-started/dashboard/):
 
 ```c
 # protect-with-token

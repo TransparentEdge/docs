@@ -95,6 +95,7 @@
   * [Invalidating content](getting-started/dashboard/invalidating-content.md)
   * [Content invalidation by tags](getting-started/dashboard/content-invalidation-by-tags.md)
   * [Prefetching Cache](getting-started/dashboard/prefetch.md)
+  * [Cache status](getting-started/dashboard/cache-status.md)
   * [Log shipping](getting-started/dashboard/log-shipping.md)
   * [Provisioning](getting-started/dashboard/auto-provisioning/README.md)
     * [Initial steps](getting-started/dashboard/auto-provisioning/initial-steps.md)
