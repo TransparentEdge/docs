@@ -135,11 +135,10 @@ Call `botm_analyze` anywhere in `vcl_recv` to run the IP assessment in bypass mo
 | `botm:ip-score` | int    | Risk score of the client IP (0-99)                                                                                                               |
 | `botm:flags`    | string | Flag letter codes present on the IP (e.g. `vt` = VPN + Tor). See the [BotM Flags API reference](https://api.botm.transparentedge.io/api/report/flags) for the full letter-code list |
 
-Read those with `var.get_int("botm:ip-score")` / `var.get("botm:flags")`, then trigger whichever response fits:
+Read those with `var.get_int("botm:ip-score")` / `var.get("botm:flags")`, e.g.:
 
-* `call deny_request;` - returns a `403 Forbidden`.
-* `call show_jschallenge;` - presents the JavaScript challenge.
-* `call show_captcha;` - presents the CAPTCHA challenge.
+- `var.get_int("botm:ip-score") >= 90` matches if the IP score is equal or greater than 90.
+- `var.get("botm:flags") ~ "[vt]"` matches if either `v` (VPN) or `t` (Tor) is present. Use the same pattern for a single flag, e.g. `var.get("botm:flags") ~ "d"` for datacenter.
 
 BotM must still be enabled for the site.
 
@@ -168,7 +167,7 @@ sub vcl_recv {
     if (req.http.host == "www.example.com") {
         call botm_analyze;
 
-        if (var.get("botm:flags") ~ "t" && var.get_int("botm:ip-score") >= 60) {
+        if (var.get("botm:flags") ~ "[vt]" && var.get_int("botm:ip-score") >= 60) {
             call deny_request;
         } else if (var.get("botm:flags") ~ "d" && var.get_int("botm:ip-score") >= 85) {
             call deny_request;
