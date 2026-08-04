@@ -104,7 +104,13 @@ After configuring thresholds, flags, and an action, save and choose how to apply
 
 ### Advanced Configuration
 
-For scenarios that go beyond what the dashboard supports, you can configure BotM directly in VCL. This overrides any thresholds set in the dashboard. Note that you still need to enable BotM for the site.
+For scenarios that go beyond what the dashboard supports, you can configure BotM directly in VCL. Note that you still need to enable BotM for the site.
+
+There are three ways to do this:
+
+* **`TCDN-BM-Action` header** - apply an action using the thresholds configured in the dashboard.
+* **`botm_analyze` subroutine** - run the assessment yourself and decide the action from the resulting score and flags. Use this for custom thresholds or logic. This is the recommended approach.
+* **`TCDN-BM-Action` header with overrides** - apply an action using the thresholds configured in VCL.
 
 #### Basic Usage
 
@@ -118,9 +124,80 @@ sub vcl_recv {
 }
 ```
 
+`TCDN-BM-Action` accepts one of `block`, `captcha`, `jschallenge`, or `bypass`.
+
+#### Custom Checks with `botm_analyze`
+
+Call `botm_analyze` anywhere in `vcl_recv` to run the IP assessment in bypass mode without triggering any automatic action. It looks up score and flags for the client IP and exposes them as request variables:
+
+| Variable        | Type   | Description                                                                                                                                     |
+| ---------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `botm:ip-score` | int    | Risk score of the client IP (0-99)                                                                                                               |
+| `botm:flags`    | string | Flag letter codes present on the IP (e.g. `vt` = VPN + Tor). See the [BotM Flags API reference](https://api.botm.transparentedge.io/api/report/flags) for the full letter-code list |
+
+Read those with `var.get_int("botm:ip-score")` / `var.get("botm:flags")`, then trigger whichever response fits:
+
+* `call deny_request;` - returns a `403 Forbidden`.
+* `call show_jschallenge;` - presents the JavaScript challenge.
+* `call show_captcha;` - presents the CAPTCHA challenge.
+
+BotM must still be enabled for the site.
+
+**Known limitation:** analytics/logs for BotM fields `status` and `reason` reflect BotM's own comparison against the thresholds configured in the dashboard, not the outcome of your custom checks. The logged `status`/`reason` may not match the action you actually took in VCL.
+
+##### Examples
+
+**Block by score threshold:**
+
+```vcl
+sub vcl_recv {
+    if (req.http.host == "www.example.com") {
+        call botm_analyze;
+
+        if (var.get_int("botm:ip-score") >= 90) {
+            call deny_request;
+        }
+    }
+}
+```
+
+**Different score threshold per flag:**
+
+```vcl
+sub vcl_recv {
+    if (req.http.host == "www.example.com") {
+        call botm_analyze;
+
+        if (var.get("botm:flags") ~ "t" && var.get_int("botm:ip-score") >= 60) {
+            call deny_request;
+        } else if (var.get("botm:flags") ~ "d" && var.get_int("botm:ip-score") >= 85) {
+            call deny_request;
+        } else if (var.get_int("botm:ip-score") >= 95) {
+            call deny_request;
+        }
+    }
+}
+```
+
+**Act only on cache miss:**
+
+Call `botm_analyze` directly in `vcl_miss` (or `vcl_pass`) so cache hits skip the check entirely and only requests going to the origin are assessed:
+
+```vcl
+sub vcl_miss {
+    if (req.http.host == "www.example.com") {
+        call botm_analyze;
+
+        if (var.get_int("botm:ip-score") >= 85) {
+            call deny_request;
+        }
+    }
+}
+```
+
 #### Overriding Thresholds
 
-The full syntax for the header value is:
+This method overrides any thresholds set in the dashboard. The full syntax for the `TCDN-BM-Action` header value is:
 
 ```
 <ACTION>@<SCORE_THRESHOLD>;<FLAG_SCORE_THRESHOLD>;<FLAGS>
@@ -131,7 +208,7 @@ The full syntax for the header value is:
 * `FLAG_SCORE_THRESHOLD`: score threshold applied when matching flags are present (1-99)
 * `FLAGS`: flag codes to check (e.g. `vt` for VPN + Tor), can be empty for no flags, check [BotM Flags API reference](https://api.botm.transparentedge.io/api/report/flags) to see the available flag letter codes
 
-#### Examples
+##### Examples
 
 **Different action per country:**
 
