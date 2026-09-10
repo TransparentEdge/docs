@@ -24,13 +24,42 @@ However, this method had drawbacks, such as the risk of the header being overwri
 ### **Deny Request**
 
 * **Command**: `call deny_request;`
-* **Description**: Immediately blocks the request with a 403 error.
+* **Description**: Immediately blocks the request and returns a `403` error. However, certain requests may bypass this block, as described below.
 * **Example**:
 
 ```perl
 sub vcl_recv {
     if (req.url ~ "^/blocked") {
         call deny_request;
+    }
+}
+```
+
+The `deny_request` command does not override requests that have been explicitly whitelisted or otherwise exempted. For example, requests originating from trusted Googlebot IP ranges may bypass the block.
+
+You can explicitly mark a request as whitelisted by setting `tcdn-whitelisted-ip`:
+
+```perl
+sub vcl_recv {
+    var.set("tcdn-whitelisted-ip", "true");
+
+    # This request will not be blocked by deny_request:
+    call deny_request;
+}
+```
+
+Setting `tcdn-whitelisted-ip` to `true` marks the request as **unblockable and unchallengeable**. This also allows the request to bypass **Under Attack mode**.
+
+### **Force Deny Request**
+
+* **Command**: `call force_deny_request;`
+* **Description**: Immediately blocks the request and returns a `403` error, regardless of whitelisting or other request exemptions.
+* **Example**:
+
+```perl
+sub vcl_recv {
+    if (req.url ~ "^/blocked") {
+        call force_deny_request;
     }
 }
 ```
