@@ -64,6 +64,30 @@ sub vcl_recv {
 }
 ```
 
+### **Respond 4xx**
+
+* **Command**: `call respond_4xx;`
+* **Description**: The `respond_4xx` commands return specific HTTP client error responses.
+* **Supported responses**:
+
+| Command             | HTTP Status | Reason       |
+| ------------------- | ----------- | ------------ |
+| `call respond_400;` | `400`       | Bad Request  |
+| `call respond_401;` | `401`       | Unauthorized |
+| `call respond_403;` | `403`       | Forbidden    |
+| `call respond_404;` | `404`       | Not Found    |
+| `call respond_410;` | `410`       | Gone         |
+
+* **Example**:
+
+```perl
+sub vcl_recv {
+    if (req.http.token != "foo-bar") {
+        call respond_401;
+    }
+}
+```
+
 ### **Redirect HTTP to HTTPS**
 
 * **Command**: `call redirect_https;`
