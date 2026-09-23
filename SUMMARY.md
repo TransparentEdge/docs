@@ -162,6 +162,7 @@
 * [Wordpress plugin](integraciones/plugin-para-wordpress.md)
 * [Google Cloud Platform](integraciones/google-cloud-platform.md)
 * [Amazon Web Services](integraciones/amazon-web-services.md)
+* [AI assistants (MCP)](integraciones/mcp-server.md)
 
 ## GUIDES AND TUTORIALS <a href="#guides" id="guides"></a>
 
