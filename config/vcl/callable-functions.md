@@ -231,3 +231,18 @@ sub vcl_recv {
 }
 ```
 
+### **Set Dynamic Backend**
+
+* **Command**: `call set_dynamic_backend;`
+* **Description**: Assigns a dynamic backend from the URL stored in `var.get("dyn-backend-conf")`. It requires setting the variable `dyn-backend-conf` before the call. The value must follow the format `<scheme>://<host>[:<port>]`, where `<scheme>` is `http` or `https`. If no port is specified, `80` applies for `http` and `443` for `https`. This command must be called from `vcl_backend_fetch`.
+* **Example**:
+
+```perl
+sub vcl_backend_fetch {
+    if (bereq.url ~ "^/api") {
+        # 'dyn-backend-conf' variable is required for this call to work.
+        var.set("dyn-backend-conf", "https://api.example.com:8443");
+        call set_dynamic_backend;
+    }
+}
+```
