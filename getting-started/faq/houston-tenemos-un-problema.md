@@ -11,4 +11,4 @@ Plus, in honor of our name, we’re happy to share a list of email addresses tha
 * [**Marketing**](mailto:marketing@transparentedge.eu)
 * [**HR**](mailto:joinus@transparentedge.eu)
 * [**Diego Suarez** ](https://app.gitbook.com/u/gesKMEaSCfWVT5pfAimTHIEOxQr2)**(CTO)**
-* [**Jorge Román** ](mailto:jroman@transparentedge.eu)**(CEO)**
+* [**Jorge Román** ](mailto:help+cdn@transparentedge.eu)**(CEO)**
