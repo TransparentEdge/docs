@@ -1,12 +1,12 @@
 ---
 description: >-
-  Query your Transparent Edge account in natural language from Claude and
-  other AI assistants through the Model Context Protocol (MCP).
+  Query your Transparent Edge account in natural language from Claude, Codex,
+  Antigravity and other AI assistants through the Model Context Protocol (MCP).
 ---
 
 # AI assistants (MCP)
 
-The **Transparent Edge MCP server** connects AI assistants such as Claude to your Transparent Edge account. Once connected, you can ask about your traffic, cache performance, security events and configuration in plain language, and the assistant fetches the answer from your account:
+The **Transparent Edge MCP server** connects AI assistants such as Claude, Codex and Antigravity to your Transparent Edge account. Once connected, you can ask about your traffic, cache performance, security events and configuration in plain language, and the assistant fetches the answer from your account:
 
 * _"What was the hit ratio of www.example.com over the last hour?"_
 * _"Which IPs triggered the most WAF rules today, and from which countries?"_
@@ -26,26 +26,81 @@ The connector is **read-only**: it can query your account, but it never changes 
 https://mcp.transparentedge.eu/mcp
 ```
 
+### How you sign in
+
+Claude, Codex and Antigravity sign you in with your usual Transparent Edge account through your browser, including two-factor authentication if your account uses it. You never have to paste API keys, and the assistant only gets access once you authorize it.
+
+Each assistant uses its own **OAuth client ID**, listed in its section below. These IDs are public and the same for every customer: they identify the assistant, not you.
+
 ### Connecting from Claude
 
-Claude (web, desktop and mobile) connects with your usual Transparent Edge login. You never have to paste API keys.
+Works in Claude on the web, desktop and mobile. You add the connector once and it follows your account.
 
-1. In Claude, go to **Customize → Connectors** and search for **Transparent Edge**.
-2. Click **Connect**.
-3. Sign in with your Transparent Edge username and password. If your account uses two-factor authentication, you'll be asked for your code as usual.
-4. Review the permissions and click **Authorize**.
+1. In Claude, go to **Customize → Connectors** and click **Add custom connector**.
+2. Name it **Transparent Edge** and paste the server URL: `https://mcp.transparentedge.eu/mcp`.
+3. Open **Advanced settings** and paste this **OAuth Client ID**. Leave the client secret empty.
+
+   ```
+   0eCt5kaQensfmXHRideDYGAPw3DOVhPI8nFDKWtR
+   ```
+4. Click **Add**, then **Connect**, and sign in with your Transparent Edge account.
 
 That's it. Ask Claude anything about your account, and it will use the connector when it needs to.
 
 {% hint style="info" %}
-You can also connect first and sign in later: the first time Claude needs your data, it shows a **Connect** button right in the conversation.
+On the Free plan Claude allows one custom connector. On Team and Enterprise plans, an owner adds the connector in **Organization settings → Connectors**, and each member then clicks **Connect** and signs in with their own Transparent Edge user.
 {% endhint %}
 
 To disconnect, go back to **Customize → Connectors** and remove Transparent Edge.
 
-### Connecting from other MCP clients
+### Connecting from Codex
 
-Clients that don't support OAuth sign-in (for example Cursor, VS Code or command-line tools) can authenticate with your API credentials instead, sent as HTTP headers on every request:
+The Codex app, the CLI and the IDE extension share one configuration, so you only set this up once.
+
+1. Add the server from a terminal:
+
+   ```bash
+   codex mcp add transparent-edge --url https://mcp.transparentedge.eu/mcp --oauth-client-id pTcdb5IZlEPyb7mQK3yTOBEKLRJ0ZnqwjXmMeH42
+   ```
+2. Sign in. Codex opens your browser on the Transparent Edge login page:
+
+   ```bash
+   codex mcp login transparent-edge
+   ```
+3. Log in with your Transparent Edge account. When the browser confirms it, go back to Codex and restart it if it was already open.
+
+The first command writes this to `~/.codex/config.toml`, so you can also add it by hand and then run `codex mcp login transparent-edge`:
+
+```toml
+[mcp_servers.transparent-edge]
+url = "https://mcp.transparentedge.eu/mcp"
+
+[mcp_servers.transparent-edge.oauth]
+client_id = "pTcdb5IZlEPyb7mQK3yTOBEKLRJ0ZnqwjXmMeH42"
+```
+
+### Connecting from Antigravity
+
+1. In the agent panel, open the **⋯** menu and go to **MCP Servers → Manage MCP Servers → View raw config**. That opens `~/.gemini/config/mcp_config.json`.
+2. Add this block and save:
+
+   ```json
+   {
+     "mcpServers": {
+       "transparent-edge": {
+         "serverUrl": "https://mcp.transparentedge.eu/mcp",
+         "oauth": {
+           "clientId": "3pXw8uj58eM15s2oaEjqBi7EmtNvfft5AcvH51uO"
+         }
+       }
+     }
+   }
+   ```
+3. Back in **Manage MCP Servers**, refresh. Antigravity opens your browser on the Transparent Edge login page. Sign in, and the server shows up with its tools.
+
+### Connecting with API credentials
+
+Clients that can't sign in through a browser (for example a machine without one, or MCP clients without OAuth support) can authenticate with your API credentials instead, sent as HTTP headers on every request:
 
 | Header               | Value              |
 | -------------------- | ------------------ |
@@ -54,7 +109,7 @@ Clients that don't support OAuth sign-in (for example Cursor, VS Code or command
 
 You'll find both values in your [dashboard user profile](https://dashboard.transparentcdn.com/user/profile), the same ones used for the [API](../guides/api/authentication.md).
 
-This is how most clients' configuration file looks, using the `mcp-remote` bridge:
+This is how most clients' configuration file looks, using the `mcp-remote` bridge (requires Node.js 18 or later):
 
 ```json
 {
@@ -62,15 +117,21 @@ This is how most clients' configuration file looks, using the `mcp-remote` bridg
     "transparent-edge": {
       "command": "npx",
       "args": [
-        "-y", "mcp-remote",
-        "https://mcp.transparentedge.eu/mcp",
-        "--header", "X-TE-Client-Id: YOUR_CLIENT_ID",
-        "--header", "X-TE-Client-Secret: YOUR_CLIENT_SECRET"
-      ]
+        "-y", "mcp-remote", "https://mcp.transparentedge.eu/mcp",
+        "--transport", "http-only",
+        "--header", "X-TE-Client-Id:${TE_CLIENT_ID}",
+        "--header", "X-TE-Client-Secret:${TE_CLIENT_SECRET}"
+      ],
+      "env": {
+        "TE_CLIENT_ID": "YOUR_CLIENT_ID",
+        "TE_CLIENT_SECRET": "YOUR_CLIENT_SECRET"
+      }
     }
   }
 }
 ```
+
+In Codex, add `env_http_headers = { "X-TE-Client-Id" = "TE_CLIENT_ID", "X-TE-Client-Secret" = "TE_CLIENT_SECRET" }` to the server's block in `~/.codex/config.toml` and export both variables. In Antigravity, add a `"headers"` object with both headers next to `serverUrl`.
 
 {% hint style="warning" %}
 Your client secret gives full access to the API on your behalf. Keep the configuration file private and never commit it to a repository.
@@ -116,9 +177,9 @@ See our [privacy policy](https://www.transparentedge.eu/en/privacy-policy/) for 
 
 <details>
 
-<summary>Claude asks me to connect again</summary>
+<summary>The assistant asks me to sign in again</summary>
 
-Your authorization has expired or was revoked. Click **Connect** and sign in again.
+Your authorization has expired or was revoked. Sign in again: **Connect** in Claude, `codex mcp login transparent-edge` in Codex, or refresh in Antigravity's **Manage MCP Servers**.
 
 </details>
 
@@ -140,10 +201,10 @@ The requested period is longer than your real-time analytics allow (4 hours, or 
 
 <details>
 
-<summary>The assistant says I'm not authenticated (other MCP clients)</summary>
+<summary>The assistant says I'm not authenticated (API credentials)</summary>
 
 Check that both headers, `X-TE-Client-Id` and `X-TE-Client-Secret`, are set and match the values in your dashboard profile.
 
 </details>
 
-If the problem persists, contact [support](mailto:support@transparentedge.eu).
+If the problem persists, contact [support](mailto:help+cdn@transparentedge.eu).
