@@ -1,7 +1,7 @@
 # Streaming logs
 
 {% hint style="info" %}
-If you have any questions about the real-time log streaming service, please contact us at [support@transparentedge.eu](mailto:support@transparentedge.eu).
+If you have any questions about the real-time log streaming service, please contact us at [help+cdn@transparentedge.eu](mailto:help+cdn@transparentedge.eu).
 {% endhint %}
 
 To activate the real-time log streaming service, simply access the dashboard at [https://dashboard.transparentcdn.com/](https://dashboard.transparentcdn.com/) , go to the Services section and activate the Streaming Logs service, you will find everything you need.

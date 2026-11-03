@@ -5,7 +5,7 @@ description: Documentación y una guía rápida de cómo echar a andar tu primer
 # Logs en streaming
 
 {% hint style="info" %}
-Si tienes cualquier duda sobre el servicio de _Streaming de logs en tiempo real_, contacta con nosotros en [support@transparentedge.eu](mailto:soporte@transparentedge.eu)
+Si tienes cualquier duda sobre el servicio de _Streaming de logs en tiempo real_, contacta con nosotros en [help+cdn@transparentedge.eu](mailto:help+cdn@transparentedge.eu)
 {% endhint %}
 
 Para activar el servicio de _Streaming de logs en tiempo real_, tan sólo debes acceder al panel en [https://dashboard.transparentcdn.com/](https://dashboard.transparentcdn.com/) y dentro del apartado _Logs_, en la pestaña _Streaming_, encontrarás todo lo necesario.

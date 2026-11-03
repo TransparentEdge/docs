@@ -8,7 +8,7 @@ By default, we use HTTP2 on tlsv1.2 and tlsv1.3.
 
 At Transparent Edge, there are always several different ways of doing something. In this case, we give you two options for serving a secure website.
 
-The first is for you to purchase your certificates from your trusted provider, and once you have them you can upload them to our platform or send us a [ticket](<mailto:support@transparentedge.eu >) so we can do it for you.
+The first is for you to purchase your certificates from your trusted provider, and once you have them you can upload them to our platform or send us a [ticket](<mailto:help+cdn@transparentedge.eu>) so we can do it for you.
 
 To upload certificates to the platform, go to our[ client portal](https://dashboard.transparentcdn.com/), select Provisioning from the left side menu, and then click on **Certificates**.
 
