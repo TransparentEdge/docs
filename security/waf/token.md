@@ -78,4 +78,4 @@ sub vcl_recv {
 
 In this way, the parameters `vf` and `vu` should be provided either through the query string in the request or via corresponding cookies. Additionally, since `vf` and `vu` are now dynamic parameters, the value of `h` will also be dynamic as it depends on them.&#x20;
 
-These are just small examples of a very specific use case. If you have any questions about integrating this functionality into your own domain, please don't hesitate to contact us at the email address:  [soporte@transparentcdn.com](mailto:soporte@transparetncdn.com).
+These are just small examples of a very specific use case. If you have any questions about integrating this functionality into your own domain, please don't hesitate to contact us at the email address:  [help+cdn@transparentedge.eu](mailto:help+cdn@transparentedge.eu).

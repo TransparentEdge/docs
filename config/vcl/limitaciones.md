@@ -21,7 +21,7 @@ The **return** function in Varnish is typically used to bypass different predefi
 
 ### Custom function definition
 
-Although we are working to change this point, currently, users are not allowed to create custom functions from the provisioning portal. However, we can upload those functions written by you with the help of our [team](mailto:support@transparentcdn.com).
+Although we are working to change this point, currently, users are not allowed to create custom functions from the provisioning portal. However, we can upload those functions written by you with the help of our [team](mailto:help+cdn@transparentedge.eu).
 
 ### Call
 
@@ -32,5 +32,5 @@ It is essential for us that you have the greatest possible autonomy and can perf
 
 
 {% hint style="warning" %}
-However, just because you can't do it from the portal doesn't mean it can't be implemented. If you find that you can't do something you need due to one of our restrictions, don't hesitate to contact our [support](mailto:support@transparentcdn.com) team. They will assist you in implementing your configuration in Transparent CDN.&#x20;
+However, just because you can't do it from the portal doesn't mean it can't be implemented. If you find that you can't do something you need due to one of our restrictions, don't hesitate to contact our [support](mailto:help+cdn@transparentedge.eu) team. They will assist you in implementing your configuration in Transparent CDN.&#x20;
 {% endhint %}

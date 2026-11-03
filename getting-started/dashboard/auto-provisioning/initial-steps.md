@@ -78,7 +78,7 @@ Alternatively, we can create a TXT record with the name "`_tcdn_challenge`" and 
 
 <figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
-If you encounter any problems or doubts in this regard, you can contact Transparent Edge via email at [soporte@transparentedge.eu](mailto:soporte@transparentcdn.com).
+If you encounter any problems or doubts in this regard, you can contact Transparent Edge via email at [help+cdn@transparentedge.eu](mailto:help+cdn@transparentedge.eu).
 
 #### VCLs
 

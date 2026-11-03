@@ -21,4 +21,4 @@ sub vcl_recv {
 
 In this way, if the user successfully completes the CAPTCHA challenge, they will be assigned the TCDN-Captcha-UID cookie and can continue browsing normally for the next eight hours, after which they will be presented with the CAPTCHA again. Alternatively, if the user is unable to solve the challenge, they will receive a 403 status code response (Robots are not allowed here!).
 
-Of course, this is just a small example of a very specific use case. If you have any questions about how to integrate this functionality into your own domain, please don't hesitate to contact us at [soporte@transparentcdn.com](mailto:soporte@transparentcdn.com).
+Of course, this is just a small example of a very specific use case. If you have any questions about how to integrate this functionality into your own domain, please don't hesitate to contact us at [help+cdn@transparentedge.eu](mailto:help+cdn@transparentedge.eu).

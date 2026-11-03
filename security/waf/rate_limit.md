@@ -62,4 +62,4 @@ sub vcl_recv {
 }
 ```
 
-Obviously, these are just small examples of very specific use cases. If you have any questions about how to integrate this functionality into your own domain, please don't hesitate to contact us via email at [soporte@transparentcdn.com](mailto:soporte@transparetncdn.com).
+Obviously, these are just small examples of very specific use cases. If you have any questions about how to integrate this functionality into your own domain, please don't hesitate to contact us via email at [help+cdn@transparentedge.eu](mailto:help+cdn@transparentedge.eu).

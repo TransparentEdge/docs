@@ -43,5 +43,5 @@ sub vcl_recv {
 
 ```
 
-Obviamente, éstos no son más que pequeños ejemplos de casos de uso muy específicos. Si tienes cualquier duda respecto a cómo integrar esta funcionalidad en tu propio dominio, por favor, no dudes en contactarnos a través de la dirección de correo electrónico [soporte@transparentedge.eu](mailto:soporte@transparetncdn.com).
+Obviamente, éstos no son más que pequeños ejemplos de casos de uso muy específicos. Si tienes cualquier duda respecto a cómo integrar esta funcionalidad en tu propio dominio, por favor, no dudes en contactarnos a través de la dirección de correo electrónico [help+cdn@transparentedge.eu](mailto:help+cdn@transparentedge.eu).
 

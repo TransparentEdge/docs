@@ -38,7 +38,7 @@ Para cada _backend_ configurado, en el campo de Acciones tenemos disponibles los
 Antes de eliminar o modificar un _backend_ (en caso de cambiarle el nombre), asegúrate de que ninguna configuración VCL dependa de él o dejará de funcionar correctamente.
 
 {% hint style="danger" %}
-Una cosa que tienes que tener en cuenta es que si vas a configurar tu backend por ssl, tienes que un backend ssl por cada site. Si quieres compartir un backend que habla con el origen por ssl hay que desactivar la opción de SNI y eso es algo que solo se puede hacer bien via [API ](../../faq/glosario/api.md)o contactando con nosotros a través de nuestro equipo de [soporte](mailto:support@transparentcdn.com)
+Una cosa que tienes que tener en cuenta es que si vas a configurar tu backend por ssl, tienes que un backend ssl por cada site. Si quieres compartir un backend que habla con el origen por ssl hay que desactivar la opción de SNI y eso es algo que solo se puede hacer bien via [API ](../../faq/glosario/api.md)o contactando con nosotros a través de nuestro equipo de [soporte](mailto:help+cdn@transparentedge.eu)
 {% endhint %}
 
 {% hint style="info" %}

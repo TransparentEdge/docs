@@ -14,7 +14,7 @@ Un detalle importante es el aviso de la parte superior, que nos indica dónde te
 
 ### Añadir Sitio
 
-Añadir un sitio nuevo es un proceso sencillo, pero por motivos de seguridad se debe validar la posesión del dominio. Este proceso se explica detalladamente cuando pulsas sobre _**Añadir sitio**_,. Si tienes cualquier problema, no dudes en contactar con nosotros en [soporte@transparentedge.eu](mailto:soporte@transparentedge.eu)
+Añadir un sitio nuevo es un proceso sencillo, pero por motivos de seguridad se debe validar la posesión del dominio. Este proceso se explica detalladamente cuando pulsas sobre _**Añadir sitio**_,. Si tienes cualquier problema, no dudes en contactar con nosotros en [help+cdn@transparentedge.eu](mailto:help+cdn@transparentedge.eu)
 
 <figure><img src="../../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
 

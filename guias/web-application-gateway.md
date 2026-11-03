@@ -52,4 +52,4 @@ sub vcl_recv {
 } 
 ```
 
-Las posibilidades son infinitas, así que si tienes algo en mente y quieres que te echemos una mano, contáctanos en soporte@transparentedge.eu&#x20;
+Las posibilidades son infinitas, así que si tienes algo en mente y quieres que te echemos una mano, contáctanos en help+cdn@transparentedge.eu&#x20;

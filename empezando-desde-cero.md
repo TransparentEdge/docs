@@ -2,7 +2,7 @@
 
 This guide is intended to help you start using Transparent Edge as quickly as possible.
 
-First and foremost: We're always standing by to help with whatever you may need. Feel free to [contact us](mailto:soporte@transparentedge.eu) if you have any questions or even if you want us to do the initial configuration for you.
+First and foremost: We're always standing by to help with whatever you may need. Feel free to [contact us](mailto:help+cdn@transparentedge.eu) if you have any questions or even if you want us to do the initial configuration for you.
 
 ## About Transparent Edge
 

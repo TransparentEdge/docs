@@ -52,4 +52,4 @@ sub vcl_recv {
 } 
 ```
 
-The possibilities are endless, so if you have something in mind and you want us to help you, contact us at [soporte@transparentcdn.com](mailto:soporte@transparentcdn.com)&#x20;
+The possibilities are endless, so if you have something in mind and you want us to help you, contact us at [help+cdn@transparentedge.eu](mailto:help+cdn@transparentedge.eu)&#x20;

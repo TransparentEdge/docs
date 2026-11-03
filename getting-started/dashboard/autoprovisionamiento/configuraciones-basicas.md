@@ -90,7 +90,7 @@ También se puede seguir la alternativa de crear un registro DNS de tipo TXT con
 
 <figure><img src="../../../.gitbook/assets/Captura de pantalla 2022-12-22 a las 16.39.51.png" alt=""><figcaption></figcaption></figure>
 
-En caso de cualquier problema y/o duda a este respecto, puedes ponerte en contacto con Transparent Edge a través de la dirección de correo electrónico [soporte@transparentedge.eu](mailto:soporte@transparentcdn.com).
+En caso de cualquier problema y/o duda a este respecto, puedes ponerte en contacto con Transparent Edge a través de la dirección de correo electrónico [help+cdn@transparentedge.eu](mailto:help+cdn@transparentedge.eu).
 
 #### VCLs
 
