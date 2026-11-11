@@ -2,7 +2,7 @@
 
 The automatic reactions feature allows for a **more agile response** to a potential vulnerability or attack on your site, such as when you are experiencing a Distributed Denial of Service (DDoS) attack. To configure them, it will be necessary to define a condition based on a threshold. Once established, the reaction will trigger when the value entered in the threshold is exceeded.
 
-<figure><img src="../../.gitbook/assets/anomalies-pic5.jpg" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Captura de pantalla 2026-11-03 a las 13.51.20.png" alt="" width="264"><figcaption></figcaption></figure>
 
 Reactions can only be configured if you have previously set up monitoring for your site. Then you will find the 'Reactions' button in the site dropdown menu.
 
@@ -10,7 +10,7 @@ Once the automatic reactions modal is open, you can select the type of anomaly f
 
 ## Reactions Types
 
-<figure><img src="../../.gitbook/assets/anomalies-pic3.jpg" alt=""><figcaption><p>Creation of new reactions</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Captura de pantalla 2026-11-03 a las 13.52.01.png" alt="" width="563"><figcaption><p>Creation of new reactions</p></figcaption></figure>
 
 * **Block IP:** If an IP is causing any anomaly, this reaction will block that IP and automatically include it in the blacklist.
 * **Under attack mode:** If the threshold set for the chosen anomaly is exceeded at any time, the 'Under Attack' mode will be activated.
@@ -25,13 +25,11 @@ Once the automatic reactions modal is open, you can select the type of anomaly f
 
 When the **Email Notification Reaction** is enabled, all designated users will receive detailed information about detections based on the monitoring system that was triggered. Additionally, if other reactions are activated, they will also be included in the email notification.
 
-For the [#crawler-ips-detection](detection-types.md#crawler-ips-detection "mention") type, reactions that involve actions against IP addresses (such as **Block IP**, **Captcha**, **JS Challenge**, or **Add to List**), will be executed based on the following two parameters:
+For the [detection-types.md](detection-types.md "mention") type, reactions that involve actions against IP addresses (such as **Block IP**, **Captcha**, **JS Challenge**, or **Add to List**), will be executed based on the following two parameters:
 
 * **Requests per Minute Threshold**: The reaction will be triggered if the number of requests per minute from an IP address exceeds the predefined threshold value.
 * **Total Requests Threshold**: The reaction will also be triggered if the total number of requests from an IP address during the detection period exceeds **2.5 times the threshold value**.
 
-
-
 {% hint style="info" %}
-Remember that to receive alert notifications, you must activate them in your [notification panel](https://dashboard.transparentcdn.com/user/notifications).
+Remember that to receive alert notifications, you must activate them in your [notification panel](https://pulse.transparentedge.eu/login).
 {% endhint %}

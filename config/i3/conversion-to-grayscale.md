@@ -1,10 +1,10 @@
 # Conversion to grayscale
 
-[i3](./), our image management solution, allows you to dynamically and transparently convert your images to grayscale.&#x20;
+i3, our image management solution, allows you to dynamically and transparently convert your images to grayscale.
 
-To do this, we use our `TCDN-i3-transform` header, specifying the desired operation, which in this case is `grayscale`.&#x20;
+To do this, we use our `TCDN-i3-transform` header, specifying the desired operation, which in this case is `grayscale`.
 
-For example, if you wanted to serve grayscale images on your domain `mi-dominio.es`, you can simply deploy a [VCL](../vcl/) [configuration](https://app.gitbook.com/s/-M7HYJERlemP2N6HqnBC-1703796690/config) similar to the following from the [dashboard:](../../getting-started/dashboard/)
+For example, if you wanted to serve grayscale images on your domain `mi-dominio.es`, you can simply deploy a [VCL](../vcl/) [configuration](https://app.gitbook.com/s/dLlfX5hLpgfTCKcNCR8i/config) similar to the following from the [dashboard](../../getting-started/dashboard/):
 
 <pre class="language-c"><code class="lang-c"><strong># i3 - grayscale
 </strong>sub vcl_recv {

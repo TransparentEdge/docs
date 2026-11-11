@@ -4,8 +4,6 @@
 
 The minimal configuration to start working on Transparent Edge is to assign a backend in the VCL configuration like this:
 
-
-
 ```
 sub vcl_recv {
     set req.backend_hint = cNNN_example.backend();  
@@ -13,8 +11,6 @@ sub vcl_recv {
 ```
 
 The above configuration applies to all registered websites. If you want to assign a specific backend to a particular site, you can use this configuration:
-
-
 
 ```
 sub vcl_recv {
@@ -25,8 +21,6 @@ sub vcl_recv {
 ```
 
 If you also want to cache all static content, you can enhance the configuration with this code:
-
-
 
 ```
 sub vcl_backend_response {    
@@ -41,7 +35,7 @@ sub vcl_backend_response {
 
 ##
 
-## &#x20;**How to assign a backend**
+## **How to assign a backend**
 
 ```
 sub vcl_recv {
@@ -70,8 +64,6 @@ sub vcl_backend_response {
 
 If you want to cache only in the CDN and not in the browser, we use the cache header max-age that affects both browsers and CDN by setting a max-age of zero, then we use the s-maxage header that only affects the CDN to rewrite the behavior only in CDN:
 
-
-
 ```
 sub vcl_backend_response {    
     if (bereq.http.host == "www.example.com") {
@@ -83,7 +75,7 @@ sub vcl_backend_response {
 }
 ```
 
-## &#x20;
+##
 
 ## **How to rewrite origin cache policies on my website**
 
@@ -122,8 +114,6 @@ sub vcl_backend_response {
 }
 ```
 
-
-
 ## **How to enable waf in detection mode**
 
 Example of WAF in Detection mode
@@ -136,8 +126,6 @@ sub vcl_recv {
     }
 }
 ```
-
-
 
 ## **How to add WAF exceptions**
 
@@ -157,9 +145,7 @@ sub vcl_recv {
 }
 ```
 
-
-
-## **How to disable  WAF for a part of my website**
+## **How to disable WAF for a part of my website**
 
 Exclude paths from WAF analysis
 
@@ -174,8 +160,6 @@ sub vcl_recv {
 }
 ```
 
-
-
 ## **How to enable I3 to transform images to webp and avif formats**
 
 i3 - auto\_webp
@@ -188,8 +172,6 @@ sub vcl_recv {
 }
 ```
 
-
-
 ## **How to enable Bot Mitigation**
 
 First, we need to obtain a token and enable the service for the desired site in the panel in its corresponding section:
@@ -197,8 +179,6 @@ First, we need to obtain a token and enable the service for the desired site in 
 Then we configure the appropriate parameters for our site
 
 Once this is done, we can deploy our VCL
-
-
 
 To enable Bot mitigation:
 
@@ -224,8 +204,6 @@ sub vcl_recv {
 }
 ```
 
-
-
 If you prefer, you can also use regex
 
 ```
@@ -235,8 +213,6 @@ sub vcl_recv {
 }
 ```
 
-
-
 If you need to remove all parameters so they cannot bypass the cache, you can use this:
 
 ```
@@ -245,8 +221,6 @@ sub vcl_recv {
     urlplus.write();
 }
 ```
-
-
 
 ## **How to apply a rate limit**
 
@@ -262,8 +236,6 @@ sub vcl_recv {
 }
 ```
 
-
-
 The rate limit can be applied in combination with a captcha or a javascript challenge, for example:
 
 ```
@@ -277,7 +249,7 @@ sub vcl_recv {
 }
 ```
 
-In this other example, a rate limit is enabled for the UAM so that it only applies to IPs that exceed the Rate Limit.  Here, UAM will be activated for 30 seconds for the site if it receives more than 200 requests in 1 second.
+In this other example, a rate limit is enabled for the UAM so that it only applies to IPs that exceed the Rate Limit. Here, UAM will be activated for 30 seconds for the site if it receives more than 200 requests in 1 second.
 
 ```
 if (req.http.host == "www.example.com") {
@@ -300,8 +272,6 @@ if (req.http.host == "www.example.com") {
     }
 }
 ```
-
-
 
 ## **How to configure a website with authenticated origin in S3 (AWS)**
 
@@ -331,8 +301,6 @@ if (req.http.host == "www.example.com") {
     set req.http.TCDN-Midtier-Enabled = "true";
 }
 ```
-
-
 
 ## How to invalidate content from python
 
@@ -380,8 +348,6 @@ def get_token():
     return str(tk)
 
 ```
-
-
 
 Next, once the token is obtained, we proceed to perform the invalidation:
 
@@ -484,8 +450,6 @@ print(response)
 
 **Please, be sure to replace the client\_id and client\_secret fields with yours.**
 
-
-
 ## **How to apply time restrictions**
 
 f you want, you can set restrictions on a specific resource, whether it is the entire website or a specific URL within that site. For this, you can use the `now` function. This function returns a string in the following format:
@@ -497,8 +461,6 @@ Thu, 10 Sep 2020 12:34:54 GMT
 The best way to establish a restriction based on a date is to include the current date within an HTTP header, and once inside, you can apply whatever logic you want.
 
 Here’s a somewhat simple but effective example.
-
-
 
 ```
 if (req.http.host == "www.example.com" && req.url ~ "/restricted_url.html") {
@@ -514,11 +476,7 @@ This code prevents access to that URL at 5 PM UTC. This example is quite basic, 
 
 {% hint style="info" %}
 You need to keep in mind that our platform is in UTC.
-
-
 {% endhint %}
-
-
 
 Perhaps, a more elegant way to do it is by using “utils.time\_format()”. For example, if we wanted to allow access from 18UTC to 20UTC in Spain, we can get the hour with `%H`:
 

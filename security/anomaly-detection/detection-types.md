@@ -26,7 +26,7 @@ The values that you can adjust are:
 
 Our recommendation for the **threshold** values is 3 times your average bandwidth and requests, although it may vary depending on the type of site.
 
-<figure><img src="../../.gitbook/assets/anomalies-pic6.jpg" alt="" width="375"><figcaption><p>Edit Anomaly Detection</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Captura de pantalla 2026-11-03 a las 13.50.38.png" alt="" width="358"><figcaption><p>Edit Anomaly Detection</p></figcaption></figure>
 
 ## Hit ratio Anomaly Detection
 
@@ -46,7 +46,7 @@ For this detection, you can adjust:
 
 ## Response Time Anomaly Detection
 
-It alerts you when the origin platform is taking longer to respond and response times spike above normal. This detection also relies on a normal distribution to identify those response times above the allowed threshold.&#x20;
+It alerts you when the origin platform is taking longer to respond and response times spike above normal. This detection also relies on a normal distribution to identify those response times above the allowed threshold.
 
 Depending on the nature of your website, your origin may take more or less time to respond. For that, you can adjust these thresholds:
 

@@ -4,7 +4,7 @@ The Easy Setup is based on 'if-then' conditional logic. When the conditions of a
 
 To create a new rule, we must select the site where our configuration will be implemented. Once selected, click the '**Add Rule'** button, which will open a modal displaying the rule templates grouped by category.
 
-<figure><img src="../.gitbook/assets/Captura de pantalla 2026-03-19 a las 9.14.23.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Captura de pantalla 2026-10-30 a las 14.49.54.png" alt=""><figcaption></figcaption></figure>
 
 In **Cache & Performance** we can find:
 
@@ -61,11 +61,9 @@ In **Other actions** we can find:
 
 * **Ignore QueryString:** This rule ignores the URL parameters (query string) when generating the cache key, treating all requests to the same path as identical.
 
-
-
 With the template already selected, we will choose whether the rule will apply to all inbound requests or, alternatively, if we want to define it for a custom filter rule. In the latter case, we can define more specific conditions on the incoming request. For example, **it is possible to check whether the client's IP is included or not in an access control list** (ACL), combining the condition type, the operator (is in/ is not in), and the name of the list we want to apply.
 
-<figure><img src="../.gitbook/assets/Captura de pantalla 2026-04-28 a las 12.53.35.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Captura de pantalla 2026-10-30 a las 14.51.25.png" alt=""><figcaption></figcaption></figure>
 
 Once everything is completed, we save, and our new rule will be implemented.
 

@@ -32,11 +32,9 @@ This service is not enabled by default. If you’d like to enable it, follow the
 * **Field 16**: Referer.
 * **Field 17**: Real protocol (because we undo the HTTPS in a layer prior to the cache layer, this field is necessary to identify if the original request was made via HTTP o HTTPS).
 * **Field 18**: Country code.
-* **Field 19**: Multi-purpose field. If [BotM](../../security/bot-mitigation.md) is active and performs any action, it's shown here.
-* **Field 20**: [Origin Error.](http-5xx-error-codes.md)
+* **Field 19**: Multi-purpose field. If [BotM](/broken/pages/dpaGKfMRzqXBX2aaE7Jf) is active and performs any action, it's shown here.
+* **Field 20**: [Origin Error.](/broken/pages/JBJaLuQdzaRcBHdxTo51)
 * **Field 21**: Remaining TTL of the object.
-
-
 
 ## Format of WAF logs
 

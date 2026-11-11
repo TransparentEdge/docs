@@ -14,4 +14,4 @@ If you have whitelists configured and wish to verify whether any of the IPs incl
 
 Once all fields have been completed, click the Request Report button. The report will be delivered to your email inbox within a few minutes, listing the affected IPs.
 
-<figure><img src="../../.gitbook/assets/Captura de pantalla 2026-03-12 a las 15.13.27.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Captura de pantalla 2026-11-03 a las 13.45.01.png" alt=""><figcaption></figcaption></figure>

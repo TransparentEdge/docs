@@ -14,7 +14,7 @@ When your website runs with SSL, it’s typical to want everything that comes in
 
 #### Redirects 301 and 302
 
-Redirects can be performed by calling the function \``redirect_request`\`, see [callable functions](../../../config/vcl/callable-functions.md).
+Redirects can be performed by calling the function \``redirect_request`\`, see [callable functions](/broken/pages/Q4ymeefG6QLa2S2I2GAp).
 
 ```perl
 sub vcl_recv {

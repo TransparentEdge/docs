@@ -1,6 +1,6 @@
 # Rewriting of headers
 
-Because we are based on [Varnish](https://www.varnish-software.com/) Enterprise software, Transparent Edge offers great flexibility when it comes to changing your website’s default behavior.&#x20;
+Because we are based on [Varnish](https://www.varnish-software.com/) Enterprise software, Transparent Edge offers great flexibility when it comes to changing your website’s default behavior.
 
 Rewriting headers is very common and rather easy to do. The most typical cases are:
 

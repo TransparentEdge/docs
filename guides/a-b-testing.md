@@ -1,14 +1,14 @@
 # A/B Testing
 
-### What is A/B Testing and why would we want to implement it?&#x20;
+### What is A/B Testing and why would we want to implement it?
 
-Through A/B testing, we can expose users to two slightly different experiences, such as changing the color of a button in the interface. Then comes the analytical part for each variant, such as the percentage of "purchases" on the website, and we can decide which variant introduces a real improvement. [This link](https://en.wikipedia.org/wiki/A/B_testing) provides a comprehensive explanation of the process.&#x20;
+Through A/B testing, we can expose users to two slightly different experiences, such as changing the color of a button in the interface. Then comes the analytical part for each variant, such as the percentage of "purchases" on the website, and we can decide which variant introduces a real improvement. [This link](https://en.wikipedia.org/wiki/A/B_testing) provides a comprehensive explanation of the process.
 
-Okay, this sounds good, but what about the performance and security offered by the CDN? Can we implement an A/B testing model without sacrificing it?&#x20;
+Okay, this sounds good, but what about the performance and security offered by the CDN? Can we implement an A/B testing model without sacrificing it?
 
 The CDN and its caching system (Varnish) cache the responses returned by the origin server completely, so most client requests do not reach the origin server. If the A/B testing system relies on logic located at the origin server, even if a client assigned to variant A requests the website, they could receive the cached opposite variant instead (and vice versa). This is not what we want, and any information obtained in the A/B testing experiment would be invalid.
 
-### Solution&#x20;
+### Solution
 
 In reality, there are multiple ways to solve this problem using the tools at our disposal. Let's see a simple example where we separate clients based on their IP address.
 

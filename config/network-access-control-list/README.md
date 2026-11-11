@@ -1,4 +1,4 @@
-# Network Access Control List
+# Network ACLs
 
 Network ACLs enable fine-grained control per client IP address. Leveraging Network ACLs you can create lists to block offending IP addresses or allow certain IP addresses in a protected domain or URL.
 
@@ -11,18 +11,18 @@ Network ACLs enable fine-grained control per client IP address. Leveraging Netwo
 
 ### Create and manage Network ACLs <a href="#create-and-manage-network-acls" id="create-and-manage-network-acls"></a>
 
-Login into the [dashboard](https://dashboard.transparentcdn.com/) and look for the "**IP Lists**" button section in the left side panel.
+Login into the [pulse](https://pulse.transparentedge.eu/login) and look for the "**IP Lists**" button section in the left side panel.
 
 This sections allows you to create, delete and modify network ACL lists.
 
-{% content-ref url="initial-configuration.md" %}
-[initial-configuration.md](initial-configuration.md)
+{% content-ref url="/broken/pages/tw88zf56NPEMekRsRrgF" %}
+[Broken link](/broken/pages/tw88zf56NPEMekRsRrgF)
 {% endcontent-ref %}
 
-{% content-ref url="auto-generated-lists.md" %}
-[auto-generated-lists.md](auto-generated-lists.md)
+{% content-ref url="/broken/pages/LAP66BRDPdmaE2N2JbwU" %}
+[Broken link](/broken/pages/LAP66BRDPdmaE2N2JbwU)
 {% endcontent-ref %}
 
-{% content-ref url="manage-lists-via-api.md" %}
-[manage-lists-via-api.md](manage-lists-via-api.md)
+{% content-ref url="/broken/pages/z7FlN32LnojzSymtUjQq" %}
+[Broken link](/broken/pages/z7FlN32LnojzSymtUjQq)
 {% endcontent-ref %}

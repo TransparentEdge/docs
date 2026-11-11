@@ -6,48 +6,44 @@ description: FAQ
 
 This section contains all the basic concepts about our service that you should understand before you begin:
 
-{% content-ref url="glosario/" %}
-[glosario](glosario/)
+{% content-ref url="glossary/" %}
+[glossary](glossary/)
 {% endcontent-ref %}
 
-{% content-ref url="empecemos-por-el-principio.md" %}
-[empecemos-por-el-principio.md](empecemos-por-el-principio.md)
+{% content-ref url="start-at-the-beginning.md" %}
+[start-at-the-beginning.md](start-at-the-beginning.md)
 {% endcontent-ref %}
 
-{% content-ref url="cosas-a-tener-en-cuenta.md" %}
-[cosas-a-tener-en-cuenta.md](cosas-a-tener-en-cuenta.md)
+{% content-ref url="things-to-consider.md" %}
+[things-to-consider.md](things-to-consider.md)
 {% endcontent-ref %}
 
-{% content-ref url="houston-tenemos-un-problema.md" %}
-[houston-tenemos-un-problema.md](houston-tenemos-un-problema.md)
+{% content-ref url="houston-we-have-a-problem.md" %}
+[houston-we-have-a-problem.md](houston-we-have-a-problem.md)
 {% endcontent-ref %}
 
-{% content-ref url="http-como-funciona.md" %}
-[http-como-funciona.md](http-como-funciona.md)
+{% content-ref url="invalidating-methods.md" %}
+[invalidating-methods.md](invalidating-methods.md)
 {% endcontent-ref %}
 
-{% content-ref url="metodos-de-invalidado.md" %}
-[metodos-de-invalidado.md](metodos-de-invalidado.md)
+{% content-ref url="dns-pointing.md" %}
+[dns-pointing.md](dns-pointing.md)
 {% endcontent-ref %}
 
-{% content-ref url="apuntando-el-dns.md" %}
-[apuntando-el-dns.md](apuntando-el-dns.md)
+{% content-ref url="../dashboard/logs.md" %}
+[logs.md](../dashboard/logs.md)
 {% endcontent-ref %}
 
-{% content-ref url="log-formats.md" %}
-[log-formats.md](log-formats.md)
+{% content-ref url="predefined-headers.md" %}
+[predefined-headers.md](predefined-headers.md)
 {% endcontent-ref %}
 
-{% content-ref url="informacion-extra-sobre-peticiones.md" %}
-[informacion-extra-sobre-peticiones.md](informacion-extra-sobre-peticiones.md)
+{% content-ref url="default-headers/" %}
+[default-headers](default-headers/)
 {% endcontent-ref %}
 
-{% content-ref url="cabeceras-por-defecto/" %}
-[cabeceras-por-defecto](cabeceras-por-defecto/)
-{% endcontent-ref %}
-
-{% content-ref url="forzando-no-cachear.md" %}
-[forzando-no-cachear.md](forzando-no-cachear.md)
+{% content-ref url="forcing-no-cache.md" %}
+[forcing-no-cache.md](forcing-no-cache.md)
 {% endcontent-ref %}
 
 {% content-ref url="architecture/" %}

@@ -1,28 +1,66 @@
 # User management
 
-To access the User Management section, click on the icon that depicts a user, located at the bottom of the side panel.
+**User Manager** is where you control who can access the dashboard of your company and what each person can do there. You can create users, change their details and permissions, check whether they use two-factor authentication, close their open sessions and review what they have changed.
 
-From this section, you will be able to change user permissions within the company, edit their information, delete user profiles, or create new users. You can also view the permissions associated with each user and check if they have enabled 2FA (Two-Factor Authentication).
+You'll find it under **Support → User Manager**.
 
-### Edit User
+The page has two tabs: **Users**, to manage the people in your company, and **User Actions**, to review their activity.
 
-Any user within the company can be edited, and also deleted, using the buttons located on the right-hand side under actions.&#x20;
+User Manager is meant for administrators. Users who don't have the right permissions (see Permissions) won't be able to manage other users.
 
-From the pop-up window, you can edit the user's first name, last name, and password, as well as the associated permissions that grant access to different actions and sections of the dashboard.
+### Users
 
-<figure><img src="../../.gitbook/assets/Captura de pantalla 2026-05-21 a las 13.42.30.png" alt="" width="563"><figcaption></figcaption></figure>
+The **Users** tab lists everyone who has access to your company. Above the list, the **Search by name or email** box helps you find someone quickly.
 
-### Create New User
+| Column                           | What it shows                                                                                                                       |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| **ID**                           | The identifier of the user.                                                                                                         |
+| **First Name** and **Last Name** | The name of the user.                                                                                                               |
+| **Email**                        | The email the user signs in with, with a copy button.                                                                               |
+| **2FA**                          | Whether the user has enabled two-factor authentication. Hover over the icon to see its state, for example _Two-factor not enabled_. |
+| **Roles**                        | The permissions the user has, shown as labels (see Permissions).                                                                    |
+| **Actions**                      | **User sessions**, **Edit** and **Delete**.                                                                                         |
 
-The process of creating a new user is very simple. The button to do so is located in the upper right corner.
+#### Requiring two-factor authentication
 
-<figure><img src="../../.gitbook/assets/Captura de pantalla 2026-05-21 a las 14.33.00.png" alt="" width="563"><figcaption></figcaption></figure>
+At the top of the list, the **Require 2FA for every user** switch is a company-wide mandate. When it's on, every user of your company must enable two-factor authentication the next time they sign in, and can no longer turn it off in their own account.
 
-Once the modal is displayed, you need to complete the required information: the email of the new company member, their first name, last name, the permissions they will have associated with their account, and assign them a password that the new user can later change.
+#### Creating a user
 
-After completing all of this has been done, the new user will receive an email in their inbox with all the information needed to access the dashboard. The company administrator will be able to manage all user information from the 'User Management' section.
+1. Click **New User**, in the upper-right corner.
+2. Fill in the user's details: email, first name, last name and an initial password.
+3. Choose the user's permissions.
+4. Save the user.
 
-### Permissions
+<figure><img src="../../.gitbook/assets/Captura de pantalla 2026-10-30 a las 13.56.59.png" alt=""><figcaption></figcaption></figure>
+
+The new user receives an email with the information needed to access the dashboard, and can change the password later.
+
+#### Editing a user
+
+Click **Edit** to open the **Update User** page. There you can change:
+
+* **First name** and **Last name**. The **Email** can't be changed after the user is created.
+* The **Password**. Leave both password fields (**Password** and **Confirm password**) empty to keep the current one.
+* The **Permissions** of the user.
+
+Click **Save changes** to apply them, or **Discard** to leave without changes.
+
+#### Closing a user's sessions
+
+Click **User sessions** (the person icon) to see where the user is signed in right now. The **User Sessions** window lists each open session with its **User Agent**, **OS**, **IP**, **Country**, **City**, **ISP** and **Expiration**.
+
+If a session looks suspicious or is no longer needed, revoke it from the **Actions** column: the user is signed out of that device immediately. If nobody is signed in, the window says _No active sessions_.
+
+#### Deleting a user
+
+Click **Delete** to remove a user and their access to the dashboard.
+
+#### Permissions
+
+Each user has one or more **roles** that decide which sections of the dashboard they can see and which actions they can perform. On the **Update User** page, the **Permissions** section shows all the available roles as cards, and how many of them are selected (for example, _2 of 13 selected_). You can type in **Filter roles** to find one.
+
+Every user needs **at least one role**. A user without roles can't sign in.
 
 **Company Administrator:** Full access to all company resources, settings, and user management.
 
@@ -49,3 +87,23 @@ After completing all of this has been done, the new user will receive an email i
 **Notifications only:** Manages notification preferences, alerts, and account security settings.
 
 **User Administrator:** Allows creating and managing users within the company.
+
+### User Actions
+
+The **User Actions** tab keeps a record of every change the users of your company have made: everything that was created, updated or deleted.
+
+1. Choose the **Date Range** you want to review. Click the field to pick the first and the last day in the calendar. By default it shows the last three months. **Reset date range** takes you back to it.
+2.  Review the table:
+
+    | Column      | What it shows                                    |
+    | ----------- | ------------------------------------------------ |
+    | **User**    | Who made the change, with a copy button.         |
+    | **Action**  | What was done: for example, **Created**.         |
+    | **Date**    | When it happened.                                |
+    | **Comment** | A description of the change, with a copy button. |
+
+At the bottom you can choose how many **rows per page** to show, see the number of records and the time of the last update, and set the **Auto-refresh** of the table. With the refresh set to 0 seconds, the table isn't updated automatically.
+
+<figure><img src="../../.gitbook/assets/user-actions-ejemplo.png" alt=""><figcaption></figcaption></figure>
+
+If there's no activity in the dates you chose, the page asks you to widen the date range. If the list can't be loaded, you'll see _Couldn't load data_, and **Try again** reloads it.

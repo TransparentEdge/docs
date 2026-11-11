@@ -8,17 +8,16 @@ By default, we use HTTP2 on tlsv1.2 and tlsv1.3.
 
 At Transparent Edge, there are always several different ways of doing something. In this case, we give you two options for serving a secure website.
 
-The first is for you to purchase your certificates from your trusted provider, and once you have them you can upload them to our platform or send us a [ticket](<mailto:help+cdn@transparentedge.eu>) so we can do it for you.
+The first is for you to purchase your certificates from your trusted provider, and once you have them you can upload them to our platform or send us a [ticket](<mailto:support@transparentedge.eu >) so we can do it for you.
 
 To upload certificates to the platform, go to our[ client portal](https://dashboard.transparentcdn.com/), select Provisioning from the left side menu, and then click on **Certificates**.
 
-<figure><img src="../../.gitbook/assets/Captura de pantalla 2026-03-19 a las 11.05.19.png" alt=""><figcaption></figcaption></figure>
+<figure><picture><source srcset="../../.gitbook/assets/Captura de pantalla 2026-10-06 a las 10.51.46.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/Captura de pantalla 2026-10-06 a las 10.51.18.png" alt=""></picture><figcaption></figcaption></figure>
 
 The second, and simpler, option is to leave the entire matter of certificates to us. We’ll take care of sending you valid certificates and renewing them, so you don’t have to do or worry about anything.
 
 #### For this to happen, the domain does have to be pointing to Transparent Edge.
 
-It’s easy: in the Provisioning section of the[ portal](https://dashboard.transparentcdn.com/), click on the Sites tab and then on the padlock icon for the website you want to protect with SSL.
+It’s easy: in the Provisioning section of the[ portal](https://pulse.transparentedge.eu/), click on the Sites tab and then on the padlock icon for the website you want to protect with SSL.
 
-<figure><img src="../../.gitbook/assets/Captura de pantalla 2026-03-19 a las 11.05.50.png" alt=""><figcaption></figcaption></figure>
-
+<figure><picture><source srcset="../../.gitbook/assets/captura-sites-demo.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/captura-sites-demo-claro.png" alt=""></picture><figcaption></figcaption></figure>

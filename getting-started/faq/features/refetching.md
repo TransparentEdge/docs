@@ -1,6 +1,6 @@
 # Refetching
 
-Refetching is a function through which, after content is invalidated via a PURGE, you force the object to be requested again from the content-invalidation agent running on the CDN nodes.&#x20;
+Refetching is a function through which, after content is invalidated via a PURGE, you force the object to be requested again from the content-invalidation agent running on the CDN nodes.
 
 That way, when a real user request comes in, that object will already be in the cache and you won’t have to go get it from the origin.
 

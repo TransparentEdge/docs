@@ -7,4 +7,3 @@ Below, we provide the link to download the Varnish Book, so you can understand t
 {% file src="../../.gitbook/assets/varnish-book.pdf" %}
 Varnish Book
 {% endfile %}
-

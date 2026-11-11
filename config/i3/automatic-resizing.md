@@ -1,18 +1,18 @@
 # Automatic resizing
 
-[i3,](./) our solution for image management, allows you to dynamically and transparently resize your images.&#x20;
+i3, our solution for image management, allows you to dynamically and transparently resize your images.
 
-To do this, we use our `TCDN-i3-transform` header, specifying the type of operation we want, in this case, `resize.` Unlike other operations, such as converting to WebP format, this operation requires a mandatory parameter: the dimensions of the resulting image. The parameter has the format `<width>x<height>`, with both units expressed in pixels and accepting a maximum value of 4096 pixels for each dimension. A valid value, for example, would be `400x300.`&#x20;
+To do this, we use our `TCDN-i3-transform` header, specifying the type of operation we want, in this case, `resize.` Unlike other operations, such as converting to WebP format, this operation requires a mandatory parameter: the dimensions of the resulting image. The parameter has the format `<width>x<height>`, with both units expressed in pixels and accepting a maximum value of 4096 pixels for each dimension. A valid value, for example, would be `400x300.`
 
-The exact syntax for this operation is as follows: `resize:`_`<ancho>`_`x[`_`<alto>`_`][,fixed]`.&#x20;
+The exact syntax for this operation is as follows: `resize:`_`<ancho>`_`x[`_`<alto>`_`][,fixed]`.
 
-Alternatively, instead of expressing a dimension in pixels, you can use the variable `orig`, which refers to the original size of the image. A valid value, for example, would be `origx300.`&#x20;
+Alternatively, instead of expressing a dimension in pixels, you can use the variable `orig`, which refers to the original size of the image. A valid value, for example, would be `origx300.`
 
-Furthermore, the dimension `<height>`is optional: if it is not specified, it is automatically calculated based on the set `<width>` to maintain the aspect ratio. A valid value, for example, would be `400x.`&#x20;
+Furthermore, the dimension `<height>`is optional: if it is not specified, it is automatically calculated based on the set `<width>` to maintain the aspect ratio. A valid value, for example, would be `400x.`
 
-Similarly, if we want to set dimensions and explicitly prevent the crop that is applied to maintain the aspect ratio, we can append the `fixed` suffix to the dimensions. A valid value, for example, would be `400x300,fixed.` Note that, for example, the value `400x,fixed` would also be valid, although the fixed suffix would be meaningless in this case.&#x20;
+Similarly, if we want to set dimensions and explicitly prevent the crop that is applied to maintain the aspect ratio, we can append the `fixed` suffix to the dimensions. A valid value, for example, would be `400x300,fixed.` Note that, for example, the value `400x,fixed` would also be valid, although the fixed suffix would be meaningless in this case.
 
-For example, if we wanted to serve images from our domain `mi-dominio.es` with a size of `300 x 300 pixels`, located at the URL `/estaticos/imagenes`, we would simply deploy a [VCL](../vcl/) [configuration](https://app.gitbook.com/s/-M7HYJERlemP2N6HqnBC-1703796690/config) similar to the following from the [dashboard](../../getting-started/dashboard/):
+For example, if we wanted to serve images from our domain `mi-dominio.es` with a size of `300 x 300 pixels`, located at the URL `/estaticos/imagenes`, we would simply deploy a [VCL](../vcl/) configuration similar to the following from the [dashboard](https://pulse.transparentedge.eu/login):
 
 ```c
 # i3 - resize
@@ -41,4 +41,4 @@ sub vcl_recv {
 }
 ```
 
-Obviously, these are just small examples of very specific use cases. If you have any questions regarding how to integrate this functionality into your own domain, please don't hesitate to contact us at the email address [help+cdn@transparentedge.eu](mailto:help+cdn@transparentedge.eu).
+Obviously, these are just small examples of very specific use cases. If you have any questions regarding how to integrate this functionality into your own domain, please don't hesitate to contact us at the email address [soporte@transparentedge.eu](mailto:soporte@transparetncdn.com).

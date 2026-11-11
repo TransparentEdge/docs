@@ -1,6 +1,6 @@
 # ESI Tags
 
-Edge Side Include (ESI) is a markup language developed by Akamai and proposed as a standard to the W3C, but it currently remains a draft. Nevertheless, Transparent Edge Services supports some of the available ESI tags.&#x20;
+Edge Side Include (ESI) is a markup language developed by Akamai and proposed as a standard to the W3C, but it currently remains a draft. Nevertheless, Transparent Edge Services supports some of the available ESI tags.
 
 ESI involves embedding ESI tags within HTML so that those calls are made independently as parallel requests.
 
@@ -13,7 +13,7 @@ at this very moment.
 </HTML>
 ```
 
-In the example above, which could be the index.html of a page, with a cache time of, for example, 3600s (1h), we are making an include within the main HTML that will be treated as a parallel call with its independent cache time from the main page.&#x20;
+In the example above, which could be the index.html of a page, with a cache time of, for example, 3600s (1h), we are making an include within the main HTML that will be treated as a parallel call with its independent cache time from the main page.
 
 This way, the call to date.cgi does not have cache, while the rest of the page does. As mentioned earlier, Transparent Edge supports only the \<esi:include> and \<esi:remove> tags.
 
@@ -23,9 +23,9 @@ This way, the call to date.cgi does not have cache, while the rest of the page d
 </esi:remove>
 ```
 
-This functionality is included by default in Transparent Edge with the service price, but it needs to be activated for each site.&#x20;
+This functionality is included by default in Transparent Edge with the service price, but it needs to be activated for each site.
 
-To do this, go to the [dashboard](https://dashboard.transparentcdn.com/auth/login?redirect=%2F) and click on the Provisioning - VCL Configs tab. Then, switch to advanced mode and duplicate the last active configuration, adding a code similar to this but adapting the domain name:
+To do this, go to the [dashboard](https://pulse.transparentedge.eu/login) and click on the Provisioning - VCL Configs tab. Then, switch to advanced mode and duplicate the last active configuration, adding a code similar to this but adapting the domain name:
 
 ```javascript
 sub vcl_backend_response {

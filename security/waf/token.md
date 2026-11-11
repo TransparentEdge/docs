@@ -4,7 +4,7 @@ This function allows us to protect content on our website by defining tokens wit
 
 ## Theoretical explanation:
 
-With this purpose in mind, the idea is that any request for a specific object (asset) on our website, such as a DASH (Dynamic Adaptive Streaming over HTTP) or HLS (HTTP Live Streaming) manifest, must include the values of three mandatory parameters:&#x20;
+With this purpose in mind, the idea is that any request for a specific object (asset) on our website, such as a DASH (Dynamic Adaptive Streaming over HTTP) or HLS (HTTP Live Streaming) manifest, must include the values of three mandatory parameters:
 
 ### Required Parameters:
 
@@ -16,17 +16,17 @@ For example, if we want to protect the `/lista-reproduccion.m3u8?lang=es`, on ou
 
 Furthermore, the value of the parameter `h` will be the MD5 hash corresponding to the string _`<vf>`_`@`_`<vu>`_`@`_`<secret>`_`@/lista-reproduccion.m3u8?lang=es`. Similarly, _`<secret>`_&#x77;ill be the seed used in generating the token.
 
-## How is it used?&#x20;
+## How is it used?
 
-This function is invoked through our `TCDN-Command` header; therefore, we must include the value `protect-with-token` along with the set of parameters separated by a colon `(:)`. Specifically, the syntax of the function is as follows: `-with-token:secret=`_`<secret>`_`[:vf=`_`<valid from>`_`][:vu=`_`<valid until>`_`][:h=`_`<hash>`_`]`.&#x20;
+This function is invoked through our `TCDN-Command` header; therefore, we must include the value `protect-with-token` along with the set of parameters separated by a colon `(:)`. Specifically, the syntax of the function is as follows: `-with-token:secret=`_`<secret>`_`[:vf=`_`<valid from>`_`][:vu=`_`<valid until>`_`][:h=`_`<hash>`_`]`.
 
-_`<secret>`_ is the only mandatory parameter, which defines the seed used in token generation. It is the private key that underpins the entire process.&#x20;
+_`<secret>`_ is the only mandatory parameter, which defines the seed used in token generation. It is the private key that underpins the entire process.
 
-Optionally, you can specify the parameters ,_`<valid from>`_, _`<valid until>`_ y _`<hash>`_ , and in a strict hard-coded manner within the [VCL](../../config/vcl/) [configuration](https://app.gitbook.com/s/-M7HYJERlemP2N6HqnBC-1703796690/config). However, it is also possible to dynamically determine the value for these three parameters: either in the request itself through the query string, or by assigning corresponding cookies (`vf`, `vu`, and `h`).&#x20;
+Optionally, you can specify the parameters ,_`<valid from>`_, _`<valid until>`_ y _`<hash>`_ , and in a strict hard-coded manner within the [VCL](/broken/pages/-M7H_Vnv4HVYwTDqBq_9) [configuration](/broken/pages/-M7H_VntHNSVzpPseiCS). However, it is also possible to dynamically determine the value for these three parameters: either in the request itself through the query string, or by assigning corresponding cookies (`vf`, `vu`, and `h`).
 
-### Example of a token with a static validity period&#x20;
+### Example of a token with a static validity period
 
-For example, if we want to protect the resource `/lista-reproduccion.m3u8?lang=es` on our domain `mi-dominio.es` using a token with a validity period of one year (e.g., 2022), we just need to deploy a similar [VCL](../../config/vcl/) [configuration](https://app.gitbook.com/s/-M7HYJERlemP2N6HqnBC-1703796690/config) from the [dashboard:](../../getting-started/dashboard/)
+For example, if we want to protect the resource `/lista-reproduccion.m3u8?lang=es` on our domain `mi-dominio.es` using a token with a validity period of one year (e.g., 2022), we just need to deploy a similar [VCL](../../config/vcl/) [configuration](https://app.gitbook.com/s/dLlfX5hLpgfTCKcNCR8i/config) from the [dashboard:](https://pulse.transparentedge.eu/login)
 
 ```c
 # protect-with-token
@@ -61,9 +61,9 @@ Therefore, requests to the resource `/lista-reproduccion.m3u8?lang=es` that are 
 
 Only requests to `/lista-reproduccion.m3u8?lang=es&h=3caf5c965d2895f1705481d3a32d63b4` or requests where a cookie named `h` with the correct value is defined will return the requested asset along with a status code 200.
 
-### Example of a token with a dynamic validity period&#x20;
+### Example of a token with a dynamic validity period
 
-In the previous example, the validity period of the token is hard-coded in the configuration itself. If we want it to be dynamic, we can deploy a similar [VCL](../../config/vcl/) [configuration](https://app.gitbook.com/s/-M7HYJERlemP2N6HqnBC-1703796690/config) from the [dashboard](../../getting-started/dashboard/):
+In the previous example, the validity period of the token is hard-coded in the configuration itself. If we want it to be dynamic, we can deploy a similar [VCL](../../config/vcl/) [configuration](https://app.gitbook.com/s/dLlfX5hLpgfTCKcNCR8i/config) from the [dashboard](https://pulse.transparentedge.eu/login):
 
 ```c
 # protect-with-token
@@ -76,6 +76,6 @@ sub vcl_recv {
 }
 ```
 
-In this way, the parameters `vf` and `vu` should be provided either through the query string in the request or via corresponding cookies. Additionally, since `vf` and `vu` are now dynamic parameters, the value of `h` will also be dynamic as it depends on them.&#x20;
+In this way, the parameters `vf` and `vu` should be provided either through the query string in the request or via corresponding cookies. Additionally, since `vf` and `vu` are now dynamic parameters, the value of `h` will also be dynamic as it depends on them.
 
-These are just small examples of a very specific use case. If you have any questions about integrating this functionality into your own domain, please don't hesitate to contact us at the email address:  [help+cdn@transparentedge.eu](mailto:help+cdn@transparentedge.eu).
+These are just small examples of a very specific use case. If you have any questions about integrating this functionality into your own domain, please don't hesitate to contact us at the email address: [soporte@transparentcdn.com](mailto:soporte@transparetncdn.com).

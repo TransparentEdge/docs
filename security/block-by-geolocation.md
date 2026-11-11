@@ -16,7 +16,7 @@ If the system is unable to locate the user's IP, the header will contain the str
 
 Using this header, we can make various decisions, such as redirection, serving specific content for that country, or simply geoblocking content.
 
-For geoblocking, you can go to your [dashboard](https://dashboard.transparentcdn.com), navigate to **Provisioning, VCL Config**, and in the advanced section, duplicate the current production configuration. Then, insert the geoblocking code within the vcl\_recv function:
+For geoblocking, you can go to your [dashboard](https://pulse.transparentedge.eu/login), navigate to **Provisioning, VCL Config**, and in the advanced section, duplicate the current production configuration. Then, insert the geoblocking code within the vcl\_recv function:
 
 ```javascript
 sub vcl_recv{

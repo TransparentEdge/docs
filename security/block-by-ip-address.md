@@ -1,7 +1,7 @@
 # Blocking by IP Address
 
 {% hint style="info" %}
-To block longer lists of IP addresses, please check [network ACLs](../getting-started/dashboard/auto-provisioning/network-acls.md).
+To block longer lists of IP addresses, please check [network ACLs](../config/network-access-control-list/).
 {% endhint %}
 
 To block traffic coming from one or multiple IP addresses, you can incorporate the following configuration snippet within the vcl\_recv function.
@@ -15,4 +15,4 @@ sub vcl_recv{
 
 ```
 
-In this example, we use the IP address provided in the [True-Client-Ip](../getting-started/faq/cabeceras-por-defecto/true-client-ip-y-x-forwarded-for.md) header. If the request comes from any of the listed IP addresses, it will be blocked immediately.
+In this example, we use the IP address provided in the [True-Client-Ip](../getting-started/faq/default-headers/true-client-ip-y-x-forwarded-for.md) header. If the request comes from any of the listed IP addresses, it will be blocked immediately.

@@ -6,15 +6,15 @@ All our solutions include the option for monitoring a single site. If you wish t
 
 ## How to activate
 
-After accessing [the dashboard](https://dashboard.transparentcdn.com/auth/login), go to the 'Anomaly Detection' section. It is highly likely that the monitored sites and detection history will be empty. The 'New' button, located within the monitored sites, will allow you to create a new configuration.
+After accessing [the dashboard](https://pulse.transparentedge.eu/login), go to the 'Anomaly Detection' section. It is highly likely that the monitored sites and detection history will be empty. The 'New' button, located within the monitored sites, will allow you to create a new configuration.
 
-<figure><img src="../../.gitbook/assets/anomalies-pic1.jpg" alt=""><figcaption><p>Anomaly Detection section</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Captura de pantalla 2026-11-03 a las 13.47.15.png" alt=""><figcaption><p>Anomaly Detection section</p></figcaption></figure>
 
 When you click it, a modal will open in which you will select the site and service for which you want to configure anomaly detection. After this, the **types of anomalies and thresholds** will appear. A threshold is a fixed value or a percentage of the total requests. This limit indicates when an anomaly is considered to occur if the metric we are observing exceeds the specified value.
 
 All parameters of the anomalies can only be modified if the service has been contracted, although a set of them is available in the _freemium_ version. Once the configuration has been created and saved, activating anomaly detection will be as simple as checking the box found in the dropdown menu of that site.
 
-<figure><img src="../../.gitbook/assets/anomalies-pic2.jpg" alt="" width="375"><figcaption><p>Active or edit Anomaly Detection</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Captura de pantalla 2026-11-03 a las 13.48.08.png" alt=""><figcaption><p>Active or edit Anomaly Detection</p></figcaption></figure>
 
 Remember that you can always go back and modify that configuration directly from the 'Settings' button, also present in the site's dropdown menu.<br>
 

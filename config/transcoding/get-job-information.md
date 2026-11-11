@@ -1,6 +1,6 @@
 # Get job information
 
-Our API has different endpoints that can be used to view the status of the different work orders. We can obtain a list of all the work orders registered for each company by launching a **GET** request, after [authentication](https://docs.transparentedge.eu/api/autenticacion), to this endpoint:
+Our API has different endpoints that can be used to view the status of the different work orders. We can obtain a list of all the work orders registered for each company by launching a **GET** request, after authentication, to this endpoint:
 
 `https://api.transparentcdn.com/v1/media/{company_id}/transcode`
 

@@ -6,17 +6,17 @@ description: >-
 
 # Authentication
 
-To authenticate against the API, we use the OAuth2 federation system. This means that in order to make requests to the API, you need to have an access token for authentication.&#x20;
+To authenticate against the API, we use the OAuth2 federation system. This means that in order to make requests to the API, you need to have an access token for authentication.
 
-First of all, we will need the values of `client_id` and `client_secret`, which can be obtained from our [dashboard](https://dashboard.transparentcdn.com/user/profile). Click on your username, to view your user profile, there you'll able to obtain the required API keys.
+First of all, we will need the values of `client_id` and `client_secret`, which can be obtained from our [dashboard](https://pulse.transparentedge.eu/login). Click on your username, to view your user profile, there you'll able to obtain the required API keys.
 
 Take note of the values that appear, as we will need them for the following steps:
 
 Here is an example, with fake data of the entire process of obtaining the access token (API\_TOKEN).
 
-> client\_id: 0b58b22d51a2d68Ffdf17b&#x20;
+> client\_id: 0b58b22d51a2d68Ffdf17b
 >
-> client\_secret: 0f3b38f9721211e848e39be374a4c1431386abdfe86&#x20;
+> client\_secret: 0f3b38f9721211e848e39be374a4c1431386abdfe86
 >
 > company\_id: 42
 

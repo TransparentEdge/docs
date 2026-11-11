@@ -1,10 +1,10 @@
 # Streaming logs
 
 {% hint style="info" %}
-If you have any questions about the real-time log streaming service, please contact us at [help+cdn@transparentedge.eu](mailto:help+cdn@transparentedge.eu).
+If you have any questions about the real-time log streaming service, please contact us at [support@transparentedge.eu](mailto:support@transparentedge.eu).
 {% endhint %}
 
-To activate the real-time log streaming service, simply access the dashboard at [https://dashboard.transparentcdn.com/](https://dashboard.transparentcdn.com/) , go to the Services section and activate the Streaming Logs service, you will find everything you need.
+To activate the real-time log streaming service, simply access the dashboard at [Pulse](https://pulse.transparentedge.eu/login) , go to the Services section and activate the Streaming Logs service, you will find everything you need.
 
 Once the service is activated, **you can download a zip** file that contains the necessary digital certificates to authenticate your consumers, as well as a set of preconfigured templates with your data for consuming logs using Filebeat, Logstash, and Python.
 
@@ -15,33 +15,31 @@ The templates are preconfigured with all the necessary data, but let's go throug
 #### Connection Parameters:
 
 * The address of our brokers:
-  * kafka1.edgetcdn.io&#x20;
-  * kafka2.edgetcdn.io&#x20;
+  * kafka1.edgetcdn.io
+  * kafka2.edgetcdn.io
   * kafka3.edgetcdn.io
 * The port to use, which will be 9093
 
 #### Contents of the zip:
 
-* Client's public certificate: **`c<ID>.crt.pem`**&#x20;
-* Client's private certificate: **`c<ID>.key.pem`**&#x20;
-* Keystore in PKCS12 format: **`c<ID>.keystore.p12`**&#x20;
-* The password used to encrypt the keystore and truststore: **`password.txt`**&#x20;
-* Public certificate of our CA: **`transparentcdnCA.pem`**&#x20;
-* Truststore with our CA (required in some consumers): **`truststore.p12`**&#x20;
-* Filebeat template: **`filebeat.yml`**&#x20;
-* Logstash template: **`kafka-logstash.conf`**&#x20;
+* Client's public certificate: **`c<ID>.crt.pem`**
+* Client's private certificate: **`c<ID>.key.pem`**
+* Keystore in PKCS12 format: **`c<ID>.keystore.p12`**
+* The password used to encrypt the keystore and truststore: **`password.txt`**
+* Public certificate of our CA: **`transparentcdnCA.pem`**
+* Truststore with our CA (required in some consumers): **`truststore.p12`**
+* Filebeat template: **`filebeat.yml`**
+* Logstash template: **`kafka-logstash.conf`**
 * Simple Python consumer: **`consumer.py`**
 
 #### Other data:
 
-* There several Topics to subscribe, the default topic for the delivery logs to will be **`c<ID>` .**  The rest of the topics will be described below and depend on the services subscribed.
-* **The prefix of the Consumer Group to join your consumers.** For example, if your `ID` is `83`, you will subscribe to the topic `c83`and you can join your consumers to any "Consumer Group" starting with `c83_`, such as `c83_group1`, `c83_test`, `c83_pre`... You can find more information about consumer groups [here.](streaming-logs.md)
+* There several Topics to subscribe, the default topic for the delivery logs to will be **`c<ID>` .** The rest of the topics will be described below and depend on the services subscribed.
+* **The prefix of the Consumer Group to join your consumers.** For example, if your `ID` is `83`, you will subscribe to the topic `c83`and you can join your consumers to any "Consumer Group" starting with `c83_`, such as `c83_group1`, `c83_test`, `c83_pre`... You can find more information about consumer groups [here.](/broken/pages/cL1RE1CS5cJ2gqOAeYS5)
 
-#### We will need:&#x20;
+#### We will need:
 
 * The IP address(es) from where your consumers will connect. You can add them from the dashboard (please allow a margin of 5 minutes for them to be active on our firewall).
-
-<figure><img src="../.gitbook/assets/Captura de Pantalla 2023-06-19 a las 13.42.09.png" alt=""><figcaption></figcaption></figure>
 
 ## Consuming the logs
 
@@ -72,15 +70,15 @@ Remember that you always have a third option, which is also valid and considered
 
 ### Consuming logs using Filebeat
 
-Let's now go through a simple deployment of Filebeat on a Debian server as a first step, where we will store the logs in a text file.&#x20;
+Let's now go through a simple deployment of Filebeat on a Debian server as a first step, where we will store the logs in a text file.
 
-The official documentation can be found at: [https://www.elastic.co/guide/en/beats/filebeat/current/index.html](https://www.elastic.co/guide/en/beats/filebeat/current/index.html)&#x20;
+The official documentation can be found at: [https://www.elastic.co/guide/en/beats/filebeat/current/index.html](https://www.elastic.co/guide/en/beats/filebeat/current/index.html)
 
 We will use the following example data, but remember that the zip file you downloaded after activating the service already contains a template called **`filebeat.yml`** with all the necessary information:
 
 * Certificates `c83.crt.pem` y `c83.key.pem`
 * Password: `password`
-* Topic (default delivery logs topic): `c83`   &#x20;
+* Topic (default delivery logs topic): `c83`
 * Consumer group: `c83_filebeat`<br>
 
 First, we download and install the Filebeat package on our server:
@@ -129,9 +127,9 @@ output.file:
   rotate_every_kb: 50000
 ```
 
-On the server where you configure Filebeat, copy the public and private key of the certificate, as well as the Transparent Edge Services CA, to the paths you have defined in the configuration.&#x20;
+On the server where you configure Filebeat, copy the public and private key of the certificate, as well as the Transparent Edge Services CA, to the paths you have defined in the configuration.
 
-You will also need to create the folder defined in the `path` if it doesn't exist.&#x20;
+You will also need to create the folder defined in the `path` if it doesn't exist.
 
 Once everything is configured, you just need to start the Filebeat service, usually using systemd with the command `systemctl start filebeat`. If everything goes well, you will see logs being consumed in the path you defined in `path:`.
 
@@ -232,7 +230,7 @@ Now all that's left is to start Logstash. We can do it through the command line 
 sudo -u logstash /usr/share/logstash/bin/logstash "--path.settings" "/etc/logstash"
 ```
 
-Remember to verify that all the necessary files are accessible by the "logstash" user, including the certificates and the destination file + folder.&#x20;
+Remember to verify that all the necessary files are accessible by the "logstash" user, including the certificates and the destination file + folder.
 
 After a few seconds, you will start receiving the logs in the file or output that you have specified in JSON format. Here's an example:
 
@@ -267,11 +265,11 @@ systemctl start logstash.service
 
 ### Consuming logs through a custom Python script
 
-You can write a consumer in many different programming languages. Let's see an example using Python, using the "confluent-kafka-python" client or library at [https://github.com/confluentinc/confluent-kafka-python](https://github.com/confluentinc/confluent-kafka-python).&#x20;
+You can write a consumer in many different programming languages. Let's see an example using Python, using the "confluent-kafka-python" client or library at [https://github.com/confluentinc/confluent-kafka-python](https://github.com/confluentinc/confluent-kafka-python).
 
 Another popular option is [https://github.com/dpkp/kafka-python](https://github.com/dpkp/kafka-python).
 
-Here's the example (once again, we'll use Debian as the operating system):&#x20;
+Here's the example (once again, we'll use Debian as the operating system):
 
 We install the necessary packages:
 
@@ -367,13 +365,13 @@ Kafka can operate in both ways thanks to Consumer Groups:
 * If we want to act as a queue, we put all consumers in the same consumer group.
 * If we want to act as a pub/sub, each consumer goes in a different group.
 
-### Examples&#x20;
+### Examples
 
 Currently, we create topics with 2 partitions by default (which can be increased upon request). Let's see some examples with a topic with 2 partitions:
 
 * We start 3 consumers, all in the **same consumer group.** One of them consumes from partition 0, another from partition 1, and the last one remains idle. This achieves parallel processing and high availability. (High availability can also be achieved with 2 consumers: if one fails, the other will consume from both partitions). Messages will be distributed between consumer 1 and consumer 2.
 
-<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
 
 * We start 2 consumers, each in a **different consumer group:** Both will receive ALL messages from the topic and will be completely isolated. This is useful if we want to perform different processing on the received messages for each consumer. We can add more consumers to this scheme, and the result will be the same: each of them will receive all messages from all partitions.<br>
 
@@ -383,7 +381,7 @@ Since we work with logs, and unless multiple different post-processes are requir
 
 ## Consuming Delivery Logs.
 
-The delivery logs can be consuming through the topic `c<ID>` &#x20;
+The delivery logs can be consuming through the topic `c<ID>`
 
 The format of the delivery logs is the following:
 
@@ -498,7 +496,7 @@ More information about consuming delivery logs [here](streaming-logs.md#consumin
 
 ## Consuming Delivery L2 (midtier) Logs.
 
-If you have the Midtier service enabled, you can also consume real-time midtier logs through the topic `c<ID>_delivery_l2` &#x20;
+If you have the Midtier service enabled, you can also consume real-time midtier logs through the topic `c<ID>_delivery_l2`
 
 The format of the midtier logs is the following:
 
@@ -510,7 +508,7 @@ It can be mapping with the same mapping as delivery logs.
 
 ## Consuming Backend Delivery Logs.
 
-If you have the backend analytics service enabled, you can also consume real-time backend delivery logs through the topic `c<ID>_backend`&#x20;
+If you have the backend analytics service enabled, you can also consume real-time backend delivery logs through the topic `c<ID>_backend`
 
 The format of the backend delivery logs is the following:
 
@@ -650,15 +648,15 @@ It can be mapping with the following:
 
 ## Consuming WAF Logs
 
-If you have the WAF service enabled, you can also consume real-time audit logs. Unlike the delivery service, these logs are in JSON format.&#x20;
+If you have the WAF service enabled, you can also consume real-time audit logs. Unlike the delivery service, these logs are in JSON format.
 
-You can use the Python consumer mentioned earlier, with the only difference being the topic to which you subscribe. In this case, the topic will have the following format: `c<ID>_waf`.&#x20;
+You can use the Python consumer mentioned earlier, with the only difference being the topic to which you subscribe. In this case, the topic will have the following format: `c<ID>_waf`.
 
 For example, if your company has the `<ID>` (client identifier) 83, you should subscribe to the topic `c83_waf`.
 
-### Audit Log Format&#x20;
+### Audit Log Format
 
-The format of the WAF service is a standard JSON object.&#x20;
+The format of the WAF service is a standard JSON object.
 
 This JSON contains all the relevant request data: the HTTP code, response headers, request headers, URL, method, client IP..., basically all the information. Additionally, it contains a field with all the details related to the attack detected.
 
@@ -681,7 +679,7 @@ $ tail -3 audit.log | jq '.transaction.messages.message'
 "XSS Attack Detected via libinjection"
 ```
 
-One of the important fields contained within `messages` is `ruleId`. It is a numerical value that allows us to set exceptions.&#x20;
+One of the important fields contained within `messages` is `ruleId`. It is a numerical value that allows us to set exceptions.
 
 Here is an example of the content of the `messages` field:
 
@@ -714,15 +712,15 @@ Here is an example of the content of the `messages` field:
 
 ## Consuming Bot Mitigation Logs
 
-If you have the BotMitigation service enabled, you can also consume real-time logs. Unlike the delivery service, these logs are in JSON format.&#x20;
+If you have the BotMitigation service enabled, you can also consume real-time logs. Unlike the delivery service, these logs are in JSON format.
 
-You can use the Python consumer mentioned earlier, with the only difference being the topic to which you subscribe. In this case, the topic will have the following format: `c<ID>_botm`.&#x20;
+You can use the Python consumer mentioned earlier, with the only difference being the topic to which you subscribe. In this case, the topic will have the following format: `c<ID>_botm`.
 
 For example, if your company has the `<ID>` (client identifier) 83, you should subscribe to the topic `c83_botm`.
 
-### BotM Log Format&#x20;
+### BotM Log Format
 
-The format of the BotMitigation service is a standard JSON object.&#x20;
+The format of the BotMitigation service is a standard JSON object.
 
 This JSON contains all the relevant data about request: host, url, user-agent ... , the specific data about the IP address reputation: assess-ip, country, ip-from ( unknown or the identified BOT), crawler (unknown or the identified Crawler), whitelisted (true only if a whitelisted IP) and the data about the response: status code, reason (risk, abuse, allowlist ...), action (block, captcha, jschallenge, bypass).
 

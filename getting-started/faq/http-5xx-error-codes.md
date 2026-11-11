@@ -45,7 +45,7 @@ The domain was not found; it is not registered in the CDN.
 
 The domain exists in the CDN but no backend has been assigned to it.
 
-* **`TCDN-OENG`** - _Origin Error No Grace_&#x20;
+* **`TCDN-OENG`** - _Origin Error No Grace_
 
 > There was an origin error 5xx and we are keeping the original status code from origin without 503 status code masking due the **`X-Show-Origin-Errors`**&#x68;eader.
 

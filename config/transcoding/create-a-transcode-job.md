@@ -72,9 +72,9 @@ There is an option to apply **DRM** to your video as part of the post-processing
 To use it, you need to add another field named `"drm"` under the `"post-process"` key in your request. The `"drm"` object includes the following fields:
 
 * **`key`**: The encryption key in hexadecimal format (32 characters – _mandatory_).
-* &#x20;**`key_id`**: The ID of the encryption key (32 characters – _mandatory_).
+* **`key_id`**: The ID of the encryption key (32 characters – _mandatory_).
 * **`key_iv`**: The IV (Initialization Vector) of the encryption key (32 characters – _optional_).
-* **`pssh`**: The PSSH data for the DRM  (_optional_).
+* **`pssh`**: The PSSH data for the DRM (_optional_).
 * **`encryption_scheme`**: The encryption scheme, which can be `"cenc"`, `"cbc1"`, `"cens"`, or `"cbcs"` (_default: "cbcs"_ - _optional_).
 
 ```
@@ -120,6 +120,6 @@ To use it, you need to add another field named `"drm"` under the `"post-process"
 }
 ```
 
-It is also possible to create a new transcoding job through our [dashboard.](https://dashboard.transparentcdn.com/) To do this, you need to expand the options of the button located at the top of the transcoding job list and follow the steps indicated in the displayed modal.
+It is also possible to create a new transcoding job through our [Pulse.](https://pulse.transparentedge.eu/) To do this, you need to expand the options of the button located at the top of the transcoding job list and follow the steps indicated in the displayed modal.
 
-<figure><img src="../../.gitbook/assets/Captura de pantalla 2026-07-21 a las 11.41.16.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Captura de pantalla 2026-11-03 a las 13.24.25.png" alt=""><figcaption></figcaption></figure>

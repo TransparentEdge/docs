@@ -1,12 +1,12 @@
 # Inclusion of graphics in the footer (strip)
 
-[i3](./), our image management solution, allows you to dynamically and transparently include strips in your images.&#x20;
+i3, our image management solution, allows you to dynamically and transparently include strips in your images.
 
-To do this, we use our `TCDN-i3-transform` header, specifying the desired operation, which in this case is `strip`. Unlike other operations, such as the [conversion to WebP format](conversion-to-webp.md), this operation requires a mandatory parameter for its execution: the URL of the strip that will be overlaid on the original image.&#x20;
+To do this, we use our `TCDN-i3-transform` header, specifying the desired operation, which in this case is `strip`. Unlike other operations, such as the [conversion to WebP format](conversion-to-webp.md), this operation requires a mandatory parameter for its execution: the URL of the strip that will be overlaid on the original image.
 
-The exact syntax for this operation is as follows: `strip:'`_`<url>`_`'`.&#x20;
+The exact syntax for this operation is as follows: `strip:'`_`<url>`_`'`.
 
-For example, if you wanted all images on your domain `mi-dominio.es` that are located at the URL `/estaticos/imagenes` to be served with the strip available at `/estaticos/grafismos/faldon.png`, you can simply deploy a [VCL](../vcl/) [configuration](https://app.gitbook.com/s/-M7HYJERlemP2N6HqnBC-1703796690/config) similar to the following from the [dashboard](../../getting-started/dashboard/):
+For example, if you wanted all images on your domain `mi-dominio.es` that are located at the URL `/estaticos/imagenes` to be served with the strip available at `/estaticos/grafismos/faldon.png`, you can simply deploy a [VCL](../vcl/) [configuration](https://app.gitbook.com/s/dLlfX5hLpgfTCKcNCR8i/config) similar to the following from the [dashboard](../../getting-started/dashboard/):
 
 ```c
 # i3 - strip
@@ -19,9 +19,9 @@ sub vcl_recv {
 }
 ```
 
-Likewise, for the obtained result to be satisfactory, both images must have the same dimensions. Therefore, in certain situations, it will be necessary to combine this operation with the [automatic image resizing](automatic-resizing.md) operation itself.&#x20;
+Likewise, for the obtained result to be satisfactory, both images must have the same dimensions. Therefore, in certain situations, it will be necessary to combine this operation with the [automatic image resizing](automatic-resizing.md) operation itself.
 
-For example, taking the previous case, if the strip has dimensions of 800 x 600 pixels, in order for it to fit perfectly onto the image, we must resize it beforehand. Thus, you can simply deploy a [VCL](../vcl/) [configuration](https://app.gitbook.com/s/-M7HYJERlemP2N6HqnBC-1703796690/config) similar to the following from the [dashboard](../../getting-started/dashboard/):
+For example, taking the previous case, if the strip has dimensions of 800 x 600 pixels, in order for it to fit perfectly onto the image, we must resize it beforehand. Thus, you can simply deploy a [VCL](../vcl/) [configuration](https://app.gitbook.com/s/dLlfX5hLpgfTCKcNCR8i/config) similar to the following from the [dashboard](../../getting-started/dashboard/):
 
 ```c
 # i3 - strip
@@ -51,4 +51,4 @@ sub vcl_recv {
 }
 ```
 
-Obviously, these are just small examples of very specific use cases. If you have any questions about how to integrate this functionality into your own domain, please don't hesitate to contact us at the email address [help+cdn@transparentedge.eu](mailto:help+cdn@transparentedge.eu).
+Obviously, these are just small examples of very specific use cases. If you have any questions about how to integrate this functionality into your own domain, please don't hesitate to contact us at the email address [soporte@transparetncdn.com](mailto:soporte@transparetncdn.com).

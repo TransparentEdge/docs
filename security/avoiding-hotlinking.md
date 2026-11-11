@@ -6,7 +6,7 @@ description: Basic protection against hotlinking
 
 Although most browsers are evolving towards increased privacy by applying stricter default regarding the [Referrer-Policy](https://developer.mozilla.org/es/docs/Web/HTTP/Headers/Referrer-Policy), basic protection against [hotlinking](https://es.wikipedia.org/wiki/Hotlinking) can still be achieved.
 
-To do this, you just need to define the `TCDN-Avoid-Hotlink-URL` header with the path to the resource you want to serve as a placeholder.&#x20;
+To do this, you just need to define the `TCDN-Avoid-Hotlink-URL` header with the path to the resource you want to serve as a placeholder.
 
 For example, if you want to prevent hotlinking of images located in the `/wiki/content` path of your domain `www.example.com,` the VCL code to insert in the configuration would be similar to:
 
@@ -20,9 +20,9 @@ sub vcl_recv {
 }
 ```
 
-As always, you can define it in a new `vcl_recv` block or within the existing one.&#x20;
+As always, you can define it in a new `vcl_recv` block or within the existing one.
 
-Now, requests against those resources and under those conditions that have a referer different from the current site's domain will instead serve the placeholder `/img/hotlink-placeholder.png.` Defining a placeholder is mandatory.&#x20;
+Now, requests against those resources and under those conditions that have a referer different from the current site's domain will instead serve the placeholder `/img/hotlink-placeholder.png.` Defining a placeholder is mandatory.
 
 You can add any necessary conditions to the previous code. For example, if the domain `www.example2.com` is allowed to hotlink without any restrictions, the code would look like this:
 

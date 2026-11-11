@@ -12,11 +12,11 @@ Built-in subroutines called at key points in the request lifecycle. Override the
 
 Called at the start of every incoming request, before any cache lookup. Use it to normalise the request, strip unnecessary headers, or decide whether the request should bypass the cache.
 
-You can also assign a [backend](../../getting-started/dashboard/auto-provisioning/configuration.md) here or do it in the `vcl_backend_fetch` subroutine.
+You can also assign a [backend](https://app.gitbook.com/s/dLlfX5hLpgfTCKcNCR8i/config) here or do it in the `vcl_backend_fetch` subroutine.
 
 ### vcl\_hash
 
-Called after `vcl_recv`, immediately before the cache lookup.&#x20;
+Called after `vcl_recv`, immediately before the cache lookup.
 
 Add data to the hash to create separate cache entries for the same URL, for example, per-host or per-device-type variations.
 
@@ -47,8 +47,6 @@ Called before Varnish sends a request to the origin. This is the correct place t
 ### vcl\_backend\_response
 
 Called when the backend response headers arrive. Use it to set TTLs, override `Cache-Control`, remove headers that would prevent caching, or discard a bad response.
-
-
 
 {% hint style="warning" %}
 The rest of the predefined functions in Varnish Enterprise Plus are not allowed to be modified by the user in Transparent CDN, to ensure the security and stability of our clients' sites at all times. However, you can check them out [here](https://varnish-cache.org/docs/trunk/users-guide/vcl-built-in-subs.html).

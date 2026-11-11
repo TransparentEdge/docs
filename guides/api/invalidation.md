@@ -50,4 +50,3 @@ Our API provides a system for executing recursive invalidations. This means that
     "ban": "1"
 }
 ```
-

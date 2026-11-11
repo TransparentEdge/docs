@@ -6,7 +6,7 @@ If you don't have an SSL certificate for your site, Transparent Edge Services ca
 
 In the case of doing it from the Sites section, you simply need to click on the lock icon that appears on the right side of the list. This will open a dialog box with instructions and requirements for the automatic management:
 
-<figure><img src="../.gitbook/assets/Captura de pantalla 2026-03-16 a las 12.05.35.png" alt=""><figcaption><p>New certificate</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Captura de pantalla 2026-11-03 a las 13.36.10.png" alt=""><figcaption><p>New certificate</p></figcaption></figure>
 
 In a few minutes, it will be deployed and automatically renewed without any intervention on your part.
 
@@ -26,7 +26,7 @@ The cipher suite used in Transparent Edge Services is standard and constantly ev
 "EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH"
 ```
 
-## Supported Features&#x20;
+## Supported Features
 
 The following features are supported by Transparent Edge terminators:
 
