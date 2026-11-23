@@ -6,6 +6,8 @@ This function is invoked through the call `rate_limit`. It requires two headers 
 
 This validation will be valid for five minutes. So, if within the following five minutes after that validation, the user reaches the same limit again, the defined block time will be applied if specified. If the validation has expired and the user surpasses this threshold again, a new CAPTCHA will be shown.
 
+The CAPTCHA and the JavaScript challenge are only shown on `GET` requests. Requests with other methods over the limit receive a `429`, except in `js_challenge` mode when the user has already passed the JavaScript challenge.
+
 For example, if in our domain `www.my-site.com` we want to limit each user to a maximum of 20 requests per second, discriminating based on their IP address, and once that limit is reached, block the user for 30 seconds and require them to validate a CAPTCHA, we would deploy a [VCL](../../config/vcl/) configuration similar to the following:
 
 ```c

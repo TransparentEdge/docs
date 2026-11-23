@@ -204,7 +204,7 @@ sub vcl_recv {
 ### **Show Captcha**
 
 * **Command:** `call show_captcha;`
-* **Description:** This command triggers the display of a CAPTCHA to verify that incoming traffic is from human users.
+* **Description:** This command triggers the display of a CAPTCHA to verify that incoming traffic is from human users. The CAPTCHA is only shown on `GET` requests; other methods receive a `403` until the CAPTCHA is solved.
 * **Example:**
 
 ```perl
