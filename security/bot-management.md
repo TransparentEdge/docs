@@ -55,28 +55,41 @@ The recommended range is between 75 and 90.
 
 ### **Flags**
 
-Flags allow you to fine-tune detection by combining an IP's reputation score with known behavioural categories or characteristics. Any combination of the following flags can be selected:
+Flags allow you to fine-tune detection by combining an IP's reputation score with known behavioural categories or characteristics. Any combination of the following flags can be selected. The code is the letter used in the [`TCDN-BM-Action` header](bot-management.md#overriding-thresholds).
 
-| Flag                      | Description                                        |
-| ------------------------- | -------------------------------------------------- |
-| **datacenter**            | IP originates from a datacenter (non-residential)  |
-| **vpn**                   | IP is associated with a VPN service                |
-| **proxy**                 | IP is a known open proxy                           |
-| **tor**                   | IP is a known Tor exit node                        |
-| **abuse**                 | IP has been reported for abusive behavior          |
-| **automated\_navigation** | IP has been detected performing automated browsing |
-| **scraper**               | IP is associated with scraping activity            |
-| **AI scraper**            | IP is associated with AI/LLM content scraping      |
-| **botnet**                | IP is part of a known botnet                       |
+**IP flags**, characteristics of the client IP. They are checked against the [Flag Score threshold](bot-management.md#flag-score-threshold):
+
+| Flag                      | Code | Description                                        |
+| ------------------------- | ---- | -------------------------------------------------- |
+| **datacenter**            | `d`  | IP originates from a datacenter (non-residential)  |
+| **vpn**                   | `v`  | IP is associated with a VPN service                |
+| **proxy**                 | `p`  | IP is a known open proxy                           |
+| **tor**                   | `t`  | IP is a known Tor exit node                        |
+| **abuse**                 | `a`  | IP has been reported for abusive behavior          |
+| **automated\_navigation** | `A`  | IP has been detected performing automated browsing |
+| **scraper**               | `s`  | IP is associated with scraping activity            |
+| **AI scraper**            | `i`  | IP is associated with AI/LLM content scraping      |
+| **botnet**                | `b`  | IP is part of a known botnet                       |
+
+**Request flags**, detected on each request. When one matches, the action applies regardless of the IP score and both thresholds:
+
+| Flag                      | Code | Description                                        |
+| ------------------------- | ---- | -------------------------------------------------- |
+| **client impersonation**  | `C`  | TLS fingerprint, user agent and headers mismatch   |
+| **AI training crawler**   | `T`  | AI crawler collecting content to train models      |
+| **AI search crawler**     | `S`  | AI crawler indexing content for AI search results  |
+| **AI user fetcher**       | `U`  | AI assistant fetching a page a user asked for      |
+
+Blocking `S` removes the site from those AI search results, and blocking `U` stops users from reading it through that assistant. The current list of flags is also available as JSON in the [BotM Flags API](https://api.botm.transparentedge.io/api/report/flags).
 
 #### **Flag Score threshold**
 
-**Range:** 1-99 (should be lower than the Score Threshold)
+**Range:** 1-99, usually lower than the Score Threshold. Each threshold is checked on its own.
 
 A secondary rule to catch moderate-risk IPs that also exhibit specific suspicious characteristics. The action fires when **both** conditions are true:
 
 * The IP's score is at or above this threshold, **and**
-* At least one of the selected flags (see below) matches the IP's profile.
+* At least one of the selected IP flags (see above) matches the IP's profile.
 
 This lets you, for example, block known VPN or Tor IPs at a lower score than you would block a generic risky IP.
 
@@ -145,7 +158,7 @@ The full syntax for the `TCDN-BM-Action` header value is:
 * `ACTION`: one of `block`, `captcha`, `pow_captcha`, `jschallenge` or `bypass`
 * `SCORE_THRESHOLD`: score at or above which the action triggers (1-99)
 * `FLAG_SCORE_THRESHOLD`: score threshold applied when matching flags are present (1-99), usually lower than `SCORE_THRESHOLD`. Each threshold is checked on its own.
-* `FLAGS`: flag codes to check (e.g. `vt` for VPN + Tor), can be empty for no flags, check [BotM Flags API reference](https://api.botm.transparentedge.io/api/report/flags) to see the available flag letter codes
+* `FLAGS`: flag codes to check (e.g. `vt` for VPN + Tor), can be empty for no flags. Codes are listed in [Flags](bot-management.md#flags)
 
 #### Examples
 
