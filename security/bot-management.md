@@ -13,7 +13,7 @@ A bot is a software application that runs automated tasks against online service
 
 Detecting a bot can be a trivial task if it's a simple bot, but advanced bots use an ordinary web engine to scrape, navigate links at random intervals, use the mouse... they become almost humans.
 
-<table><thead><tr><th width="183">Bot Type</th><th>Description</th></tr></thead><tbody><tr><td>Simple</td><td>Connects from a single IP address and uses automated scripts that do not try to impersonate as a browser.</td></tr><tr><td>Moderate</td><td>Uses a headless browser that can even execute javascript.</td></tr><tr><td>Advanced</td><td>Simulates mouse movements and clics, mimicking human behaviour. Uses browser automation technologies. Used by botnets.</td></tr><tr><td>Evasive</td><td>Same as advanced but leverages on VPNs, proxies and other spoofing methodologies to hide.</td></tr></tbody></table>
+<table><thead><tr><th width="183">Bot Type</th><th>Description</th></tr></thead><tbody><tr><td>Simple</td><td>Connects from a single IP address and uses automated scripts that do not try to impersonate as a browser.</td></tr><tr><td>Moderate</td><td>Uses a headless browser that can even execute javascript.</td></tr><tr><td>Advanced</td><td>Simulates mouse movements and clicks, mimicking human behaviour. Uses browser automation technologies. Used by botnets.</td></tr><tr><td>Evasive</td><td>Same as advanced but leverages on VPNs, proxies and other spoofing methodologies to hide.</td></tr></tbody></table>
 
 ## What is BotM?
 
@@ -34,7 +34,7 @@ At the top of the page, the **BattleBot** snippet is displayed — a lightweight
 
 ## Bot Management Settings
 
-If you have adquired the Bot Management service, you'll be able to access its settings where you can customize the threat detection level per site.
+If you have acquired the Bot Management service, you'll be able to access its settings where you can customize the threat detection level per site.
 
 The screenshot below shows a small part of the available options:
 
@@ -102,17 +102,19 @@ Once the thresholds and flags have been configured, clicking Save configuration 
 The available actions are:
 
 * **block:** Returns a `403 Forbidden` response immediately.
-* **captcha:** Shows a CAPTCHA challenge on the same page. On success, a signed cookie is set and the page reloads, the user continues normally. Only applies to `GET` requests; other methods are blocked with `403` until the captcha is resolved.
+* **captcha:** Shows a CAPTCHA challenge on the same page. On success, a signed cookie is set and the page reloads, the user continues normally.
 * **pow\_captcha:** Same as `captcha`, but the browser first solves a JavaScript challenge and only then the CAPTCHA is shown.
 * **jschallenge:** Presents a JavaScript-based challenge instead of a CAPTCHA.
 * **bypass:** Checks the IP against thresholds but takes no action. The result is available for use in downstream VCL logic (see [Advanced Configuration](bot-management.md#advanced-configuration)).
+
+Challenges (`captcha`, `pow_captcha`, `jschallenge`) only apply to `GET` requests; other methods are blocked with `403` unless the visitor already solved the challenge.
 
 #### Saving the Configuration
 
 After configuring thresholds, flags, and an action, save and choose how to apply it:
 
 * **Create VCL automatically**: A custom VCL snippet is created and deployed for your site. No further action required.
-* **I'll configure it manually**: No VCL is generated. You can copy the snippet created at the top and paste it into the VCL editor. (see Advanced Configuration).
+* **I'll configure it manually**: No VCL is generated. You can copy the snippet created at the top and paste it into the VCL editor (see [Advanced Configuration](bot-management.md#advanced-configuration)).
 
 ***
 
@@ -145,7 +147,7 @@ How it works:
 * BotM does not run on `OPTIONS` requests, ESI subrequests and restarted requests, and never acts on allow-listed IPs (see [Global Whitelists](global-whitelists.md)). The exception is allow-listed AI crawlers when the AI crawler flags (`T`, `S`, `U`) are configured: the action applies to them, and they are no longer treated as allow-listed for the rest of the request.
 * `TCDN-BM-Action` and `tcdn-bm-deny-reason` headers sent by clients are removed before your VCL runs.
 
-`ACTION` is one of `block`, `captcha`, `pow_captcha`, `jschallenge` or `bypass`.
+`ACTION` is one of `block`, `captcha`, `pow_captcha`, `jschallenge` or `bypass` (lowercase). Any other value runs as `bypass`: no action is taken.
 
 #### Overriding Thresholds
 
@@ -155,10 +157,10 @@ The full syntax for the `TCDN-BM-Action` header value is:
 <ACTION>@<SCORE_THRESHOLD>;<FLAG_SCORE_THRESHOLD>;<FLAGS>
 ```
 
-* `ACTION`: one of `block`, `captcha`, `pow_captcha`, `jschallenge` or `bypass`
-* `SCORE_THRESHOLD`: score at or above which the action triggers (1-99)
+* `ACTION`: see [Usage](bot-management.md#usage)
+* `SCORE_THRESHOLD`: score at or above which the action triggers (1-99). `100` never triggers: the action then depends only on the flags.
 * `FLAG_SCORE_THRESHOLD`: score threshold applied when matching flags are present (1-99), usually lower than `SCORE_THRESHOLD`. Each threshold is checked on its own.
-* `FLAGS`: flag codes to check (e.g. `vt` for VPN + Tor), can be empty for no flags. Codes are listed in [Flags](bot-management.md#flags)
+* `FLAGS`: flag codes to check (e.g. `vt` for VPN + Tor), can be empty for no flags. Codes are listed in [Flags](bot-management.md#flags).
 
 #### Examples
 
@@ -231,12 +233,12 @@ sub vcl_pass {
 ```
 
 {% hint style="warning" %}
-Do not set `TCDN-BM-Action` in `vcl_recv` if you call `protect_with_botm` from `vcl_miss` or `vcl_pass`: a header left in `vcl_recv` is applied at the end of `vcl_recv` (see below), on every request, including cache hits.
+If you call `protect_with_botm` from `vcl_miss` or `vcl_pass`, do not leave `TCDN-BM-Action` set in `vcl_recv` without calling it: the header is applied at the end of `vcl_recv` (see [below](bot-management.md#tcdn-bm-action-header-without-the-call)), on every request, including cache hits.
 {% endhint %}
 
 **Use the result in your own logic (`bypass`):**
 
-With `bypass`, no action is taken. If the IP exceeds the thresholds, the header `tcdn-bm-deny-reason` is set and is available in the rest of your VCL, including `vcl_miss`, `vcl_pass` and `vcl_backend_fetch`. Each call sets or removes it, so it holds the result of the last call:
+With `bypass`, no action is taken. If the IP exceeds the thresholds, the header `tcdn-bm-deny-reason` is set with the reason and is available in the rest of your VCL, including `vcl_miss`, `vcl_pass` and `vcl_backend_fetch`. It is also sent to the origin. Each call sets or removes it, so it holds the result of the last call:
 
 ```vcl
 sub vcl_recv {
@@ -250,6 +252,56 @@ sub vcl_miss {
     # Only present if the IP exceeded the thresholds
     if (req.http.tcdn-bm-deny-reason) {
         call deny_request;
+    }
+}
+```
+
+**Complete example:**
+
+```vcl
+sub vcl_recv {
+    if (req.http.host == "www.example.com") {
+        # Block before the cache: Tor and proxies from score 50, any IP from score 95
+        if (req.url ~ "^/(login|signup)") {
+            set req.http.TCDN-BM-Action = "block@95;50;tp";
+            call protect_with_botm;
+        }
+
+        # CAPTCHA on the search page, expensive for the origin. Requests other than GET are blocked, unless the CAPTCHA was already solved
+        if (req.url ~ "^/search") {
+            set req.http.TCDN-BM-Action = "captcha@90;70;dvptC";
+            call protect_with_botm;
+        }
+
+        # Several calls in the same request, each with its own action.
+        # First, block AI training crawlers (T) on the whole site, with any score...
+        set req.http.TCDN-BM-Action = "block@100;100;T";
+        call protect_with_botm;
+
+        # ...then score only (bypass): the request continues, the reason is left in 'tcdn-bm-deny-reason'
+        # (also sent to the origin) and used in your own logic
+        set req.http.TCDN-BM-Action = "bypass@75;65;dvptasibAC";
+        call protect_with_botm;
+        if (req.http.tcdn-bm-deny-reason && req.url ~ "^/api/") {
+            call deny_request;
+        }
+    }
+}
+
+sub vcl_miss {
+    # Challenge only what goes to the origin: cache hits are not challenged.
+    # IP flags from score 85, never on the score alone (100)
+    if (req.http.host == "www.example.com" && req.url ~ "^/news/") {
+        set req.http.TCDN-BM-Action = "jschallenge@100;85;dvptasibA";
+        call protect_with_botm;
+    }
+}
+
+sub vcl_pass {
+    # Not cacheable (pass): private area, with the thresholds configured in the dashboard
+    if (req.http.host == "www.example.com" && req.url ~ "^/my-account/") {
+        set req.http.TCDN-BM-Action = "pow_captcha";
+        call protect_with_botm;
     }
 }
 ```
