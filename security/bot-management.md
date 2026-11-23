@@ -86,10 +86,11 @@ This lets you, for example, block known VPN or Tor IPs at a lower score than you
 
 Once the thresholds and flags have been configured, clicking Save configuration opens a modal to define what happens when a bot is detected.
 
-There are four available actions:
+The available actions are:
 
 * **block:** Returns a `403 Forbidden` response immediately.
-* **captcha:** Redirects the user to a CAPTCHA challenge. On success, a signed cookie is set and the user continues normally. Only applies to `GET` requests; other methods are blocked with `403` until the captcha is resolved.
+* **captcha:** Shows a CAPTCHA challenge on the same page. On success, a signed cookie is set and the page reloads, the user continues normally. Only applies to `GET` requests; other methods are blocked with `403` until the captcha is resolved.
+* **pow\_captcha:** Same as `captcha`, but the browser first solves a JavaScript challenge and only then the CAPTCHA is shown.
 * **jschallenge:** Presents a JavaScript-based challenge instead of a CAPTCHA.
 * **bypass:** Checks the IP against thresholds but takes no action. The result is available for use in downstream VCL logic (see [Advanced Configuration](bot-management.md#advanced-configuration)).
 
@@ -104,110 +105,49 @@ After configuring thresholds, flags, and an action, save and choose how to apply
 
 ### Advanced Configuration
 
-For scenarios that go beyond what the dashboard supports, you can configure BotM directly in VCL. Note that you still need to enable BotM for the site.
+For scenarios that go beyond what the dashboard supports, you can run BotM directly from your VCL with the `protect_with_botm` subroutine. BotM must still be enabled for the site in the dashboard.
 
-There are three ways to do this:
+#### Usage
 
-* **`TCDN-BM-Action` header** - apply an action using the thresholds configured in the dashboard.
-* **`botm_analyze` subroutine** - run the assessment yourself and decide the action from the resulting score and flags. Use this for custom thresholds or logic. This is the recommended approach.
-* **`TCDN-BM-Action` header with overrides** - apply an action using the thresholds configured in VCL.
+Call `protect_with_botm` where you want BotM to run. The action, and optionally the thresholds, are taken from the `TCDN-BM-Action` header:
 
-#### Basic Usage
-
-Set the `TCDN-BM-Action` header anywhere in `vcl_recv`:
+* **No header:** `block` with the thresholds configured in the dashboard.
+* **`<ACTION>`:** that action with the thresholds configured in the dashboard.
+* **`<ACTION>@<THRESHOLDS>`:** that action with the thresholds set in VCL (see [Overriding Thresholds](bot-management.md#overriding-thresholds)).
 
 ```vcl
 sub vcl_recv {
     if (req.http.host == "www.example.com") {
         set req.http.TCDN-BM-Action = "jschallenge";
+        call protect_with_botm;
     }
 }
 ```
 
-`TCDN-BM-Action` accepts one of `block`, `captcha`, `jschallenge`, or `bypass`.
+How it works:
 
-#### Custom Checks with `botm_analyze`
+* BotM runs **at the point of the call**. If the IP exceeds the thresholds, the action is applied right there: `block`, `captcha`, `pow_captcha` and `jschallenge` end the request (unless the visitor already solved the challenge), `bypass` lets it continue.
+* It can be called from `vcl_recv`, `vcl_miss` and `vcl_pass`.
+* Each call uses the `TCDN-BM-Action` header and removes it, so you can call it several times in the same request with different actions or thresholds. The first call that blocks or shows a challenge ends the request.
+* BotM does not run on `OPTIONS` requests, ESI subrequests and restarted requests, and never acts on allow-listed IPs (see [Global Whitelists](global-whitelists.md)). The exception is allow-listed AI crawlers when the AI crawler flags (`T`, `S`, `U`) are configured: the action applies to them, and they are no longer treated as allow-listed for the rest of the request.
+* `TCDN-BM-Action` and `tcdn-bm-deny-reason` headers sent by clients are removed before your VCL runs.
 
-Call `botm_analyze` anywhere in `vcl_recv` to run the IP assessment in bypass mode without triggering any automatic action. It looks up score and flags for the client IP and exposes them as request variables:
-
-| Variable        | Type   | Description                                                                                                                                                                         |
-| --------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `botm:ip-score` | int    | Risk score of the client IP (0-99)                                                                                                                                                  |
-| `botm:flags`    | string | Flag letter codes present on the IP (e.g. `vt` = VPN + Tor). See the [BotM Flags API reference](https://api.botm.transparentedge.io/api/report/flags) for the full letter-code list |
-
-Read those with `var.get_int("botm:ip-score")` / `var.get("botm:flags")`, e.g.:
-
-* `var.get_int("botm:ip-score") >= 90` matches if the IP score is equal or greater than 90.
-* `var.get("botm:flags") ~ "[vt]"` matches if either `v` (VPN) or `t` (Tor) is present. Use the same pattern for a single flag, e.g. `var.get("botm:flags") ~ "d"` for datacenter.
-
-BotM must still be enabled for the site.
-
-**Known limitation:** analytics/logs for BotM fields `status` and `reason` reflect BotM's own comparison against the thresholds configured in the dashboard, not the outcome of your custom checks. The logged `status`/`reason` may not match the action you actually took in VCL.
-
-**Examples**
-
-**Block by score threshold:**
-
-```vcl
-sub vcl_recv {
-    if (req.http.host == "www.example.com") {
-        call botm_analyze;
-
-        if (var.get_int("botm:ip-score") >= 90) {
-            call deny_request;
-        }
-    }
-}
-```
-
-**Different score threshold per flag:**
-
-```vcl
-sub vcl_recv {
-    if (req.http.host == "www.example.com") {
-        call botm_analyze;
-
-        if (var.get("botm:flags") ~ "[vt]" && var.get_int("botm:ip-score") >= 60) {
-            call deny_request;
-        } else if (var.get("botm:flags") ~ "d" && var.get_int("botm:ip-score") >= 85) {
-            call deny_request;
-        } else if (var.get_int("botm:ip-score") >= 95) {
-            call deny_request;
-        }
-    }
-}
-```
-
-**Act only on cache miss:**
-
-Call `botm_analyze` directly in `vcl_miss` (or `vcl_pass`) so cache hits skip the check entirely and only requests going to the origin are assessed:
-
-```vcl
-sub vcl_miss {
-    if (req.http.host == "www.example.com") {
-        call botm_analyze;
-
-        if (var.get_int("botm:ip-score") >= 85) {
-            call deny_request;
-        }
-    }
-}
-```
+`ACTION` is one of `block`, `captcha`, `pow_captcha`, `jschallenge` or `bypass`.
 
 #### Overriding Thresholds
 
-This method overrides any thresholds set in the dashboard. The full syntax for the `TCDN-BM-Action` header value is:
+The full syntax for the `TCDN-BM-Action` header value is:
 
 ```
 <ACTION>@<SCORE_THRESHOLD>;<FLAG_SCORE_THRESHOLD>;<FLAGS>
 ```
 
-* `ACTION`: one of `block`, `captcha`, `jschallenge`, or `bypass`
+* `ACTION`: one of `block`, `captcha`, `pow_captcha`, `jschallenge` or `bypass`
 * `SCORE_THRESHOLD`: score at or above which the action triggers (1-99)
-* `FLAG_SCORE_THRESHOLD`: score threshold applied when matching flags are present (1-99)
+* `FLAG_SCORE_THRESHOLD`: score threshold applied when matching flags are present (1-99), usually lower than `SCORE_THRESHOLD`. Each threshold is checked on its own.
 * `FLAGS`: flag codes to check (e.g. `vt` for VPN + Tor), can be empty for no flags, check [BotM Flags API reference](https://api.botm.transparentedge.io/api/report/flags) to see the available flag letter codes
 
-**Examples**
+#### Examples
 
 **Different action per country:**
 
@@ -218,30 +158,107 @@ sub vcl_recv {
             # Higher thresholds and JS challenge for ES/PT traffic
             set req.http.TCDN-BM-Action = "jschallenge@90;70;vt";
         } else {
-            # Block everything else that exceeds default thresholds configured in the dashboard
+            # Block everything else that exceeds the thresholds configured in the dashboard
             set req.http.TCDN-BM-Action = "block";
         }
+        call protect_with_botm;
     }
 }
 ```
 
-**Act only on cache miss (bypass mode):**
-
-Use `bypass` to run the assessment without taking immediate action. If the IP exceeds the configured thresholds, the header `tcdn-bm-deny-reason` is set and available in subsequent subroutines such as `vcl_miss`, `vcl_pass` or `vcl_backend_fetch`.
+**Different score threshold per flag (several calls):**
 
 ```vcl
 sub vcl_recv {
     if (req.http.host == "www.example.com") {
-        if (req.url ~ "^/img/") {
-            set req.http.TCDN-BM-Action = "bypass";
+        # VPN or Tor from score 60, any IP from score 95
+        set req.http.TCDN-BM-Action = "block@95;60;vt";
+        call protect_with_botm;
+
+        # Datacenter from score 85
+        set req.http.TCDN-BM-Action = "block@95;85;d";
+        call protect_with_botm;
+    }
+}
+```
+
+**Stricter rules for a path:**
+
+```vcl
+sub vcl_recv {
+    if (req.http.host == "www.example.com") {
+        if (req.url ~ "^/login") {
+            set req.http.TCDN-BM-Action = "captcha@70;50;vtpd";
+        } else {
+            set req.http.TCDN-BM-Action = "jschallenge";
         }
+        call protect_with_botm;
+    }
+}
+```
+
+**Act only on cache miss:**
+
+Call it from `vcl_miss` and `vcl_pass` so cache hits skip the check entirely and only requests going to the origin are assessed. Set the header right before the call, in the same subroutine:
+
+```vcl
+sub vcl_miss {
+    if (req.http.host == "www.example.com") {
+        set req.http.TCDN-BM-Action = "block";
+        call protect_with_botm;
+    }
+}
+
+sub vcl_pass {
+    if (req.http.host == "www.example.com") {
+        set req.http.TCDN-BM-Action = "block";
+        call protect_with_botm;
+    }
+}
+```
+
+{% hint style="warning" %}
+Do not set `TCDN-BM-Action` in `vcl_recv` if you call `protect_with_botm` from `vcl_miss` or `vcl_pass`: a header left in `vcl_recv` is applied at the end of `vcl_recv` (see below), on every request, including cache hits.
+{% endhint %}
+
+**Use the result in your own logic (`bypass`):**
+
+With `bypass`, no action is taken. If the IP exceeds the thresholds, the header `tcdn-bm-deny-reason` is set and is available in the rest of your VCL, including `vcl_miss`, `vcl_pass` and `vcl_backend_fetch`. Each call sets or removes it, so it holds the result of the last call:
+
+```vcl
+sub vcl_recv {
+    if (req.http.host == "www.example.com" && req.url ~ "^/img/") {
+        set req.http.TCDN-BM-Action = "bypass";
+        call protect_with_botm;
     }
 }
 
 sub vcl_miss {
-    # Only present if the IP exceeded the configured thresholds
+    # Only present if the IP exceeded the thresholds
     if (req.http.tcdn-bm-deny-reason) {
         call deny_request;
     }
 }
 ```
+
+#### `TCDN-BM-Action` Header Without the Call
+
+Setting the `TCDN-BM-Action` header without calling `protect_with_botm` is still supported: if the header is still present at the end of `vcl_recv`, BotM runs at that point with that action.
+
+```vcl
+sub vcl_recv {
+    if (req.http.host == "www.example.com") {
+        set req.http.TCDN-BM-Action = "jschallenge";
+    }
+}
+```
+
+{% hint style="warning" %}
+With this method BotM does not run where the header is set, but after all your `vcl_recv` code:
+
+* If your `vcl_recv` ends earlier, for example with `return (pass);`, BotM does not run at all.
+* If the header is set several times, only the last value is used.
+* It runs on every request, including cache hits.
+
+Use `call protect_with_botm;` instead.
+{% endhint %}

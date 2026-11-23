@@ -231,6 +231,22 @@ sub vcl_recv {
 }
 ```
 
+### **Protect with BotM**
+
+* **Command**: `call protect_with_botm;`
+* **Description**: Runs [Bot Management](../../security/bot-management.md#advanced-configuration) at the point of the call and applies the action from the `TCDN-BM-Action` header (`block` if the header is not set). Can be called from `vcl_recv`, `vcl_miss` and `vcl_pass`. Bot Management must be enabled for the site.
+* **Example**:
+
+```perl
+sub vcl_recv {
+    if (req.http.host == "www.example.com") {
+        # JavaScript challenge for IPs over the thresholds configured in the dashboard.
+        set req.http.TCDN-BM-Action = "jschallenge";
+        call protect_with_botm;
+    }
+}
+```
+
 ### **Set Dynamic Backend**
 
 * **Command**: `call set_dynamic_backend;`
