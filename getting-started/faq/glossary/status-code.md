@@ -16,7 +16,7 @@ The server is only delivering part of the content. This type of response is give
 
 ## Redirections
 
-**301Moved Permanently**
+**301 Moved Permanently**
 
 This status code indicates a permanent redirection. This type of request can be cached by proxy cache and by browsers. They must be used carefully because they can cause confusion.
 
@@ -77,10 +77,10 @@ This is a code returned by some web servers when acting as a reverse proxy and t
 
 **503 Service Unavailable**
 
-The service is not available. This error is returned when there’s no contact with the client’s web server, either because it’s down or due to a communication problem. It's generated “on the fly” by Transparent Edge when the client has a fatal error. When 503 error messages are received by the client, look for errors in its logs.
+The service is not available. This error is returned when there’s no contact with the client’s web server, either because it’s down or due to a communication problem. Transparent Edge returns 503 when it cannot get a usable response from your origin — the connection failed, the origin is marked unhealthy, or it answered with a 5xx of its own. If the origin simply took too long, a 504 is returned instead.
 
 **504 Gateway Timeout**
 
 This response code typically occurs when the client’s origin server is taking too long to return a non-cached object, either because it should not be cached or because it has expired.
 
-Transparent Edge protects you against all 5XX errors by showing you the latest cached version. You can get more information [here](https://docs.transparentedge.eu/v/english/getting-started/faq/funcionalidades/proteccion-ante-caidas-del-origen).
+When your origin fails, Transparent Edge serves the latest cached version of the object whenever one is available (See [Protection against origin failures](https://docs.transparentedge.eu/getting-started/faq/features/protection-against-origin-failures)). If the object is not cacheable, or no copy is stored, an error page is returned instead — see [HTTP 5xx Error Codes](https://docs.transparentedge.eu/getting-started/faq/http-5xx-error-codes).

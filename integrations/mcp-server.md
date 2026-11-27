@@ -28,17 +28,24 @@ https://mcp.transparentedge.eu/mcp
 
 ### Connecting from Claude
 
-Claude (web, desktop and mobile) connects with your usual Transparent Edge login. You never have to paste API keys.
+Claude (web, desktop and mobile) connects with your usual Transparent Edge login. Authentication use OAuth; you never have to paste API keys.
 
-1. In Claude, go to **Customize → Connectors** and search for **Transparent Edge**.
-2. Click **Connect**.
-3. Sign in with your Transparent Edge username and password. If your account uses two-factor authentication, you'll be asked for your code as usual.
-4. Review the permissions and click **Authorize**.
+1. In Claude, go to **Customize → Connectors** and click **Add custom connector**.
+2. Name: `Transparent Edge` (or any name you like).  URL: `https://mcp.transparentedge.eu/mcp`
+3. Expand **Advanced settings** and fill in:&#x20;
+   * **OAuth Client ID**: `0eCt5kaQensfmXHRideDYGAPw3DOVhPI8nFDKWtR`
+   * **OAuth Client Secret**: leave it empty.
+4. Save, click **Connect** and sign in with your Transparent Edge user (and your 2FA code, if enabled).
+5. Review the permissions and click **Authorize**.
+
+{% hint style="info" %}
+**Team and Enterprise plans:** an organization admin adds the connector in **Organization settings → Connectors** with the same details. Each user will then find it under **Customize → Connectors** and only needs to click **Connect**.
+{% endhint %}
 
 That's it. Ask Claude anything about your account, and it will use the connector when it needs to.
 
 {% hint style="info" %}
-You can also connect first and sign in later: the first time Claude needs your data, it shows a **Connect** button right in the conversation.
+If you add the connector but don't sign in yet, Claude will show a **Connect** button in the conversation the first time it needs your data.
 {% endhint %}
 
 To disconnect, go back to **Customize → Connectors** and remove Transparent Edge.
@@ -143,6 +150,14 @@ The requested period is longer than your real-time analytics allow (4 hours, or 
 <summary>The assistant says I'm not authenticated (other MCP clients)</summary>
 
 Check that both headers, `X-TE-Client-Id` and `X-TE-Client-Secret`, are set and match the values in your dashboard profile.
+
+</details>
+
+<details>
+
+<summary>Claude keeps asking you to sign in after authorizing, or shows <code>CLIENT_HTTP_NOT_IMPLEMENTED</code></summary>
+
+The connector was created without the OAuth Client ID. Remove it and add it again following the steps above, with the Client ID under **Advanced settings** and the Client Secret left empty.
 
 </details>
 

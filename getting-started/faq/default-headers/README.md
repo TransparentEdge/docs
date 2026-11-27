@@ -15,3 +15,20 @@
 {% content-ref url="cabeceras-de-cache.md" %}
 [cabeceras-de-cache.md](cabeceras-de-cache.md)
 {% endcontent-ref %}
+
+{% content-ref url="age.md" %}
+[age.md](age.md)
+{% endcontent-ref %}
+
+{% content-ref url="tp-cache.md" %}
+[tp-cache.md](tp-cache.md)
+{% endcontent-ref %}
+
+{% content-ref url="true-client-ip-y-x-forwarded-for.md" %}
+[true-client-ip-y-x-forwarded-for.md](true-client-ip-y-x-forwarded-for.md)
+{% endcontent-ref %}
+
+{% content-ref url="reason.md" %}
+[reason.md](reason.md)
+{% endcontent-ref %}
+

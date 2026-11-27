@@ -4,10 +4,51 @@ description: Learn the meaning of the debug strings
 
 # Debug codes
 
-In Transparent Edge, every response is logged with a TCDN-Debug code, that helps us to check what happened with a request in a glance. You can see it in the analytics section of the dashboard
+Every response served by Transparent Edge carries a debug string that tells you, at a glance, what happened to that request. You will find the same string in two places:
 
-Every code has two parts: the reason and the request id (XID), separated with a colon (\`:\`). The XID is a unique representation of the request/response and can be disregarded; it's only a identifier we at Transparent Edge use for finding a specific request in the logs.
+* In the **`reason` response header** of the request itself.
+* In the **analytics section of the dashboard**, for every logged request.
 
-The reason is far more interesting, because tells us things about the response in case of error. Below is a table including the most common reasons:
+A string has two parts separated by a colon: the reason and the request ID.
 
-<table><thead><tr><th width="196">Reason</th><th>Explanation</th></tr></thead><tbody><tr><td><code>TCDN-OK</code></td><td>Everything is fine. Should be the most common reason code.</td></tr><tr><td><code>TCDN-RPE-XXX</code></td><td>RPE is for <code>Request Processed at Edge</code>. The XXX matches the code used in VCL code for processing this request. A TCDN-Command of <code>deny_request</code> or a redirect reners this debug code. You will only see this request in CDN logs, because request and response are entirely managed at the edge node, without any intervention of the backend.</td></tr><tr><td><code>TCDN-BENG-XXX</code></td><td>BENG is for <code>Backend Error, No Grace</code>. This error should appear if the request is a <code>MISS</code>, and the origin server renders a error code ( > 500). If the CDN node has a stale content and the grace isn't disabled by the VCL config, stale content should be served instead the error. This type of error usually tells the backend is giving the XXX error originally, so it must be fixed in the origin.</td></tr><tr><td><code>TCDN-BENG-Service unavailable</code></td><td>Very similar to the previous one. There's no content cached in the node for that URL, and there's a problem with the MISS request. In this case, the backend server couldn't be reached for a reply. Usually means a network problem, usually caused by a firewall or IDS blocking requests from our nodes. It also could mean that your configured healthcheck is returning an incorrect status code, so we're marking your backend as unavailable.</td></tr><tr><td><code>TCDN-SBPR-XXX</code></td><td>SBPR is for <code>Sick Backend, POST/PUT Request</code>. Since usually the only cacheable objects are URLs asked with the GET method, any POST/PUT requests would be uncacheable by default, and hence any stale mechanism is not applied. The XXX part is the original error answered by the backend. Should be fixed in the origin app.</td></tr><tr><td><code>TCDN-DNF</code></td><td>DNF is for `Domain Not Found`. You should see it if a domain is pointing via CNAME to Transparent, but no VCL configuration assigning a backend to that hostname is available.</td></tr><tr><td><code>TCDN-E</code></td><td>Unknown error. If you're seeing this, please contact us, including the XID of the request so we can debug the problem.</td></tr><tr><td><code>TCDN-RPE-GRL-429-Too Many Requests</code></td><td>The request has been stopped by our global rate-limit system, this is a safeguard to protect origin against big and sudden traffic spikes, if your site usually has those kind of spikes coming from legit traffic contact with our support to increase it.</td></tr><tr><td><code>TCDN-RPE-Under Attack</code></td><td><p>The request has been halted by our "Under Attack" mode.</p><p>If this is a legitimate user using a normal web browser (like Chrome, Firefox, or Safari). Our system will quickly check and then automatically redirect to the original page.</p></td></tr><tr><td><code>TCDN-RPE-UA-429-Too Many Requests</code></td><td>This message appears when we've stopped a request several times in a row because our "Under Attack" mode thinks it might be harmful. This often happens if the requests come too frequently, more than what we expect from regular users.<br><br>This could mean that the requests are coming from a tool or program that's sending too many requests too quickly, or it might be someone trying to cause trouble on purpose.</td></tr><tr><td><code>TCDN-RPE-UA-403-Denylist</code></td><td>Under Attack Mode is enabled and the IP Address is present on our deny list because it has been involved in attacks in the past.</td></tr></tbody></table>
+```
+reason: TCDN-BENG-Origin Timeout:4123fd06e0-1795161458-224112845
+        └──────── reason ───────┘└───────── request ID ────────┘
+```
+
+The reason is the part that tells you what happened. The request ID identifies that single request in our logs: you can ignore it day to day, but **quote it when you open a support ticket**, because it is what lets us find the exact request you are asking about.
+
+### Requests served normally
+
+| Reason          | Explanation                                                                                                                                                                                                                                                                                                                   |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `TCDN-OK`       | Everything went fine. This should be the most common value by far.                                                                                                                                                                                                                                                            |
+| `TCDN-OK-STALE` | The request was served from a cached copy that had already expired. This normally means your origin was failing and the CDN served the previous version rather than an error page. See [Protection against origin failures](https://docs.transparentedge.eu/getting-started/faq/features/protection-against-origin-failures). |
+
+### Requests resolved at the edge
+
+These never reached your origin: the edge node produced the response itself.
+
+<table><thead><tr><th width="196">Reason</th><th>Explanation</th></tr></thead><tbody><tr><td><code>TCDN-RPE-XXX</code></td><td>RPE is for <code>Request Processed at Edge</code>. <code>XXX</code> is the status code the VCL configuration used to answer: a <code>deny_request</code>, a redirect, and so on. These requests appear in the CDN logs only, since your origin was never involved.</td></tr><tr><td><code>TCDN-RPE-GRL-429-Too Many Requests</code></td><td>The global rate limit stopped the request. It is there to protect your origin from sudden spikes. If your site receives legitimate spikes, contact us and we will adjust the limit.</td></tr><tr><td><code>TCDN-RPE-Under Attack</code></td><td>The request was held by "Under Attack" mode. A legitimate visitor using a normal browser is checked in a moment and then sent on to the page they asked for.</td></tr><tr><td><code>TCDN-RPE-UA-429-Too Many Requests</code></td><td>"Under Attack" mode stopped this request several times in a row, normally because it arrived far more often than a regular visitor would ask. It is usually a script or a tool making too many requests.</td></tr><tr><td><code>TCDN-RPE-UA-403-Denylist</code></td><td>"Under Attack" mode is enabled and this IP address is on the deny list, because it took part in previous attacks.</td></tr></tbody></table>
+
+### Backend errors
+
+Something went wrong between the CDN and your origin. Each of these is explained in detail, with the HTTP status code returned and what to check first, in [HTTP 5xx Error Codes](https://docs.transparentedge.eu/getting-started/faq/http-5xx-error-codes).
+
+| Reason                         | Explanation                                                                                                                                                               |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `TCDN-BENG-Origin Timeout`     | Your origin did not answer in time. Returned as **504**.                                                                                                                  |
+| `TCDN-BENG-Origin Unreachable` | The connection to your origin failed immediately. Returned as **503**.                                                                                                    |
+| `TCDN-BENG-Sick Healthcheck`   | Your origin is marked as unhealthy by its health check. Returned as **503**.                                                                                              |
+| `TCDN-BENG-XXX`                | Your origin answered with an error. `XXX` is the status code it returned. The error is in your application and has to be fixed there.                                     |
+| `TCDN-SBNG`                    | The request to your origin failed and could not be attributed to any of the causes above.                                                                                 |
+| `TCDN-SBPR`                    | A non-cacheable request — POST, PUT, PATCH or DELETE — produced an error at your origin. These methods are never cached, so there is no previous version to fall back on. |
+| `TCDN-OENG-XXX`                | Your origin returned an error and it was passed through to the visitor unchanged, because `X-Show-Origin-Errors` is enabled for your service.                             |
+| `TCDN-DNF`                     | Domain Not Found: the domain points to Transparent Edge, but no configuration assigns a backend to that hostname. Returned as **520**.                                    |
+| `TCDN-NBD`                     | No Backend Defined: the domain exists in the CDN but has no backend assigned. Returned as **520**.                                                                        |
+
+### Anything else
+
+| Reason       | Explanation                                                                             |
+| ------------ | --------------------------------------------------------------------------------------- |
+| `TCDN-E-XXX` | An error we have not classified. Contact us with the request ID and we will look it up. |
